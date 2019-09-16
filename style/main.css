@@ -108,6 +108,8 @@ a > .image:hover, div:hover > a > p {
   grid-area: main;
   overflow-y: scroll;
   min-height: 70vh;
+  scrollbar-color: white var(--bg);
+  scrollbar-width: thin;
 }
 
 .main-container::-webkit-scrollbar-track {
