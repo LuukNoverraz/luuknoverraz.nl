@@ -110,18 +110,46 @@ a > .image:hover, div:hover > a > p {
 }
 
 #main > div {
-  
-}
 
-#main > div > h1 {
-  margin-bottom: 0;
-  margin-top: 0;
 }
 
 .main-container {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: "main";
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 1fr 5fr 1fr;
+  grid-template-areas:  "top top top"
+                        "left center right"
+                        "bottom bottom bottom";
+}
+
+#top {
+  grid-area: top;
+}
+
+#left {
+  grid-area: left;
+}
+
+#center {
+  grid-area: center;
+}
+
+.line-between {
+  width: 20vw;
+  height: .25vh;
+  background-color: white;
+}
+
+.not-last-article {
+  margin-bottom: 4vh;
+}
+
+#right {
+  grid-area: right;
+}
+
+#bottom {
+  grid-area: bottom;
 }
 
 img {
@@ -132,9 +160,9 @@ img {
   user-drag: none;
 }
 
-#center > h1 {
-  margin-top: 0;
-  margin-bottom: 0;
+#center h1, #center p {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
 }
 
 #footer {
@@ -201,5 +229,13 @@ img {
   }
   #projects {
     align-self: baseline;
+  }
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-areas:  "top top top"
+                          "left center right"
+                          "bottom bottom bottom";
   }
 }
