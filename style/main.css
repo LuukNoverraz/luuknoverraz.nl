@@ -126,7 +126,6 @@ a > .image:hover, div:hover > a > p {
   opacity: 0.0;
 }
 .main-container::-webkit-scrollbar-thumb {
-  border-radius: 1vw;
   background-color: var(--txt);
 }
 
