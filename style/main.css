@@ -26,6 +26,11 @@ p {
   font-family: centuryGothic;
 }
 
+i {
+  font-family: centuryGothic;
+  font-style: italic;
+}
+
 #container {
   display: grid;
   grid-template-columns: 1fr;
@@ -91,6 +96,10 @@ a > .image:hover, div:hover > a > p {
   color: var(--bgr);
 }
 
+#nav a {
+  text-decoration: none;
+}
+
 #about {
   grid-area: about;
   background-color: var(--ylw);
@@ -137,7 +146,7 @@ a > .image:hover, div:hover > a > p {
   height: 11vh;
 }
 
-#main p {
+#main p, #main i {
   color: var(--txt);
 }
 
