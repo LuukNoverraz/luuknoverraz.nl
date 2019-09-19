@@ -64,7 +64,7 @@ a > .image, div > a > p {
   transition-timing-function: ease-in-out;
 }
 
-a > .image:hover, div:hover > a > p {
+a > .image:hover, div:hover > .nav-text > p {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
@@ -86,6 +86,19 @@ a > .image:hover, div:hover > a > p {
   grid-template-areas: "about projects skills";
 }
 
+.color-link {
+  font-weight: bold;
+  color: var(--blu) !important;
+}
+
+.color-link2 {
+  color: var(--ylw) !important;
+}
+
+.keywords {
+  color: var(--pnk) !important;
+}
+
 #nav > div {
   min-width: 11vw;
   text-align: center;
@@ -94,10 +107,6 @@ a > .image:hover, div:hover > a > p {
 
 #nav p {
   color: var(--bgr);
-}
-
-#nav a {
-  text-decoration: none;
 }
 
 #about {
@@ -200,6 +209,10 @@ img {
 #center h1, #center p {
   margin-top: 1vh;
   margin-bottom: 1vh;
+}
+
+a {
+  text-decoration: none;
 }
 
 #footer {
