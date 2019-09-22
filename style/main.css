@@ -133,7 +133,6 @@ a > .image:hover, div:hover > .nav-text > p {
 
 #main {
   grid-area: main;
-  overflow-y: scroll;
   min-height: 70vh;
   scrollbar-color: var(--txt) var(--bgr);
   scrollbar-width: thin;
@@ -154,7 +153,7 @@ a > .image:hover, div:hover > .nav-text > p {
   background-color: var(--txt);
 }
 
-#main > div {
+.main-container > div {
   height: 11vh;
 }
 
@@ -171,6 +170,50 @@ a > .image:hover, div:hover > .nav-text > p {
                         "bottom bottom bottom";
 }
 
+.main-container-projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "bayver besyes alein";
+}
+
+.project-block {
+  opacity: 1.0;
+}
+
+.project-block > img, .project-block > p {
+  display: flex;
+  height: 100%;
+  max-height: 22vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: -webkit-xxx-large;
+  font-weight: bold;
+  color: #4B0082 !important;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#bayver {
+  grid-area: bayver;
+  background-image: url("../images/bayver.png");
+  background-size: cover;
+}
+
+#besyes {
+  grid-area: besyes;
+  background-image: url("../images/besyes.png");
+  background-size: cover;
+}
+
+#alein {
+  grid-area: alein;
+  background-image: url("../images/alein.png");
+  background-size: cover;
+}
+
 #top {
   grid-area: top;
 }
@@ -181,6 +224,12 @@ a > .image:hover, div:hover > .nav-text > p {
 
 #center {
   grid-area: center;
+  margin-top: -5vh;
+}
+
+#center-projects {
+  grid-area: center;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .line-between {
@@ -190,7 +239,7 @@ a > .image:hover, div:hover > .nav-text > p {
 }
 
 .center-div {
-  margin-bottom: 7vh;
+  margin-bottom: 4vh;
 }
 
 #about-main {
@@ -269,7 +318,7 @@ i {
 }
 
 @media only screen and (min-width: 640px) {
-  #container {
+  /* #container {
     display: grid;
     min-width: 100vw;
     min-height: 100vh;
@@ -301,7 +350,7 @@ i {
   }
   #skills {
     align-self: baseline;
-  }
+  } */
   .main-container {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
@@ -312,7 +361,7 @@ i {
   }
   .content-image {
     max-width: 20vw;
-    max-height: 30vh;
+    max-height: 20vh;
     margin-top: 8vh;
     margin-left: 2vw;
   }
