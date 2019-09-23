@@ -174,17 +174,22 @@ a > .image:hover, div:hover > .nav-text > p {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: "bayver besyes alein";
+  grid-template-areas: "bayver besyes alein"
+                       "other-projects other-projects other-projects"
+                       "other-projects other-projects other-projects";
 }
 
 .project-block {
-  opacity: 1.0;
+  cursor: pointer;
+  width: 33.333vw;
 }
 
-.project-block > img, .project-block > p {
+.project-image {
   display: flex;
   height: 100%;
   max-height: 22vh;
+  position: relative;
+  top: -23vh;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -194,24 +199,48 @@ a > .image:hover, div:hover > .nav-text > p {
   margin: auto;
   margin-top: 0;
   margin-bottom: 0;
+  opacity: 0.0;
+  transition-property: transform, opacity;
+  transition-duration: .4s;
+  transition-timing-function: ease-in-out;
 }
 
 #bayver {
   grid-area: bayver;
   background-image: url("../images/bayver.png");
-  background-size: cover;
 }
 
 #besyes {
   grid-area: besyes;
   background-image: url("../images/besyes.png");
-  background-size: cover;
 }
 
 #alein {
   grid-area: alein;
   background-image: url("../images/alein.png");
+}
+
+#other-projects {
+  grid-area: other-projects;
+}
+
+.project-content {
+  height: 100%;
   background-size: cover;
+  transition-property: filter;
+  transition-duration: .4s;
+  transition-timing-function: ease-in-out;
+}
+
+.project-block:hover .project-content {
+  filter: blur(2px);
+}
+
+.project-block:hover .project-image {
+  opacity: 1.0;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 #top {
@@ -318,39 +347,6 @@ i {
 }
 
 @media only screen and (min-width: 640px) {
-  /* #container {
-    display: grid;
-    min-width: 100vw;
-    min-height: 100vh;
-    grid-template-columns: 1fr 7fr;
-    grid-template-areas: "header header"
-                         "nav main"
-                         "footer footer";
-  }
-  #header, #footer {
-    min-height: 15vh
-  }
-  #header {
-    -webkit-box-shadow: 0px 10px 39px 0px rgba(0,0,0,0.89);
-    -moz-box-shadow: 0px 10px 39px 0px rgba(0,0,0,0.89);
-    box-shadow: 0px 10px 39px 0px rgba(0,0,0,0.89);
-  }
-  .nav-container {
-    grid-template-rows: 2fr 1fr 2fr;
-    grid-template-columns: 1fr;
-    grid-template-areas: "about"
-               "projects"
-               "skills";
-  }
-  #about {
-    align-self: end;
-  }
-  #projects {
-    align-self: center;
-  }
-  #skills {
-    align-self: baseline;
-  } */
   .main-container {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
