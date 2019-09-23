@@ -134,6 +134,7 @@ a > .image:hover, div:hover > .nav-text > p {
 #main {
   grid-area: main;
   min-height: 70vh;
+  overflow-y: scroll;
   scrollbar-color: var(--txt) var(--bgr);
   scrollbar-width: thin;
 }
@@ -177,6 +178,7 @@ a > .image:hover, div:hover > .nav-text > p {
   grid-template-areas: "bayver besyes alein"
                        "other-projects other-projects other-projects"
                        "other-projects other-projects other-projects";
+  overflow: hidden !important;
 }
 
 .project-block {
@@ -186,16 +188,10 @@ a > .image:hover, div:hover > .nav-text > p {
 
 .project-image {
   display: flex;
-  height: 100%;
   max-height: 22vh;
+  max-width: 100%;
   position: relative;
-  top: -23vh;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: -webkit-xxx-large;
-  font-weight: bold;
-  color: #4B0082 !important;
+  top: -22.6vh;
   margin: auto;
   margin-top: 0;
   margin-bottom: 0;
@@ -222,6 +218,23 @@ a > .image:hover, div:hover > .nav-text > p {
 
 #other-projects {
   grid-area: other-projects;
+}
+
+#personal-logo {
+  margin-right: 33.333vw;
+}
+
+#back-arrow {
+  transition-property: transform;
+  transition-duration: .4s;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+}
+
+#back-arrow:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .project-content {
