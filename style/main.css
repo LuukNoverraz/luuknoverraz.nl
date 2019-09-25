@@ -177,7 +177,7 @@ a > .image:hover, .nav-text:hover > p {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: "bayver besyes alein"
+  grid-template-areas: "bayver besyes masteralein"
                        "other-projects other-projects other-projects"
                        "other-projects other-projects other-projects";
   overflow: hidden !important;
@@ -186,6 +186,8 @@ a > .image:hover, .nav-text:hover > p {
 .project-block {
   cursor: pointer;
   width: 33.333vw;
+  overflow: hidden;
+  display: inline-block;
 }
 
 .project-image {
@@ -213,9 +215,9 @@ a > .image:hover, .nav-text:hover > p {
   background-image: url("../images/besyes.png");
 }
 
-#alein {
-  grid-area: alein;
-  background-image: url("../images/alein.png");
+#masteralein {
+  grid-area: masteralein;
+  background-image: url("../images/masteralein.png");
 }
 
 #other-projects {
@@ -232,13 +234,14 @@ a > .image:hover, .nav-text:hover > p {
 .project-content {
   height: 100%;
   background-size: cover;
-  transition-property: filter;
+  transition-property: filter, transform;
   transition-duration: .4s;
   transition-timing-function: ease-in-out;
 }
 
 .project-block:hover .project-content {
   filter: blur(2px);
+  transform: scale(1.03);
 }
 
 .project-block:hover .project-image {
@@ -308,7 +311,7 @@ img {
 
 #center h1, #center p, #center i {
   margin-top: 1vh;
-  margin-bottom: 1vh;
+  margin-bottom: 0.5vh;
 }
 
 a {
@@ -362,8 +365,8 @@ i {
   }
   .content-image {
     max-width: 20vw;
-    max-height: 20vh;
-    margin-top: 8vh;
+    max-height: 25vh;
+    margin-top: 4vh;
     margin-left: 2vw;
   }
   #about-main {
