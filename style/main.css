@@ -224,6 +224,13 @@ a > .image:hover, .nav-text:hover > p {
   grid-area: other-projects;
 }
 
+#masteralein-iframe {
+  margin-top: 2vh;
+  margin-bottom: 8vh;
+  width: 64vw;
+  height: 36vw;
+}
+
 #bayver-iframe {
   margin-top: 2vh;
   margin-bottom: 8vh;
