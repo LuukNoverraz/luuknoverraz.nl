@@ -62,13 +62,13 @@ i {
   margin-top: 1vh;
 }
 
-a > .image, div > a > p {
+a > .image, .nav-text > p {
   transition-property: transform;
   transition-duration: .4s;
   transition-timing-function: ease-in-out;
 }
 
-a > .image:hover, div:hover > .nav-text > p {
+a > .image:hover, .nav-text:hover > p {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
@@ -126,9 +126,11 @@ a > .image:hover, div:hover > .nav-text > p {
   background-color: var(--pnk);
 }
 
-#nav p {
+.nav-text {
   color: var(--bgr);
   font-weight: bold;
+  text-align: center;
+  cursor: pointer;
 }
 
 #main {
@@ -220,21 +222,11 @@ a > .image:hover, div:hover > .nav-text > p {
   grid-area: other-projects;
 }
 
-#personal-logo {
-  margin-right: 33.333vw;
-}
-
-#back-arrow {
-  transition-property: transform;
-  transition-duration: .4s;
-  transition-timing-function: ease-in-out;
-  cursor: pointer;
-}
-
-#back-arrow:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
+#bayver-iframe {
+  margin-top: 2vh;
+  margin-bottom: 8vh;
+  width: 60vw;
+  height: 60vw;
 }
 
 .project-content {

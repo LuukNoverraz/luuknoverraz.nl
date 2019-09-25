@@ -7,6 +7,7 @@
     <title>Luuk Noverraz</title>
     <link href="style/normalize.css" rel="stylesheet" type="text/css" />
     <link href="style/main.css" rel="stylesheet" type="text/css"/>
+    <script src="script.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -20,22 +21,16 @@
     	<div id="header" class="section">
         <img src="images/logo.svg" class="image" alt="Luuk Noverraz">
       </div>
-    	<div id="nav" class="section nav-container">
-        <div id="about">
-          <a class="nav-text" href="index.html">
-            <p>ABOUT ME</p>
-          </a>
-        </div>
-        <div id="projects">
-          <a class="nav-text" href="projects.html">
-            <p>PROJECTS</p>
-          </a>
-        </div>
-        <div id="skills">
-          <a class="nav-text">
+      <div id="nav" class="section nav-container">
+        <a class="nav-text" id="about" href="index.html">
+          <p>ABOUT ME</p>
+        </a>
+        <a class="nav-text" href="projects.html" id="projects">
+          <p>PROJECTS</p>
+        </a>
+          <a class="nav-text" id="skills">
             <p>SKILLS</p>
           </a>
-        </div>
       </div>
     	<div id="main" class="section main-container">
         <div id="top"></div>
@@ -59,7 +54,7 @@
         <div id="bottom"></div>
       </div>
     	<div id="footer" class="section footer-container">
-        <div id="email">
+        <div id="email" onclick="emailClick()">
           <a href="mailto:luuknoverraz@gmail.com">
             <img src="images/email.svg" class="image" alt="Email">
           </a>
