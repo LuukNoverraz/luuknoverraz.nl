@@ -1,0 +1,13 @@
+{
+"companyName": "DefaultCompany",
+"productName": "Alein",
+"dataUrl": "master-alein.data.unityweb",
+"asmCodeUrl": "master-alein.asm.code.unityweb",
+"asmMemoryUrl": "master-alein.asm.memory.unityweb",
+"asmFrameworkUrl": "master-alein.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#1A1A1A"
+}
