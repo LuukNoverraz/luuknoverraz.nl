@@ -25,6 +25,11 @@ p {
   font-family: centuryGothic;
 }
 
+li {
+  font-family: centuryGothic;
+  color: var(--txt);
+}
+
 i {
   font-family: centuryGothic;
   font-style: italic;
