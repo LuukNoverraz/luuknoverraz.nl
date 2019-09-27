@@ -375,6 +375,15 @@ i {
                           "left center right"
                           "bottom bottom bottom";
   }
+  .main-container-projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "bayver besyes masteralein"
+                         "other-projects other-projects other-projects"
+                         "other-projects other-projects other-projects";
+    overflow: hidden !important;
+  }
   .content-image {
     max-width: 20vw;
     max-height: 25vh;
