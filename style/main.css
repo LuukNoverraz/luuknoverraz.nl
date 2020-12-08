@@ -73,6 +73,12 @@ a > .image, .nav-text > p {
   transition-timing-function: ease-in-out;
 }
 
+.nav-text > p {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;  
+}
+
 a > .image:hover, .nav-text:hover > p {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
