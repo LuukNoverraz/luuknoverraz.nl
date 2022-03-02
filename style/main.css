@@ -73,9 +73,39 @@ body {
     margin-right: 5%;
 }
 
-.body {
+.main {
     background: green;
     grid-area: body;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    height: 65vh;
+    color: white;
+}
+
+.title-item {
+    margin: 0;
+    line-height: 0.9;
+    font-size: 8vw;
+    font-weight: 900;
+}
+
+.articles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 14px;
+    grid-row-gap: 28px;
+    height: 80vh;
+}
+
+.article-item {
+    background-color: white;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 28px 2px rgba(0,0,0,0.2); 
+    box-shadow: 0px 0px 28px 2px rgba(0,0,0,0.2);
 }
 
 .footer {
