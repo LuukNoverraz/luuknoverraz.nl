@@ -1,6 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@keyframes moveUpDown {
+    0%, 100% {
+      transform: translateY(-1.25vh);
+    }
+    50% {
+        transform: translateY(1.25vh);
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    max-width: 100%;
+    overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
     background: repeating-linear-gradient(#131B4A, #00011A, #131B4A 150vh);
 }
@@ -18,11 +33,13 @@ body {
 
 .waves {
     position: absolute;
-    width: 100%;
-    height: 100vh;
+    z-index: -9999;
+    top: 33.3%;
+    width: 1920px;
+    height: 200vh;
     mix-blend-mode: overlay;
     background-image: url("../images/wave1.png");
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
     background-blend-mode: overlay;
 }
 
@@ -69,6 +86,18 @@ body {
     grid-area: center-logo;
 }
 
+.scrollbutton {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10vh;
+    -webkit-animation: moveUpDown 4s ease-in-out infinite;
+    animation: moveUpDown 4s ease-in-out infinite;
+}
+
+.scrollbutton img {
+    width: 7.5vw;
+}
+
 .header-center-container {
     width: 100%;
     height: 100%;
@@ -91,6 +120,9 @@ body {
     font-size: 3vh;
     font-weight: 600;
     margin-top: 5vh;
+}
+
+#see-more > a {
     color: white;
     text-decoration: underline;
     text-decoration-color: white;
@@ -104,7 +136,8 @@ body {
 .title {
     display: flex;
     align-items: center;
-    height: 65vh;
+    height: 40vh;
+    margin-top: 7.5vh;
     color: white;
 }
 
