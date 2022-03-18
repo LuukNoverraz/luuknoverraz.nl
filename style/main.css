@@ -17,7 +17,7 @@ body {
     max-width: 100%;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
-    background: repeating-linear-gradient(#131B4A, #00011A, #131B4A 150vh);
+    background: repeating-linear-gradient(#131B4A, #00011A, #131B4A);
 }
 
 .container {
@@ -44,7 +44,7 @@ body {
 }
 
 .home {
-    height: 250vh;
+    /* height: 215vh; */
 }
 
 .header {
@@ -113,6 +113,7 @@ body {
     text-decoration-color: white;
     margin-left: 5%;
     margin-right: 5%;
+    font-weight: 700;
 }
 
 #see-more {
@@ -136,8 +137,8 @@ body {
 .title {
     display: flex;
     align-items: center;
-    height: 40vh;
-    margin-top: 7.5vh;
+    margin-top: 20vh;
+    margin-bottom: 7.5vh;
     color: white;
 }
 
@@ -169,4 +170,46 @@ body {
 .footer {
     /* background: blue; */
     grid-area: footer;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-rows: 1fr;
+    margin-top: 7.5vh;
+}
+
+.footer-contents {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.footer-item {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    height: 6vw;
+    aspect-ratio: 1 / 1;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.twitter {
+    background-image: url(../images/social/twitter.png);
+}
+
+.linkedin {
+    background-image: url(../images/social/linkedin.png);
+}
+
+.github {
+    background-image: url(../images/social/github.png);
+}
+
+.dribbble {
+    background-image: url(../images/social/dribbble.png);
+}
+
+.itchio {
+    background-image: url(../images/social/itchio.png);
 }
