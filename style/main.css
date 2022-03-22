@@ -188,28 +188,13 @@ body {
 .footer-item {
     margin-left: 2.5%;
     margin-right: 2.5%;
-    height: 6vw;
+    height: 5vw;
     aspect-ratio: 1 / 1;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.twitter {
-    background-image: url(../images/social/twitter.png);
-}
-
-.linkedin {
-    background-image: url(../images/social/linkedin.png);
-}
-
-.github {
-    background-image: url(../images/social/github.png);
-}
-
-.dribbble {
-    background-image: url(../images/social/dribbble.png);
-}
-
-.itchio {
-    background-image: url(../images/social/itchio.png);
+.footer-item > img {
+    max-height: 100%;
+    max-width: 100%;
 }
