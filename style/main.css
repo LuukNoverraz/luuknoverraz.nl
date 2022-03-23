@@ -9,6 +9,16 @@
     }
 }
 
+@keyframes waveMove {
+    0% {
+      transform: translateX(960px);
+    }
+    100% {
+        transform: translateX(-960px);
+    }
+}
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -31,16 +41,37 @@ body {
         "footer footer footer";
 }
 
-.waves {
+.wave-container {
     position: absolute;
+    max-width: 100vw;
+    max-height: fit-content;
+}
+
+.waves {
+    position: relative;
     z-index: -9999;
     top: 33.3%;
     width: 1920px;
     height: 200vh;
     mix-blend-mode: overlay;
-    background-image: url("../images/wave1.png");
-    background-repeat: repeat-x;
     background-blend-mode: overlay;
+}
+
+.waves.first {
+    background-image: url("../images/wave1.svg");
+    transform: scale(2.0);
+    animation: waveMove 15s linear infinite;
+}
+
+.waves.second {
+    background-image: url("../images/wave2.svg");
+    transform: translateX(33.33vw);
+}
+
+.waves.third {
+    background-image: url("../images/wave3.svg");
+    transform: scale(2.0);
+    animation: waveMove 15s linear infinite;
 }
 
 .home {
