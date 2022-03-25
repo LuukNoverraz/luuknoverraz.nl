@@ -1,4 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-ExtraLight;
+    src: url(../fonts/Montserrat-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-Light;
+    src: url(../fonts/Montserrat-Light.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-Black;
+    src: url(../fonts/Montserrat-Black.ttf);
+}
 
 @keyframes moveUpDown {
     0%, 100% {
@@ -11,13 +34,42 @@
 
 @keyframes waveMove {
     0% {
-      transform: translateX(960px);
+        margin-left: 0;
+    }
+    50% {
+        margin-left: -200%;
     }
     100% {
-        transform: translateX(-960px);
+        margin-left: 0;
     }
 }
 
+@keyframes waveUpDown {
+    0% {
+        margin-top: 0;
+    }
+    50% {
+        margin-top: -5%;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
+
+@keyframes textShuffle {
+    0% {
+        margin-left: 0;
+        clip: rect(0px, 1920px, 107px, 50px);
+    }
+    50% {
+        margin-left: -50vw;
+        clip: rect(0px, 1920px, 107px, 750px);
+    }
+    100% {
+        margin-left: 0;
+        clip: rect(0px, 1920px, 107px, 50px);
+    }
+}
 
 html {
     scroll-behavior: smooth;
@@ -26,7 +78,7 @@ html {
 body {
     max-width: 100%;
     overflow-x: hidden;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Montserrat;
     background: repeating-linear-gradient(#131B4A, #00011A, #131B4A);
 }
 
@@ -43,35 +95,36 @@ body {
 
 .wave-container {
     position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 180%;
     max-width: 100vw;
     max-height: fit-content;
+    user-select: none
 }
 
 .waves {
-    position: relative;
-    z-index: -9999;
-    top: 33.3%;
-    width: 1920px;
-    height: 200vh;
+    position: absolute;
+    width: 400%;
+    animation: waveMove 40s linear infinite, waveUpDown 10s ease-in-out infinite;
+}
+
+.waves img {
     mix-blend-mode: overlay;
     background-blend-mode: overlay;
 }
 
-.waves.first {
-    background-image: url("../images/wave1.svg");
-    transform: scale(2.0);
-    animation: waveMove 15s linear infinite;
+.first > img {
+    margin-top: 40vh;
 }
 
-.waves.second {
-    background-image: url("../images/wave2.svg");
-    transform: translateX(33.33vw);
+.second > img {
+    margin-top: 60vh;
+    margin-left: -200vw;
 }
 
-.waves.third {
-    background-image: url("../images/wave3.svg");
-    transform: scale(2.0);
-    animation: waveMove 15s linear infinite;
+.third > img {
+    margin-top: 80vh;
 }
 
 .home {
@@ -168,17 +221,47 @@ body {
 .title {
     display: flex;
     align-items: center;
-    margin-top: 20vh;
-    margin-bottom: 7.5vh;
+    margin-top: 30vh;
+    margin-bottom: 17.5vh;
     color: white;
+    font-family: Montserrat-Black;
+    white-space: nowrap;
 }
 
 .title-item {
+    position: absolute;
+    overflow: hidden;
     margin: 0;
+    width: 75vw;
     line-height: 0.9;
     font-size: 8vw;
     font-weight: 900;
     text-shadow: 0px 0px 28px rgba(0, 0, 0, 0.2);
+}
+
+.billboard {
+    position: absolute;
+    font-family: Montserrat-ExtraLight;
+    font-size: 5vw;
+    margin-top: 0.5vh;
+    margin-left: 1vw;
+}
+
+#upper-billboard {
+    /* animation: textShuffle 5s infinite; */
+}
+
+#lower-billboard {
+
+}
+
+#underline {
+    position: absolute;
+    background: white;
+    width: 100%;
+    height: 0.4vh;
+    margin-top: 8%;
+    margin-left: 0.75vw;
 }
 
 .articles {
@@ -204,7 +287,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 2.5fr 1fr;
     grid-template-rows: 1fr;
-    margin-top: 7.5vh;
+    margin-bottom: 23vh;
 }
 
 .footer-contents {
