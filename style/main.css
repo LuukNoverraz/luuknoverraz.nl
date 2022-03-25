@@ -56,18 +56,25 @@
     }
 }
 
-@keyframes textShuffle {
-    0% {
-        margin-left: 0;
-        clip: rect(0px, 1920px, 107px, 50px);
+@keyframes upperTextMove {
+    from {
+        transform: translateX(80vw);
+        clip: rect(-10px, 1920px, 200px, -80vw);
     }
-    50% {
-        margin-left: -50vw;
-        clip: rect(0px, 1920px, 107px, 750px);
+    to {
+        transform: translateX(-80vw);
+        clip: rect(-10px, 1920px, 200px, 80vw);
     }
-    100% {
-        margin-left: 0;
-        clip: rect(0px, 1920px, 107px, 50px);
+}
+
+@keyframes lowerTextMove {
+    from {
+        transform: translateX(65vw);
+        clip: rect(-10px, 1920px, 200px, -65vw);
+    }
+    to {
+        transform: translateX(-65vw);
+        clip: rect(-10px, 1920px, 200px, 65vw);
     }
 }
 
@@ -248,11 +255,11 @@ body {
 }
 
 #upper-billboard {
-    /* animation: textShuffle 5s infinite; */
+    animation: upperTextMove 15s linear infinite;
 }
 
 #lower-billboard {
-
+    animation: lowerTextMove 15s linear infinite;
 }
 
 #underline {
