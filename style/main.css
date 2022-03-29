@@ -89,6 +89,7 @@ html {
 
 body {
     max-width: 100%;
+    padding-top: 10vh;
     overflow-x: hidden;
     font-family: Montserrat;
     background: repeating-linear-gradient(#131B4A, #00011A, #131B4A);
@@ -139,13 +140,18 @@ body {
     margin-top: 80vh;
 }
 
-.home {
-    /* height: 215vh; */
+.header {
+    z-index: 2000;
+    position: fixed;
+    grid-area: header;
+    height: 10vh;
+    width: 100vw;
+    top: 0;
+    transition: top 0.15s linear;
 }
 
-.header {
-    z-index: 1000;
-    grid-area: header;
+.nav-up {
+    top: -10vh;
 }
 
 .left-header {
