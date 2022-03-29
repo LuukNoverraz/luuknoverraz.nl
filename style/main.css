@@ -382,6 +382,60 @@ body {
     width: 6vw;
 }
 
+.collapsible {
+    background-color: #00000000;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 2vw;
+    font-family: Montserrat-SemiBold;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+  
+.active:after {
+    content: "\2212";
+}
+  
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: scroll;
+    overflow-x: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: white;
+    scrollbar-width: auto;
+    scrollbar-color: #bfbfbf #ffffff;
+}
+
+.content::-webkit-scrollbar {
+width: 12px;
+}
+
+.content::-webkit-scrollbar-track {
+background: #ffffff;
+}
+
+.content::-webkit-scrollbar-thumb {
+background-color: #bfbfbf;
+border-radius: 12px;
+border: 4px solid #ffffff;
+}
+
+.content a {
+    color: #0008D0;
+}
+
 .footer {
     z-index: 1000;
     grid-area: footer;
