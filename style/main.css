@@ -1,3 +1,5 @@
+/* Custom fonts */
+
 @font-face {
     font-family: Montserrat-ExtraLight;
     src: url(../fonts/Montserrat-ExtraLight.ttf);
@@ -27,6 +29,8 @@
     font-family: Montserrat-Black;
     src: url(../fonts/Montserrat-Black.ttf);
 }
+
+/* Animations */
 
 @keyframes moveUpDown {
     0%, 100% {
@@ -82,6 +86,8 @@
         clip: rect(-10px, 1920px, 200px, 65vw);
     }
 }
+
+/* Styling */
 
 html {
     scroll-behavior: smooth;
@@ -186,7 +192,6 @@ body {
 
 #luuknoverraz-logo {
     grid-area: center-logo;
-    user-drag: none; 
     user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
@@ -302,7 +307,6 @@ body {
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 14px;
     grid-row-gap: 28px;
-    /* height: 80vh; */
 }
 
 .article-item {
@@ -310,7 +314,6 @@ body {
     border-radius: 10px;
     -webkit-box-shadow: 0px 0px 28px 2px rgba(0,0,0,0.2); 
     box-shadow: 0px 0px 28px 2px rgba(0,0,0,0.2);
-    aspect-ratio: 1 / 0.990588235;
 }
 
 .article-title {
@@ -335,7 +338,6 @@ body {
     min-height: 100%;
     max-height: 100%;
     object-fit: cover;
-    user-drag: none; 
     user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
@@ -534,17 +536,15 @@ body {
     color: black;
 }
 
-.modal-window {
+.modal-window, .modal-window > div {
     border-radius: 1rem;
 }
 
-.modal-window > div {
-    border-radius: 1rem;
-}
-  
 .modal-window div:not(:last-of-type) {
     margin-bottom: 15px;
 }
+
+/* Styling for 500-800px width format */
 
 @media (max-width: 800px) {
     .main {
@@ -555,6 +555,8 @@ body {
         max-height: 1600px !important;
     }
 }
+
+/* Styling for <500px width format */
 
 @media (max-width: 500px) {
     .wave-container {

@@ -28,10 +28,13 @@ for (i = 0; i < coll.length; i++) {
     });
 }
 
+// Did scroll if you scroll
+// Makes sense right
 $(window).scroll(function(event){
     didScroll = true;
 });
 
+// Check for scroll every 250 milliseconds
 setInterval(function() {
     if (didScroll) {
         hasScrolled();
@@ -42,13 +45,12 @@ setInterval(function() {
 function hasScrolled() {
     var st = $(this).scrollTop();
     
-    // Make sure they scroll more than delta
+    // Make sure user scrolls more than delta variable
     if(Math.abs(lastScrollTop - st) <= delta) {
         return;
     }
 
-    // If they scrolled down and are past the navbar, add class .nav-up.
-    // This is necessary so you never see what is "behind" the navbar.
+    // If user scrolled down and is past the navbar, add class .nav-up (so you don't see behind the nav bar)
     if (st > lastScrollTop && st > navbarHeight){
         // Scroll Down
         $('.header').removeClass('nav-down').addClass('nav-up');
