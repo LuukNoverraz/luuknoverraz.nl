@@ -87,6 +87,13 @@
     }
 }
 
+/* Define color variables */
+
+:root {
+    --white: #ffffff;
+    --blue: #0008D0;
+}
+
 /* Styling */
 
 html {
@@ -97,7 +104,6 @@ body {
     max-width: 100%;
     padding-top: 10vh;
     overflow-x: hidden;
-    font-family: Montserrat;
     background: repeating-linear-gradient(#131B4A, #00011A, #131B4A);
 }
 
@@ -192,6 +198,9 @@ body {
 
 #luuknoverraz-logo {
     grid-area: center-logo;
+}
+
+#luuknoverraz-logo, .article-image {
     user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
@@ -220,24 +229,24 @@ body {
     margin: auto;
 }
 
+.header-center-container p, .header-center-container a, #more-text, #more-text > a, .title, .article-title, .date, .collapsible, .collapsible:after {
+    color: var(--white);
+    text-decoration-color: var(--white);
+}
+
 .header-center-container p {
-    color: white;
     text-decoration: underline;
-    text-decoration-color: white;
     margin-left: 5%;
     margin-right: 5%;
     font-weight: 700;
 }
 
 .header-center-container a {
-    color: white;
     text-decoration: underline;
-    text-decoration-color: white;
     z-index: 1000;
 }
 
 #more-text {
-    color: white;
     text-align: center;
     font-size: 3vh;
     font-weight: 600;
@@ -245,9 +254,7 @@ body {
 }
 
 #more-text > a {
-    color: white;
     text-decoration: underline;
-    text-decoration-color: white;
 }
 
 .main {
@@ -260,7 +267,6 @@ body {
     align-items: center;
     margin-top: 30vh;
     margin-bottom: 17.5vh;
-    color: white;
     font-family: Montserrat-Black;
     white-space: nowrap;
 }
@@ -316,18 +322,20 @@ body {
     box-shadow: 0px 0px 28px 2px rgba(0,0,0,0.2);
 }
 
+.article-title, .article-image, .tag, .date, .collapsible {
+    cursor: pointer;
+}
+
 .article-title {
     position: absolute;
     font-family: Montserrat-SemiBold;
     -webkit-text-shadow: 0px 0px 20px rgba(0,0,0,0.75);
     text-shadow: 0px 0px 20px rgba(0,0,0,0.75);
-    color: white;
     margin: 0;
     font-size: 1.5vw;
     margin-top: 13.5vw;
     margin-left: 1vw;
     z-index: 1000;
-    cursor: pointer;
 }
 
 .article-image {
@@ -338,12 +346,6 @@ body {
     min-height: 100%;
     max-height: 100%;
     object-fit: cover;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    cursor: pointer;
     transition-property: filter;
     transition-duration: .2s;
     transition-timing-function: ease-in-out;
@@ -353,10 +355,13 @@ body {
     filter: brightness(0.75);
 }
 
+body, .tag, .date, .modal-window {
+    font-family: Montserrat;
+}
+
 .tag {
     position: absolute;
     font-size: 1.25vw;
-    font-family: Montserrat;
     text-align: center;
     border-radius: 5px;
     color: #424242;
@@ -367,23 +372,19 @@ body {
     margin-top: 15.5vw;
     margin-left: 1vw;
     width: 5vw;
-    cursor: pointer;
 }
 
 .date {
     position: absolute;
     font-size: 1.25vw;
-    font-family: Montserrat;
     text-align: right;
     border-radius: 5px;
-    color: white;
     z-index: 1000;
     -webkit-text-shadow: 0px 0px 20px rgba(0,0,0,0.75);
     text-shadow: 0px 0px 20px rgba(0,0,0,0.75);
     margin-top: 15.5vw;
     margin-left: 9vw;
     width: 8vw;
-    cursor: pointer;
 }
 
 #robotics {
@@ -392,8 +393,6 @@ body {
 
 .collapsible {
     background-color: #00000000;
-    color: white;
-    cursor: pointer;
     padding: 18px;
     width: 100%;
     border: none;
@@ -405,7 +404,6 @@ body {
 
 .collapsible:after {
     content: '\002B';
-    color: white;
     font-weight: bold;
     float: right;
     margin-left: 5px;
@@ -448,7 +446,7 @@ body {
 }
 
 .content a, .modal-window a {
-    color: #0008D0;
+    color: var(--blue);
 }
 
 .footer {
@@ -495,7 +493,6 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s;
-    font-family: Montserrat;
 }
 
 .modal-window h1 {
