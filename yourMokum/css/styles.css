@@ -1,0 +1,197 @@
+/* importeer Poppins font van fonts.google.com */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap'); */
+
+/* importeer Helvetica font uit onze eigen mappen */
+/* @font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../assets/HelveticaNeue.otf');
+  font-style: normal;
+  font-weight: 300;
+} */
+
+@font-face {
+	font-family: 'Spectral';
+	src: url('../assets/Spectral-Regular.ttf');
+	font-style: normal;
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: 'Windsor';
+	src: url('../assets/WindsorEF-Bold.otf');
+	font-style: normal;
+	font-weight: 300;
+}
+
+:root {
+	--base: #F8F8F8;  
+	--red: #b4464f;  
+	--green: #121F13;
+}
+
+*, html {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #F8F8F8;
+	font-family: 'Spectral';
+}
+
+h1 {
+	font-family: 'Windsor';
+	color: var(--red);
+	font-weight: 700; /* bold */
+}
+
+h2 { 
+	font-size: 1.25em;
+	color: var(--base);
+	font-weight: 700; /* bold */
+	margin-bottom: 1.5em;
+}
+
+h3 {
+	font-size: 1.5em;
+	color: var(--green);
+}
+
+nav {
+	height: 10vh;
+	display: flex;
+	justify-content: end;
+	padding: 2vw;
+	align-items: center;
+}
+
+body > nav {
+	box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.25);
+}
+
+.map {
+	height: 100vh;
+	flex-direction: column;
+	display: flex;
+	justify-content: space-between;
+}
+
+nav + main + footer {
+	background-color: var(--base);
+	box-shadow: 0px -10px 15px -3px rgba(0,0,0,0.25);
+}
+
+nav + main + footer > section {
+	display: flex;
+	justify-content: space-around;
+}
+
+nav + main + footer > section > section {
+	width: 4em;
+}
+
+nav + main + footer > section > section:nth-child(even) {
+	display: flex;
+	justify-content: center;
+}
+
+nav + main + footer > section > section img {
+	max-height: 4em;
+}
+
+nav section {
+	display: flex;
+	width: 100vw;
+	justify-content: center;
+	align-items: center;
+}
+
+nav h1 {
+	font-size: 2em;
+}
+
+nav img {
+	width: 1.5em;
+}
+
+nav h1 span {
+	color: var(--green);
+}
+
+.landing {
+	margin-top: -10vh;
+	background-size: cover;
+	height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.landing h1 {
+	font-size: 3em;
+}
+
+.landing h1 span {
+	color: var(--base);
+}
+
+.landing h1, .landing h2 {
+	filter: drop-shadow(0px 0px 15px rgba(17, 30, 18, 0.25));
+}
+
+main button {
+	align-items: center;
+	background-color: var(--red);
+	color: var(--base);
+	border: 0;
+	border-radius: 1.25em;
+	cursor: pointer;
+	font-family: 'Spectral';
+	font-size: 1em;
+	min-height: 3em;
+	width: 12em;
+	padding: 0px 20px 0px 20px;
+	transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, 
+				box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, 
+				color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+	filter: drop-shadow(0px 0px 15px rgba(17, 30, 18, 0.25));
+}
+
+main button:hover, main button:focus { 
+  background-color: #87353B;
+  color: var(--base);
+}
+
+main button:active {
+  background: #5a2327;
+  color: rgb(248, 248, 248, .7);
+}
+
+.info-block {
+	margin: 5vh 5vw;
+}
+
+p { 
+	font-size: 1em;
+	color: var(--green);
+	margin-bottom: 0.5em;
+}
+
+a {
+	color: var(--red);
+}
+
+img {
+	max-width: 500px;
+}
+
+footer {
+	background-color: #E1E1E1;
+	padding: 2vh 5vw;
+}
+
+footer a {
+	color: var(--green);
+}
