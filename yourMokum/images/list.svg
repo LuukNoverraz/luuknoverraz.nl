@@ -1,1 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg width="100%" height="100%" viewBox="0 0 126 126" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g><circle cx="11.19" cy="24.68" r="11.19" style="fill:#b4464f;"/><circle cx="11.19" cy="101.257" r="11.19" style="fill:#b4464f;"/><circle cx="11.19" cy="62.969" r="11.19" style="fill:#b4464f;"/><path d="M120.897,29.685c2.762,0 5.005,-2.242 5.005,-5.005c0,-2.762 -2.243,-5.005 -5.005,-5.005l-75.795,0c-2.763,0 -5.006,2.243 -5.006,5.005c0,2.763 2.243,5.005 5.006,5.005l75.795,0Z" style="fill:#b4464f;"/><path d="M120.897,67.974c2.762,-0 5.005,-2.243 5.005,-5.005c0,-2.763 -2.243,-5.005 -5.005,-5.005l-75.795,-0c-2.763,-0 -5.006,2.242 -5.006,5.005c0,2.762 2.243,5.005 5.006,5.005l75.795,-0Z" style="fill:#b4464f;"/><path d="M120.897,106.262c2.762,0 5.005,-2.242 5.005,-5.005c0,-2.762 -2.243,-5.005 -5.005,-5.005l-75.795,0c-2.763,0 -5.006,2.243 -5.006,5.005c0,2.763 2.243,5.005 5.006,5.005l75.795,0Z" style="fill:#b4464f;"/></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 43 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-39.5909,-610.863)">
+        <g transform="matrix(0.244739,-0.350657,0.4239,0.202452,2.35621,633.747)">
+            <text x="62.25px" y="66.739px" style="font-family:'WindsorEF-Bold', 'WindsorEF';font-weight:700;font-size:37.844px;fill:rgb(180,70,79);">o</text>
+        </g>
+        <g transform="matrix(0.244739,-0.350657,0.4239,0.202452,2.35621,645.861)">
+            <text x="62.25px" y="66.739px" style="font-family:'WindsorEF-Bold', 'WindsorEF';font-weight:700;font-size:37.844px;fill:rgb(180,70,79);">o</text>
+        </g>
+        <g transform="matrix(0.244739,-0.350657,0.4239,0.202452,2.35621,657.975)">
+            <text x="62.25px" y="66.739px" style="font-family:'WindsorEF-Bold', 'WindsorEF';font-weight:700;font-size:37.844px;fill:rgb(180,70,79);">o</text>
+        </g>
+        <g transform="matrix(3.07867e-16,5.02786,-15.8106,9.68121e-16,9826.96,-2737.11)">
+            <text x="667.271px" y="618.15px" style="font-family:'WindsorEF-UltraHeavy', 'WindsorEF';font-weight:500;font-size:2.628px;fill:rgb(180,70,79);">I</text>
+        </g>
+        <g transform="matrix(3.07867e-16,5.02786,-15.8106,9.68121e-16,9826.96,-2724.92)">
+            <text x="667.271px" y="618.15px" style="font-family:'WindsorEF-UltraHeavy', 'WindsorEF';font-weight:500;font-size:2.628px;fill:rgb(180,70,79);">I</text>
+        </g>
+        <g transform="matrix(3.07867e-16,5.02786,-15.8106,9.68121e-16,9826.96,-2712.72)">
+            <text x="667.271px" y="618.15px" style="font-family:'WindsorEF-UltraHeavy', 'WindsorEF';font-weight:500;font-size:2.628px;fill:rgb(180,70,79);">I</text>
+        </g>
+    </g>
+</svg>
