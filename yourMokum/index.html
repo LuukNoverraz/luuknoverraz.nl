@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yourMokum</title>
 	<link rel="stylesheet" href="css/styles.css">
-    <script src="background.js" async="" defer=""></script>
+    <script src="scripts/random-background.js" async="" defer=""></script>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
@@ -22,16 +22,16 @@
     <main>
         <nav>
             <a href="">
-                <img src="images/account-light.svg">
+                <img src="images/account-light.svg" alt="Account">
             </a>
         </nav>
         <section class="landing">
             <section>
                 <h1>your<span>Mokum</span></h1>
                 <h2>Make Amsterdam yours.</h2>
-                <a href="map.html">
-                    <button role="button">Start exploring</button>
-                </a>
+                <form action="map.html" method="get">
+                    <button>Start exploring</button>
+                </form>
             </section>
         </section>
         <section class="info-block">

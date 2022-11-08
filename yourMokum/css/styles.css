@@ -98,6 +98,9 @@ nav {
 }
 
 body > nav {
+	position: fixed;
+	width: 100vw;
+	background: var(--base);
 	z-index: 1;
 	box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.25);
 }
@@ -117,34 +120,56 @@ body > nav {
 
 nav + main {
 	height: inherit;
+	margin-top: 10vh;
+	margin-bottom: 14vh;
     background: linear-gradient(320deg, #b4464f, #9e446a, #7d4979, #584d79, #3b4d6c, #2f4858);
     background-size: 1200% 1200%;
 
-    -webkit-animation: moving-bg 30s ease infinite;
-    -moz-animation: moving-bg 30s ease infinite;
-    animation: moving-bg 30s ease infinite;
+    -webkit-animation: moving-bg 60s ease infinite;
+    -moz-animation: moving-bg 60s ease infinite;
+    animation: moving-bg 60s ease infinite;
 }
 
 nav + main > section:nth-of-type(1) a {
 	display: flex;
 	justify-content: center;
-	height: 80vh;
+	max-height: 76vh;
 }
 
 nav + main img {
 	max-width: 100vw;
+	align-self: center;
+	max-height: inherit;
 }
 
 nav + main + footer {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 86vh;
+	width: 100vw;
+	height: 14vh;
 	background-color: var(--base);
 	box-shadow: 0px -10px 15px -3px rgba(0,0,0,0.25);
 }
 
 nav + main + footer a {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
 	width: inherit;
+}
+
+nav + main + footer a p {
+	text-align: center;
+	font-family: 'Windsor';
+	font-size: 0.75em; 
+	color: var(--main);
+}
+
+.current {
+	border-bottom: 2px var(--main) solid;
 }
 
 nav + main + footer > section {
@@ -168,7 +193,7 @@ nav + main + footer > section > section img {
 	max-height: 3em;
 }
 
-nav + main:not(.info) section:nth-of-type(2) {
+nav + main:not(.info) > section:nth-of-type(2) {
 	display: none;
 }
 
@@ -178,8 +203,91 @@ nav + main:not(.info) section:nth-of-type(2) {
 	overflow-y: scroll;
 }
 
-.info > section:nth-of-type(1) {
+nav + main:not(.info):not(.list):not(.social) section:first-child {
+	height: 76vh;
+	display: flex;
+	align-items: center;
+}
+
+.info > section:first-child, .list > section:first-child, .social > section:first-child {
+	display: none !important;
+}
+
+nav + main > section:nth-child(3) {
 	display: none;
+	flex-direction: column;
+}
+
+nav + main > section:nth-child(3) h2 {
+	color: var(--sec);
+	margin-bottom: 0;
+	width: fit-content;
+}
+
+nav + main > section:nth-child(3) > section {
+	border-bottom: #cacdca 4px solid;
+	padding: 1em;
+}
+
+nav + main > section:nth-child(3) > section a > section {
+	display: flex;
+	flex-direction: column;
+}
+
+nav + main > section:nth-child(3) > section a > section section {
+	width: 50%;
+	height: 25vh;
+	background-size: cover;
+	background-position-y: center;
+}
+
+nav + main > section:nth-child(3) > section:nth-of-type(1) a > section section {
+	background-image: url('../images/boroughs/nieuw-west.png');
+}
+
+nav + main > section:nth-child(3) > section:nth-of-type(2) a > section section {
+	background-image: url('../images/boroughs/zuid.jpg');
+}
+
+nav + main > section:nth-child(3) > section:nth-of-type(3) a > section section {
+	background-image: url('../images/bg/004.jpg');
+}
+
+nav + main > section:nth-child(3) > section:nth-of-type(4) a > section section {
+	background-image: url('../images/boroughs/oost.jpg');
+}
+
+nav + main > section:nth-child(3) > section:nth-of-type(5) a > section section {
+	background-image: url('../images/bg/004.jpg');
+}
+
+nav + main > section:nth-child(3) > section:nth-of-type(6) a > section section {
+	background-image: url('../images/boroughs/zuidoost.png');
+}
+
+nav + main > section:nth-child(3) > section:nth-of-type(7) a > section section {
+	background-image: url('../images/boroughs/centrum.jpg');
+}
+
+nav + main > section:nth-child(3) > section:nth-of-type(8) a > section section {
+	background-image: url('../images/boroughs/westpoort.png');
+}
+
+nav + main > section:nth-child(4) {
+	display: none;
+}
+
+.list, .social {
+	background: var(--base);
+}
+
+.list > section:nth-child(3) {
+	display: flex;
+	padding-bottom: 20vh;
+}
+
+.social > section:nth-child(4) {
+	display: flex;
 }
 
 .info h2 + section {
