@@ -250,7 +250,7 @@ nav + main > section:nth-child(3) > section:nth-of-type(2) a > section section {
 }
 
 nav + main > section:nth-child(3) > section:nth-of-type(3) a > section section {
-	background-image: url('../images/bg/004.jpg');
+	background-image: url('../images/boroughs/west_05.webp');
 }
 
 nav + main > section:nth-child(3) > section:nth-of-type(4) a > section section {
@@ -258,7 +258,7 @@ nav + main > section:nth-child(3) > section:nth-of-type(4) a > section section {
 }
 
 nav + main > section:nth-child(3) > section:nth-of-type(5) a > section section {
-	background-image: url('../images/bg/004.jpg');
+	background-image: url('../images/boroughs/noord.jpg');
 }
 
 nav + main > section:nth-child(3) > section:nth-of-type(6) a > section section {
@@ -288,6 +288,12 @@ nav + main > section:nth-child(4) {
 
 .social > section:nth-child(4) {
 	display: flex;
+	flex-direction: column;
+	padding: 1em;
+}
+
+.social > section:nth-child(4) h2 {
+	color: var(--sec);
 }
 
 .info h2 + section {
@@ -319,15 +325,47 @@ nav + main > section:nth-child(4) {
 }
 
 .info h2 + section section:nth-of-type(1) {
-	background-image: url('../images/bg/001.jpg');
+	background-image: url('../images/boroughs/west_01.webp');
 }
 
 .info h2 + section section:nth-of-type(2) {
-	background-image: url('../images/bg/002.jpg');
+	background-image: url('../images/boroughs/west_02.webp');
 }
 
 .info h2 + section section:nth-of-type(3) {
-	background-image: url('../images/bg/003.jpg');
+	background-image: url('../images/boroughs/west_03.webp');
+}
+
+.info h2 + section section:nth-of-type(n+4) {
+	display: none;
+}
+
+.info h2 + section section:nth-of-type(n+4).revealed {
+	display: flex;
+}
+
+.info h2 + section section:nth-of-type(4) {
+	background-image: url('../images/boroughs/west_04.webp');
+}
+
+.info h2 + section section:nth-of-type(5) {
+	background-image: url('../images/boroughs/west_05.webp');
+}
+
+.info h2 + section section:nth-of-type(6) {
+	background-image: url('../images/boroughs/west_06.webp');
+}
+
+.info h2 + section section:nth-of-type(7) {
+	background-image: url('../images/boroughs/west_07.webp');
+}
+
+.info h2 + section section:nth-of-type(8) {
+	background-image: url('../images/boroughs/west_08.webp');
+}
+
+.info h2 + section section:nth-of-type(9) {
+	background-image: url('../images/boroughs/west_09.jpg');
 }
 
 .info h2 {

@@ -41,3 +41,9 @@ $('#social-icon').click(function() {
     $('#map-main').removeClass("list");
     $('#map-main').addClass("social");
 })
+
+$('#see-more').click(function() {
+    // Reveal more images
+    $("p", this).text("See less ←");
+    $('.info h2 + section section:nth-of-type(n+4)').toggleClass("revealed");
+})
