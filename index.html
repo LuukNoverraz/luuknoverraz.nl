@@ -1,337 +1,374 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Luuk Noverraz</title>
-        <link rel="stylesheet" href="style/main.css">
-        <link rel="stylesheet" href="style/normalize.css">
-        <meta name="description" content="Hi, I'm Luuk Noverraz, 17 years old. Currently I'm studying Communication and Multimedia Design at the Amsterdam University of Applied Sciences or the HvA.">
-        <meta name="keywords" content="Luuk,Luuk Noverraz,Noverraz,LuukNoverraz,Luuk N">
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1a1a1a">
-        <meta name="msapplication-TileColor" content="#1a1a1a">
-        <meta name="theme-color" content="#ffffff">
-    </head>
-    <body>
-        <section id="wave-container">
-            <div class="waves first">
-                <img src="images/wave.svg">
-            </div>
-            <div class="waves second">
-                <img src="images/wave.svg">
-            </div>
-            <div class="waves third">
-                <img src="images/wave.svg">
-            </div>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Luuk Noverraz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="normalize.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#ce2a29">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ce2a29">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <header>
+        <ul>
+            <a id="header-index" onclick="scrollToSection('#index')"><li>Index</li></a>
+            <a id="header-about" onclick="scrollToSection('#about', 1 * parseFloat(getComputedStyle(document.documentElement).fontSize))"><li>Over mij</li></a>
+        </ul>
+        <img src="images/logo.png" alt="Logo of Luuk Noverraz' face" draggable="false">
+        <section class="language">
+            <p>
+                <a id="nl">NL</a> / <a id="en">EN</a>
+            </p>
         </section>
-        
-        <section class="container home">
-            <header class="header">
-                <header class="header-container">
-                    <div class="left-header">
-                        <div class="logo-container">
-                            <img src="images/luuknoverraz-logo.svg" id="luuknoverraz-logo" alt="Luuk Noverraz">
-                        </div>
-                    </div>
-                    <nav>
-                        <p><a href="#">HOME</a></p>
-                        <p><a href="projects/">PROJECTS</a></p>
-                        <p><a href="about/">ABOUT</a></p>
-                    </nav>
-                    <div class="right-header">
-
-                    </div>
-                </header>
-            </header>
-            <main>
-                <div class="title">
-                    <h1 class="title-item">
-                    <span>LUUK</span>
-                    <span class="billboard" id="upper-billboard">GAME / GRAPHIC / WEB / VIDEO</span>
-                    <span id="underline"></span>
-                    <br>
-                    <span>NOVERRAZ</span>
-                    <span class="billboard" id="lower-billboard">DESIGN / DEVELOPMENT</span>
-                    <span id="underline"></span>
-                    </h1>
-                </div>
-                <div class="scrollbutton">
-                    <a href="#down">
-                        <img src="images/scroll-button.png">
-                    </a>
-                </div>
-                <article class="articles">
-                    <a href="#ltnwwm">
-                        <div class="article-item">
-                            <p class="article-title">LTNWWM</p>
-                            <div class="tag">html / css</div>
-                            <div class="date">2022</div>
-                            <img src="images/projects/ltnwwm-cover.png" class="article-image" alt="Long-term nuclear waste warning messages">
-                        </div>
-                    </a>
-
-                    <section id="ltnwwm" class="modal-window">
-                        <div>
-                          <a href="#/" title="Close" class="modal-close">X</a>
-                            <h1>LTNWWM</h1>
-                            <p>LTNWWM is a website created with the goal of sharing information about long-term nuclear waste warning messages in a clean and concise format.</p>
-                            <p><a href="https://oege.ie.hva.nl/~noverrl/" target="_blank">You can view it here.</a></p>
-                        </div>
-                    </section>
-                    
-                    <a href="#dicetective">
-                        <div class="article-item">
-                            <p class="article-title">Dicetective</p>
-                            <div class="tag">unity</div>
-                            <div class="date">2022</div>
-                            <img src="images/projects/dicetective-cover.png" class="article-image" alt="Dicetective">
-                        </div>
-                    </a>
-
-                    <section id="dicetective" class="modal-window">
-                        <div>
-                          <a href="#/" title="Close" class="modal-close">X</a>
-                            <h1>Dicetective</h1>
-                            <p>It's do or die in this dicey detective drama! In Dicetective, you enter the role of the world-class dice detective when suddenly, tragedy strikes and mystery is born. Get ready to meet many faces... of the six on a dice, that is, on your quest to solve the mystery.</p>
-                            <p>Dicetective was made in 48 hours for the <a href="https://itch.io/jam/gmtk-jam-2022">GMTK Game Jam 2022</a>. The theme was Roll of the Dice.</p>
-                            <p>You can play <a href="https://luuknoverraz.itch.io/dicetective" target="_blank">Dicetective on Itch.io</a>.</p>
-                        </div>
-                    </section>
-
-                    <a href="#jacob-quest">
-                        <div class="article-item">
-                            <p class="article-title">Jacob Quest</p>
-                            <div class="tag">unreal</div>
-                            <div class="date">2022</div>
-                            <img src="images/projects/jacobquest-cover.png" class="article-image" alt="Jacob Quest">
-                        </div>
-                    </a>
-
-                    <section id="jacob-quest" class="modal-window">
-                        <div>
-                          <a href="#/" title="Close" class="modal-close">X</a>
-                            <h1>Jacob Quest</h1>
-                            <p>Embark on the incredible Jacob Quest. This is a short game made in Unreal Engine, mainly to try out the engine for the first time. Nevertheless, if you desire to play it, you can <a href="https://github.com/LuukNoverraz/Jacob-Quest/releases/tag/v1.0.0" target="_blank">download it on Github</a>.</p>
-                        </div>
-                    </section>
-                    
-                    <a href="#night-stroll-ambush">
-                        <div class="article-item">
-                            <p class="article-title">Night Stroll Ambush</p>
-                            <div class="tag">unity</div>
-                            <div class="date">2021</div>
-                            <img src="images/projects/nightstrollambush-cover.png" class="article-image" alt="Night Stroll Ambush">
-                        </div>
-                    </a>
-
-                    <section id="night-stroll-ambush" class="modal-window">
-                        <div>
-                          <a href="#/" title="Close" class="modal-close">X</a>
-                            <h1>Night Stroll Ambush</h1>
-                            <p>You were taking a nice walk at night when suddenly... oh no! You've been attacked by bandits suddenly shooting at you. Featuring a tune made by <a href="https://soundcloud.com/rvke_dubstep" target="_blank">RVKE</a>, this game was made during a weekend for the Mini Jam 87: Break game jam. Play it on <a href="https://luuknoverraz.itch.io/night-stroll-ambush" target="_blank">Itch.io</a>.</p>
-                        </div>
-                    </section>
-
-                    <a href="#zerotrace">
-                        <div id="down" class="article-item">
-                            <p class="article-title">Zerotrace</p>
-                            <div class="tag">unity</div>
-                            <div class="date">2021</div>
-                            <img src="images/projects/zerotrace-cover.png" class="article-image" alt="Zerotrace">
-                        </div>
-                    </a>
-
-                    <section id="zerotrace" class="modal-window">
-                        <div>
-                          <a href="#/" title="Close" class="modal-close">X</a>
-                            <h1>Zerotrace</h1>
-                            <p>A stealth game where you will have to manoeuver past your enemies. Making this game, I learned more about navmeshes, animating and modeling in conjunction with the Unity engine and worked my way to a finished game once more. Download it on <a href="https://luuknoverraz.itch.io/zerotrace" target="_blank">Itch.io</a> or <a href="https://github.com/LuukNoverraz/Zerotrace/releases/tag/v0.1" target="_blank">Github</a>.</p>
-                        </div>
-                    </section>
-
-                    <a href="#musicboard">
-                        <div class="article-item">
-                            <p class="article-title">Musicboard</p>
-                            <div class="tag">react</div>
-                            <div class="date">2021</div>
-                            <img src="images/projects/musicboard-cover.png" class="article-image" alt="Musicboard">
-                        </div>
-                    </a>
-
-                    <section id="musicboard" class="modal-window">
-                        <div>
-                          <a href="#/" title="Close" class="modal-close">X</a>
-                            <h1>Musicboard</h1>
-                            <p>Musicboard is an application developed with React that uses the Spotify API to get currently playing song and displays information regarding song/artist using different API's. Setting it up yourself is a bit of a hassle, but luckily I wrote a handy guide along with the source code at <a href="https://github.com/LuukNoverraz/Musicboard" target="_blank">Github</a>.</p>
-                        </div>
-                    </section>
-
-                    <a href="#barbasim">
-                        <div class="article-item">
-                            <p class="article-title">Barbasim</p>
-                            <div class="tag">unity</div>
-                            <div class="date">2020</div>
-                            <img src="images/projects/barbasim-cover.png" class="article-image" alt="Barbasim">
-                        </div>
-                    </a>
-
-                    <section id="barbasim" class="modal-window">
-                        <div>
-                          <a href="#/" title="Close" class="modal-close">X</a>
-                            <h1>Barbasim</h1>
-                            <p>Barbasim is a creature simulation made with the Unity engine where little 'Barba' creatures interact with each other on a randomly generated island. Every Barba has unique stats and their own name. You can view the island from different angles and follow Barba's. Barbasim is available to download at my <a href="https://luuknoverraz.itch.io/barbasim" target="_blank">Itch.io</a> page.</p>
-                        </div>
-                    </section>
-
-                    <!-- <a href="#llama-madness">
-                        <div class="article-item">
-                            <p class="article-title">Llama Madness</p>
-                            <div class="tag">unity</div>
-                            <div class="date">2020</div>
-                            <img src="images/projects/llamamadness-cover.png" class="article-image" alt="Llama Madness">
-                        </div>
-                    </a>
-
-                    <div id="llama-madness" class="modal-window">
-                        <div>
-                          <a href="#/" title="Close" class="modal-close">X</a>
-                            <h1>Llama Madness</h1>
-                            <p>A local 2-3 player racing/platforming game where llama's and probably too many fingers on <i>one keyboard</i> take the focus. Download it on <a href="https://github.com/LuukNoverraz/LlamaMadness/releases/tag/v1.0-alpha" target="_blank">Github</a>.</p>
-                        </div>
-                    </div> -->
-
-                    <a href="#sumo-shooters">
-                        <div class="article-item">
-                            <p class="article-title">Sumo Shooters</p>
-                            <div class="tag">unity</div>
-                            <div class="date">2020</div>
-                            <img src="images/projects/sumoshooters-cover.png" class="article-image" alt="Sumo Shooters">
-                        </div>
-                    </a>
-
-                    <section id="sumo-shooters" class="modal-window">
-                        <div>
-                          <a href="#/" title="Close" class="modal-close">X</a>
-                            <h1>Sumo Shooters</h1>
-                            <p>A local multiplayer mobile game that mixes billiards with sumo. Although you should probably be able to play it on a phone, you'll have to cope with a version for PC you can download <a href="https://github.com/LuukNoverraz/SumoShooters/releases/tag/v1.0-alpha" target="_blank">here</a>.</p>
-                        </div>
-                    </section>
-
-                    <a href="#bayver">
-                        <div class="article-item">
-                            <p class="article-title">Bayver</p>
-                            <div class="tag">css / js</div>
-                            <div class="date">2019</div>
-                            <img src="images/projects/bayver-cover.png" class="article-image" alt="Bayver">
-                        </div>
-                    </a>
-
-                    <section id="bayver" class="modal-window">
-                        <div>
-                          <a href="#/" title="Close" class="modal-close">X</a>
-                            <h1>Bayver</h1>
-                            <p>In a collaboration with <a href="https://jochembaas.nl/" target="_blank">Jochem Baas</a> and <a href="https://midasscheffers.github.io/" target="_blank">Midas Scheffers</a>, Bayver was created. An adventurous route-planning app that suggests locations to visit. Just state your startpoint, endpoint and duration and Bayver generates a route passing locations that suit your preferences. Try a development version of Bayver on <a href="https://github.com/jochem33/projectzero/tree/dev" target="_blank">Github</a>.</p>
-                        </div>
-                    </section>
-
-                    <a href="#besyes">
-                        <div class="article-item">
-                            <p class="article-title">Besyes</p>
-                            <div class="tag">unity</div>
-                            <div class="date">2019</div>
-                            <img src="images/projects/besyes-cover.png" class="article-image" alt="Besyes">
-                        </div>
-                    </a>
-
-                    <section id="besyes" class="modal-window">
-                        <div>
-                          <a href="#/" title="Close" class="modal-close">X</a>
-                            <h1>Besyes</h1>
-                            <p>Besyes is a game I made together with <a href="http://www.jochembaas.nl/" target="_blank">Jochem Baas</a>, <a href="https://midasscheffers.github.io/" target="_blank">Midas Scheffers</a> and <a href="https://github.com/BerkYildirimm" target="_blank">Berk Yildirim</a>. The game revolves around scavenging as a gatherer, and was made in assignment of IJsfontein. You can view the source code on <a href="https://github.com/jochem33/BeverBesjes" target="_blank">Github</a>.</p>
-                        </div>
-                    </section>
-
-                    <a href="#master-alein">
-                        <div class="article-item">
-                            <p class="article-title">Master Alein</p>
-                            <div class="tag">unity</div>
-                            <div class="date">2018</div>
-                            <img src="images/projects/masteralein-cover.png" class="article-image" alt="Master Alein">
-                        </div>
-                    </a>
-
-                    <section id="master-alein" class="modal-window">
-                        <div>
-                          <a href="#/" title="Close" class="modal-close">X</a>
-                            <h1>Master Alein</h1>
-                            <p>Master Alein is the first Unity game I made in the Coderclass. It is a 2D game, with the sprites being made by me. The premise of the game is that you can't jump, instead, you use the environment to your adventage. First I had made a singeplayer test build, but I later redesigned the character and changed it into a two player game of tag. You can find the source code at <a href="https://github.com/LuukNoverraz/Alein" target="_blank">this repository</a></p>
-                        </div>
-                    </section>
-                    
-                    <a href="#first-lego-league">
-                        <div class="article-item">
-                            <p class="article-title">First Lego League</p>
-                            <div class="tag" id="robotics">robotics</div>
-                            <div class="date">2016-2019</div>
-                            <img src="images/projects/fll-cover.png" class="article-image" alt="First Lego League">
-                        </div>
-                    </a>
-
-                    <section id="first-lego-league" class="modal-window">
-                        <div>
-                          <a href="#/" title="Close" class="modal-close">X</a>
-                            <h1>First Lego League</h1>
-                            <p>In 2016, 2017, 2018 and 2019 I participated in the First Lego League as a part of the <a href="https://roboticaclub.nl" target="_blank">Metis robotics club</a> with several teams: the CodeCrackers (twice), 032Code and Frøggy respectively.</p>
-                            <p>Leading up to and during these competitions, I learned a lot about teamwork and how to tackle problems while also improving my tech skills through Lego Mindstorms. With the combined input of everyone on our team, we were even able to compete in the Benelux finale twice.</p>
-                        </div>
-                    </section>
-                </article>
-                <p id="more-text"><a href="projects/">SEE MORE</a> / <a href="about/">ABOUT ME</a></p>
-            </main>
-            
-            <footer>
-                <div class="footer-container">
-
-                </div>
-                <div class="footer-container footer-contents">
-                    <div class="footer-item twitter">
-                        <a href="https://twitter.com/LuukNoverraz" target="_blank">
-                            <img src="images/social/twitter.svg">
-                        </a>
-                    </div>
-                    <div class="footer-item linkedin">
-                        <a href="https://www.linkedin.com/in/luuknoverraz/" target="_blank">
-                            <img src="images/social/linkedin.svg">
-                        </a>
-                    </div>
-                    <div class="footer-item github">
-                        <a href="https://github.com/LuukNoverraz" target="_blank">
-                            <img src="images/social/github.svg">
-                        </a>
-                    </div>
-                    <div class="footer-item dribbble">
-                        <a href="https://dribbble.com/LuukNoverraz" target="_blank">
-                            <img src="images/social/dribbble.svg">
-                        </a>
-                        </div>
-                    <div class="footer-item itchio">
-                        <a href="https://luuknoverraz.itch.io" target="_blank">
-                            <img src="images/social/itchio.svg">
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-container">
-
-                </div>
-            </footer>
+    </header>
+    <main id="index">
+        <section class="intro">
+            <h1>Luuk<br>Noverraz</h1>
+            <h2>GAME DEVELOPER / FRONT-END DEVELOPER / VIDEO EDITOR</h2>
+            <h3>Met een passie voor creativiteit ontwerp en ontwikkel ik games, websites en videocontent.</h3>
+            <section class="location">
+                <a href="mailto:luuknoverraz@gmail.com"><img src="images/mail.svg" alt="A mail icon."></a>
+                <a href="https://www.linkedin.com/in/luuknoverraz/" target="_blank"><img src="images/linkedin.svg" alt="A LinkedIn icon."></a>
+                <a href="https://github.com/LuukNoverraz" target="_blank"><img src="images/github.svg" alt="A GitHub icon."></a>
+                <img src="images/map-pin.svg" alt="A map pin icon.">
+                <p>Amsterdam</p>
+            </section>
         </section>
-        <script src="scripts/jquery.min.js"></script>
-        <script src="scripts/main.js"></script>
-    </body>
+        <section class="showcase">
+            <section class="project">
+                <video autoplay muted loop>
+                    <source src="videos/barbasimvideo.webm" type="video/webm">
+                </video>
+                <img src="images/project-overlay.png">
+                <p>Ik bouw digitale werelden en verhalen</p>
+            </section>
+            <section class="project">
+                <video autoplay muted loop>
+                    <source src="videos/destrengvideo.webm" type="video/webm">
+                </video>
+                <img src="images/project-overlay.png">
+                <p>Ik maak user-friendly web-ervaringen</p>
+            </section>
+            <section class="project">
+                <video autoplay muted loop>
+                    <source src="videos/scpvideotrim.webm" type="video/webm">
+                </video>
+                <img src="images/project-overlay.png">
+                <p>Ik deel kennis en humor via video’s</p>
+            </section>
+        </section>
+        <section class="additional-content">
+            <a class="close-button"><img src="images/back.svg" alt="A back arrow.">Terug</a>
+            <section class="game-project">
+                <h2>Barbasim</h2>
+                <section class="project-details">
+                    <div>
+                        <img src="images/date.svg">
+                        <p>2020 (4 weken)</p>
+                    </div>
+                    <div>
+                        <img src="images/tools.svg">
+                        <p>Unity Engine, C#</p>
+                    </div>
+                    <div>
+                        <img src="images/link.svg">
+                        <a href="https://luuknoverraz.itch.io/barbasim" target="_blank">https://luuknoverraz.itch.io/barbasim</a>
+                    </div>
+                </section>
+                <section class="project-info">
+                    <div>
+                        <p>
+                            Barbasim is een 'creature simulation' die ik in 2020 met de Unity engine heb gemaakt. Er wordt een willekeurig eiland gegenereerd waar kleine "Barba" wezentjes met elkaar interacteren. Elke Barba heeft unieke statistieken en een eigen naam. Je kunt het eiland vanuit verschillende hoeken bekijken en Barba's volgen.
+                        </p>
+                        <img src="images/barbasim/image1.png">
+                    </div>
+                    <div>
+                        <p>
+                            In mijn ontwerpproces ben ik door veel verschillende ideeën geïtereerd. Oorspronkelijk was ik van plan een isometrisch perspectief toe te passen. Daarbij zouden de beestjes blokkig zijn en in vaste stappen bewegen. Echter wilde ik meer dynamiek toevoegen, dus ging ik verder nadenken. Zo heb ik een paar 2D-concepten geschetst.
+                        </p>
+                        <img src="images/barbasim/image2.png">
+                    </div>
+                    <div>
+                        <p>
+                            Echter besloot ik het hierna in 3D uit te voeren, omdat ik dan makkelijk veel wezens zou kunnen produceren door enkele aanpassingen aan de mesh te maken, wat bij een sprite lastiger zou zijn.
+                            Het eerste ontwerp dat ik in 3D heb gemaakt was een blokje met benen. Alleen concludeerde ik dat dieren bestaan uit zachte vormen en niet scherp en rechthoekig zijn. Daarom heb ik de wezens later in het proces herontworpen.
+                        </p>
+                        <img src="images/barbasim/image3.png">
+                    </div>
+                    <div>
+                        <p>
+                            Hierna heb ik mij gefocust op het maken van de wereld. Oorspronkelijk ging ik voor een oneindige wereld, maar ik realiseerde dat in een oneindige wereld je minder gehecht zou raken aan de wezens. Daarom besloot ik toch te gaan voor het maken van een eiland bij de simulatie, zodat je de specifieke dieren op het eiland zou kunnen herkennen.
+                        </p>
+                        <img src="images/barbasim/image4.png">
+                    </div>
+                    <div>
+                        <p>
+                           Ik schreef vervolgens een generator om om de wezens, die ik Barba's besloot te noemen, te maken met elk een andere kleur, lengte en naam. Daarvoor heb ik ook zelf een naam generator geschreven.
+                           Ik zorgde ervoor dat er aan het begin van het spel een paar honderd Barba’s werden geboren, elk met andere statistieken. Naast kleur, lengte en naam voegde ik ook sterkte, vriendelijkheid en snelheid toe. Uiteindelijk zorgde ik ervoor dat de Barba’s ook voort konden planten en zo kinderen konden krijgen met de statistieken van hun ouders en dood konden gaan door te verdrinken of door in een gevecht te raken.
+                        </p>
+                        <img src="images/barbasim/image5.png">
+                    </div>
+                    <div>
+                        <p>
+                            Zo heb ik uiteindelijk een spel gemaakt waar ik nog steeds drie jaar later trots op ben. <i>Barbasim</i> is te downloaden op <a href="https://luuknoverraz.itch.io/barbasim" target="_blank">Itch.io</a>.
+                        </p>
+                    </div>
+                </section>
+            </section>            
+            <section class="web-project">
+                <h2>De Streng</h2>
+                <section class="project-details">
+                    <div>
+                        <img src="images/date.svg">
+                        <p>2023 (4 weken)</p>
+                    </div>
+                    <div>
+                        <img src="images/tools.svg">
+                        <p>HTML, CSS, JavaScript</p>
+                    </div>
+                    <div>
+                        <img src="images/link.svg">
+                        <a href="http://destreng.com/" target="_blank">http://destreng.com/</a>
+                    </div>
+                </section>
+                <section class="project-info">
+                    <div>
+                        <p>
+                            Ik heb voor bedrijf <i>De Streng</i> een one-page website ontworpen en gemaakt.
+                            Dit bedrijf had een verouderde site die toe was aan een verfrissing. 
+                            Op basis van de voorgaande site heb ik eerst de merkidentiteit van het bedrijf herontworpen naar een moderner en simplistischer beeld.
+                            In overleg met de opdrachtgever heb ik besloten een one-page website te maken, vooral vanwege ruimtebesparing en een meer prettige user experience.
+                        </p>
+                        <img src="images/destreng/image0.png">
+                    </div>
+                    <div>
+                        <p>
+                            Eerst heb ik de site ontworpen, voor zowel desktop als mobiel formaat. 
+                            Na enkele besprekingen met de opdrachtgever ben ik enkele iteraties doorgegaan. 
+                            Hierna ben ik begonnen met het bouwen van de website in HTML/CSS.
+                        </p>
+                        <img src="images/destreng/image1.png">
+                    </div>
+                    <div>
+                        <p>
+                            Hoewel de site in principe statisch is, zijn er enkele dynamische elementen op de pagina waarvoor ik JavaScript heb ingezet. 
+                            Daarnaast heb ik erop gelet dat de code van de site netjes en semantisch correct is.
+                            Na enkele weken was de site gereed en in zowel Nederlands als Engels beschikbaar. De site is responsive en werkt dus op desktop, tablet en mobiel.
+                        </p>
+                        <img src="images/destreng/image2.png">
+                    </div>
+                    <div>
+                        <p>
+                            Uiteindelijk ben ik erg tevreden met hoe de site is geworden en dat was de opdrachtgever gelukkig ook. 
+                            Het was erg leerzaam om het volledige proces, van ontwerp tot ontwikkeling, in dienst van deze klant uit te kunnen voeren.
+                        </p>
+                        <img src="images/destreng/image3.png">
+                    </div>
+                </section>
+            </section>
+            <section class="video-project">
+                <h2>Magmaroni</h2>
+                <section class="project-details">
+                    <div>
+                        <img src="images/date.svg">
+                        <p>2023 - heden</p>
+                    </div>
+                    <div>
+                        <img src="images/tools.svg">
+                        <p>Adobe Premiere Pro</p>
+                    </div>
+                    <div>
+                        <img src="images/link.svg">
+                        <a href="https://www.youtube.com/@magmaroni" target="_blank">https://www.youtube.com/@magmaroni</a>
+                    </div>
+                </section>
+                <section class="project-info">
+                    <div>
+                        <p>
+                            W.I.P 
+                        </p>
+                    </div>
+                </section>
+            </section>
+        </section>
+        <section class="about" id="about">
+            <h2>Over mij</h2>
+            <section class="about-primary">
+                <p>Momenteel ben ik <span id="studyYear">2e</span> jaars student Communication & Multimedia Design aan de Hogeschool van Amsterdam. 
+                    Hier leer ik met een oog voor zowel gebruikers als opdrachtgevers creatieve oplossingen te vinden tot unieke design challenges. 
+                    Ik let op de kleinste details en ben altijd leergierig. 
+                    Ik beschouw mijn begrip van zowel ontwerp als technologie als mijn kracht en hoop deze overlap in te kunnen zetten om bij te kunnen dragen aan een betere wereld.
+                    <br><br>Als je geïnteresseerd bent in mijn werk of wilt samenwerken, aarzel dan niet om contact met me op te nemen via <a href="mailto:luuknoverraz@gmail.com">luuknoverraz@gmail.com</a>.
+                </p>
+                <section class="about-picture">
+                    <img src="images/luuk.jpg" alt="A picture of Luuk Noverraz">
+                </section>
+            </section>
+            <hr>
+            <section class="cv">
+                <section class="experience">
+                    <h2>Ervaring</h2>
+                    <h3>Werkervaring</h3>
+                    <section class="experience-item">
+                        <p>Webontwikkelaar <i>/ De Streng</i></p>
+                        <h4>Februari 2022 - heden</h4>
+                        <p>Bezig met het beheren van een webshop in Shopify, inclusief het maken van aanpassingen in Liquid en CSS. Bovendien een responsive one-page website ontworpen en ontwikkeld.</p>
+                    </section>
+                    <section class="experience-item">
+                        <p>Webontwikkelaar <i>/ Coolfinity</i></p>
+                        <h4>Augustus 2020 - september 2021</h4>
+                        <p>Gewerkt aan het verbeteren van het ontwerp van de website van Coolfinity en ontwikkeld met Wix.</p>
+                    </section>
+                    <section class="experience-item">
+                        <p>Stagiair Grafisch Ontwerp <i>/ 310k</i></p>
+                        <h4>November 2018</h4>
+                    </section>
+                    <h3>Opleidingen</h3>
+                    <section class="experience-item">
+                        <p>Communication and Multimedia Design (Bachelor) <i>/ Hogeschool van Amsterdam</i></p>
+                        <h4>September 2022 - heden</h4>
+                        <p>Propedeuse in 2023 cum laude behaald.</p>
+                    </section>
+                </section>
+                <section class="skills">
+                    <h2>Vaardigheden</h2>
+                    <h3>Tools</h3>
+                    <section class="tools">
+                        <section class="tool-container">
+                            <section class="tool">
+                                <div>
+                                    <img src="images/unity.svg">
+                                </div>
+                                <p>Unity</p>
+                            </section>
+                            <section class="tool">
+                                <div>
+                                    <img src="images/godot.svg">
+                                </div>
+                                <p>Godot</p>
+                            </section>
+                            <section class="tool">
+                                <div>
+                                    <img src="images/blender.svg">
+                                </div>
+                                <p>Blender</p>
+                            </section>
+                            <section class="tool">
+                                <div>
+                                    <img src="images/git.svg">
+                                </div>
+                                <p>Git</p>
+                            </section>
+                            <section class="tool">
+                                <div>
+                                    <img src="images/adobe_illustrator.svg">
+                                </div>
+                                <p>Adobe Illustrator</p>
+                            </section>
+                        </section>
+                        <section class="tool-container">
+                            <section class="tool">
+                                <div>
+                                    <img src="images/adobe_premiere_pro.svg">
+                                </div>
+                                <p>Adobe Premiere Pro</p>
+                            </section>
+                            <section class="tool">
+                                <div>
+                                    <img src="images/adobe_xd.svg">
+                                </div>
+                                <p>Adobe XD</p>
+                            </section>
+                            <section class="tool">
+                                <div>
+                                    <img src="images/wordpress.svg">
+                                </div>
+                                <p>Wordpress</p>
+                            </section>
+                            <section class="tool">
+                                <div>
+                                    <img src="images/wix.svg">
+                                </div>
+                                <p>Wix</p>
+                            </section>
+                            <section class="tool">
+                                <div>
+                                    <img src="images/shopify.svg">
+                                </div>
+                                <p>Shopify</p>
+                            </section>
+                        </section>
+                    </section>
+                    <h3>Talen</h3>
+                    <section class="language">
+                        <p>Nederlands <i>/ Moedertaal</i></p>
+                        <p>Engels <i>/ Professionele vaardigheid</i></p>
+                    </section>
+                    <section class="tools">
+                        <section class="tool-container">
+                            <section class="tool">
+                                <div>
+                                    <img src="images/html.svg">
+                                </div>
+                                <p>HTML</p>
+                            </section>
+                            <section class="tool">
+                                <div>
+                                    <img src="images/css.svg">
+                                </div>
+                                <p>CSS</p>
+                            </section>
+                            <section class="tool">
+                                <div>
+                                    <img src="images/javascript.svg">
+                                </div>
+                                <p>JavaScript</p>
+                            </section>
+                        </section>
+                        <section class="tool-container">
+                            <section class="tool">
+                                <div>
+                                    <img src="images/python.svg">
+                                </div>
+                                <p>Python</p>
+                            </section>
+                            <section class="tool">
+                                <div>
+                                    <img src="images/csharp.svg">
+                                </div>
+                                <p>C#</p>
+                            </section>
+                            <section class="tool">
+                                <div>
+                                    <img src="images/react.svg">
+                                </div>
+                                <p>React</p>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p class="copyright">20XX © Luuk Noverraz </p>
+        <a href="https://github.com/LuukNoverraz/luuknoverraz.nl" target="_blank">
+            <img src="images/code.svg" alt="Source code">
+        </a>
+    </footer>
+    <script src="textFit.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
 </html>
