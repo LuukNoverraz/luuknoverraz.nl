@@ -23,12 +23,12 @@
     <header>
         <ul>
             <a id="header-index" onclick="scrollToSection('#index')"><li>Index</li></a>
-            <a id="header-about" onclick="scrollToSection('#about', 1 * parseFloat(getComputedStyle(document.documentElement).fontSize))"><li>Over mij</li></a>
+            <a data-translate="headerAbout" id="header-about" onclick="scrollToSection('#about', 1 * parseFloat(getComputedStyle(document.documentElement).fontSize))"><li>Over mij</li></a>
         </ul>
-        <img src="images/logo.png" alt="Logo of Luuk Noverraz' face" draggable="false">
+        <img src="images/logo.png" alt="Logo of Luuk Noverraz' face" draggable="false" onclick="scrollToSection('#index')">
         <section class="language">
             <p>
-                <a id="nl">NL</a> / <a id="en">EN</a>
+                <a id="nl" onclick="translatePage('nl')">NL</a> / <a id="en" onclick="translatePage('en')">EN</a>
             </p>
         </section>
     </header>
@@ -36,7 +36,7 @@
         <section class="intro">
             <h1>Luuk<br>Noverraz</h1>
             <h2>GAME DEVELOPER / FRONT-END DEVELOPER / VIDEO EDITOR</h2>
-            <h3>Met een passie voor creativiteit ontwerp en ontwikkel ik games, websites en videocontent.</h3>
+            <h3 data-translate="subtitle">Met een passie voor creativiteit ontwerp en ontwikkel ik games, websites en videocontent.</h3>
             <section class="location">
                 <a href="mailto:luuknoverraz@gmail.com"><img src="images/mail.svg" alt="A mail icon."></a>
                 <a href="https://www.linkedin.com/in/luuknoverraz/" target="_blank"><img src="images/linkedin.svg" alt="A LinkedIn icon."></a>
@@ -51,31 +51,31 @@
                     <source src="videos/barbasimvideo.webm" type="video/webm">
                 </video>
                 <img src="images/project-overlay.png">
-                <p>Ik bouw digitale werelden en verhalen</p>
+                <p data-translate="project1Slogan">Ik bouw digitale werelden en verhalen</p>
             </section>
             <section class="project">
                 <video autoplay muted loop>
                     <source src="videos/destrengvideo.webm" type="video/webm">
                 </video>
                 <img src="images/project-overlay.png">
-                <p>Ik maak user-friendly web-ervaringen</p>
+                <p data-translate="project2Slogan">Ik maak user-friendly web-ervaringen</p>
             </section>
             <section class="project">
                 <video autoplay muted loop>
                     <source src="videos/scpvideotrim.webm" type="video/webm">
                 </video>
                 <img src="images/project-overlay.png">
-                <p>Ik deel kennis en humor via video’s</p>
+                <p data-translate="project3Slogan">Ik deel kennis en humor via video’s</p>
             </section>
         </section>
         <section class="additional-content">
-            <a class="close-button"><img src="images/back.svg" alt="A back arrow.">Terug</a>
+            <a class="close-button"><img src="images/back.svg" alt="A back arrow."><p data-translate="projectBack">Terug</p></a>
             <section class="game-project">
                 <h2>Barbasim</h2>
                 <section class="project-details">
                     <div>
                         <img src="images/date.svg">
-                        <p>2020 (4 weken)</p>
+                        <p data-translate="project1Duration">2020 (4 weken)</p>
                     </div>
                     <div>
                         <img src="images/tools.svg">
@@ -88,39 +88,39 @@
                 </section>
                 <section class="project-info">
                     <div>
-                        <p>
+                        <p data-translate="project1Text1">
                             Barbasim is een 'creature simulation' die ik in 2020 met de Unity engine heb gemaakt. Er wordt een willekeurig eiland gegenereerd waar kleine "Barba" wezentjes met elkaar interacteren. Elke Barba heeft unieke statistieken en een eigen naam. Je kunt het eiland vanuit verschillende hoeken bekijken en Barba's volgen.
                         </p>
                         <img src="images/barbasim/image1.png">
                     </div>
                     <div>
-                        <p>
+                        <p data-translate="project1Text2">
                             In mijn ontwerpproces ben ik door veel verschillende ideeën geïtereerd. Oorspronkelijk was ik van plan een isometrisch perspectief toe te passen. Daarbij zouden de beestjes blokkig zijn en in vaste stappen bewegen. Echter wilde ik meer dynamiek toevoegen, dus ging ik verder nadenken. Zo heb ik een paar 2D-concepten geschetst.
                         </p>
                         <img src="images/barbasim/image2.png">
                     </div>
                     <div>
-                        <p>
+                        <p data-translate="project1Text3">
                             Echter besloot ik het hierna in 3D uit te voeren, omdat ik dan makkelijk veel wezens zou kunnen produceren door enkele aanpassingen aan de mesh te maken, wat bij een sprite lastiger zou zijn.
                             Het eerste ontwerp dat ik in 3D heb gemaakt was een blokje met benen. Alleen concludeerde ik dat dieren bestaan uit zachte vormen en niet scherp en rechthoekig zijn. Daarom heb ik de wezens later in het proces herontworpen.
                         </p>
                         <img src="images/barbasim/image3.png">
                     </div>
                     <div>
-                        <p>
+                        <p data-translate="project1Text4">
                             Hierna heb ik mij gefocust op het maken van de wereld. Oorspronkelijk ging ik voor een oneindige wereld, maar ik realiseerde dat in een oneindige wereld je minder gehecht zou raken aan de wezens. Daarom besloot ik toch te gaan voor het maken van een eiland bij de simulatie, zodat je de specifieke dieren op het eiland zou kunnen herkennen.
                         </p>
                         <img src="images/barbasim/image4.png">
                     </div>
                     <div>
-                        <p>
+                        <p data-translate="project1Text5">
                            Ik schreef vervolgens een generator om om de wezens, die ik Barba's besloot te noemen, te maken met elk een andere kleur, lengte en naam. Daarvoor heb ik ook zelf een naam generator geschreven.
                            Ik zorgde ervoor dat er aan het begin van het spel een paar honderd Barba’s werden geboren, elk met andere statistieken. Naast kleur, lengte en naam voegde ik ook sterkte, vriendelijkheid en snelheid toe. Uiteindelijk zorgde ik ervoor dat de Barba’s ook voort konden planten en zo kinderen konden krijgen met de statistieken van hun ouders en dood konden gaan door te verdrinken of door in een gevecht te raken.
                         </p>
                         <img src="images/barbasim/image5.png">
                     </div>
                     <div>
-                        <p>
+                        <p data-translate="project1Text6">
                             Zo heb ik uiteindelijk een spel gemaakt waar ik nog steeds drie jaar later trots op ben. <i>Barbasim</i> is te downloaden op <a href="https://luuknoverraz.itch.io/barbasim" target="_blank">Itch.io</a>.
                         </p>
                     </div>
@@ -131,7 +131,7 @@
                 <section class="project-details">
                     <div>
                         <img src="images/date.svg">
-                        <p>2023 (4 weken)</p>
+                        <p data-translate="project2Duration">2023 (4 weken)</p>
                     </div>
                     <div>
                         <img src="images/tools.svg">
@@ -144,7 +144,7 @@
                 </section>
                 <section class="project-info">
                     <div>
-                        <p>
+                        <p data-translate="project2Text1">
                             Ik heb voor bedrijf <i>De Streng</i> een one-page website ontworpen en gemaakt.
                             Dit bedrijf had een verouderde site die toe was aan een verfrissing. 
                             Op basis van de voorgaande site heb ik eerst de merkidentiteit van het bedrijf herontworpen naar een moderner en simplistischer beeld.
@@ -153,7 +153,7 @@
                         <img src="images/destreng/image0.png">
                     </div>
                     <div>
-                        <p>
+                        <p data-translate="project2Text2">
                             Eerst heb ik de site ontworpen, voor zowel desktop als mobiel formaat. 
                             Na enkele besprekingen met de opdrachtgever ben ik enkele iteraties doorgegaan. 
                             Hierna ben ik begonnen met het bouwen van de website in HTML/CSS.
@@ -161,7 +161,7 @@
                         <img src="images/destreng/image1.png">
                     </div>
                     <div>
-                        <p>
+                        <p data-translate="project2Text3">
                             Hoewel de site in principe statisch is, zijn er enkele dynamische elementen op de pagina waarvoor ik JavaScript heb ingezet. 
                             Daarnaast heb ik erop gelet dat de code van de site netjes en semantisch correct is.
                             Na enkele weken was de site gereed en in zowel Nederlands als Engels beschikbaar. De site is responsive en werkt dus op desktop, tablet en mobiel.
@@ -169,7 +169,7 @@
                         <img src="images/destreng/image2.png">
                     </div>
                     <div>
-                        <p>
+                        <p data-translate="project2Text4">
                             Uiteindelijk ben ik erg tevreden met hoe de site is geworden en dat was de opdrachtgever gelukkig ook. 
                             Het was erg leerzaam om het volledige proces, van ontwerp tot ontwikkeling, in dienst van deze klant uit te kunnen voeren.
                         </p>
@@ -182,7 +182,7 @@
                 <section class="project-details">
                     <div>
                         <img src="images/date.svg">
-                        <p>2023 - heden</p>
+                        <p data-translate="project3Duration">2023 - heden</p>
                     </div>
                     <div>
                         <img src="images/tools.svg">
@@ -196,21 +196,23 @@
                 <section class="project-info">
                     <div>
                         <p>
-                            W.I.P 
+                            Al ruim 5 jaar maak ik video's met Adobe Premiere Pro. Onlangs ben ik begonnen met het maken van video's op mijn YouTube-kanaal genaamd Magmaroni. Hier wil ik mijn game-ontwikkelingsreis en -proces delen. 
                         </p>
                     </div>
                 </section>
             </section>
         </section>
         <section class="about" id="about">
-            <h2>Over mij</h2>
+            <h2 data-translate="aboutTitle">Over mij</h2>
             <section class="about-primary">
-                <p>Momenteel ben ik <span id="studyYear">2e</span> jaars student Communication & Multimedia Design aan de Hogeschool van Amsterdam. 
-                    Hier leer ik met een oog voor zowel gebruikers als opdrachtgevers creatieve oplossingen te vinden tot unieke design challenges. 
-                    Ik let op de kleinste details en ben altijd leergierig. 
-                    Ik beschouw mijn begrip van zowel ontwerp als technologie als mijn kracht en hoop deze overlap in te kunnen zetten om bij te kunnen dragen aan een betere wereld.
-                    <br><br>Als je geïnteresseerd bent in mijn werk of wilt samenwerken, aarzel dan niet om contact met me op te nemen via <a href="mailto:luuknoverraz@gmail.com">luuknoverraz@gmail.com</a>.
-                </p>
+                <section>
+                    <p data-translate="aboutText1">Momenteel ben ik </p><p><span id="studyYear">2e</span></p><p data-translate="aboutText2"> jaars student Communication & Multimedia Design aan de Hogeschool van Amsterdam. 
+                        Hier leer ik met een oog voor zowel gebruikers als opdrachtgevers creatieve oplossingen te vinden tot unieke design challenges. 
+                        Ik let op de kleinste details en ben altijd leergierig. 
+                        Ik beschouw mijn begrip van zowel ontwerp als technologie als mijn kracht en hoop deze overlap in te kunnen zetten om bij te kunnen dragen aan een betere wereld.</p>
+                        <br><br><p data-translate="aboutText3">Als je geïnteresseerd bent in mijn werk of wilt samenwerken, aarzel dan niet om contact met me op te nemen via</p> <p><a href="mailto:luuknoverraz@gmail.com">luuknoverraz@gmail.com</a>.
+                    </p>
+                </section>
                 <section class="about-picture">
                     <img src="images/luuk.jpg" alt="A picture of Luuk Noverraz">
                 </section>
@@ -218,31 +220,39 @@
             <hr>
             <section class="cv">
                 <section class="experience">
-                    <h2>Ervaring</h2>
-                    <h3>Werkervaring</h3>
+                    <h2 data-translate="experience">Ervaring</h2>
+                    <h3 data-translate="workExperience">Werkervaring</h3>
                     <section class="experience-item">
-                        <p>Webontwikkelaar <i>/ De Streng</i></p>
-                        <h4>Februari 2022 - heden</h4>
-                        <p>Bezig met het beheren van een webshop in Shopify, inclusief het maken van aanpassingen in Liquid en CSS. Bovendien een responsive one-page website ontworpen en ontwikkeld.</p>
+                        <section>
+                            <p data-translate="experienceTitle1" class="experience-item-title">Webontwikkelaar</p> <p class="experience-item-title"><i>/ De Streng</i></p>
+                        </section>
+                        <h4 data-translate="experienceDuration1">Februari 2022 - heden</h4>
+                        <p data-translate="experienceDescription1" class="experience-item-description">Bezig met het beheren van een webshop in Shopify, inclusief het maken van aanpassingen in Liquid en CSS. Bovendien een responsive one-page website ontworpen en ontwikkeld.</p>
                     </section>
                     <section class="experience-item">
-                        <p>Webontwikkelaar <i>/ Coolfinity</i></p>
-                        <h4>Augustus 2020 - september 2021</h4>
-                        <p>Gewerkt aan het verbeteren van het ontwerp van de website van Coolfinity en ontwikkeld met Wix.</p>
+                        <section>
+                            <p data-translate="experienceTitle2" class="experience-item-title">Webontwikkelaar</p> <p class="experience-item-title"><i>/ Coolfinity</i></p>
+                        </section>
+                        <h4 data-translate="experienceDuration2">Augustus 2020 - september 2021</h4>
+                        <p data-translate="experienceDescription2" class="experience-item-description">Gewerkt aan het verbeteren van het ontwerp van de website van Coolfinity en ontwikkeld met Wix.</p>
                     </section>
                     <section class="experience-item">
-                        <p>Stagiair Grafisch Ontwerp <i>/ 310k</i></p>
+                        <section>
+                            <p data-translate="experienceTitle3" class="experience-item-title">Stagiair Grafisch Ontwerp</p> <p class="experience-item-title"><i>/ 310k</i></p>
+                        </section>
                         <h4>November 2018</h4>
                     </section>
-                    <h3>Opleidingen</h3>
+                    <h3 data-translate="education">Opleidingen</h3>
                     <section class="experience-item">
-                        <p>Communication and Multimedia Design (Bachelor) <i>/ Hogeschool van Amsterdam</i></p>
-                        <h4>September 2022 - heden</h4>
-                        <p>Propedeuse in 2023 cum laude behaald.</p>
+                        <section>
+                            <p data-translate="experienceTitle4" class="experience-item-title">Communication and Multimedia Design (Bachelor)</p> <p data-translate="experienceTitle4School" class="experience-item-title"> <i>/ Hogeschool van Amsterdam</i></p>
+                        </section>
+                        <h4 data-translate="experienceDuration4">September 2022 - heden</h4>
+                        <p data-translate="experienceDescription4" class="experience-item-description">Propedeuse in 2023 cum laude behaald.</p>
                     </section>
                 </section>
                 <section class="skills">
-                    <h2>Vaardigheden</h2>
+                    <h2 data-translate="skills">Vaardigheden</h2>
                     <h3>Tools</h3>
                     <section class="tools">
                         <section class="tool-container">
@@ -310,10 +320,10 @@
                             </section>
                         </section>
                     </section>
-                    <h3>Talen</h3>
-                    <section class="language">
-                        <p>Nederlands <i>/ Moedertaal</i></p>
-                        <p>Engels <i>/ Professionele vaardigheid</i></p>
+                    <h3 data-translate="languages">Talen</h3>
+                    <section class="languages">
+                        <p class="language-item" data-translate="languageDutch">Nederlands / Moedertaal</p>
+                        <p class="language-item" data-translate="languageEnglish">Engels / Professionele vaardigheid</p>
                     </section>
                     <section class="tools">
                         <section class="tool-container">
@@ -367,7 +377,6 @@
             <img src="images/code.svg" alt="Source code">
         </a>
     </footer>
-    <script src="textFit.js"></script>
     <script src="scripts.js"></script>
 </body>
 
