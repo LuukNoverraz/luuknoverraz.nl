@@ -1,0 +1,759 @@
+/* ==========================================================================
+   Tokens
+   Fluid sizes are clamp()s tuned to match the original design exactly at a
+   1440×900 desktop and to scale down smoothly to a 390px phone.
+   ========================================================================== */
+:root {
+  --red: #ce2a29;
+  --red-on-dark: #e03c3b; /* same red, nudged lighter so small text on black meets WCAG AA (4.6:1) */
+  --black: #10070c;
+  --white: #ffffff;
+  --gray: #cacaca;
+
+  --header-h: clamp(4rem, 2.77rem + 5.05vw, 7.3125rem);
+  --gutter: clamp(1rem, 0.16rem + 3.43vw, 3.25rem);
+
+  --fs-sm: clamp(0.8rem, 0.78rem + 0.067vw, 0.84375rem);
+  --fs-body: clamp(1rem, 0.954rem + 0.19vw, 1.125rem);
+  --fs-lg: clamp(1rem, 0.744rem + 1.048vw, 1.6875rem);
+  --fs-subtitle: clamp(1.1rem, 0.88rem + 0.9vw, 1.6875rem);
+  --fs-slogan: clamp(1.3rem, 0.67rem + 2.59vw, 3rem);
+  --fs-name: clamp(2.2rem, 2.1rem + 2.04vw, 3.9375rem);
+  --fs-header: clamp(0.75rem, 0.61rem + 0.571vw, 1.125rem);
+
+  --radius: 5px;
+
+  color-scheme: light;
+}
+
+/* ==========================================================================
+   Fonts – subset WOFF2, only the six faces the site uses
+   ========================================================================== */
+@font-face {
+  font-family: benzinRegular;
+  src: url(/fonts/Benzin-Regular.woff2) format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: benzinExtraBold;
+  src: url(/fonts/Benzin-ExtraBold.woff2) format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: neueHaasLight;
+  src: url(/fonts/NeueHaasDisplayLight.woff2) format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: neueHaasRoman;
+  src: url(/fonts/NeueHaasDisplayRoman.woff2) format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: neueHaasThin;
+  src: url(/fonts/NeueHaasDisplayThin.woff2) format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: neueHaasThinItalic;
+  src: url(/fonts/NeueHaasDisplayThinItalic.woff2) format('woff2');
+  font-display: swap;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+  scrollbar-width: thin;
+  scrollbar-color: var(--red) var(--white);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @view-transition {
+    navigation: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  overflow-x: clip;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  inset-block-start: 0.5rem;
+  inset-inline-start: 0.5rem;
+  z-index: 10;
+  padding: 0.75em 1em;
+  background: var(--red);
+  color: var(--white);
+  font-family: benzinRegular, sans-serif;
+  translate: 0 -200%;
+
+  &:focus-visible {
+    translate: 0;
+  }
+}
+
+/* Chrome / Safari scrollbar (Firefox uses scrollbar-color above) */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, var(--white) var(--header-h), var(--black) 0);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--red);
+  border-radius: 6px;
+  border: 3px solid var(--red);
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  block-size: var(--header-h);
+  padding-inline: var(--gutter);
+  background: var(--white);
+  color: var(--black);
+  font-family: benzinRegular, sans-serif;
+  font-size: var(--fs-header);
+  view-transition-name: site-header;
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    display: flex;
+    gap: 1.1em;
+  }
+
+  /* Current section in red */
+  &[data-section='index'] [data-nav='index'],
+  &[data-section='about'] [data-nav='about'] {
+    color: var(--red);
+  }
+}
+
+.logo {
+  position: absolute;
+  inset-inline-start: 50%;
+  translate: -50% 0;
+  block-size: 76%;
+
+  img {
+    block-size: 100%;
+    inline-size: auto;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+}
+
+.lang-switch {
+  margin: 0;
+
+  [aria-current='page'] {
+    color: var(--red);
+  }
+}
+
+/* ==========================================================================
+   Main / intro
+   ========================================================================== */
+main {
+  min-block-size: calc(100dvh - var(--header-h));
+  padding-block: clamp(2.5rem, 1.1rem + 5.71vw, 6.25rem);
+  padding-inline: clamp(1rem, -1.6rem + 10.67vw, 8rem);
+  background: var(--black);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+
+  h1 {
+    display: inline-block;
+    align-self: flex-start;
+    margin: 0 0 0 1vw;
+    color: var(--red);
+    font-family: benzinExtraBold, sans-serif;
+    font-size: var(--fs-name);
+    font-weight: normal;
+    transform: skew(-19.4deg);
+  }
+
+  .role {
+    margin: 0.83em 0 0;
+    font-family: benzinRegular, sans-serif;
+    font-size: var(--fs-lg);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .subtitle {
+    max-inline-size: 48%;
+    margin: 1em 0 0.5em;
+    font-family: neueHaasLight, sans-serif;
+    font-size: var(--fs-subtitle);
+    line-height: 1.9;
+  }
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  min-block-size: 2.8125rem;
+  max-block-size: 2.8125rem;
+  margin-block-end: 1rem;
+
+  img {
+    block-size: 1.40625rem;
+    inline-size: auto;
+    padding-inline-end: 1.5em;
+  }
+
+  .pin {
+    padding-inline-end: 0.75em;
+  }
+
+  p {
+    margin: 0;
+    font-family: neueHaasLight, sans-serif;
+    font-size: var(--fs-body);
+    line-height: 1.9;
+  }
+}
+
+/* ==========================================================================
+   Project cards
+   ========================================================================== */
+.showcase {
+  margin-block-start: 2em;
+}
+
+.cards {
+  display: flex;
+  gap: 2em;
+  block-size: 40em;
+
+  li {
+    flex: 1;
+    min-inline-size: 0;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  block-size: 100%;
+  overflow: hidden;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--white);
+  color: var(--white);
+  text-decoration: none;
+
+  /* Each card morphs into its opened state when navigating to the project page */
+  &[data-slug='barbasim'] {
+    view-transition-name: card-barbasim;
+  }
+  &[data-slug='de-streng'] {
+    view-transition-name: card-de-streng;
+  }
+  &[data-slug='magmaroni'] {
+    view-transition-name: card-magmaroni;
+  }
+
+  /* Dark gradient so the slogan stays readable */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: url(/images/overlay.webp) center / cover no-repeat;
+  }
+
+  .is-open & {
+    border-radius: var(--radius);
+  }
+}
+
+.card-poster,
+.card-video {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  max-inline-size: none;
+  object-fit: cover;
+}
+
+.card-slogan {
+  position: relative;
+  z-index: 2;
+  margin-block: 1em;
+  padding-inline: 1em;
+  font-family: benzinRegular, sans-serif;
+  font-size: var(--fs-slogan);
+  text-align: center;
+  text-shadow: 3px 1px 0 var(--red);
+}
+
+/* ==========================================================================
+   Opened project
+   ========================================================================== */
+.project-detail {
+  color: var(--white);
+  font-family: neueHaasRoman, sans-serif;
+  font-size: var(--fs-body);
+  line-height: 1.9;
+
+  h2 {
+    margin: 0;
+    font-family: benzinRegular, sans-serif;
+    font-size: var(--fs-lg);
+    font-weight: normal;
+  }
+
+  a {
+    color: var(--red-on-dark);
+  }
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  inline-size: fit-content;
+  padding-block: 1em;
+  font-family: benzinRegular, sans-serif;
+  text-decoration: none;
+
+  img {
+    block-size: 1.5em;
+    inline-size: auto;
+    padding-inline-end: 0.5em;
+  }
+}
+
+.project-meta {
+  margin: 0;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    block-size: 1.5em;
+    inline-size: auto;
+  }
+
+  dd {
+    margin: 0 0 0 0.5em;
+  }
+}
+
+.project-body {
+  display: flex;
+  flex-direction: column;
+  margin-block-start: 1.5em;
+}
+
+.project-row {
+  display: flex;
+  margin-block-end: 20px;
+
+  p {
+    flex: 1;
+    margin: 0;
+  }
+
+  img {
+    flex: none;
+    inline-size: auto;
+    max-inline-size: 16em;
+    block-size: auto;
+    margin-inline-start: 0.66em;
+    margin-block-end: 1em;
+    border-radius: var(--radius);
+  }
+}
+
+/* ==========================================================================
+   About
+   ========================================================================== */
+.about {
+  margin-block-start: clamp(3rem, 1.89rem + 4.57vw, 6rem);
+  padding: 1rem clamp(1.25rem, 0.6rem + 2.67vw, 3rem);
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--black);
+
+  h2 {
+    margin: 0.83em 0 0;
+    color: var(--red);
+    font-family: benzinRegular, sans-serif;
+    font-size: var(--fs-body);
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  > h2 {
+    margin-block-end: 2em;
+  }
+
+  h3 {
+    margin-block: 0.5em;
+    font-family: neueHaasThin, sans-serif;
+    font-size: var(--fs-body);
+    font-weight: normal;
+    line-height: 1.9;
+    text-transform: uppercase;
+  }
+
+  a {
+    color: var(--red);
+  }
+
+  hr {
+    margin: 4em 0;
+    border: 1px solid var(--gray);
+  }
+}
+
+.about-primary {
+  display: grid;
+  /* text column is 64vw + gutter; the photo takes what is left, up to 15vw */
+  grid-template-columns: min(66.66vw, 100% - 8rem) minmax(0, 15vw);
+  justify-content: space-between;
+  align-items: start;
+}
+
+.about-text {
+  max-inline-size: 64vw;
+  padding-inline-end: 2.66vw;
+  font-family: neueHaasRoman, sans-serif;
+  font-size: var(--fs-body);
+  line-height: 1.9;
+
+  p {
+    margin: 0;
+  }
+
+  p + p {
+    margin-block-start: 1.15rem;
+  }
+}
+
+.about-picture {
+  inline-size: 100%;
+  block-size: auto;
+  border-radius: var(--radius);
+}
+
+/* ==========================================================================
+   CV
+   ========================================================================== */
+.cv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.experience {
+  inline-size: 55%;
+}
+
+.entry {
+  font-size: var(--fs-body);
+}
+
+.entry-title {
+  margin: 0;
+  font-family: benzinRegular, sans-serif;
+  font-size: inherit;
+  font-weight: normal;
+  line-height: 1.9;
+
+  i {
+    font-weight: normal;
+  }
+}
+
+.entry-date {
+  margin: 0 0 0.5em;
+  font-family: neueHaasThin, sans-serif;
+  font-size: var(--fs-sm);
+}
+
+.entry-description {
+  inline-size: 90%;
+  margin: 0 0 1em;
+  font-family: neueHaasLight, sans-serif;
+  line-height: 1.9;
+}
+
+.tool-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(5, auto);
+  grid-template-columns: 14em auto;
+  column-gap: 2em;
+  font-family: neueHaasRoman, sans-serif;
+
+  li {
+    display: flex;
+    align-items: center;
+    block-size: 1.5em;
+    margin-block-end: 0.75em;
+    font-size: var(--fs-body);
+  }
+
+  img {
+    inline-size: 32px;
+    block-size: 1.5em;
+    margin-inline-end: 1vw;
+  }
+}
+
+.tool-grid--code {
+  grid-template-rows: repeat(3, auto);
+}
+
+.spoken {
+  display: grid;
+  grid-template-columns: 13.375rem auto;
+  column-gap: 2rem;
+  margin-block-end: 1em;
+  font-family: neueHaasRoman, sans-serif;
+  font-size: var(--fs-body);
+  line-height: 1.9;
+
+  li {
+    contain: inline-size; /* wrap inside the column instead of widening it */
+  }
+
+  i {
+    font-family: neueHaasThinItalic, sans-serif;
+    font-style: normal;
+  }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-inline: var(--gutter);
+  background: var(--black);
+  color: var(--white);
+  font-family: neueHaasRoman, sans-serif;
+
+  p {
+    min-block-size: 3.65625rem;
+    margin: 0;
+  }
+
+  img {
+    block-size: 1.6875rem;
+    inline-size: auto;
+  }
+}
+
+/* ==========================================================================
+   Tablet
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .intro .subtitle {
+    max-inline-size: 80%;
+  }
+
+  .cv {
+    flex-direction: column;
+  }
+
+  .experience {
+    inline-size: 100%;
+  }
+}
+
+/* ==========================================================================
+   Phone
+   ========================================================================== */
+@media (max-width: 768px) {
+  .intro .subtitle {
+    max-inline-size: none;
+    line-height: 1.6;
+  }
+
+  .intro .role {
+    line-height: 1.5;
+  }
+
+  .contact {
+    flex-wrap: wrap;
+    max-block-size: none;
+
+    img {
+      padding-inline-end: 1.1em;
+    }
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 1em;
+    block-size: auto;
+
+    li {
+      display: flex;
+      min-block-size: 220px;
+    }
+  }
+
+  .card {
+    flex: 1;
+    block-size: auto;
+    border-radius: var(--radius);
+  }
+
+  .card-slogan {
+    padding-inline: 0.75em;
+  }
+
+  .project-detail {
+    line-height: 1.7;
+  }
+
+  .project-meta a {
+    word-break: break-all;
+  }
+
+  .project-row {
+    flex-direction: column;
+
+    img {
+      inline-size: 100%;
+      max-inline-size: 100%;
+      margin: 1em 0 0;
+    }
+  }
+
+  .about {
+    padding-block-end: 2em;
+
+    hr {
+      margin: 2.5em 0;
+    }
+  }
+
+  .about-primary {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text {
+    max-inline-size: none;
+    padding-inline-end: 0;
+  }
+
+  .about-primary > picture {
+    order: -1;
+  }
+
+  .about-picture {
+    inline-size: 160px;
+    margin-block-end: 1.5em;
+  }
+
+  .entry-title,
+  .entry-description {
+    inline-size: 100%;
+  }
+
+  .skills {
+    margin-block-start: 1.5em;
+  }
+
+  .tool-grid,
+  .spoken {
+    grid-template-columns: 50% auto;
+    column-gap: 1em;
+  }
+
+  .tool-grid img {
+    inline-size: 24px;
+    block-size: 24px;
+    margin-inline-end: 10px;
+  }
+
+  .spoken {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    align-items: center;
+    padding-block: 1em;
+
+    p {
+      min-block-size: 0;
+    }
+
+    img {
+      block-size: 22px;
+    }
+  }
+}

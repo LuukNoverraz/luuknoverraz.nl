@@ -1,0 +1,150 @@
+---
+import { Picture } from 'astro:assets';
+import '../styles/global.css';
+import { base, copy, social, year, type Lang, type ProjectSlug } from '../content';
+import logo from '../assets/images/logo.png';
+
+interface Props {
+  lang: Lang;
+  /** Set on project pages. */
+  project?: ProjectSlug;
+}
+
+const { lang, project } = Astro.props;
+const t = copy[lang];
+const site = Astro.site!;
+
+const pathFor = (l: Lang) => base(l) + (project ? `${project}/` : '');
+const alternates = { nl: new URL(pathFor('nl'), site).href, en: new URL(pathFor('en'), site).href };
+const canonical = alternates[lang];
+const title = project ? `${t.projects[project].name} – ${t.meta.title}` : t.meta.title;
+const description = project ? t.projects[project].paragraphs[0].replace(/<[^>]+>/g, '') : t.meta.description;
+
+// On the home page "Index" scrolls to the top; on a project page it goes back home.
+const indexHref = project ? base(lang) : '#top';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Luuk Noverraz',
+  url: site.href,
+  jobTitle: ['Game Developer', 'Front-end Developer', 'Video Editor'],
+  address: { '@type': 'PostalAddress', addressLocality: 'Amsterdam', addressCountry: 'NL' },
+  sameAs: [social.linkedin, social.github, social.youtube, social.itch],
+};
+---
+
+<!doctype html>
+<html lang={t.htmlLang} id="top">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="nl" href={alternates.nl} />
+    <link rel="alternate" hreflang="en" href={alternates.en} />
+    <link rel="alternate" hreflang="x-default" href={alternates.nl} />
+
+    <link rel="preload" href="/fonts/Benzin-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Benzin-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/NeueHaasDisplayLight.woff2" as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/og.jpg', site).href} />
+    <meta property="og:locale" content={t.meta.locale} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#ce2a29" />
+    <meta name="msapplication-TileColor" content="#ce2a29" />
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">{t.nav.skip}</a>
+
+    <header class="site-header" data-section="index">
+      <nav aria-label={t.nav.label}>
+        <ul>
+          <li><a href={indexHref} data-nav="index">{t.nav.index}</a></li>
+          <li><a href="#about" data-nav="about">{t.nav.about}</a></li>
+        </ul>
+      </nav>
+
+      <a class="logo" href={base(lang)} aria-label="Luuk Noverraz – home">
+        <Picture src={logo} formats={['avif', 'webp']} alt="" draggable="false" loading="eager" />
+      </a>
+
+      <p class="lang-switch">
+        <a href={pathFor('nl')} hreflang="nl" lang="nl" aria-current={lang === 'nl' ? 'page' : undefined}>NL</a>{' / '}<a href={pathFor('en')} hreflang="en" lang="en" aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
+      </p>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <p>{year} © Luuk Noverraz</p>
+      <a href={social.source} target="_blank" rel="noopener" aria-label={t.footer.source}>
+        <img src="/icons/code.svg" alt="" width="27" height="27" />
+      </a>
+    </footer>
+
+    <script>
+      // 1. Highlight "Over mij" in the header while the about section is in view.
+      const header = document.querySelector<HTMLElement>('.site-header')!;
+      const about = document.getElementById('about');
+      if (about) {
+        new IntersectionObserver(
+          ([entry]) => {
+            const passed = entry.isIntersecting || entry.boundingClientRect.top < 0;
+            header.dataset.section = passed ? 'about' : 'index';
+          },
+          { rootMargin: '0px 0px -50% 0px' },
+        ).observe(about);
+      }
+
+      // 2. Project loops: only download and play while on screen, never with reduced motion,
+      //    and not before the page has finished loading (keeps them off the critical path).
+      const videos = document.querySelectorAll<HTMLVideoElement>('video[data-loop]');
+      const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+      let started = false;
+      const startVideos = () => {
+        if (started || reduceMotion.matches) return;
+        started = true;
+        const io = new IntersectionObserver((entries) => {
+          for (const { target, isIntersecting } of entries) {
+            const video = target as HTMLVideoElement;
+            if (isIntersecting) {
+              video.preload = 'auto';
+              video.play().catch(() => {});
+            } else {
+              video.pause();
+            }
+          }
+        });
+        videos.forEach((v) => io.observe(v));
+      };
+      if (videos.length) {
+        if (document.readyState === 'complete') startVideos();
+        else addEventListener('load', startVideos, { once: true });
+      }
+      reduceMotion.addEventListener('change', () => {
+        if (reduceMotion.matches) videos.forEach((v) => v.pause());
+        else if (started) videos.forEach((v) => v.play().catch(() => {}));
+        else startVideos();
+      });
+    </script>
+  </body>
+</html>
