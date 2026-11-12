@@ -514,3 +514,243 @@ footer p {
 footer img {
     height: 3vh;
 }
+/* ---------- Responsive: tablet ---------- */
+@media (max-width: 1100px) {
+    main {
+        padding: 64px 48px;
+    }
+
+    header {
+        padding: 0 32px;
+    }
+
+    main h3 {
+        max-width: 80%;
+    }
+
+    .project p {
+        font-size: 2em;
+    }
+
+    .cv {
+        flex-direction: column;
+    }
+
+    .experience {
+        width: 100%;
+    }
+}
+
+/* ---------- Responsive: mobile ---------- */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    header {
+        height: 64px;
+        padding: 0 16px;
+        font-size: 12px;
+    }
+
+    header ul li {
+        padding-right: 12px;
+    }
+
+    header img {
+        height: 44px;
+    }
+
+    main {
+        min-height: auto;
+        padding: 40px 16px;
+    }
+
+    main h1 {
+        font-size: 2.6rem;
+        margin-left: 0.4rem;
+    }
+
+    main h2 {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    main h3 {
+        font-size: 1.1rem;
+        max-width: 100%;
+        line-height: 1.6;
+    }
+
+    .location {
+        max-height: none;
+        flex-wrap: wrap;
+    }
+
+    .location img {
+        height: 22px;
+        padding-right: 1.1em;
+    }
+
+    .location p {
+        font-size: 0.95rem;
+        max-width: none;
+    }
+
+    /* Projects stack vertically */
+    .showcase {
+        flex-direction: column;
+        height: auto;
+        gap: 1em;
+    }
+
+    .project {
+        min-height: 220px;
+        border-radius: 5px;
+    }
+
+    .project:first-of-type, .project:nth-of-type(2) {
+        margin-right: 0;
+    }
+
+    .project p {
+        font-size: 1.3rem;
+        padding: 0 0.75em;
+    }
+
+    /* Project detail pages */
+    .additional-content {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .close-button img {
+        height: 20px;
+    }
+
+    .project-details img {
+        max-height: 20px;
+    }
+
+    .project-details div a {
+        word-break: break-all;
+    }
+
+    .project-info > div {
+        flex-direction: column;
+    }
+
+    .project-info img {
+        max-width: 100%;
+        width: 100%;
+        margin: 1em 0 0;
+    }
+
+    /* About */
+    .about {
+        padding: 1em 1.25em 2em;
+        margin-top: 3em;
+    }
+
+    .about h2,
+    .cv h3 {
+        font-size: 0.9rem;
+    }
+
+    .about p,
+    .about-primary p,
+    .cv p {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .about-primary {
+        flex-direction: column-reverse;
+    }
+
+    .about-primary section:first-of-type {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .about-picture,
+    .about-picture img {
+        width: 160px;
+        margin: 0 0 1.5em;
+    }
+
+    .about hr {
+        margin: 2.5em 0;
+    }
+
+    .experience-item p {
+        width: 100%;
+    }
+
+    .experience-item p:first-of-type {
+        margin-bottom: 0;
+    }
+
+    .experience h4 {
+        font-size: 0.8rem;
+        margin-top: 0.4em;
+    }
+
+    .skills {
+        margin-top: 1.5em;
+    }
+
+    .tool {
+        font-size: 0.95rem;
+        height: 28px;
+    }
+
+    .tool img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+    }
+
+    .tools .tool-container:first-of-type {
+        width: 50%;
+    }
+
+    .tool-container:nth-of-type(2) {
+        margin-left: 1em;
+    }
+
+    .languages {
+        flex-direction: column;
+    }
+
+    .languages p:nth-of-type(2) {
+        margin-left: 0;
+    }
+
+    footer {
+        padding: 1em 16px;
+        align-items: center;
+    }
+
+    footer p {
+        height: auto;
+    }
+
+    footer img {
+        height: 22px;
+    }
+}
+
+@media (max-width: 380px) {
+    header ul li {
+        padding-right: 8px;
+    }
+
+    header img {
+        height: 36px;
+    }
+
+    main h1 {
+        font-size: 2.2rem;
+    }
+}
