@@ -57,11 +57,11 @@ export const copy: Record<Lang, Copy> = {
     meta: {
       title: 'Luuk Noverraz',
       description:
-        'Luuk Noverraz – filosoof, gamedeveloper en webdeveloper uit Amsterdam.',
+        'Luuk Noverraz – student filosofie, gamedeveloper en webdeveloper uit Amsterdam.',
       locale: 'nl_NL',
     },
     nav: { skip: 'Naar inhoud' },
-    role: 'Filosoof / Gamedeveloper / Webdeveloper',
+    role: 'Student filosofie / Gamedeveloper / Webdeveloper',
     location: 'Anno 2004, Amsterdam',
     social: { mail: 'Stuur een e-mail', linkedin: 'LinkedIn', github: 'GitHub' },
     back: 'Terug',
@@ -99,11 +99,11 @@ export const copy: Record<Lang, Copy> = {
     meta: {
       title: 'Luuk Noverraz',
       description:
-        'Luuk Noverraz – philosopher, game developer and web developer from Amsterdam.',
+        'Luuk Noverraz – philosophy student, game developer and web developer from Amsterdam.',
       locale: 'en_GB',
     },
     nav: { skip: 'Skip to content' },
-    role: 'Philosopher / Game developer / Web developer',
+    role: 'Philosophy student / Game developer / Web developer',
     location: 'Est. 2004, Amsterdam',
     social: { mail: 'Send an email', linkedin: 'LinkedIn', github: 'GitHub' },
     back: 'Back',
