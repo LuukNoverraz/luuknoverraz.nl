@@ -507,10 +507,14 @@ a:hover {
   max-inline-size: 39.375rem;
 }
 
-/* A large image may use the full width, at its own 16:10 shape. */
+/* A large image may use the full width, at 16:10 or, for screenshots, 16:9. */
 .project-media--wide {
   max-inline-size: none;
   aspect-ratio: 16 / 10;
+}
+
+.project-media--16x9 {
+  aspect-ratio: 16 / 9;
 }
 
 .project-body {
@@ -521,7 +525,7 @@ a:hover {
 
 .project-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 26.25rem);
   gap: 2rem;
   align-items: start;
 
@@ -529,9 +533,9 @@ a:hover {
     max-inline-size: 42rem;
   }
 
+  /* Fills its column, so its space is reserved before the file arrives. */
   img {
-    inline-size: auto;
-    max-inline-size: 20rem;
+    inline-size: 100%;
     block-size: auto;
   }
 }
@@ -620,8 +624,8 @@ a:hover {
     gap: 1rem;
   }
 
-  .project-row img {
-    max-inline-size: 100%;
+  .project-row {
+    gap: 1rem;
   }
 }
 

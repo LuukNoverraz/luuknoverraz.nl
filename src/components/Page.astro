@@ -15,6 +15,8 @@ const t = copy[lang];
 const ext = { target: '_blank', rel: 'noopener' };
 const hasWork = projectSlugs.length > 0;
 const posterWidths = (w: number) => [480, 854, 1280].filter((x) => x < w).concat(w);
+// Top image of a project page: a large screenshot when there is one, else the cover.
+const hero = project ? (media[project].hero ?? media[project].poster) : undefined;
 ---
 
 <Base lang={lang} project={project}>
@@ -167,14 +169,19 @@ const posterWidths = (w: number) => [480, 854, 1280].filter((x) => x < w).concat
           )}
         </dl>
         <div
-          class:list={['project-media', 'project-media--hero', media[project].poster.width >= 1280 && 'project-media--wide']}
+          class:list={[
+            'project-media',
+            'project-media--hero',
+            hero!.width >= 1000 && 'project-media--wide',
+            hero!.width / hero!.height > 1.7 && 'project-media--16x9',
+          ]}
           data-slug={project}
         >
           <Picture
-            src={media[project].poster}
+            src={hero!}
             formats={['avif', 'webp']}
             fallbackFormat="jpg"
-            widths={posterWidths(media[project].poster.width)}
+            widths={posterWidths(hero!.width)}
             sizes="(max-width: 1100px) 100vw, 64rem"
             alt=""
             loading="eager"
@@ -198,8 +205,8 @@ const posterWidths = (w: number) => [480, 854, 1280].filter((x) => x < w).concat
                     src={img.src}
                     formats={['avif', 'webp']}
                     fallbackFormat={img.src.format === 'png' && img.src.width > 900 ? 'jpg' : img.src.format}
-                    widths={[Math.min(img.src.width, 320), Math.min(img.src.width, 640)].filter((w, j, a) => a.indexOf(w) === j)}
-                    sizes={`${Math.min(img.src.width, 320)}px`}
+                    widths={[Math.min(img.src.width, 420), Math.min(img.src.width, 840)].filter((w, j, a) => a.indexOf(w) === j)}
+                    sizes={`(max-width: 768px) 100vw, ${Math.min(img.src.width, 420)}px`}
                     alt={img.alt[lang]}
                     loading="lazy"
                   />
