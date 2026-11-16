@@ -146,9 +146,14 @@ a:hover {
   padding: 1rem var(--gutter);
 }
 
-.logo img {
-  block-size: 2.75rem;
-  inline-size: auto;
+.logo {
+  color: var(--red);
+
+  svg {
+    display: block;
+    block-size: 2.75rem;
+    inline-size: auto;
+  }
 }
 
 .lang-switch {

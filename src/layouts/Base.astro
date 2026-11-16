@@ -1,8 +1,7 @@
 ---
-import { Picture } from 'astro:assets';
 import '../styles/global.css';
 import { base, copy, social, year, type Lang, type ProjectSlug } from '../content';
-import logo from '../assets/images/logo.png';
+import Logo from '../components/Logo.astro';
 
 interface Props {
   lang: Lang;
@@ -83,7 +82,7 @@ const jsonLd = {
 
     <header class="topbar">
       <a class="logo" href={base(lang)} aria-label="Luuk Noverraz – home">
-        <Picture src={logo} formats={['avif', 'webp']} alt="" draggable="false" loading="eager" />
+        <Logo />
       </a>
       <p class="lang-switch">
         <a href={pathFor('nl')} hreflang="nl" lang="nl" aria-current={!notFound && lang === 'nl' ? 'page' : undefined}>NL</a>{' / '}<a href={pathFor('en')} hreflang="en" lang="en" aria-current={!notFound && lang === 'en' ? 'page' : undefined}>EN</a>
