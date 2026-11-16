@@ -262,8 +262,6 @@ interface EarlierGame {
   year: number;
   engine: string;
   jam?: { name: string; url: string };
-  /** Shown after the facts, e.g. who it was made with. */
-  note?: Record<Lang, string>;
   text: Record<Lang, string>;
 }
 
@@ -285,7 +283,6 @@ export const earlierGames: EarlierGame[] = [
     year: 2024,
     engine: 'Godot',
     jam: { name: 'Mini Jam 150: Magic', url: 'https://itch.io/jam/mini-jam-150-magic' },
-    note: { nl: 'met homhom', en: 'with homhom' },
     text: {
       nl: 'Een platformer waarin je de profetie van de Hero of Light vervult.',
       en: 'A platformer about fulfilling the prophecy of the Hero of Light.',

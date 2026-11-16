@@ -145,10 +145,11 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
                         {g.jam && (
                           <>
                             {' · '}
-                            <a href={g.jam.url} {...ext}>{g.jam.name}</a>
+                            <a href={g.jam.url} {...ext}>
+                              {g.jam.name} <span aria-hidden="true">↗</span>
+                            </a>
                           </>
                         )}
-                        {g.note && ` · ${g.note[lang]}`}
                       </p>
                     </div>
                   </li>
