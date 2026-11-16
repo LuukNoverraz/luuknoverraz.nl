@@ -1,14 +1,20 @@
 // All site copy lives here, once per language. Pages are generated from this at build time,
 // so there is no client-side translation and both languages are real, indexable URLs.
 
-export type Lang = 'nl' | 'en' | 'zh';
-export const langs: Lang[] = ['nl', 'en', 'zh'];
+export type Lang = 'nl' | 'en' | 'de' | 'fr' | 'zh';
+export const langs: Lang[] = ['nl', 'en', 'de', 'fr', 'zh'];
 /** Written by me, and always shown in the top bar. */
 export const mainLangs: Lang[] = ['nl', 'en'];
 /** AI-translated from the two above; offered in the globe menu. */
-export const moreLangs: Lang[] = ['zh'];
+export const moreLangs: Lang[] = ['de', 'fr', 'zh'];
 /** Each language's name, in that language. */
-export const langNames: Record<Lang, string> = { nl: 'Nederlands', en: 'English', zh: '简体中文' };
+export const langNames: Record<Lang, string> = {
+  nl: 'Nederlands',
+  en: 'English',
+  de: 'Deutsch',
+  fr: 'Français',
+  zh: '简体中文',
+};
 
 /** URL prefix per language. Dutch stays at the root so existing links keep working. */
 export const base = (lang: Lang) => (lang === 'nl' ? '/' : `/${lang}/`);
@@ -265,6 +271,204 @@ export const copy: Record<Lang, Copy> = {
       title: 'Earlier games',
     },
   },
+  // German. AI-translated from the English; keep it in step when that changes.
+  de: {
+    htmlLang: 'de',
+    meta: {
+      title: 'Luuk Noverraz',
+      description: 'Luuk Noverraz – Philosophiestudent, Spieleentwickler und Webentwickler aus Amsterdam.',
+      locale: 'de_DE',
+    },
+    nav: { skip: 'Zum Inhalt springen', moreLanguages: 'Weitere Sprachen' },
+    translationNote: 'Diese Seite wurde von einer KI übersetzt und kann Fehler enthalten.',
+    role: 'Philosophiestudent / Spieleentwickler / Webentwickler',
+    location: 'Gegr. 2004, Amsterdam',
+    locationLabel: 'Ort',
+    social: { mail: 'E-Mail senden', linkedin: 'LinkedIn', github: 'GitHub' },
+    back: 'Zurück',
+    projectLabels: { date: 'Zeitraum', role: 'Rolle', tools: 'Werkzeuge', link: 'Spielen' },
+    projects: {
+      'everest-half-full': {
+        name: 'Everest Half Full',
+        slogan: 'Trag ein Glas Wasser auf den Mount Everest',
+        duration: 'September 2026 – heute · in Entwicklung',
+        role: 'Solo-Entwickler',
+        tools: 'Godot 4',
+        paragraphs: [
+          'Ein Berg, ein Glas Wasser, und oben so viel davon übrig wie möglich. Everest Half Full ist ein Kletterspiel in der Ich-Perspektive darüber, etwas Unnötiges an einen unvernünftigen Ort zu bringen.',
+          'Das Schwierige ist die Bewegung. Ein hastiger Schritt, eine harte Landung oder eine Böe auf einem ungeschützten Grat, und das Wasser schwappt über den Rand. Nachfüllen gibt es nicht, und was verschüttet ist, bleibt verschüttet. Ein leeres Glas beendet den Versuch nicht; die Frage ist, wie viel du mit nach oben bringst.',
+          'Die Form des Berges beruht auf Höhendaten der Everest-Region, in einem bewusst schlichten Low-Poly-Stil mit bewegtem Himmel und Wasser, das auf jeden Schritt reagiert. Eine markierte Route gibt es nicht: Vom Basislager aus suchst du dir deinen eigenen Weg nach oben.',
+          'Es ist mein bisher größtes Spiel. Ich entwickle es allein in Godot 4, für den PC, und bereite es gerade auf einen geschlossenen Playtest vor. Ein Veröffentlichungsdatum gibt es noch nicht.',
+        ],
+      },
+      'your-honor-wtf': {
+        name: 'Your Honor, WTF?!',
+        slogan: 'Ein Gerichtssaal-Partyspiel, in dem die Richter KIs sind',
+        duration: 'Juli – August 2025',
+        role: 'Solo: Design, Code, Grafik und Assets',
+        tools: 'Godot, Player2 API',
+        link: 'https://noverraz.itch.io/your-honor-wtf',
+        paragraphs: [
+          'Zwei Spieler stehen sich vor Gericht gegenüber: Einer klagt an, der andere verteidigt, und bis zu vier weitere bilden die Jury. Die Anklagen sind frei erfunden, etwa den Mond gestohlen oder eine Gans beleidigt zu haben. Danach fällt ein KI-Richter das Urteil. Es gibt zehn Richter, jeder mit eigenem Charakter, vom Höhlenmenschen bis zum Baby.',
+          'Ich habe das ganze Spiel selbst gemacht, einschließlich aller Grafiken und Assets, für den Player2 AI NPC Jam im Sommer 2025. Es wurde Fünfter von 46 Einreichungen und gewann 500 Dollar. Die Jury nannte es <q lang="en">a great way to settle arguments IRL</q>.',
+          'Es ist für zwei bis sechs Spieler in einem Raum gedacht und läuft im Browser sowie unter Windows und Linux. Zum Spielen brauchst du die Player2-App.',
+        ],
+      },
+      'gnostic-death-experience': {
+        name: 'Gnostic Death Experience',
+        slogan: 'First-Person-Parkour aus dem Kreislauf der Wiedergeburt',
+        duration: 'Mai 2024 · 4 Tage',
+        role: 'Solo: Spiel, Grafik, Assets und Musik',
+        tools: 'Godot',
+        link: 'https://noverraz.itch.io/gnostic-death-experience',
+        paragraphs: [
+          'Du bist gestorben, und das Licht kommt dich holen. Sprinte, ducke dich und dashe hinaus, bevor es dich einholt und für ein weiteres Leben zurückschickt. Es ist ein First-Person-Parkourspiel, gebaut fürs Speedrunning, in einem Low-Poly-Stil der PlayStation-Ära.',
+          'Ich habe es in vier Tagen für den SpeedJam #5 gemacht, allein, einschließlich aller Grafiken, der 3D-Assets und der Musik. Derzeit arbeite ich an einem Remake für das Web und Discord.',
+        ],
+      },
+      'sheep-keep': {
+        name: 'Sheep Keep',
+        slogan: 'Rette deine Schafe, bevor die Lava kommt',
+        duration: 'Mai 2024 · 2 Tage',
+        role: 'Grafik, 3D-Modelle und Spiellogik, zusammen mit homhom',
+        tools: 'Godot',
+        link: 'https://homhom.itch.io/sheep-keep',
+        paragraphs: [
+          'Du bist Jörgen, ein isländischer Schäfer. Du hütest deine Schafe wie an jedem anderen Tag, als der Boden zu grollen beginnt. Rette so viele Schafe wie möglich, bevor dein Zuhause unter der Lava verschwindet.',
+          'Entstanden in zwei Tagen mit homhom für den Micro Jam 013, mit dem Thema Lava und der Vorgabe, dass die Zeit begrenzt ist. Ich habe die Grafiken und die 3D-Modelle gemacht, und einen großen Teil der Spiellogik haben wir gemeinsam geschrieben. Gebaut in Godot, mit Gedichten von Plutbios.',
+        ],
+      },
+    },
+    education: {
+      title: 'Ausbildung',
+      schools: [
+        { title: 'Philosophie (Bachelor)', org: 'Universität von Amsterdam', date: '2025 - heute' },
+        {
+          title: 'Creative Media and Game Technologies - Game Design (Bachelor)',
+          org: 'Breda University of Applied Sciences',
+          date: '2024 - 2025',
+        },
+        {
+          title: 'Communication and Multimedia Design (Bachelor)',
+          org: 'Hochschule von Amsterdam',
+          date: '2022 - 2023',
+          description: 'Propädeutikum 2023 mit Auszeichnung (cum laude) abgeschlossen.',
+        },
+      ],
+    },
+    footer: { source: 'Quellcode dieser Website auf GitHub' },
+    notFound: {
+      title: 'Seite nicht gefunden',
+      text: 'Diese Seite gibt es nicht (mehr). Vielleicht ist der Link veraltet oder enthält einen Tippfehler.',
+      home: 'Zurück zur Startseite',
+    },
+    card: { mail: 'E-Mail.' },
+    work: { title: 'Arbeiten', view: 'Mehr lesen', play: 'Spielen' },
+    earlier: {
+      title: 'Frühere Spiele',
+    },
+  },
+
+  // French. AI-translated from the English; keep it in step when that changes.
+  fr: {
+    htmlLang: 'fr',
+    meta: {
+      title: 'Luuk Noverraz',
+      description:
+        'Luuk Noverraz – étudiant en philosophie, développeur de jeux et développeur web à Amsterdam.',
+      locale: 'fr_FR',
+    },
+    nav: { skip: 'Aller au contenu', moreLanguages: 'Autres langues' },
+    translationNote: 'Cette page a été traduite par une IA et peut contenir des erreurs.',
+    role: 'Étudiant en philosophie / Développeur de jeux et web',
+    location: 'Fondé en 2004, Amsterdam',
+    locationLabel: 'Lieu',
+    social: { mail: 'Envoyer un e-mail', linkedin: 'LinkedIn', github: 'GitHub' },
+    back: 'Retour',
+    projectLabels: { date: 'Période', role: 'Rôle', tools: 'Outils', link: 'Jouer' },
+    labelSuffix: '\u202f:', // French sets a thin space before a colon
+    projects: {
+      'everest-half-full': {
+        name: 'Everest Half Full',
+        slogan: 'Porter un verre d’eau au sommet de l’Everest',
+        duration: 'septembre 2026 – aujourd’hui · en développement',
+        role: 'Développeur solo',
+        tools: 'Godot 4',
+        paragraphs: [
+          'Une montagne, un verre d’eau et, une fois en haut, le plus d’eau possible encore dedans. Everest Half Full est un jeu d’escalade à la première personne où l’on emmène quelque chose d’inutile dans un endroit déraisonnable.',
+          'Le difficile, c’est de bouger. Un pas trop pressé, une réception brutale ou une rafale sur une arête exposée, et l’eau passe par-dessus le bord. Impossible de remplir le verre, et ce qui est renversé le reste. Un verre vide ne met pas fin à la tentative ; la question est de savoir combien vous en apportez jusqu’en haut.',
+          'La forme de la montagne s’appuie sur les données d’altitude de la région de l’Everest, dans un style low-poly volontairement simple, avec des ciels en mouvement et une eau qui réagit à chaque pas. Aucun itinéraire n’est balisé : depuis le camp de base, à vous de trouver votre chemin.',
+          'C’est mon plus grand jeu à ce jour. Je le développe seul avec Godot 4, pour PC, et je le prépare actuellement pour un test fermé. Il n’y a pas encore de date de sortie.',
+        ],
+      },
+      'your-honor-wtf': {
+        name: 'Your Honor, WTF?!',
+        slogan: 'Un jeu de tribunal entre amis où les juges sont des IA',
+        duration: 'juillet – août 2025',
+        role: 'Solo : design, code, graphismes et assets',
+        tools: 'Godot, Player2 API',
+        link: 'https://noverraz.itch.io/your-honor-wtf',
+        paragraphs: [
+          'Deux joueurs s’affrontent au tribunal : l’un accuse, l’autre défend, et jusqu’à quatre autres forment le jury. Les chefs d’accusation sont inventés, comme avoir volé la lune ou insulté une oie. Un juge IA rend ensuite son verdict. Il y a dix juges, chacun avec son caractère, de l’homme des cavernes au bébé.',
+          'J’ai réalisé tout le jeu moi-même, graphismes et assets compris, pour la Player2 AI NPC Jam à l’été 2025. Il a terminé cinquième sur 46 participants et a remporté 500 dollars. Le jury l’a décrit ainsi : <q lang="en">a great way to settle arguments IRL</q>.',
+          'Il est prévu pour deux à six joueurs dans la même pièce et fonctionne dans le navigateur ainsi que sous Windows et Linux. Il faut l’application Player2 pour jouer.',
+        ],
+      },
+      'gnostic-death-experience': {
+        name: 'Gnostic Death Experience',
+        slogan: 'Du parkour à la première personne pour sortir du cycle des réincarnations',
+        duration: 'mai 2024 · 4 jours',
+        role: 'Solo : jeu, graphismes, assets et musique',
+        tools: 'Godot',
+        link: 'https://noverraz.itch.io/gnostic-death-experience',
+        paragraphs: [
+          'Vous êtes mort, et la lumière vient vous chercher. Courez, accroupissez-vous et foncez vers la sortie avant qu’elle ne vous rattrape et ne vous renvoie pour une autre vie. C’est un jeu de parkour à la première personne conçu pour le speedrun, dans un style low-poly de l’époque PlayStation.',
+          'Je l’ai réalisé en quatre jours pour la SpeedJam #5, seul, y compris tous les graphismes, les assets 3D et la musique. Je travaille actuellement sur un remake pour le web et Discord.',
+        ],
+      },
+      'sheep-keep': {
+        name: 'Sheep Keep',
+        slogan: 'Sauvez vos moutons avant l’arrivée de la lave',
+        duration: 'mai 2024 · 2 jours',
+        role: 'Graphismes, modèles 3D et logique de jeu, avec homhom',
+        tools: 'Godot',
+        link: 'https://homhom.itch.io/sheep-keep',
+        paragraphs: [
+          'Vous êtes Jörgen, un berger islandais. Vous gardez vos moutons comme n’importe quel autre jour, quand le sol se met à gronder. Sauvez autant de moutons que possible avant que votre maison ne disparaisse sous la lave.',
+          'Réalisé en deux jours avec homhom pour la Micro Jam 013, dont le thème était la lave et la contrainte un temps limité. J’ai fait les illustrations et les modèles 3D, et nous avons écrit ensemble une grande partie de la logique de jeu. Conçu avec Godot, avec des poèmes de Plutbios.',
+        ],
+      },
+    },
+    education: {
+      title: 'Formation',
+      schools: [
+        { title: 'Philosophie (licence)', org: 'Université d’Amsterdam', date: '2025 - aujourd’hui' },
+        {
+          title: 'Creative Media and Game Technologies - Game Design (licence)',
+          org: 'Breda University of Applied Sciences',
+          date: '2024 - 2025',
+        },
+        {
+          title: 'Communication and Multimedia Design (licence)',
+          org: 'Haute école d’Amsterdam',
+          date: '2022 - 2023',
+          description: 'Propédeutique obtenue en 2023 avec mention (cum laude).',
+        },
+      ],
+    },
+    footer: { source: 'Code source de ce site sur GitHub' },
+    notFound: {
+      title: 'Page introuvable',
+      text: 'Cette page n’existe pas (ou plus). Le lien est peut-être obsolète ou contient une faute de frappe.',
+      home: 'Retour à l’accueil',
+    },
+    card: { mail: 'E-mail.' },
+    work: { title: 'Travaux', view: 'En savoir plus', play: 'Jouer' },
+    earlier: {
+      title: 'Jeux précédents',
+    },
+  },
+
   // Simplified Chinese. AI-translated from the English; keep it in step when that changes.
   zh: {
     htmlLang: 'zh-Hans',
@@ -386,6 +590,8 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Een game over traplopen, in vijf uur gemaakt.',
       en: 'A game about climbing stairs, made in five hours.',
+      de: 'Ein Spiel übers Treppensteigen, in fünf Stunden gemacht.',
+      fr: 'Un jeu où l’on monte des escaliers, fait en cinq heures.',
       zh: '一款关于爬楼梯的游戏，五小时做完。',
     },
   },
@@ -398,6 +604,8 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Een platformer waarin je de profetie van de Hero of Light vervult.',
       en: 'A platformer about fulfilling the prophecy of the Hero of Light.',
+      de: 'Ein Plattformer, in dem du die Prophezeiung des Hero of Light erfüllst.',
+      fr: 'Un jeu de plateforme où vous accomplissez la prophétie du Hero of Light.',
       zh: '一款平台跳跃游戏，去实现“光之英雄”的预言。',
     },
   },
@@ -410,6 +618,8 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Je wordt wakker en merkt dat er iets ontbreekt…',
       en: 'You wake up to find something’s missing…',
+      de: 'Du wachst auf und merkst, dass etwas fehlt…',
+      fr: 'Vous vous réveillez et il vous manque quelque chose…',
       zh: '你醒来，发现少了点什么……',
     },
   },
@@ -422,6 +632,8 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Je eerste dag als bewaker in een gevangenis waar de gevangenen post-its zijn.',
       en: 'Your first day as a guard in a prison where the inmates are post-it notes.',
+      de: 'Dein erster Tag als Wärter in einem Gefängnis, dessen Insassen Post-its sind.',
+      fr: 'Votre premier jour comme gardien dans une prison dont les détenus sont des Post-it.',
       zh: '你第一天上班，在一座囚犯全是便利贴的监狱里当狱警。',
     },
   },
@@ -433,6 +645,8 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Een korte horrorgame in de wereld van de SCP Foundation, in één week gemaakt.',
       en: 'A short horror game set in the world of the SCP Foundation, made in one week.',
+      de: 'Ein kurzes Horrorspiel in der Welt der SCP Foundation, in einer Woche gemacht.',
+      fr: 'Un court jeu d’horreur dans l’univers de la Fondation SCP, fait en une semaine.',
       zh: '一款以 SCP 基金会世界为背景的短篇恐怖游戏，一周做完。',
     },
   },
@@ -445,6 +659,8 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Een komische detective-visual novel met dobbelstenen in de hoofdrol.',
       en: 'A comedy detective visual novel with dice in the leading roles.',
+      de: 'Eine komödiantische Detektiv-Visual-Novel mit Würfeln in den Hauptrollen.',
+      fr: 'Un visual novel policier et comique avec des dés dans les rôles principaux.',
       zh: '一部由骰子担纲主演的喜剧侦探视觉小说。',
     },
   },
@@ -457,6 +673,8 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Breek de pijlen die op je afkomen en loop door.',
       en: 'Break the arrows flying at you and keep walking.',
+      de: 'Zerbrich die Pfeile, die auf dich zufliegen, und geh weiter.',
+      fr: 'Brisez les flèches qui volent vers vous et continuez à marcher.',
       zh: '击碎朝你飞来的箭，继续往前走。',
     },
   },
@@ -468,6 +686,8 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Een stealth-prototype waarin je langs je vijanden moet sluipen.',
       en: 'A stealth prototype about slipping past your enemies.',
+      de: 'Ein Stealth-Prototyp, in dem du an deinen Gegnern vorbeischleichst.',
+      fr: 'Un prototype d’infiltration où il faut se faufiler entre les ennemis.',
       zh: '一个潜行原型，目标是悄悄绕过敌人。',
     },
   },
@@ -479,6 +699,8 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Een simulatie van wezentjes op een willekeurig gegenereerd eiland.',
       en: 'A simulation of little creatures on a randomly generated island.',
+      de: 'Eine Simulation kleiner Wesen auf einer zufällig generierten Insel.',
+      fr: 'Une simulation de petites créatures sur une île générée aléatoirement.',
       zh: '在随机生成的小岛上模拟一群小生物的生活。',
     },
   },
@@ -490,6 +712,8 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Een mobiele game voor twee spelers die biljart met sumo mixt.',
       en: 'A two-player mobile game that mixes billiards with sumo.',
+      de: 'Ein Handyspiel für zwei, das Billard mit Sumo mischt.',
+      fr: 'Un jeu mobile à deux qui mélange billard et sumo.',
       zh: '一款把台球和相扑混在一起的双人手机游戏。',
     },
   },
