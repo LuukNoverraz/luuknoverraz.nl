@@ -116,6 +116,22 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
               );
             })}
           </ul>
+          <details class="earlier">
+            <summary>{t.earlier.title}</summary>
+            <ul>
+              {t.earlier.games.map((g) => (
+                <li>
+                  <h3>
+                    <a href={g.link} {...ext}>
+                      {g.name} <span aria-hidden="true">↗</span>
+                    </a>
+                  </h3>
+                  <p>{g.text}</p>
+                  <p class="project-facts">{g.facts}</p>
+                </li>
+              ))}
+            </ul>
+          </details>
         </section>
 
         )}

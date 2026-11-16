@@ -467,6 +467,62 @@ a:hover {
   letter-spacing: 0.08em;
 }
 
+/* Older games: a plain text list behind a toggle, so the four above stay the focus. */
+.earlier {
+  margin-block-start: clamp(2.5rem, 6vw, 4.5rem);
+  padding-block-start: 1.25rem;
+  border-block-start: 1px solid var(--line);
+
+  summary {
+    display: inline-block; /* drops the default triangle */
+    padding-block: 0.4rem;
+    font-family: var(--serif);
+    letter-spacing: 0.08em;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: '↓';
+      display: inline-block;
+      margin-inline-start: 0.5em;
+    }
+
+    &:hover {
+      color: var(--red);
+    }
+  }
+
+  &[open] summary::after {
+    rotate: 180deg;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    gap: 1.75rem clamp(1.25rem, 4vw, 3rem);
+    margin-block-start: 1.5rem;
+  }
+
+  h3 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: normal;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    margin-block-start: 0.3rem;
+  }
+}
+
 /* ==========================================================================
    Project page
    ========================================================================== */

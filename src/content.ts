@@ -56,6 +56,8 @@ interface Copy {
   /** Business card on the home page, and the section below it. */
   card: { mail: string };
   work: { title: string; view: string; play: string };
+  /** Older games, listed as text behind a "more" toggle under the projects. */
+  earlier: { title: string; games: { name: string; text: string; facts: string; link: string }[] };
 }
 
 export const copy: Record<Lang, Copy> = {
@@ -150,6 +152,35 @@ export const copy: Record<Lang, Copy> = {
     },
     card: { mail: 'E-mail.' },
     work: { title: 'Werk', view: 'Lees meer', play: 'Speel' },
+    earlier: {
+      title: 'Eerdere games',
+      games: [
+        {
+          name: 'How Fast Can You Climb the Stairs?',
+          text: 'Een game over traplopen, in vijf uur gemaakt.',
+          facts: '2024 · The Weirdcore Jam',
+          link: 'https://noverraz.itch.io/hfcycts',
+        },
+        {
+          name: 'Hero of Light',
+          text: 'Een platformer waarin je de profetie van de Hero of Light vervult.',
+          facts: '2024 · Mini Jam 150 · met homhom',
+          link: 'https://noverraz.itch.io/hero-of-light',
+        },
+        {
+          name: 'Post-it Prison',
+          text: 'Je eerste dag als bewaker in een gevangenis waar de gevangenen post-its zijn.',
+          facts: '2023 · gamejam',
+          link: 'https://noverraz.itch.io/post-it-prison',
+        },
+        {
+          name: 'scp at home',
+          text: 'Een korte horrorgame in de wereld van de SCP Foundation, in één week gemaakt.',
+          facts: '2023',
+          link: 'https://noverraz.itch.io/scp-at-home',
+        },
+      ],
+    },
   },
 
   en: {
@@ -243,6 +274,35 @@ export const copy: Record<Lang, Copy> = {
     },
     card: { mail: 'E-mail.' },
     work: { title: 'Work', view: 'Read more', play: 'Play' },
+    earlier: {
+      title: 'Earlier games',
+      games: [
+        {
+          name: 'How Fast Can You Climb the Stairs?',
+          text: 'A game about climbing stairs, made in five hours.',
+          facts: '2024 · The Weirdcore Jam',
+          link: 'https://noverraz.itch.io/hfcycts',
+        },
+        {
+          name: 'Hero of Light',
+          text: 'A platformer about fulfilling the prophecy of the Hero of Light.',
+          facts: '2024 · Mini Jam 150 · with homhom',
+          link: 'https://noverraz.itch.io/hero-of-light',
+        },
+        {
+          name: 'Post-it Prison',
+          text: 'Your first day as a guard in a prison where the inmates are post-it notes.',
+          facts: '2023 · game jam',
+          link: 'https://noverraz.itch.io/post-it-prison',
+        },
+        {
+          name: 'scp at home',
+          text: 'A short horror game set in the world of the SCP Foundation, made in one week.',
+          facts: '2023',
+          link: 'https://noverraz.itch.io/scp-at-home',
+        },
+      ],
+    },
   },
 };
 
