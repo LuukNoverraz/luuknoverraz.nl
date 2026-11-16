@@ -488,10 +488,17 @@ a:hover {
       display: none;
     }
 
+    /* A chevron drawn from two borders: points down when closed, up when open. */
     &::after {
-      content: '↓';
+      content: '';
       display: inline-block;
-      margin-inline-start: 0.5em;
+      inline-size: 0.45em;
+      block-size: 0.45em;
+      margin-inline-start: 0.7em;
+      border: solid currentColor;
+      border-width: 0 1.5px 1.5px 0;
+      rotate: 45deg;
+      translate: 0 -0.25em;
     }
 
     &:hover {
@@ -500,7 +507,8 @@ a:hover {
   }
 
   &[open] summary::after {
-    rotate: 180deg;
+    rotate: 225deg;
+    translate: 0 0.05em;
   }
 
   ul {
