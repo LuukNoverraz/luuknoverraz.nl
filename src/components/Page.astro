@@ -88,18 +88,25 @@ const posterWidths = (w: number) => [480, 854, 1280].filter((x) => x < w).concat
                       alt=""
                       loading="lazy"
                     />
-                    <video data-loop muted loop playsinline preload="none">
-                      <source src={`/videos/${m.video}.webm`} type="video/webm" />
-                      <source src={`/videos/${m.video}.mp4`} type="video/mp4" />
-                    </video>
+                    {m.video && (
+                      <video data-loop muted loop playsinline preload="none">
+                        <source src={`/videos/${m.video}.webm`} type="video/webm" />
+                        <source src={`/videos/${m.video}.mp4`} type="video/mp4" />
+                      </video>
+                    )}
                   </a>
                   <div class="project-text">
                     <h3><a href={href}>{p.name}</a></h3>
                     <p class="project-slogan">{p.slogan}</p>
-                    <p class="project-facts">{p.duration} · {p.tools}</p>
-                    <a class="project-more" href={href} aria-label={`${t.work.view}: ${p.name}`}>
-                      {t.work.view} <span aria-hidden="true">→</span>
-                    </a>
+                    <p class="project-facts">{p.duration} · {p.role}</p>
+                    <p class="project-links">
+                      <a href={p.link} {...ext} aria-label={`${t.work.play}: ${p.name}`}>
+                        {t.work.play} <span aria-hidden="true">↗</span>
+                      </a>
+                      <a href={href} aria-label={`${t.work.view}: ${p.name}`}>
+                        {t.work.view} <span aria-hidden="true">→</span>
+                      </a>
+                    </p>
                   </div>
                 </li>
               );
@@ -141,12 +148,18 @@ const posterWidths = (w: number) => [480, 854, 1280].filter((x) => x < w).concat
             <dd>{t.projects[project].duration}</dd>
           </div>
           <div>
+            <dt>{t.projectLabels.role}.</dt>
+            <dd>{t.projects[project].role}</dd>
+          </div>
+          <div>
             <dt>{t.projectLabels.tools}.</dt>
             <dd>{t.projects[project].tools}</dd>
           </div>
           <div>
             <dt>{t.projectLabels.link}.</dt>
-            <dd><a href={t.projects[project].link} {...ext}>{t.projects[project].link}</a></dd>
+            <dd>
+              <a href={t.projects[project].link} {...ext}>{t.projects[project].link.replace('https://', '')}</a>
+            </dd>
           </div>
         </dl>
         <div class="project-media project-media--hero" data-slug={project}>
@@ -160,10 +173,12 @@ const posterWidths = (w: number) => [480, 854, 1280].filter((x) => x < w).concat
             loading="eager"
             fetchpriority="high"
           />
-          <video data-loop muted loop playsinline preload="none" aria-hidden="true">
-            <source src={`/videos/${media[project].video}.webm`} type="video/webm" />
-            <source src={`/videos/${media[project].video}.mp4`} type="video/mp4" />
-          </video>
+          {media[project].video && (
+            <video data-loop muted loop playsinline preload="none" aria-hidden="true">
+              <source src={`/videos/${media[project].video}.webm`} type="video/webm" />
+              <source src={`/videos/${media[project].video}.mp4`} type="video/mp4" />
+            </video>
+          )}
         </div>
         <div class="project-body">
           {t.projects[project].paragraphs.map((text, i) => {

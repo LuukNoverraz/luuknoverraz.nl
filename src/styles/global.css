@@ -407,7 +407,7 @@ a:hover {
 .project-media {
   position: relative;
   display: block;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 63 / 50; /* itch.io cover size, so covers show uncropped */
   overflow: hidden;
   background: var(--line);
   box-shadow: 0 1px 2px rgb(22 18 20 / 0.08);
@@ -422,14 +422,14 @@ a:hover {
     object-fit: cover;
   }
 
-  &[data-slug='barbasim'] {
-    view-transition-name: media-barbasim;
+  &[data-slug='your-honor-wtf'] {
+    view-transition-name: media-your-honor-wtf;
   }
-  &[data-slug='de-streng'] {
-    view-transition-name: media-de-streng;
+  &[data-slug='gnostic-death-experience'] {
+    view-transition-name: media-gnostic-death-experience;
   }
-  &[data-slug='magmaroni'] {
-    view-transition-name: media-magmaroni;
+  &[data-slug='sheep-keep'] {
+    view-transition-name: media-sheep-keep;
   }
 }
 
@@ -455,8 +455,10 @@ a:hover {
   font-size: 0.875rem;
 }
 
-.project-more {
-  display: inline-block;
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.75rem;
   margin-block-start: 1rem;
   font-family: var(--serif);
   letter-spacing: 0.08em;
@@ -497,8 +499,9 @@ a:hover {
   }
 }
 
+/* Covers are 630px wide; don't stretch them past that. */
 .project-media--hero {
-  aspect-ratio: 16 / 9;
+  max-inline-size: 39.375rem;
 }
 
 .project-body {
