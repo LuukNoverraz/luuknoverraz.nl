@@ -8,9 +8,11 @@ interface Props {
   lang: Lang;
   /** Set on project pages. */
   project?: ProjectSlug;
+  /** Set on the 404 page: no canonical, no alternates, not indexed. */
+  notFound?: boolean;
 }
 
-const { lang, project } = Astro.props;
+const { lang, project, notFound } = Astro.props;
 const t = copy[lang];
 const site = Astro.site!;
 
@@ -20,8 +22,10 @@ const canonical = alternates[lang];
 const title = project ? `${t.projects[project].name} – ${t.meta.title}` : t.meta.title;
 const description = project ? t.projects[project].paragraphs[0].replace(/<[^>]+>/g, '') : t.meta.description;
 
-// On the home page "Index" scrolls to the top; on a project page it goes back home.
-const indexHref = project ? base(lang) : '#top';
+// On the home page "Index" scrolls to the top; elsewhere it goes back home.
+const indexHref = project || notFound ? base(lang) : '#top';
+// Every page except 404 has the about section on it.
+const aboutHref = notFound ? `${base(lang)}#about` : '#about';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -41,10 +45,18 @@ const jsonLd = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="nl" href={alternates.nl} />
-    <link rel="alternate" hreflang="en" href={alternates.en} />
-    <link rel="alternate" hreflang="x-default" href={alternates.nl} />
+    {
+      notFound ? (
+        <meta name="robots" content="noindex" />
+      ) : (
+        <>
+          <link rel="canonical" href={canonical} />
+          <link rel="alternate" hreflang="nl" href={alternates.nl} />
+          <link rel="alternate" hreflang="en" href={alternates.en} />
+          <link rel="alternate" hreflang="x-default" href={alternates.nl} />
+        </>
+      )
+    }
 
     <link rel="preload" href="/fonts/Benzin-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/Benzin-Regular.woff2" as="font" type="font/woff2" crossorigin />
@@ -67,7 +79,7 @@ const jsonLd = {
     <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
     <meta name="theme-color" content="#ffffff" />
 
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    {!notFound && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
 
   <body>
@@ -77,7 +89,7 @@ const jsonLd = {
       <nav aria-label={t.nav.label}>
         <ul>
           <li><a href={indexHref} data-nav="index">{t.nav.index}</a></li>
-          <li><a href="#about" data-nav="about">{t.nav.about}</a></li>
+          <li><a href={aboutHref} data-nav="about">{t.nav.about}</a></li>
         </ul>
       </nav>
 
@@ -86,7 +98,7 @@ const jsonLd = {
       </a>
 
       <p class="lang-switch">
-        <a href={pathFor('nl')} hreflang="nl" lang="nl" aria-current={lang === 'nl' ? 'page' : undefined}>NL</a>{' / '}<a href={pathFor('en')} hreflang="en" lang="en" aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
+        <a href={pathFor('nl')} hreflang="nl" lang="nl" aria-current={!notFound && lang === 'nl' ? 'page' : undefined}>NL</a>{' / '}<a href={pathFor('en')} hreflang="en" lang="en" aria-current={!notFound && lang === 'en' ? 'page' : undefined}>EN</a>
       </p>
     </header>
 

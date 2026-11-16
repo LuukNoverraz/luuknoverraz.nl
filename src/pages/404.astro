@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import { base, copy, langs } from '../content';
+
+// GitHub Pages serves this file for any unknown path, so it cannot know which
+// language the visitor came for: it shows both.
+---
+
+<Base lang="nl" notFound>
+  <section class="not-found">
+    <h1>404</h1>
+    {
+      langs.map((l) => (
+        <div lang={l}>
+          <h2>{copy[l].notFound.title}</h2>
+          <p>{copy[l].notFound.text}</p>
+          <p><a href={base(l)}>{copy[l].notFound.home}</a></p>
+        </div>
+      ))
+    }
+  </section>
+</Base>

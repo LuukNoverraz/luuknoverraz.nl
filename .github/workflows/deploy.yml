@@ -3,9 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  # Rebuild on 1 January (© year) and 1 October (study year in the about text).
+  # Rebuild on 1 January so the © year in the footer stays current.
   schedule:
-    - cron: '0 4 1 1,10 *'
+    - cron: '0 4 1 1 *'
   workflow_dispatch:
 
 permissions:

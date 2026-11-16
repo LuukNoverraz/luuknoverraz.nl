@@ -41,6 +41,10 @@ Routes: `/` (NL), `/en/`, and one page per project (`/barbasim/`, `/en/barbasim/
   ffmpeg -i out.mp4 -frames:v 1 poster.png
   ```
 
+## CV
+
+The pages carry a print stylesheet: **Ctrl/Cmd+P → Save as PDF** on `/` or `/en/` gives a clean two-page CV (name, contact, about, experience, education, skills) without the site chrome or the video cards. There is no separate PDF file to keep in sync.
+
 ## Deploy
 
-Every push to `main` builds and deploys through `.github/workflows/deploy.yml`. In the repo, **Settings → Pages → Source** must be set to **GitHub Actions**. The workflow also rebuilds on 1 January and 1 October so the © year and study year stay current.
+Every push to `main` builds and deploys through `.github/workflows/deploy.yml`. In the repo, **Settings → Pages → Source** must be set to **GitHub Actions**. The workflow also rebuilds on 1 January so the © year stays current.

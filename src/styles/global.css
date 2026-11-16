@@ -616,6 +616,68 @@ main {
 }
 
 /* ==========================================================================
+   404
+   ========================================================================== */
+.not-found {
+  color: var(--white);
+
+  h1 {
+    margin: 0 0 0.5em 1vw;
+    color: var(--red);
+    font-family: benzinExtraBold, sans-serif;
+    font-size: var(--fs-name);
+    font-weight: normal;
+    transform: skew(-19.4deg);
+  }
+
+  h2 {
+    margin: 0 0 0.5em;
+    font-family: benzinRegular, sans-serif;
+    font-size: var(--fs-lg);
+    font-weight: normal;
+  }
+
+  p {
+    margin: 0;
+    max-inline-size: 36ch;
+    font-family: neueHaasLight, sans-serif;
+    font-size: var(--fs-body);
+    line-height: 1.9;
+  }
+
+  a {
+    color: var(--red-on-dark);
+  }
+
+  > div + div {
+    margin-block-start: 2.5em;
+  }
+}
+
+@media (min-width: 769px) {
+  .not-found > div {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .not-found {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 24em));
+    grid-template-rows: auto auto;
+    gap: 0 3em;
+    align-content: start;
+
+    h1 {
+      grid-column: 1 / -1;
+    }
+
+    > div + div {
+      margin-block-start: 0;
+    }
+  }
+}
+
+/* ==========================================================================
    Tablet
    ========================================================================== */
 @media (max-width: 1100px) {
@@ -755,5 +817,150 @@ main {
     img {
       block-size: 22px;
     }
+  }
+}
+
+/* ==========================================================================
+   Print – the page doubles as a printable CV (Ctrl/Cmd+P -> Save as PDF)
+   ========================================================================== */
+@media print {
+  :root {
+    --header-h: 0;
+  }
+
+  body,
+  main,
+  .site-footer {
+    background: var(--white);
+    color: var(--black);
+  }
+
+  main {
+    min-block-size: 0;
+    padding: 0;
+  }
+
+  /* Site chrome and the video cards are not part of a CV. */
+  .skip-link,
+  .site-header,
+  .showcase,
+  .site-footer a {
+    display: none;
+  }
+
+  .intro {
+    color: var(--black);
+
+    h1 {
+      margin-inline-start: 0;
+    }
+
+    .subtitle {
+      max-inline-size: none;
+    }
+  }
+
+  .contact img {
+    /* icons are solid dark shapes; keep them legible on white */
+    filter: none;
+  }
+
+  .about {
+    margin-block-start: 1.5em;
+    padding: 0;
+
+    hr {
+      margin: 1.2em 0;
+    }
+
+    h2 {
+      margin-block: 0 0.6em;
+    }
+
+    h3 {
+      margin-block: 0.8em 0.3em;
+    }
+  }
+
+  /* Tighter leading than on screen so the CV fits two sheets. */
+  .intro .subtitle,
+  .about-text,
+  .entry-title,
+  .entry-description,
+  .spoken,
+  .project-detail {
+    line-height: 1.45;
+  }
+
+  .about-text p + p {
+    margin-block-start: 0.8em;
+  }
+
+  .entry-description {
+    margin-block-end: 0.6em;
+  }
+
+  .intro .role {
+    margin-block-start: 0.4em;
+  }
+
+  .contact {
+    margin-block-end: 0;
+  }
+
+  .about-primary {
+    grid-template-columns: 1fr 9em;
+    gap: 1.5em;
+  }
+
+  .about-primary > picture {
+    order: 0;
+  }
+
+  .about-picture {
+    inline-size: 9em;
+    margin: 0;
+  }
+
+  /* Single column: flex columns paginate badly and leave half a blank sheet. */
+  .cv {
+    display: block;
+  }
+
+  .experience,
+  .skills {
+    inline-size: 100%;
+  }
+
+  .skills {
+    margin-block-start: 1.2em;
+  }
+
+  .tool-grid,
+  .spoken {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1em;
+  }
+
+  .tool-grid li {
+    margin-block-end: 0.35em;
+  }
+
+  /* Never split an entry or a heading across two sheets. */
+  .entry,
+  .tool-grid li,
+  .spoken li,
+  .project-row {
+    break-inside: avoid;
+  }
+
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
   }
 }
