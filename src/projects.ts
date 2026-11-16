@@ -19,6 +19,7 @@ import skShip from './assets/images/sheep-keep/ship.jpg';
 import skVolcano from './assets/images/sheep-keep/volcano.jpg';
 import tHfcycts from './assets/thumbs/hfcycts.jpg';
 import tHeroOfLight from './assets/thumbs/hero-of-light.jpg';
+import tInvasiveProcedure from './assets/thumbs/invasive-procedure.jpg';
 import tPostItPrison from './assets/thumbs/post-it-prison.jpg';
 import tScpAtHome from './assets/thumbs/scp-at-home.jpg';
 import tDicetective from './assets/thumbs/dicetective.jpg';
@@ -139,6 +140,7 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
 export const earlierThumbs: Record<string, ImageMetadata> = {
   'hfcycts': tHfcycts,
   'hero-of-light': tHeroOfLight,
+  'invasive-procedure': tInvasiveProcedure,
   'post-it-prison': tPostItPrison,
   'scp-at-home': tScpAtHome,
   'dicetective': tDicetective,

@@ -289,6 +289,17 @@ export const earlierGames: EarlierGame[] = [
     },
   },
   {
+    name: 'Invasive Procedure',
+    link: 'https://homhom.itch.io/invasive-procedure',
+    year: 2023,
+    engine: 'Godot',
+    jam: { name: 'Ludum Dare 54', url: 'https://ludumdare.com/schedule/54/' },
+    text: {
+      nl: 'Je wordt wakker en merkt dat er iets ontbreekt…',
+      en: 'You wake up to find something’s missing…',
+    },
+  },
+  {
     name: 'Post-it Prison',
     link: 'https://noverraz.itch.io/post-it-prison',
     year: 2023,
