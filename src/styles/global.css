@@ -6,7 +6,7 @@
   --ink: #161214;
   --muted: #645d61;
   --paper: #efede8;
-  --card: #ffffff;
+  --card: #fbfaf6;
   --line: #d6d2cb;
 
   --serif: shipporiMincho, 'Hiragino Mincho ProN', 'Yu Mincho', Georgia, serif;
@@ -180,21 +180,62 @@ a:hover {
   place-items: center;
   min-block-size: 100svh;
   padding: 5rem var(--gutter);
+  perspective: 90rem;
 }
 
+/* --rx / --ry (degrees) and --lx / --ly (where the light falls) are set by the
+   tilt script in Page.astro while the pointer moves; at rest the card lies flat. */
 .card {
+  position: relative;
   container-type: inline-size;
   /* 91 × 55 mm, the standard Japanese business card */
   aspect-ratio: 91 / 55;
   inline-size: min(100%, 60rem, (100svh - 10rem) * 91 / 55);
+  border-radius: 2px;
   background: var(--card);
+  /* cut edge catching the light, then a contact shadow, then the soft one that
+     slides away from the raised side */
   box-shadow:
-    0 1px 2px rgb(22 18 20 / 0.08),
-    0 1.5rem 3.5rem -1rem rgb(22 18 20 / 0.18);
+    inset 0 1px 0 rgb(255 255 255 / 0.9),
+    inset 0 -1px 0 rgb(22 18 20 / 0.07),
+    0 1px 1px rgb(22 18 20 / 0.12),
+    calc(var(--ry, 0) * -1.5px) calc(1.5rem + var(--rx, 0) * 1.5px) 3.5rem -1rem rgb(22 18 20 / 0.2);
+  transform: rotateX(calc(var(--rx, 0) * 1deg)) rotateY(calc(var(--ry, 0) * 1deg));
   view-transition-name: card;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  /* Paper: fine grain plus a faint cloudy unevenness, as inline SVG noise. */
+  &::before {
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .09 0 0 0 0 .07 0 0 0 0 .08 0 0 0 .55 -.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.03 .05' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .09 0 0 0 0 .07 0 0 0 0 .08 0 0 0 .2 -.09'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+    opacity: 0.55;
+  }
+
+  /* Light: brighter where it falls, a touch of shade at the far corner. */
+  &::after {
+    background: radial-gradient(
+      130% 130% at var(--lx, 32%) var(--ly, 12%),
+      rgb(255 255 255 / 0.55),
+      transparent 45%,
+      rgb(22 18 20 / 0.045)
+    );
+  }
 }
 
 .card-inner {
+  position: relative;
+  z-index: 1;
+  /* a hair of highlight under the ink, as if pressed into the paper */
+  text-shadow: 0 max(0.5px, 0.06cqw) 0 rgb(255 255 255 / 0.85);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -583,6 +624,12 @@ a:hover {
     inline-size: 100%;
     box-shadow: none;
     border: 1px solid var(--line);
+    transform: none;
+
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 
   .section {

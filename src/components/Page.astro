@@ -176,3 +176,46 @@ const posterWidths = (w: number) => [480, 854, 1280].filter((x) => x < w).concat
     )
   }
 </Base>
+
+<script>
+  // The card leans a few degrees towards the pointer, and the light on it follows.
+  // Mouse only, and never with reduced motion; without this script it just lies flat.
+  const hero = document.querySelector<HTMLElement>('.hero');
+  const card = hero?.querySelector<HTMLElement>('.card');
+  const canTilt =
+    matchMedia('(hover: hover) and (pointer: fine)').matches &&
+    !matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (hero && card && canTilt) {
+    const maxDeg = 5;
+    let targetX = 0;
+    let targetY = 0;
+    let x = 0;
+    let y = 0;
+    let frame = 0;
+
+    const step = () => {
+      x += (targetX - x) * 0.1;
+      y += (targetY - y) * 0.1;
+      const settled = Math.abs(targetX - x) < 0.002 && Math.abs(targetY - y) < 0.002;
+      if (settled) [x, y] = [targetX, targetY];
+      card.style.setProperty('--ry', (x * maxDeg).toFixed(2));
+      card.style.setProperty('--rx', (-y * maxDeg).toFixed(2));
+      card.style.setProperty('--lx', `${(50 + x * 35).toFixed(1)}%`);
+      card.style.setProperty('--ly', `${(50 + y * 35).toFixed(1)}%`);
+      frame = settled ? 0 : requestAnimationFrame(step);
+    };
+    const moveTo = (nx: number, ny: number) => {
+      targetX = Math.max(-1, Math.min(1, nx));
+      targetY = Math.max(-1, Math.min(1, ny));
+      frame ||= requestAnimationFrame(step);
+    };
+
+    hero.addEventListener('pointermove', (e) => {
+      // measured from the middle of the hero, which is where the card sits
+      const r = hero.getBoundingClientRect();
+      moveTo((e.clientX - r.left) / r.width * 2 - 1, (e.clientY - r.top) / r.height * 2 - 1);
+    });
+    hero.addEventListener('pointerleave', () => moveTo(0, 0));
+  }
+</script>
