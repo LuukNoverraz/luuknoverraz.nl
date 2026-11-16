@@ -49,6 +49,8 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'Een gehandschoende hand houdt een vol glas water vast in een groen dal, met besneeuwde bergen in de verte.',
           en: 'A gloved hand holds a full glass of water in a green valley, with snowy mountains in the distance.',
+          es: 'Una mano enguantada sostiene un vaso lleno de agua en un valle verde, con montañas nevadas a lo lejos.',
+          ja: '緑の谷で、手袋をした手が水のいっぱい入ったコップを持っている。遠くに雪山が見える。',
           de: 'Eine behandschuhte Hand hält ein volles Glas Wasser in einem grünen Tal, in der Ferne verschneite Berge.',
           fr: 'Une main gantée tient un verre d’eau plein dans une vallée verte, avec des montagnes enneigées au loin.',
           zh: '一只戴着手套的手在绿色山谷中端着一满杯水，远处是雪山。',
@@ -59,6 +61,8 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'Het glas water bij nacht, hoog boven een zee van bergtoppen onder een sterrenhemel.',
           en: 'The glass of water at night, high above a sea of peaks under a starry sky.',
+          es: 'El vaso de agua de noche, muy por encima de un mar de cumbres bajo un cielo estrellado.',
+          ja: '夜、星空の下に連なる峰々のはるか上で持たれた水のコップ。',
           de: 'Das Glas Wasser bei Nacht, hoch über einem Meer von Gipfeln unter dem Sternenhimmel.',
           fr: 'Le verre d’eau de nuit, très haut au-dessus d’une mer de sommets sous un ciel étoilé.',
           zh: '夜色中的那杯水，高悬于星空下的群峰之上。',
@@ -69,6 +73,8 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'Het glas water op een rotsige vlakte bij twee tenten van Base Camp, tussen besneeuwde hellingen.',
           en: 'The glass of water on a rocky plain near two Base Camp tents, between snowy slopes.',
+          es: 'El vaso de agua en una llanura rocosa junto a dos tiendas del campo base, entre laderas nevadas.',
+          ja: '雪の斜面に囲まれた岩場、ベースキャンプの2張りのテントの近くにある水のコップ。',
           de: 'Das Glas Wasser auf einer felsigen Ebene bei zwei Zelten des Basislagers, zwischen verschneiten Hängen.',
           fr: 'Le verre d’eau sur un plateau rocheux près de deux tentes du camp de base, entre des pentes enneigées.',
           zh: '那杯水在大本营两顶帐篷附近的碎石平地上，四周是积雪的山坡。',
@@ -85,6 +91,8 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'Een speler typt een aanklacht tegen een andere speler terwijl de tijd loopt.',
           en: 'A player types an accusation against another player while the timer runs.',
+          es: 'Un jugador escribe una acusación contra otro jugador mientras corre el tiempo.',
+          ja: 'タイマーが進む中、プレイヤーが別のプレイヤーへの告発文を入力している。',
           de: 'Ein Spieler tippt eine Anklage gegen einen anderen Spieler, während die Zeit läuft.',
           fr: 'Un joueur tape une accusation contre un autre joueur pendant que le chrono tourne.',
           zh: '一名玩家在倒计时中输入对另一名玩家的指控。',
@@ -95,6 +103,8 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'Een rechter met piratenhoed doet in piratentaal uitspraak tussen de twee spelers.',
           en: 'A judge in a pirate hat delivers a verdict in pirate speak between the two players.',
+          es: 'Un juez con sombrero pirata dicta sentencia en jerga pirata entre los dos jugadores.',
+          ja: '海賊帽をかぶった裁判官が、2人のプレイヤーの間で海賊口調の判決を言い渡している。',
           de: 'Ein Richter mit Piratenhut verkündet zwischen den beiden Spielern ein Urteil in Piratensprache.',
           fr: 'Un juge coiffé d’un chapeau de pirate rend son verdict en parler pirate entre les deux joueurs.',
           zh: '一位戴海盗帽的法官在两名玩家之间用海盗腔宣读判决。',
@@ -105,6 +115,8 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'Het keuzescherm waar vijf spelers elk een personage kiezen.',
           en: 'The selection screen where five players each pick a character.',
+          es: 'La pantalla de selección donde cinco jugadores eligen cada uno un personaje.',
+          ja: '5人のプレイヤーがそれぞれキャラクターを選ぶ選択画面。',
           de: 'Der Auswahlbildschirm, auf dem fünf Spieler je eine Figur wählen.',
           fr: 'L’écran de sélection où cinq joueurs choisissent chacun un personnage.',
           zh: '五名玩家各自挑选角色的选择界面。',
@@ -121,6 +133,8 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'Een witte pilaar en donkere blokken boven een witte vlakte, met zwevende ogen op de achtergrond.',
           en: 'A white pillar and dark blocks above a white plain, with floating eyes in the background.',
+          es: 'Un pilar blanco y bloques oscuros sobre una llanura blanca, con ojos flotando al fondo.',
+          ja: '白い平原の上に立つ白い柱と暗いブロック。背景には目玉が浮かんでいる。',
           de: 'Eine weiße Säule und dunkle Blöcke über einer weißen Ebene, im Hintergrund schwebende Augen.',
           fr: 'Un pilier blanc et des blocs sombres au-dessus d’une plaine blanche, avec des yeux flottants à l’arrière-plan.',
           zh: '白色平原上方的一根白色立柱和几块深色方块，背景中漂浮着眼球。',
@@ -131,6 +145,8 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'Blokken die los in het zwart zweven, gezien vanuit de speler, met de timer bovenin.',
           en: 'Blocks floating loose in the dark, seen from the player, with the timer at the top.',
+          es: 'Bloques flotando sueltos en la oscuridad, vistos desde el jugador, con el cronómetro arriba.',
+          ja: 'プレイヤー視点で見た、暗闇に浮かぶブロック。上部にタイマーがある。',
           de: 'Blöcke, die frei im Dunkeln schweben, aus Sicht des Spielers, oben der Timer.',
           fr: 'Des blocs flottant dans le noir, vus par le joueur, avec le chrono en haut.',
           zh: '从玩家视角看到的悬浮在黑暗中的方块，顶部是计时器。',
@@ -147,6 +163,8 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'De herder en twee schapen bij een hut in een donker heuvellandschap, met de teller van geredde schapen.',
           en: 'The shepherd and two sheep by a hut in a dark, hilly landscape, with the count of rescued sheep.',
+          es: 'El pastor y dos ovejas junto a una cabaña en un paisaje oscuro de colinas, con el contador de ovejas rescatadas.',
+          ja: '暗い丘陵地の小屋のそばにいる羊飼いと2匹の羊。救出した羊の数が表示されている。',
           de: 'Der Schäfer und zwei Schafe an einer Hütte in einer dunklen Hügellandschaft, dazu der Zähler der geretteten Schafe.',
           fr: 'Le berger et deux moutons près d’une cabane dans un paysage sombre et vallonné, avec le compteur de moutons sauvés.',
           zh: '牧羊人和两只羊站在昏暗丘陵间的小屋旁，画面上有已救出羊只的计数。',
@@ -157,6 +175,8 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'De vulkaan barst uit boven de heuvels.',
           en: 'The volcano erupts above the hills.',
+          es: 'El volcán entra en erupción sobre las colinas.',
+          ja: '丘の上で噴火する火山。',
           de: 'Der Vulkan bricht über den Hügeln aus.',
           fr: 'Le volcan entre en éruption au-dessus des collines.',
           zh: '火山在群山之上喷发。',

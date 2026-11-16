@@ -254,6 +254,14 @@ a:hover {
     neueHaasRoman, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Source Han Sans SC', sans-serif;
 }
 
+/* Japanese: the same idea, with the system's Japanese mincho and gothic faces. */
+:lang(ja) {
+  --serif: shipporiMincho, 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif CJK JP', 'Source Han Serif JP', serif;
+  --sans:
+    neueHaasRoman, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, 'Noto Sans CJK JP', 'Source Han Sans JP',
+    sans-serif;
+}
+
 /* ==========================================================================
    The business card
    Everything inside is sized in cqw (1% of the card's width), so the card
@@ -409,9 +417,10 @@ a:hover {
   text-decoration: none;
 }
 
-/* Chinese has no capitals to set small, and its characters are denser: give the
-   role line more size and air so it stays readable. */
-:lang(zh) .card-role {
+/* Chinese and Japanese have no capitals to set small, and their characters are
+   denser: give the role line more size and air so it stays readable. */
+:lang(zh) .card-role,
+:lang(ja) .card-role {
   font-size: 1.9cqw;
   letter-spacing: 0.2em;
 }
@@ -454,7 +463,8 @@ a:hover {
     line-height: 1.6;
   }
 
-  :lang(zh) .card-role {
+  :lang(zh) .card-role,
+  :lang(ja) .card-role {
     font-size: 3.9cqw;
     letter-spacing: 0.1em; /* fits the three roles on one line */
   }
