@@ -143,6 +143,5 @@ export const social = {
   linkedin: 'https://www.linkedin.com/in/luuknoverraz/',
   github: 'https://github.com/LuukNoverraz',
   source: 'https://github.com/LuukNoverraz/luuknoverraz.nl',
-  youtube: 'https://www.youtube.com/@magmaroni',
   itch: 'https://luuknoverraz.itch.io',
 };
