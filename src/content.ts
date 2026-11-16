@@ -10,6 +10,7 @@ export const base = (lang: Lang) => (lang === 'nl' ? '/' : '/en/');
 // Projects shown under the card, in this order. To add one: add its slug here, its
 // copy under `projects` (both languages) and its media in projects.ts.
 export const projectSlugs: readonly string[] = [
+  'everest-half-full',
   'your-honor-wtf',
   'gnostic-death-experience',
   'sheep-keep',
@@ -33,8 +34,8 @@ interface ProjectCopy {
   /** What I did on it. */
   role: string;
   tools: string;
-  /** Where it can be played. */
-  link: string;
+  /** Where it can be played; left out while a game isn't public yet. */
+  link?: string;
   /** Paragraphs; may contain trusted inline HTML (<i>, <a>, <q>). */
   paragraphs: string[];
 }
@@ -73,6 +74,19 @@ export const copy: Record<Lang, Copy> = {
     back: 'Terug',
     projectLabels: { date: 'Periode', role: 'Rol', tools: 'Tools', link: 'Spelen' },
     projects: {
+      'everest-half-full': {
+        name: 'Everest Half Full',
+        slogan: 'Draag een glas water de Mount Everest op',
+        duration: 'september 2026 – heden · in ontwikkeling',
+        role: 'Solo-ontwikkelaar',
+        tools: 'Godot 4',
+        paragraphs: [
+          'Eén berg, één glas water, en zo veel mogelijk daarvan over als je boven bent. Everest Half Full is een firstperson-klimgame over iets onnodigs naar een onredelijke plek brengen.',
+          'Het moeilijke is bewegen. Een gehaaste stap, een harde landing of een windvlaag over een open graat, en het water gaat over de rand. Bijvullen kan niet, en wat gemorst is blijft gemorst. Een leeg glas beëindigt je poging niet; de vraag is hoeveel je meeneemt naar boven.',
+          'De vorm van de berg is gebaseerd op hoogtegegevens van het Everest-gebied, in een bewust eenvoudige low-poly stijl met bewegende luchten en water dat op elke stap reageert. Er is geen gemarkeerde route: vanaf Base Camp zoek je zelf je weg omhoog.',
+          'Het is mijn grootste game tot nu toe. Ik maak hem in mijn eentje in Godot 4, voor pc, en bereid hem nu voor op een gesloten playtest. Er is nog geen releasedatum.',
+        ],
+      },
       'your-honor-wtf': {
         name: 'Your Honor, WTF?!',
         slogan: 'Een rechtbank-partygame waarin de rechters AI zijn',
@@ -153,6 +167,19 @@ export const copy: Record<Lang, Copy> = {
     back: 'Back',
     projectLabels: { date: 'Period', role: 'Role', tools: 'Tools', link: 'Play' },
     projects: {
+      'everest-half-full': {
+        name: 'Everest Half Full',
+        slogan: 'Carry a glass of water up Mount Everest',
+        duration: 'September 2026 – present · in development',
+        role: 'Solo developer',
+        tools: 'Godot 4',
+        paragraphs: [
+          'One mountain, one glass of water, and as much of it left at the top as you can manage. Everest Half Full is a first-person climbing game about taking something unnecessary somewhere unreasonable.',
+          'The hard part is moving. A hurried step, a rough landing or a gust across an exposed ridge sends water over the rim. There are no refills, and what spills stays spilled. An empty glass does not end the attempt; the question is how much you bring with you.',
+          'The shape of the mountain draws on elevation data from the Everest region, in a deliberately simple low-poly style with moving skies and water that responds to every step. There is no marked route: from Base Camp you find your own way up.',
+          'It is my largest game so far. I am building it on my own in Godot 4, for PC, and preparing it for a closed playtest. There is no release date yet.',
+        ],
+      },
       'your-honor-wtf': {
         name: 'Your Honor, WTF?!',
         slogan: 'A courtroom party game where the judges are AI',

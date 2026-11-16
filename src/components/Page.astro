@@ -100,9 +100,11 @@ const posterWidths = (w: number) => [480, 854, 1280].filter((x) => x < w).concat
                     <p class="project-slogan">{p.slogan}</p>
                     <p class="project-facts">{p.duration} · {p.role}</p>
                     <p class="project-links">
-                      <a href={p.link} {...ext} aria-label={`${t.work.play}: ${p.name}`}>
-                        {t.work.play} <span aria-hidden="true">↗</span>
-                      </a>
+                      {p.link && (
+                        <a href={p.link} {...ext} aria-label={`${t.work.play}: ${p.name}`}>
+                          {t.work.play} <span aria-hidden="true">↗</span>
+                        </a>
+                      )}
                       <a href={href} aria-label={`${t.work.view}: ${p.name}`}>
                         {t.work.view} <span aria-hidden="true">→</span>
                       </a>
@@ -155,14 +157,19 @@ const posterWidths = (w: number) => [480, 854, 1280].filter((x) => x < w).concat
             <dt>{t.projectLabels.tools}.</dt>
             <dd>{t.projects[project].tools}</dd>
           </div>
-          <div>
-            <dt>{t.projectLabels.link}.</dt>
-            <dd>
-              <a href={t.projects[project].link} {...ext}>{t.projects[project].link.replace('https://', '')}</a>
-            </dd>
-          </div>
+          {t.projects[project].link && (
+            <div>
+              <dt>{t.projectLabels.link}.</dt>
+              <dd>
+                <a href={t.projects[project].link} {...ext}>{t.projects[project].link.replace('https://', '')}</a>
+              </dd>
+            </div>
+          )}
         </dl>
-        <div class="project-media project-media--hero" data-slug={project}>
+        <div
+          class:list={['project-media', 'project-media--hero', media[project].poster.width >= 1280 && 'project-media--wide']}
+          data-slug={project}
+        >
           <Picture
             src={media[project].poster}
             formats={['avif', 'webp']}

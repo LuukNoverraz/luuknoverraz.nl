@@ -422,6 +422,9 @@ a:hover {
     object-fit: cover;
   }
 
+  &[data-slug='everest-half-full'] {
+    view-transition-name: media-everest-half-full;
+  }
   &[data-slug='your-honor-wtf'] {
     view-transition-name: media-your-honor-wtf;
   }
@@ -502,6 +505,12 @@ a:hover {
 /* Covers are 630px wide; don't stretch them past that. */
 .project-media--hero {
   max-inline-size: 39.375rem;
+}
+
+/* A large image may use the full width, at its own 16:10 shape. */
+.project-media--wide {
+  max-inline-size: none;
+  aspect-ratio: 16 / 10;
 }
 
 .project-body {
