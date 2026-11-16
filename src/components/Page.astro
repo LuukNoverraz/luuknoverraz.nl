@@ -2,7 +2,7 @@
 import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import { base, copy, projectSlugs, social, type Lang, type ProjectSlug } from '../content';
-import { media } from '../projects';
+import { earlierThumbs, media } from '../projects';
 
 interface Props {
   lang: Lang;
@@ -119,17 +119,32 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
           <details class="earlier">
             <summary>{t.earlier.title}</summary>
             <ul>
-              {t.earlier.games.map((g) => (
-                <li>
-                  <h3>
-                    <a href={g.link} {...ext}>
-                      {g.name} <span aria-hidden="true">↗</span>
-                    </a>
-                  </h3>
-                  <p>{g.text}</p>
-                  <p class="project-facts">{g.facts}</p>
-                </li>
-              ))}
+              {t.earlier.games.map((g) => {
+                const thumb = earlierThumbs[g.link.replace(/\/$/, '').split('/').pop()!];
+                return (
+                  <li>
+                    {thumb && (
+                      <Picture
+                        src={thumb}
+                        formats={['avif', 'webp']}
+                        widths={[96, 192]}
+                        sizes="6rem"
+                        alt=""
+                        loading="lazy"
+                      />
+                    )}
+                    <div>
+                      <h3>
+                        <a href={g.link} {...ext}>
+                          {g.name} <span aria-hidden="true">↗</span>
+                        </a>
+                      </h3>
+                      <p>{g.text}</p>
+                      <p class="project-facts">{g.facts}</p>
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           </details>
         </section>

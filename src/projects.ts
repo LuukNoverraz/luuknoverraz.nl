@@ -17,6 +17,15 @@ import gdeEye from './assets/images/gnostic-death-experience/eye.jpg';
 import skMeadow from './assets/images/sheep-keep/meadow.jpg';
 import skShip from './assets/images/sheep-keep/ship.jpg';
 import skVolcano from './assets/images/sheep-keep/volcano.jpg';
+import tHfcycts from './assets/thumbs/hfcycts.jpg';
+import tHeroOfLight from './assets/thumbs/hero-of-light.jpg';
+import tPostItPrison from './assets/thumbs/post-it-prison.jpg';
+import tScpAtHome from './assets/thumbs/scp-at-home.jpg';
+import tDicetective from './assets/thumbs/dicetective.jpg';
+import tNightStrollAmbush from './assets/thumbs/night-stroll-ambush.jpg';
+import tZerotrace from './assets/thumbs/zerotrace.jpg';
+import tBarbasim from './assets/thumbs/barbasim.jpg';
+import tSumoShooters from './assets/thumbs/sumo-shooters.jpg';
 
 interface ProjectMedia {
   /** Cover, shown in the list on the home page. */
@@ -124,4 +133,17 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
       },
     ],
   },
+};
+
+// Small covers for the earlier games, keyed by the last part of each game's itch.io link.
+export const earlierThumbs: Record<string, ImageMetadata> = {
+  'hfcycts': tHfcycts,
+  'hero-of-light': tHeroOfLight,
+  'post-it-prison': tPostItPrison,
+  'scp-at-home': tScpAtHome,
+  'dicetective': tDicetective,
+  'night-stroll-ambush': tNightStrollAmbush,
+  'zerotrace': tZerotrace,
+  'barbasim': tBarbasim,
+  'sumo-shooters': tSumoShooters,
 };
