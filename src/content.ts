@@ -62,7 +62,7 @@ export const copy: Record<Lang, Copy> = {
     },
     nav: { skip: 'Naar inhoud' },
     role: 'Filosoof / Gamedeveloper / Webdeveloper',
-    location: 'Est. 2004, Amsterdam',
+    location: 'Anno 2004, Amsterdam',
     social: { mail: 'Stuur een e-mail', linkedin: 'LinkedIn', github: 'GitHub' },
     back: 'Terug',
     projectLabels: { date: 'Periode', tools: 'Tools', link: 'Link' },
