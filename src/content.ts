@@ -56,8 +56,8 @@ interface Copy {
   /** Business card on the home page, and the section below it. */
   card: { mail: string };
   work: { title: string; view: string; play: string };
-  /** Older games, listed as text behind a "more" toggle under the projects. */
-  earlier: { title: string; games: { name: string; text: string; facts: string; link: string }[] };
+  /** Heading of the older games behind the "more" toggle; the games are in `earlierGames`. */
+  earlier: { title: string };
 }
 
 export const copy: Record<Lang, Copy> = {
@@ -154,62 +154,6 @@ export const copy: Record<Lang, Copy> = {
     work: { title: 'Werk', view: 'Lees meer', play: 'Speel' },
     earlier: {
       title: 'Eerdere games',
-      games: [
-        {
-          name: 'How Fast Can You Climb the Stairs?',
-          text: 'Een game over traplopen, in vijf uur gemaakt.',
-          facts: '2024 · The Weirdcore Jam',
-          link: 'https://noverraz.itch.io/hfcycts',
-        },
-        {
-          name: 'Hero of Light',
-          text: 'Een platformer waarin je de profetie van de Hero of Light vervult.',
-          facts: '2024 · Mini Jam 150 · met homhom',
-          link: 'https://noverraz.itch.io/hero-of-light',
-        },
-        {
-          name: 'Post-it Prison',
-          text: 'Je eerste dag als bewaker in een gevangenis waar de gevangenen post-its zijn.',
-          facts: '2023 · gamejam',
-          link: 'https://noverraz.itch.io/post-it-prison',
-        },
-        {
-          name: 'scp at home',
-          text: 'Een korte horrorgame in de wereld van de SCP Foundation, in één week gemaakt.',
-          facts: '2023',
-          link: 'https://noverraz.itch.io/scp-at-home',
-        },
-        {
-          name: 'Dicetective',
-          text: 'Een komische detective-visual novel met dobbelstenen in de hoofdrol.',
-          facts: '2022 · GMTK Game Jam · Unity',
-          link: 'https://luuknoverraz.itch.io/dicetective',
-        },
-        {
-          name: 'Night Stroll Ambush',
-          text: 'Breek de pijlen die op je afkomen en loop door.',
-          facts: '2021 · Mini Jam 87 · Unity',
-          link: 'https://luuknoverraz.itch.io/night-stroll-ambush',
-        },
-        {
-          name: 'Zerotrace',
-          text: 'Een stealth-prototype waarin je langs je vijanden moet sluipen.',
-          facts: 'prototype · Unity',
-          link: 'https://luuknoverraz.itch.io/zerotrace',
-        },
-        {
-          name: 'Barbasim',
-          text: 'Een simulatie van wezentjes op een willekeurig gegenereerd eiland.',
-          facts: '2020 · Unity',
-          link: 'https://luuknoverraz.itch.io/barbasim',
-        },
-        {
-          name: 'Sumo Shooters',
-          text: 'Een mobiele game voor twee spelers die biljart met sumo mixt.',
-          facts: 'Unity · Android',
-          link: 'https://luuknoverraz.itch.io/sumo-shooters',
-        },
-      ],
     },
   },
 
@@ -306,65 +250,121 @@ export const copy: Record<Lang, Copy> = {
     work: { title: 'Work', view: 'Read more', play: 'Play' },
     earlier: {
       title: 'Earlier games',
-      games: [
-        {
-          name: 'How Fast Can You Climb the Stairs?',
-          text: 'A game about climbing stairs, made in five hours.',
-          facts: '2024 · The Weirdcore Jam',
-          link: 'https://noverraz.itch.io/hfcycts',
-        },
-        {
-          name: 'Hero of Light',
-          text: 'A platformer about fulfilling the prophecy of the Hero of Light.',
-          facts: '2024 · Mini Jam 150 · with homhom',
-          link: 'https://noverraz.itch.io/hero-of-light',
-        },
-        {
-          name: 'Post-it Prison',
-          text: 'Your first day as a guard in a prison where the inmates are post-it notes.',
-          facts: '2023 · game jam',
-          link: 'https://noverraz.itch.io/post-it-prison',
-        },
-        {
-          name: 'scp at home',
-          text: 'A short horror game set in the world of the SCP Foundation, made in one week.',
-          facts: '2023',
-          link: 'https://noverraz.itch.io/scp-at-home',
-        },
-        {
-          name: 'Dicetective',
-          text: 'A comedy detective visual novel with dice in the leading roles.',
-          facts: '2022 · GMTK Game Jam · Unity',
-          link: 'https://luuknoverraz.itch.io/dicetective',
-        },
-        {
-          name: 'Night Stroll Ambush',
-          text: 'Break the arrows flying at you and keep walking.',
-          facts: '2021 · Mini Jam 87 · Unity',
-          link: 'https://luuknoverraz.itch.io/night-stroll-ambush',
-        },
-        {
-          name: 'Zerotrace',
-          text: 'A stealth prototype about slipping past your enemies.',
-          facts: 'Prototype · Unity',
-          link: 'https://luuknoverraz.itch.io/zerotrace',
-        },
-        {
-          name: 'Barbasim',
-          text: 'A simulation of little creatures on a randomly generated island.',
-          facts: '2020 · Unity',
-          link: 'https://luuknoverraz.itch.io/barbasim',
-        },
-        {
-          name: 'Sumo Shooters',
-          text: 'A two-player mobile game that mixes billiards with sumo.',
-          facts: 'Unity · Android',
-          link: 'https://luuknoverraz.itch.io/sumo-shooters',
-        },
-      ],
     },
   },
 };
+
+// Older games, newest first, shown as a compact list behind a toggle under the projects.
+// Each line of facts reads: year · engine · game jam (linked).
+interface EarlierGame {
+  name: string;
+  link: string;
+  year: number;
+  engine: string;
+  jam?: { name: string; url: string };
+  /** Shown after the facts, e.g. who it was made with. */
+  note?: Record<Lang, string>;
+  text: Record<Lang, string>;
+}
+
+export const earlierGames: EarlierGame[] = [
+  {
+    name: 'How Fast Can You Climb the Stairs?',
+    link: 'https://noverraz.itch.io/hfcycts',
+    year: 2024,
+    engine: 'Godot',
+    jam: { name: 'The Weirdcore Jam', url: 'https://itch.io/jam/the-weirdcore-jam' },
+    text: {
+      nl: 'Een game over traplopen, in vijf uur gemaakt.',
+      en: 'A game about climbing stairs, made in five hours.',
+    },
+  },
+  {
+    name: 'Hero of Light',
+    link: 'https://noverraz.itch.io/hero-of-light',
+    year: 2024,
+    engine: 'Godot',
+    jam: { name: 'Mini Jam 150: Magic', url: 'https://itch.io/jam/mini-jam-150-magic' },
+    note: { nl: 'met homhom', en: 'with homhom' },
+    text: {
+      nl: 'Een platformer waarin je de profetie van de Hero of Light vervult.',
+      en: 'A platformer about fulfilling the prophecy of the Hero of Light.',
+    },
+  },
+  {
+    name: 'Post-it Prison',
+    link: 'https://noverraz.itch.io/post-it-prison',
+    year: 2023,
+    engine: 'Godot',
+    jam: { name: 'A highly unproductive game jam', url: 'https://itch.io/jam/a-highly-uproductive-game-jam' },
+    text: {
+      nl: 'Je eerste dag als bewaker in een gevangenis waar de gevangenen post-its zijn.',
+      en: 'Your first day as a guard in a prison where the inmates are post-it notes.',
+    },
+  },
+  {
+    name: 'scp at home',
+    link: 'https://noverraz.itch.io/scp-at-home',
+    year: 2023,
+    engine: 'Godot',
+    text: {
+      nl: 'Een korte horrorgame in de wereld van de SCP Foundation, in één week gemaakt.',
+      en: 'A short horror game set in the world of the SCP Foundation, made in one week.',
+    },
+  },
+  {
+    name: 'Dicetective',
+    link: 'https://luuknoverraz.itch.io/dicetective',
+    year: 2022,
+    engine: 'Unity',
+    jam: { name: 'GMTK Game Jam 2022', url: 'https://itch.io/jam/gmtk-jam-2022' },
+    text: {
+      nl: 'Een komische detective-visual novel met dobbelstenen in de hoofdrol.',
+      en: 'A comedy detective visual novel with dice in the leading roles.',
+    },
+  },
+  {
+    name: 'Night Stroll Ambush',
+    link: 'https://luuknoverraz.itch.io/night-stroll-ambush',
+    year: 2021,
+    engine: 'Unity',
+    jam: { name: 'Mini Jam 87: Break', url: 'https://itch.io/jam/mini-jam-87-break' },
+    text: {
+      nl: 'Breek de pijlen die op je afkomen en loop door.',
+      en: 'Break the arrows flying at you and keep walking.',
+    },
+  },
+  {
+    name: 'Zerotrace',
+    link: 'https://luuknoverraz.itch.io/zerotrace',
+    year: 2021,
+    engine: 'Unity',
+    text: {
+      nl: 'Een stealth-prototype waarin je langs je vijanden moet sluipen.',
+      en: 'A stealth prototype about slipping past your enemies.',
+    },
+  },
+  {
+    name: 'Barbasim',
+    link: 'https://luuknoverraz.itch.io/barbasim',
+    year: 2020,
+    engine: 'Unity',
+    text: {
+      nl: 'Een simulatie van wezentjes op een willekeurig gegenereerd eiland.',
+      en: 'A simulation of little creatures on a randomly generated island.',
+    },
+  },
+  {
+    name: 'Sumo Shooters',
+    link: 'https://luuknoverraz.itch.io/sumo-shooters',
+    year: 2020,
+    engine: 'Unity',
+    text: {
+      nl: 'Een mobiele game voor twee spelers die biljart met sumo mixt.',
+      en: 'A two-player mobile game that mixes billiards with sumo.',
+    },
+  },
+];
 
 export const social = {
   mail: 'mailto:luuknoverraz@gmail.com',

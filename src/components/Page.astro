@@ -1,7 +1,7 @@
 ---
 import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import { base, copy, projectSlugs, social, type Lang, type ProjectSlug } from '../content';
+import { base, copy, earlierGames, projectSlugs, social, type Lang, type ProjectSlug } from '../content';
 import { earlierThumbs, media } from '../projects';
 
 interface Props {
@@ -119,7 +119,7 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
           <details class="earlier">
             <summary>{t.earlier.title}</summary>
             <ul>
-              {t.earlier.games.map((g) => {
+              {earlierGames.map((g) => {
                 const thumb = earlierThumbs[g.link.replace(/\/$/, '').split('/').pop()!];
                 return (
                   <li>
@@ -139,8 +139,17 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
                           {g.name} <span aria-hidden="true">↗</span>
                         </a>
                       </h3>
-                      <p>{g.text}</p>
-                      <p class="project-facts">{g.facts}</p>
+                      <p>{g.text[lang]}</p>
+                      <p class="project-facts">
+                        {g.year} · {g.engine}
+                        {g.jam && (
+                          <>
+                            {' · '}
+                            <a href={g.jam.url} {...ext}>{g.jam.name}</a>
+                          </>
+                        )}
+                        {g.note && ` · ${g.note[lang]}`}
+                      </p>
                     </div>
                   </li>
                 );
