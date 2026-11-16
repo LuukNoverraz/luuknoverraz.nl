@@ -219,7 +219,6 @@ a:hover {
 }
 
 .card-name span::first-letter,
-.card-role::first-letter,
 .section-title::first-letter {
   color: var(--red);
 }
