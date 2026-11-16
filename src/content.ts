@@ -106,7 +106,7 @@ export const copy: Record<Lang, Copy> = {
     },
     about: {
       title: 'Over mij',
-      text: 'Momenteel studeer ik Filosofie aan de Universiteit van Amsterdam. Daarvoor studeerde ik Game Design in Breda en Communication & Multimedia Design in Amsterdam. Met een oog voor zowel gebruikers als opdrachtgevers zoek ik creatieve oplossingen tot unieke design challenges. Ik let op de kleinste details en ben altijd leergierig. Ik beschouw mijn begrip van zowel ontwerp als technologie als mijn kracht en hoop deze overlap in te kunnen zetten om bij te kunnen dragen aan een betere wereld.',
+      text: "Ik maak games, websites en video's. Momenteel ben ik tweedejaars student Filosofie aan de Universiteit van Amsterdam, na Game Design in Breda en Communication & Multimedia Design in Amsterdam.",
       contact: 'Als je geïnteresseerd bent in mijn werk of wilt samenwerken, aarzel dan niet om contact met me op te nemen via',
     },
     experience: {
@@ -219,7 +219,7 @@ export const copy: Record<Lang, Copy> = {
     },
     about: {
       title: 'About me',
-      text: "I'm currently studying Philosophy at the University of Amsterdam. Before that I studied Game Design in Breda and Communication & Multimedia Design in Amsterdam. With an eye for both users and clients, I look for creative solutions to unique design challenges. I pay attention to the smallest details and am always eager to learn. I consider my understanding of both design and technology to be my strength and hope to use this overlap to contribute to a better world.",
+      text: "I make games, websites and videos. I'm currently a second-year Philosophy student at the University of Amsterdam, after Game Design in Breda and Communication & Multimedia Design in Amsterdam.",
       contact: "If you are interested in my work or would like to collaborate, please don't hesitate to contact me at",
     },
     experience: {
