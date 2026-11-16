@@ -260,8 +260,18 @@ a:hover {
   white-space: nowrap;
 }
 
+/* Small caps by hand (the font has no small-cap glyphs): capitals at a reduced
+   size, with the initial brought back up to full size. */
 .card-name span {
+  --small-cap: 0.72;
   display: inline-block; /* ::first-letter needs a block-level box */
+  font-size: calc(1em * var(--small-cap));
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.card-name span::first-letter {
+  font-size: calc(1em / var(--small-cap));
 }
 
 .card-name span::first-letter,
@@ -278,8 +288,9 @@ a:hover {
 
 .card-role {
   margin-block-start: 1.4cqw;
-  font-size: 1.95cqw;
-  letter-spacing: 0.04em;
+  font-size: 1.6cqw;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .card-contact {
@@ -342,7 +353,7 @@ a:hover {
 
   .card-role {
     margin-block-start: 4cqw;
-    font-size: 4.4cqw;
+    font-size: 3.6cqw;
     line-height: 1.6;
   }
 
