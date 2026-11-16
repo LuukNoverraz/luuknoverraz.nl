@@ -7,182 +7,224 @@ import portrait from '../assets/images/luuk.jpg';
 
 interface Props {
   lang: Lang;
-  /** When set, this project is shown opened (the old "expanded card" state). */
+  /** When set, renders that project's page instead of the home page. */
   project?: ProjectSlug;
 }
 
 const { lang, project } = Astro.props;
 const t = copy[lang];
-const cards = project ? [project] : projectSlugs;
-const posterWidths = (w: number) => [480, 854, 1280].filter((x) => x < w).concat(w);
 const ext = { target: '_blank', rel: 'noopener' };
+const posterWidths = (w: number) => [480, 854, 1280].filter((x) => x < w).concat(w);
 ---
 
 <Base lang={lang} project={project}>
-  <section class="intro">
-    <h1>Luuk<br />Noverraz</h1>
-    <p class="role">{t.role}</p>
-    <p class="subtitle">{t.subtitle}</p>
-    <div class="contact">
-      <a href={social.mail} aria-label={t.social.mail}><img src="/icons/mail.svg" alt="" width="27" height="23" /></a>
-      <a href={social.linkedin} {...ext} aria-label={t.social.linkedin}><img src="/icons/linkedin.svg" alt="" width="23" height="23" /></a>
-      <a href={social.github} {...ext} aria-label={t.social.github}><img src="/icons/github.svg" alt="" width="23" height="23" /></a>
-      <img class="pin" src="/icons/map-pin.svg" alt="" width="18" height="23" />
-      <p>{t.location}</p>
-    </div>
-  </section>
+  {
+    !project && (
+      <>
+        <section class="hero">
+          <div class="card">
+            <div class="card-inner">
+              <p class="card-tag">
+                <span>{t.card.left}</span>
+                <span>{t.card.right}</span>
+              </p>
+              <h1 class="card-name">
+                <span>Luuk</span> <span>Noverraz</span>
+              </h1>
+              <hr class="card-rule" />
+              <p class="card-role">{t.role}</p>
+              <dl class="card-contact">
+                <div>
+                  <dt>{t.card.mail}</dt>
+                  <dd><a href={social.mail}>{social.email}</a></dd>
+                </div>
+                <div>
+                  <dt>LinkedIn.</dt>
+                  <dd><a href={social.linkedin} {...ext}>linkedin.com/in/luuknoverraz</a></dd>
+                </div>
+                <div>
+                  <dt>GitHub.</dt>
+                  <dd><a href={social.github} {...ext}>github.com/LuukNoverraz</a></dd>
+                </div>
+                <div>
+                  <dt>YouTube.</dt>
+                  <dd><a href={social.youtube} {...ext}>youtube.com/@magmaroni</a></dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <a class="scroll-cue" href="#work">{t.work.title} <span aria-hidden="true">↓</span></a>
+        </section>
 
-  <section class="showcase" aria-label={project ? t.projects[project].name : lang === 'nl' ? 'Projecten' : 'Projects'}>
-    <ul class:list={['cards', { 'is-open': project }]}>
-      {
-        cards.map((slug, i) => {
-          const p = t.projects[slug];
-          const m = media[slug];
-          const Card = project ? 'div' : 'a';
-          return (
-            <li>
-              <Card class="card" data-slug={slug} href={project ? undefined : `${base(lang)}${slug}/`}>
-                <Picture
-                  class="card-poster"
-                  src={m.poster}
-                  formats={['avif', 'webp']}
-                  fallbackFormat="jpg"
-                  widths={posterWidths(m.poster.width)}
-                  sizes="(max-width: 768px) 100vw, 80vw"
-                  alt=""
-                  loading="eager"
-                  fetchpriority={i === 0 ? 'high' : 'auto'}
-                />
-                <video class="card-video" data-loop muted loop playsinline preload="none" aria-hidden="true">
-                  <source src={`/videos/${m.video}.webm`} type="video/webm" />
-                  <source src={`/videos/${m.video}.mp4`} type="video/mp4" />
-                </video>
-                <p class="card-slogan">
-                  <span class="visually-hidden">{p.name}: </span>
-                  {p.slogan}
-                </p>
-              </Card>
-            </li>
-          );
-        })
-      }
-    </ul>
-
-    {
-      project && (
-        <article class="project-detail">
-          <a class="back" href={`${base(lang)}`}>
-            <img src="/icons/back.svg" alt="" width="27" height="27" />
-            {t.back}
-          </a>
-          <h2>{t.projects[project].name}</h2>
-          <dl class="project-meta">
-            <div>
-              <dt><img src="/icons/date.svg" alt={t.projectLabels.date} width="27" height="27" /></dt>
-              <dd>{t.projects[project].duration}</dd>
-            </div>
-            <div>
-              <dt><img src="/icons/tools.svg" alt={t.projectLabels.tools} width="27" height="27" /></dt>
-              <dd>{t.projects[project].tools}</dd>
-            </div>
-            <div>
-              <dt><img src="/icons/link.svg" alt={t.projectLabels.link} width="27" height="27" /></dt>
-              <dd><a href={t.projects[project].link} {...ext}>{t.projects[project].link}</a></dd>
-            </div>
-          </dl>
-          <div class="project-body">
-            {t.projects[project].paragraphs.map((text, i) => {
-              const img = media[project].images[i];
+        <section class="section work" id="work" aria-labelledby="work-title">
+          <h2 class="section-title" id="work-title">{t.work.title}</h2>
+          <ul class="projects">
+            {projectSlugs.map((slug) => {
+              const p = t.projects[slug];
+              const m = media[slug];
+              const href = `${base(lang)}${slug}/`;
               return (
-                <div class="project-row">
-                  <p set:html={text} />
-                  {img && (
+                <li class="project">
+                  <a class="project-media" href={href} tabindex="-1" aria-hidden="true" data-slug={slug}>
                     <Picture
-                      src={img.src}
+                      src={m.poster}
                       formats={['avif', 'webp']}
-                      fallbackFormat={img.src.format === 'png' && img.src.width > 900 ? 'jpg' : img.src.format}
-                      widths={[Math.min(img.src.width, 288), Math.min(img.src.width, 576)].filter((w, j, a) => a.indexOf(w) === j)}
-                      sizes={`${Math.min(img.src.width, 288)}px`}
-                      alt={img.alt[lang]}
+                      fallbackFormat="jpg"
+                      widths={posterWidths(m.poster.width)}
+                      sizes="(max-width: 768px) 100vw, 36rem"
+                      alt=""
                       loading="lazy"
                     />
-                  )}
-                </div>
+                    <video data-loop muted loop playsinline preload="none">
+                      <source src={`/videos/${m.video}.webm`} type="video/webm" />
+                      <source src={`/videos/${m.video}.mp4`} type="video/mp4" />
+                    </video>
+                  </a>
+                  <div class="project-text">
+                    <h3><a href={href}>{p.name}</a></h3>
+                    <p class="project-slogan">{p.slogan}</p>
+                    <p class="project-facts">{p.duration} · {p.tools}</p>
+                    <a class="project-more" href={href} aria-label={`${t.work.view}: ${p.name}`}>
+                      {t.work.view} <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </li>
               );
             })}
+          </ul>
+        </section>
+
+        <section class="section about" id="about" aria-labelledby="about-title">
+          <h2 class="section-title" id="about-title">{t.about.title}</h2>
+          <div class="about-primary">
+            <div class="about-text">
+              <p>{t.about.text}</p>
+              <p>{t.about.contact} <a href={social.mail}>{social.email}</a>.</p>
+            </div>
+            <Picture
+              class="about-picture"
+              src={portrait}
+              formats={['avif', 'webp']}
+              widths={[216, 432, 640]}
+              sizes="(max-width: 768px) 160px, 13.5rem"
+              alt={lang === 'nl' ? 'Foto van Luuk Noverraz' : 'Photo of Luuk Noverraz'}
+              loading="lazy"
+            />
           </div>
-        </article>
-      )
-    }
-  </section>
 
-  <section class="about" id="about" aria-labelledby="about-title">
-    <h2 id="about-title">{t.about.title}</h2>
-    <div class="about-primary">
-      <div class="about-text">
-        <p>{t.about.text}</p>
-        <p>{t.about.contact} <a href={social.mail}>{social.email}</a>.</p>
-      </div>
-      <Picture
-        class="about-picture"
-        src={portrait}
-        formats={['avif', 'webp']}
-        widths={[216, 432, 640]}
-        sizes="(max-width: 768px) 160px, 15vw"
-        alt={lang === 'nl' ? 'Foto van Luuk Noverraz' : 'Photo of Luuk Noverraz'}
-        loading="lazy"
-      />
-    </div>
+          <div class="cv">
+            <section class="experience" aria-labelledby="experience-title">
+              <h2 class="section-title" id="experience-title">{t.experience.title}</h2>
+              {
+                [
+                  [t.experience.work, t.experience.jobs],
+                  [t.experience.education, t.experience.schools],
+                ].map(([heading, entries]) => (
+                  <>
+                    <h3>{heading as string}</h3>
+                    <ul class="entries">
+                      {(entries as typeof t.experience.jobs).map((e) => (
+                        <li class="entry">
+                          <h4 class="entry-title">
+                            {e.title} <i>/ {e.org}</i>
+                          </h4>
+                          <p class="entry-date">{e.date}</p>
+                          {e.description && <p class="entry-description">{e.description}</p>}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ))
+              }
+            </section>
 
-    <hr />
-
-    <div class="cv">
-      <section class="experience" aria-labelledby="experience-title">
-        <h2 id="experience-title">{t.experience.title}</h2>
-        {
-          [
-            [t.experience.work, t.experience.jobs],
-            [t.experience.education, t.experience.schools],
-          ].map(([heading, entries]) => (
-            <>
-              <h3>{heading as string}</h3>
-              <ul class="entries">
-                {(entries as typeof t.experience.jobs).map((e) => (
-                  <li class="entry">
-                    <h4 class="entry-title">
-                      {e.title} <i>/ {e.org}</i>
-                    </h4>
-                    <p class="entry-date">{e.date}</p>
-                    {e.description && <p class="entry-description">{e.description}</p>}
-                  </li>
+            <section class="skills" aria-labelledby="skills-title">
+              <h2 class="section-title" id="skills-title">{t.skills.title}</h2>
+              <h3>{t.skills.tools}</h3>
+              <ul class="tool-grid">
+                {tools.map(([icon, label]) => (
+                  <li><img src={`/icons/${icon}.svg`} alt="" width="24" height="24" loading="lazy" />{label}</li>
                 ))}
               </ul>
-            </>
-          ))
-        }
-      </section>
+              <h3>{t.skills.codeLanguages}</h3>
+              <ul class="tool-grid">
+                {codeLanguages.map(([icon, label]) => (
+                  <li><img src={`/icons/${icon}.svg`} alt="" width="24" height="24" loading="lazy" />{label}</li>
+                ))}
+              </ul>
+              <h3>{t.skills.languages}</h3>
+              <ul class="spoken">
+                {t.skills.spoken.map(([language, level]) => (
+                  <li>{language} / <i>{level}</i></li>
+                ))}
+              </ul>
+            </section>
+          </div>
+        </section>
+      </>
+    )
+  }
 
-      <section class="skills" aria-labelledby="skills-title">
-        <h2 id="skills-title">{t.skills.title}</h2>
-        <h3>{t.skills.tools}</h3>
-        <ul class="tool-grid">
-          {tools.map(([icon, label]) => (
-            <li><img src={`/icons/${icon}.svg`} alt="" width="32" height="27" />{label}</li>
-          ))}
-        </ul>
-        <h3>{t.skills.languages}</h3>
-        <ul class="spoken">
-          {t.skills.spoken.map(([language, level]) => (
-            <li>{language} / <i>{level}</i></li>
-          ))}
-        </ul>
-        <h3 class="visually-hidden">{t.skills.codeLanguages}</h3>
-        <ul class="tool-grid tool-grid--code">
-          {codeLanguages.map(([icon, label]) => (
-            <li><img src={`/icons/${icon}.svg`} alt="" width="32" height="27" />{label}</li>
-          ))}
-        </ul>
-      </section>
-    </div>
-  </section>
+  {
+    project && (
+      <article class="section project-detail">
+        <a class="back" href={`${base(lang)}#work`}>
+          <span aria-hidden="true">←</span> {t.back}
+        </a>
+        <h1 class="section-title">{t.projects[project].name}</h1>
+        <p class="project-slogan">{t.projects[project].slogan}</p>
+        <dl class="project-meta">
+          <div>
+            <dt>{t.projectLabels.date}.</dt>
+            <dd>{t.projects[project].duration}</dd>
+          </div>
+          <div>
+            <dt>{t.projectLabels.tools}.</dt>
+            <dd>{t.projects[project].tools}</dd>
+          </div>
+          <div>
+            <dt>{t.projectLabels.link}.</dt>
+            <dd><a href={t.projects[project].link} {...ext}>{t.projects[project].link}</a></dd>
+          </div>
+        </dl>
+        <div class="project-media project-media--hero" data-slug={project}>
+          <Picture
+            src={media[project].poster}
+            formats={['avif', 'webp']}
+            fallbackFormat="jpg"
+            widths={posterWidths(media[project].poster.width)}
+            sizes="(max-width: 1100px) 100vw, 64rem"
+            alt=""
+            loading="eager"
+            fetchpriority="high"
+          />
+          <video data-loop muted loop playsinline preload="none" aria-hidden="true">
+            <source src={`/videos/${media[project].video}.webm`} type="video/webm" />
+            <source src={`/videos/${media[project].video}.mp4`} type="video/mp4" />
+          </video>
+        </div>
+        <div class="project-body">
+          {t.projects[project].paragraphs.map((text, i) => {
+            const img = media[project].images[i];
+            return (
+              <div class="project-row">
+                <p set:html={text} />
+                {img && (
+                  <Picture
+                    src={img.src}
+                    formats={['avif', 'webp']}
+                    fallbackFormat={img.src.format === 'png' && img.src.width > 900 ? 'jpg' : img.src.format}
+                    widths={[Math.min(img.src.width, 320), Math.min(img.src.width, 640)].filter((w, j, a) => a.indexOf(w) === j)}
+                    sizes={`${Math.min(img.src.width, 320)}px`}
+                    alt={img.alt[lang]}
+                    loading="lazy"
+                  />
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </article>
+    )
+  }
 </Base>

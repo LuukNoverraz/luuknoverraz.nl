@@ -46,6 +46,9 @@ interface Copy {
   skills: { title: string; tools: string; languages: string; codeLanguages: string; spoken: [string, string][] };
   footer: { source: string };
   notFound: { title: string; text: string; home: string };
+  /** Business card on the home page, and the section below it. */
+  card: { left: string; right: string; mail: string };
+  work: { title: string; view: string };
 }
 
 export const copy: Record<Lang, Copy> = {
@@ -160,6 +163,8 @@ export const copy: Record<Lang, Copy> = {
       text: 'Deze pagina bestaat niet (meer). Misschien is de link verouderd of staat er een typefout in.',
       home: 'Terug naar de homepage',
     },
+    card: { left: 'Portfolio', right: 'Amsterdam', mail: 'E-mail.' },
+    work: { title: 'Werk', view: 'Bekijk project' },
   },
 
   en: {
@@ -273,6 +278,8 @@ export const copy: Record<Lang, Copy> = {
       text: "This page doesn't exist (any more). The link may be outdated or contain a typo.",
       home: 'Back to the homepage',
     },
+    card: { left: 'Portfolio', right: 'Amsterdam', mail: 'E-mail.' },
+    work: { title: 'Work', view: 'View project' },
   },
 };
 
