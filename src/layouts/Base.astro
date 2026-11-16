@@ -102,6 +102,21 @@ const jsonLd = {
     </footer>
 
     <script>
+      // Top bar: mark it hidden while scrolling down and shown while scrolling up.
+      // The stylesheet only acts on this on screens where the bar covers content.
+      const topbar = document.querySelector<HTMLElement>('.topbar');
+      let lastY = scrollY;
+      addEventListener(
+        'scroll',
+        () => {
+          const y = Math.max(scrollY, 0);
+          if (Math.abs(y - lastY) < 8) return; // ignore jitter
+          topbar?.toggleAttribute('data-hidden', y > lastY && y > 80);
+          lastY = y;
+        },
+        { passive: true },
+      );
+
       // Project loops: only download and play while on screen, never with reduced motion,
       // and not before the page has finished loading (keeps them off the critical path).
       const videos = document.querySelectorAll<HTMLVideoElement>('video[data-loop]');

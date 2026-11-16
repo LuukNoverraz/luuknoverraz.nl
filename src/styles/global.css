@@ -136,8 +136,8 @@ a:hover {
 /* ==========================================================================
    Top bar: logo + language switch
    ========================================================================== */
-/* Stays in view while scrolling. Its paper-coloured backing is invisible at the top
-   of the page and keeps the logo readable once content slides underneath. */
+/* Stays in view while scrolling, with no background: on wide screens the logo and
+   the language switch sit in the margins beside the content. */
 .topbar {
   position: fixed;
   inset: 0 0 auto;
@@ -146,8 +146,26 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 0.6rem var(--gutter);
-  background: color-mix(in srgb, var(--paper) 88%, transparent);
-  backdrop-filter: blur(8px);
+}
+
+/* Narrower than this, the content runs underneath the logo. There the bar gets a
+   plain paper backing and steps aside while scrolling down, returning on the way
+   up (Base.astro sets data-hidden). Keyboard focus always brings it back. */
+@media (max-width: 70rem) {
+  .topbar {
+    background: var(--paper);
+    transition: translate 0.25s ease;
+
+    &[data-hidden]:not(:focus-within) {
+      translate: 0 -100%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topbar {
+    transition: none;
+  }
 }
 
 .logo {
