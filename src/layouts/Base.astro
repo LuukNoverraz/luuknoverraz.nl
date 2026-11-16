@@ -109,12 +109,14 @@ const jsonLd = {
             ))
           }
         </p>
+        <span aria-hidden="true">/</span>
         {/* The other languages are AI-translated; they live behind the globe. */}
         <details class="lang-more">
           <summary aria-label={t.nav.moreLanguages} title={t.nav.moreLanguages}>
             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true" focusable="false">
               <circle cx="12" cy="12" r="9"></circle>
-              <path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"></path>
+              <ellipse cx="12" cy="12" rx="3.8" ry="9"></ellipse>
+              <path d="M3 12h18M4.6 7.2h14.8M4.6 16.8h14.8"></path>
             </svg>
           </summary>
           <ul>
