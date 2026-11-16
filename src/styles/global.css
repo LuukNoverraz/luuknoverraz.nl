@@ -49,7 +49,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  scroll-padding-top: 2rem;
+  scroll-padding-top: 5rem; /* clears the fixed top bar */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -136,14 +136,18 @@ a:hover {
 /* ==========================================================================
    Top bar: logo + language switch
    ========================================================================== */
+/* Stays in view while scrolling. Its paper-coloured backing is invisible at the top
+   of the page and keeps the logo readable once content slides underneath. */
 .topbar {
-  position: absolute;
+  position: fixed;
   inset: 0 0 auto;
-  z-index: 2;
+  z-index: 5;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem var(--gutter);
+  padding: 0.6rem var(--gutter);
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(8px);
 }
 
 .logo {
@@ -540,8 +544,10 @@ a:hover {
     margin-block-start: 0.3rem;
   }
 
-  /* Jam links: no underline at rest; the arrow marks them as links. */
+  /* Jam links: no underline at rest; they stand out from the grey facts by
+     being set in the ink colour. */
   .project-facts a {
+    color: var(--ink);
     text-decoration: none;
 
     &:hover,

@@ -104,11 +104,11 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
                     <p class="project-links">
                       {p.link && (
                         <a href={p.link} {...ext} aria-label={`${t.work.play}: ${p.name}`}>
-                          {t.work.play} <span aria-hidden="true">↗</span>
+                          {t.work.play}
                         </a>
                       )}
                       <a href={href} aria-label={`${t.work.view}: ${p.name}`}>
-                        {t.work.view} <span aria-hidden="true">→</span>
+                        {t.work.view}
                       </a>
                     </p>
                   </div>
@@ -135,9 +135,7 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
                     )}
                     <div>
                       <h3>
-                        <a href={g.link} {...ext}>
-                          {g.name} <span aria-hidden="true">↗</span>
-                        </a>
+                        <a href={g.link} {...ext}>{g.name}</a>
                       </h3>
                       <p>{g.text[lang]}</p>
                       <p class="project-facts">
@@ -145,9 +143,7 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
                         {g.jam && (
                           <>
                             {' · '}
-                            <a href={g.jam.url} {...ext}>
-                              {g.jam.name} <span aria-hidden="true">↗</span>
-                            </a>
+                            <a href={g.jam.url} {...ext}>{g.jam.name}</a>
                           </>
                         )}
                       </p>
