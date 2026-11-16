@@ -232,11 +232,16 @@ a:hover {
   }
 }
 
+.ink-defs {
+  position: absolute;
+}
+
 .card-inner {
   position: relative;
   z-index: 1;
   /* a hair of highlight under the ink, as if pressed into the paper */
   text-shadow: 0 max(0.5px, 0.06cqw) 0 rgb(255 255 255 / 0.85);
+  filter: url(#ink); /* defined next to the card in Page.astro */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -636,6 +641,10 @@ a:hover {
     box-shadow: none;
     border: 1px solid var(--line);
     transform: none;
+
+    .card-inner {
+      filter: none;
+    }
 
     &::before,
     &::after {
