@@ -1,9 +1,8 @@
 ---
 import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import { base, codeLanguages, copy, projectSlugs, social, tools, type Lang, type ProjectSlug } from '../content';
+import { base, copy, projectSlugs, social, type Lang, type ProjectSlug } from '../content';
 import { media } from '../projects';
-import portrait from '../assets/images/luuk.jpg';
 
 interface Props {
   lang: Lang;
@@ -14,6 +13,7 @@ interface Props {
 const { lang, project } = Astro.props;
 const t = copy[lang];
 const ext = { target: '_blank', rel: 'noopener' };
+const hasWork = projectSlugs.length > 0;
 const posterWidths = (w: number) => [480, 854, 1280].filter((x) => x < w).concat(w);
 ---
 
@@ -24,16 +24,16 @@ const posterWidths = (w: number) => [480, 854, 1280].filter((x) => x < w).concat
         <section class="hero">
           <div class="card">
             <div class="card-inner">
-              <p class="card-tag">
-                <span>{t.card.left}</span>
-                <span>{t.card.right}</span>
-              </p>
               <h1 class="card-name">
                 <span>Luuk</span> <span>Noverraz</span>
               </h1>
               <hr class="card-rule" />
               <p class="card-role">{t.role}</p>
               <dl class="card-contact">
+                <div class="card-location">
+                  <dt class="visually-hidden">{lang === 'nl' ? 'Locatie' : 'Location'}</dt>
+                  <dd>{t.location}</dd>
+                </div>
                 <div>
                   <dt>{t.card.mail}</dt>
                   <dd><a href={social.mail}>{social.email}</a></dd>
@@ -53,9 +53,12 @@ const posterWidths = (w: number) => [480, 854, 1280].filter((x) => x < w).concat
               </dl>
             </div>
           </div>
-          <a class="scroll-cue" href="#work">{t.work.title} <span aria-hidden="true">↓</span></a>
+          <a class="scroll-cue" href={hasWork ? '#work' : '#education'}>
+            {hasWork ? t.work.title : t.education.title} <span aria-hidden="true">↓</span>
+          </a>
         </section>
 
+        {hasWork && (
         <section class="section work" id="work" aria-labelledby="work-title">
           <h2 class="section-title" id="work-title">{t.work.title}</h2>
           <ul class="projects">
@@ -94,72 +97,21 @@ const posterWidths = (w: number) => [480, 854, 1280].filter((x) => x < w).concat
           </ul>
         </section>
 
-        <section class="section about" id="about" aria-labelledby="about-title">
-          <h2 class="section-title" id="about-title">{t.about.title}</h2>
-          <div class="about-primary">
-            <div class="about-text">
-              <p>{t.about.text}</p>
-              <p>{t.about.contact} <a href={social.mail}>{social.email}</a>.</p>
-            </div>
-            <Picture
-              class="about-picture"
-              src={portrait}
-              formats={['avif', 'webp']}
-              widths={[216, 432, 640]}
-              sizes="(max-width: 768px) 160px, 13.5rem"
-              alt={lang === 'nl' ? 'Foto van Luuk Noverraz' : 'Photo of Luuk Noverraz'}
-              loading="lazy"
-            />
-          </div>
+        )}
 
-          <div class="cv">
-            <section class="experience" aria-labelledby="experience-title">
-              <h2 class="section-title" id="experience-title">{t.experience.title}</h2>
-              {
-                [
-                  [t.experience.work, t.experience.jobs],
-                  [t.experience.education, t.experience.schools],
-                ].map(([heading, entries]) => (
-                  <>
-                    <h3>{heading as string}</h3>
-                    <ul class="entries">
-                      {(entries as typeof t.experience.jobs).map((e) => (
-                        <li class="entry">
-                          <h4 class="entry-title">
-                            {e.title} <i>/ {e.org}</i>
-                          </h4>
-                          <p class="entry-date">{e.date}</p>
-                          {e.description && <p class="entry-description">{e.description}</p>}
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                ))
-              }
-            </section>
-
-            <section class="skills" aria-labelledby="skills-title">
-              <h2 class="section-title" id="skills-title">{t.skills.title}</h2>
-              <h3>{t.skills.tools}</h3>
-              <ul class="tool-grid">
-                {tools.map(([icon, label]) => (
-                  <li><img src={`/icons/${icon}.svg`} alt="" width="24" height="24" loading="lazy" />{label}</li>
-                ))}
-              </ul>
-              <h3>{t.skills.codeLanguages}</h3>
-              <ul class="tool-grid">
-                {codeLanguages.map(([icon, label]) => (
-                  <li><img src={`/icons/${icon}.svg`} alt="" width="24" height="24" loading="lazy" />{label}</li>
-                ))}
-              </ul>
-              <h3>{t.skills.languages}</h3>
-              <ul class="spoken">
-                {t.skills.spoken.map(([language, level]) => (
-                  <li>{language} / <i>{level}</i></li>
-                ))}
-              </ul>
-            </section>
-          </div>
+        <section class="section education" id="education" aria-labelledby="education-title">
+          <h2 class="section-title" id="education-title">{t.education.title}</h2>
+          <ul class="entries">
+            {t.education.schools.map((e) => (
+              <li class="entry">
+                <h3 class="entry-title">
+                  {e.title} <i>/ {e.org}</i>
+                </h3>
+                <p class="entry-date">{e.date}</p>
+                {e.description && <p class="entry-description">{e.description}</p>}
+              </li>
+            ))}
+          </ul>
         </section>
       </>
     )
