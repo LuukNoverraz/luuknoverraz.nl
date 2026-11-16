@@ -49,6 +49,7 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'Een gehandschoende hand houdt een vol glas water vast in een groen dal, met besneeuwde bergen in de verte.',
           en: 'A gloved hand holds a full glass of water in a green valley, with snowy mountains in the distance.',
+          zh: '一只戴着手套的手在绿色山谷中端着一满杯水，远处是雪山。',
         },
       },
       {
@@ -56,6 +57,7 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'Het glas water bij nacht, hoog boven een zee van bergtoppen onder een sterrenhemel.',
           en: 'The glass of water at night, high above a sea of peaks under a starry sky.',
+          zh: '夜色中的那杯水，高悬于星空下的群峰之上。',
         },
       },
       {
@@ -63,6 +65,7 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'Het glas water op een rotsige vlakte bij twee tenten van Base Camp, tussen besneeuwde hellingen.',
           en: 'The glass of water on a rocky plain near two Base Camp tents, between snowy slopes.',
+          zh: '那杯水在大本营两顶帐篷附近的碎石平地上，四周是积雪的山坡。',
         },
       },
     ],
@@ -76,6 +79,7 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'Een speler typt een aanklacht tegen een andere speler terwijl de tijd loopt.',
           en: 'A player types an accusation against another player while the timer runs.',
+          zh: '一名玩家在倒计时中输入对另一名玩家的指控。',
         },
       },
       {
@@ -83,6 +87,7 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'Een rechter met piratenhoed doet in piratentaal uitspraak tussen de twee spelers.',
           en: 'A judge in a pirate hat delivers a verdict in pirate speak between the two players.',
+          zh: '一位戴海盗帽的法官在两名玩家之间用海盗腔宣读判决。',
         },
       },
       {
@@ -90,6 +95,7 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'Het keuzescherm waar vijf spelers elk een personage kiezen.',
           en: 'The selection screen where five players each pick a character.',
+          zh: '五名玩家各自挑选角色的选择界面。',
         },
       },
     ],
@@ -103,6 +109,7 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'Een witte pilaar en donkere blokken boven een witte vlakte, met zwevende ogen op de achtergrond.',
           en: 'A white pillar and dark blocks above a white plain, with floating eyes in the background.',
+          zh: '白色平原上方的一根白色立柱和几块深色方块，背景中漂浮着眼球。',
         },
       },
       {
@@ -110,6 +117,7 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'Blokken die los in het zwart zweven, gezien vanuit de speler, met de timer bovenin.',
           en: 'Blocks floating loose in the dark, seen from the player, with the timer at the top.',
+          zh: '从玩家视角看到的悬浮在黑暗中的方块，顶部是计时器。',
         },
       },
     ],
@@ -123,6 +131,7 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'De herder en twee schapen bij een hut in een donker heuvellandschap, met de teller van geredde schapen.',
           en: 'The shepherd and two sheep by a hut in a dark, hilly landscape, with the count of rescued sheep.',
+          zh: '牧羊人和两只羊站在昏暗丘陵间的小屋旁，画面上有已救出羊只的计数。',
         },
       },
       {
@@ -130,6 +139,7 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
         alt: {
           nl: 'De vulkaan barst uit boven de heuvels.',
           en: 'The volcano erupts above the hills.',
+          zh: '火山在群山之上喷发。',
         },
       },
     ],

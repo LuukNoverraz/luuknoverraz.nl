@@ -43,7 +43,7 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
               <p class="card-role">{t.role}</p>
               <dl class="card-contact">
                 <div class="card-location">
-                  <dt class="visually-hidden">{lang === 'nl' ? 'Locatie' : 'Location'}</dt>
+                  <dt class="visually-hidden">{t.locationLabel}</dt>
                   <dd>{t.location}</dd>
                 </div>
                 <div>
@@ -185,20 +185,20 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
         <p class="project-slogan">{t.projects[project].slogan}</p>
         <dl class="project-meta">
           <div>
-            <dt>{t.projectLabels.date}.</dt>
+            <dt>{t.projectLabels.date}{t.labelSuffix ?? "."}</dt>
             <dd>{t.projects[project].duration}</dd>
           </div>
           <div>
-            <dt>{t.projectLabels.role}.</dt>
+            <dt>{t.projectLabels.role}{t.labelSuffix ?? "."}</dt>
             <dd>{t.projects[project].role}</dd>
           </div>
           <div>
-            <dt>{t.projectLabels.tools}.</dt>
+            <dt>{t.projectLabels.tools}{t.labelSuffix ?? "."}</dt>
             <dd>{t.projects[project].tools}</dd>
           </div>
           {t.projects[project].link && (
             <div>
-              <dt>{t.projectLabels.link}.</dt>
+              <dt>{t.projectLabels.link}{t.labelSuffix ?? "."}</dt>
               <dd>
                 <a href={t.projects[project].link} {...ext}>{t.projects[project].link.replace('https://', '')}</a>
               </dd>

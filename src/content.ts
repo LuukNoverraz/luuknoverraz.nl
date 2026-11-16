@@ -1,11 +1,17 @@
 // All site copy lives here, once per language. Pages are generated from this at build time,
 // so there is no client-side translation and both languages are real, indexable URLs.
 
-export type Lang = 'nl' | 'en';
-export const langs: Lang[] = ['nl', 'en'];
+export type Lang = 'nl' | 'en' | 'zh';
+export const langs: Lang[] = ['nl', 'en', 'zh'];
+/** Written by me, and always shown in the top bar. */
+export const mainLangs: Lang[] = ['nl', 'en'];
+/** AI-translated from the two above; offered in the globe menu. */
+export const moreLangs: Lang[] = ['zh'];
+/** Each language's name, in that language. */
+export const langNames: Record<Lang, string> = { nl: 'Nederlands', en: 'English', zh: '简体中文' };
 
 /** URL prefix per language. Dutch stays at the root so existing links keep working. */
-export const base = (lang: Lang) => (lang === 'nl' ? '/' : '/en/');
+export const base = (lang: Lang) => (lang === 'nl' ? '/' : `/${lang}/`);
 
 // Projects shown under the card, in this order. To add one: add its slug here, its
 // copy under `projects` (both languages) and its media in projects.ts.
@@ -43,12 +49,17 @@ interface ProjectCopy {
 interface Copy {
   htmlLang: string;
   meta: { title: string; description: string; locale: string };
-  nav: { skip: string };
+  nav: { skip: string; moreLanguages: string };
+  /** Shown in the footer of AI-translated languages. */
+  translationNote?: string;
   role: string;
   location: string;
+  locationLabel: string;
   social: { mail: string; linkedin: string; github: string };
   back: string;
   projectLabels: { date: string; role: string; tools: string; link: string };
+  /** Mark after each of those labels on a project page; a full stop when left out. */
+  labelSuffix?: string;
   projects: Record<ProjectSlug, ProjectCopy & { name: string }>;
   education: { title: string; schools: Entry[] };
   footer: { source: string };
@@ -69,9 +80,10 @@ export const copy: Record<Lang, Copy> = {
         'Luuk Noverraz – student filosofie, gameontwikkelaar en webontwikkelaar uit Amsterdam.',
       locale: 'nl_NL',
     },
-    nav: { skip: 'Naar inhoud' },
+    nav: { skip: 'Naar inhoud', moreLanguages: 'Meer talen' },
     role: 'Student filosofie / Gameontwikkelaar / Webontwikkelaar',
     location: 'Anno 2004, Amsterdam',
+    locationLabel: 'Locatie',
     social: { mail: 'Stuur een e-mail', linkedin: 'LinkedIn', github: 'GitHub' },
     back: 'Terug',
     projectLabels: { date: 'Periode', role: 'Rol', tools: 'Tools', link: 'Spelen' },
@@ -165,9 +177,10 @@ export const copy: Record<Lang, Copy> = {
         'Luuk Noverraz – philosophy student, game developer and web developer from Amsterdam.',
       locale: 'en_GB',
     },
-    nav: { skip: 'Skip to content' },
+    nav: { skip: 'Skip to content', moreLanguages: 'More languages' },
     role: 'Philosophy student / Game developer / Web developer',
     location: 'Est. 2004, Amsterdam',
+    locationLabel: 'Location',
     social: { mail: 'Send an email', linkedin: 'LinkedIn', github: 'GitHub' },
     back: 'Back',
     projectLabels: { date: 'Period', role: 'Role', tools: 'Tools', link: 'Play' },
@@ -252,6 +265,104 @@ export const copy: Record<Lang, Copy> = {
       title: 'Earlier games',
     },
   },
+  // Simplified Chinese. AI-translated from the English; keep it in step when that changes.
+  zh: {
+    htmlLang: 'zh-Hans',
+    meta: {
+      title: 'Luuk Noverraz',
+      description: 'Luuk Noverraz——来自阿姆斯特丹的哲学系学生、游戏开发者和网页开发者。',
+      locale: 'zh_CN',
+    },
+    nav: { skip: '跳到正文', moreLanguages: '更多语言' },
+    translationNote: '本页面由 AI 翻译，可能存在错误。',
+    role: '哲学系学生 / 游戏开发者 / 网页开发者',
+    location: '始于 2004，阿姆斯特丹',
+    locationLabel: '所在地',
+    social: { mail: '发送电子邮件', linkedin: 'LinkedIn', github: 'GitHub' },
+    back: '返回',
+    projectLabels: { date: '时间', role: '职责', tools: '工具', link: '试玩' },
+    labelSuffix: '：',
+    projects: {
+      'everest-half-full': {
+        name: 'Everest Half Full',
+        slogan: '端着一杯水登上珠穆朗玛峰',
+        duration: '2026 年 9 月至今 · 开发中',
+        role: '独立开发',
+        tools: 'Godot 4',
+        paragraphs: [
+          '一座山，一杯水，登顶时能剩多少算多少。《Everest Half Full》是一款第一人称登山游戏，讲的是把一件没必要的东西带到一个不讲道理的地方。',
+          '难的是移动。一步迈得太急、一次落地太重，或是裸露山脊上的一阵风，都会让水洒出杯沿。中途没有续杯，洒了就是洒了。杯子空了，这次挑战也不会结束；问题只在于你能带上去多少。',
+          '山体的形状取自珠峰地区的高程数据，画面是刻意保持简洁的低多边形风格，配上流动的天空和会随每一步晃动的水。没有标记好的路线：从大本营出发，你得自己找路上山。',
+          '这是我迄今为止规模最大的游戏。我一个人用 Godot 4 开发，面向 PC 平台，目前正在为封闭测试做准备。发售日期尚未确定。',
+        ],
+      },
+      'your-honor-wtf': {
+        name: 'Your Honor, WTF?!',
+        slogan: '一款由 AI 当法官的法庭派对游戏',
+        duration: '2025 年 7 月至 8 月',
+        role: '独立完成：设计、程序、美术与素材',
+        tools: 'Godot、Player2 API',
+        link: 'https://noverraz.itch.io/your-honor-wtf',
+        paragraphs: [
+          '两名玩家在法庭上对峙：一人指控，一人辩护，另外最多四人组成陪审团。罪名都是编出来的，比如偷走月亮，或者侮辱了一只鹅。随后由 AI 法官宣判。法官共有十位，性格各不相同，从原始人到婴儿都有。',
+          '整款游戏由我一人完成，包括全部美术和素材，是为 2025 年夏天的 Player2 AI NPC Jam 制作的。它在 46 件参赛作品中获得第五名，赢得 500 美元奖金。评委的评价是：<q lang="en">a great way to settle arguments IRL</q>。',
+          '游戏适合两到六人同处一室游玩，可在浏览器、Windows 和 Linux 上运行。游玩需要安装 Player2 应用。',
+        ],
+      },
+      'gnostic-death-experience': {
+        name: 'Gnostic Death Experience',
+        slogan: '逃出轮回的第一人称跑酷',
+        duration: '2024 年 5 月 · 4 天',
+        role: '独立完成：游戏、美术、素材与音乐',
+        tools: 'Godot',
+        link: 'https://noverraz.itch.io/gnostic-death-experience',
+        paragraphs: [
+          '你已经死了，而那道光正朝你而来。奔跑、下蹲、冲刺，赶在它追上你、把你送回去再过一世之前逃出去。这是一款为速通而生的第一人称跑酷游戏，采用 PlayStation 时代的低多边形风格。',
+          '我为 SpeedJam #5 用四天独自做完了它，包括全部美术、3D 素材和音乐。目前我正在制作面向网页和 Discord 的重制版。',
+        ],
+      },
+      'sheep-keep': {
+        name: 'Sheep Keep',
+        slogan: '赶在岩浆到来之前救出你的羊',
+        duration: '2024 年 5 月 · 2 天',
+        role: '美术、3D 模型与游戏逻辑，与 homhom 合作',
+        tools: 'Godot',
+        link: 'https://homhom.itch.io/sheep-keep',
+        paragraphs: [
+          '你是 Jörgen，一位冰岛牧羊人。这天你像往常一样照看羊群，大地却突然开始隆隆作响。在家园被岩浆吞没之前，尽可能多地救出你的羊。',
+          '这是我和 homhom 为 Micro Jam 013 用两天做出来的，主题是“岩浆”，附加规则是“时间有限”。我负责美术和 3D 模型，游戏逻辑的大部分由我们一起编写。使用 Godot 制作，诗歌出自 Plutbios。',
+        ],
+      },
+    },
+    education: {
+      title: '教育经历',
+      schools: [
+        { title: '哲学（学士）', org: '阿姆斯特丹大学', date: '2025 - 至今' },
+        {
+          title: '创意媒体与游戏技术 - 游戏设计（学士）',
+          org: '布雷达应用科学大学',
+          date: '2024 - 2025',
+        },
+        {
+          title: '传播与多媒体设计（学士）',
+          org: '阿姆斯特丹应用科学大学',
+          date: '2022 - 2023',
+          description: '2023 年以优等成绩（cum laude）取得第一学年文凭（propedeuse）。',
+        },
+      ],
+    },
+    footer: { source: '本网站的源代码（GitHub）' },
+    notFound: {
+      title: '页面未找到',
+      text: '此页面不存在（或已不存在）。链接可能已过期，或地址有误。',
+      home: '返回首页',
+    },
+    card: { mail: 'E-mail.' },
+    work: { title: '作品', view: '了解更多', play: '试玩' },
+    earlier: {
+      title: '早期游戏',
+    },
+  },
 };
 
 // Older games, newest first, shown as a compact list behind a toggle under the projects.
@@ -275,6 +386,7 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Een game over traplopen, in vijf uur gemaakt.',
       en: 'A game about climbing stairs, made in five hours.',
+      zh: '一款关于爬楼梯的游戏，五小时做完。',
     },
   },
   {
@@ -286,6 +398,7 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Een platformer waarin je de profetie van de Hero of Light vervult.',
       en: 'A platformer about fulfilling the prophecy of the Hero of Light.',
+      zh: '一款平台跳跃游戏，去实现“光之英雄”的预言。',
     },
   },
   {
@@ -297,6 +410,7 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Je wordt wakker en merkt dat er iets ontbreekt…',
       en: 'You wake up to find something’s missing…',
+      zh: '你醒来，发现少了点什么……',
     },
   },
   {
@@ -308,6 +422,7 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Je eerste dag als bewaker in een gevangenis waar de gevangenen post-its zijn.',
       en: 'Your first day as a guard in a prison where the inmates are post-it notes.',
+      zh: '你第一天上班，在一座囚犯全是便利贴的监狱里当狱警。',
     },
   },
   {
@@ -318,6 +433,7 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Een korte horrorgame in de wereld van de SCP Foundation, in één week gemaakt.',
       en: 'A short horror game set in the world of the SCP Foundation, made in one week.',
+      zh: '一款以 SCP 基金会世界为背景的短篇恐怖游戏，一周做完。',
     },
   },
   {
@@ -329,6 +445,7 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Een komische detective-visual novel met dobbelstenen in de hoofdrol.',
       en: 'A comedy detective visual novel with dice in the leading roles.',
+      zh: '一部由骰子担纲主演的喜剧侦探视觉小说。',
     },
   },
   {
@@ -340,6 +457,7 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Breek de pijlen die op je afkomen en loop door.',
       en: 'Break the arrows flying at you and keep walking.',
+      zh: '击碎朝你飞来的箭，继续往前走。',
     },
   },
   {
@@ -350,6 +468,7 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Een stealth-prototype waarin je langs je vijanden moet sluipen.',
       en: 'A stealth prototype about slipping past your enemies.',
+      zh: '一个潜行原型，目标是悄悄绕过敌人。',
     },
   },
   {
@@ -360,6 +479,7 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Een simulatie van wezentjes op een willekeurig gegenereerd eiland.',
       en: 'A simulation of little creatures on a randomly generated island.',
+      zh: '在随机生成的小岛上模拟一群小生物的生活。',
     },
   },
   {
@@ -370,6 +490,7 @@ export const earlierGames: EarlierGame[] = [
     text: {
       nl: 'Een mobiele game voor twee spelers die biljart met sumo mixt.',
       en: 'A two-player mobile game that mixes billiards with sumo.',
+      zh: '一款把台球和相扑混在一起的双人手机游戏。',
     },
   },
 ];

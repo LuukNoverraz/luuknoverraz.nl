@@ -179,6 +179,9 @@ a:hover {
 }
 
 .lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
   font-family: var(--serif);
   letter-spacing: 0.08em;
 
@@ -189,6 +192,66 @@ a:hover {
   [aria-current='page'] {
     color: var(--red);
   }
+}
+
+/* Globe: opens a small menu with the AI-translated languages. */
+.lang-more {
+  position: relative;
+
+  summary {
+    display: grid;
+    place-items: center;
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:hover {
+      color: var(--red);
+    }
+
+    svg {
+      inline-size: 1.25rem;
+      block-size: 1.25rem;
+    }
+  }
+
+  /* red while open, and while the page itself is in one of these languages */
+  &[open] summary,
+  &:has([aria-current='page']) summary {
+    color: var(--red);
+  }
+
+  ul {
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline-end: 0;
+    min-inline-size: 9rem;
+    padding-block: 0.4rem;
+    background: var(--card);
+    box-shadow:
+      0 1px 2px rgb(22 18 20 / 0.12),
+      0 0.75rem 2rem -0.75rem rgb(22 18 20 / 0.25);
+    font-family: var(--sans);
+    letter-spacing: 0;
+  }
+
+  li a {
+    display: block;
+    padding: 0.55rem 1rem;
+    white-space: nowrap;
+  }
+}
+
+/* Chinese: the card's serif and the body sans only hold Latin letters, so name the
+   system's Simplified Chinese fonts after them (nothing extra is downloaded). */
+:lang(zh) {
+  --serif: shipporiMincho, 'Songti SC', 'STSong', 'Noto Serif CJK SC', 'Source Han Serif SC', SimSun, serif;
+  --sans:
+    neueHaasRoman, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Source Han Sans SC', sans-serif;
 }
 
 /* ==========================================================================
@@ -346,6 +409,13 @@ a:hover {
   text-decoration: none;
 }
 
+/* Chinese has no capitals to set small, and its characters are denser: give the
+   role line more size and air so it stays readable. */
+:lang(zh) .card-role {
+  font-size: 1.9cqw;
+  letter-spacing: 0.2em;
+}
+
 /* Narrow screens: turn the card upright, like a vertical card. */
 @media (max-width: 640px) {
   .card {
@@ -382,6 +452,11 @@ a:hover {
     margin-block-start: 4cqw;
     font-size: 3.6cqw;
     line-height: 1.6;
+  }
+
+  :lang(zh) .card-role {
+    font-size: 3.9cqw;
+    letter-spacing: 0.1em; /* fits the three roles on one line */
   }
 
   .card-contact {
@@ -725,6 +800,11 @@ a:hover {
     inline-size: auto;
     filter: invert(1) opacity(0.6);
   }
+}
+
+.translation-note {
+  display: block;
+  margin-block-start: 0.25rem;
 }
 
 /* ==========================================================================

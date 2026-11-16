@@ -1,6 +1,17 @@
 ---
 import '../styles/global.css';
-import { base, copy, social, year, type Lang, type ProjectSlug } from '../content';
+import {
+  base,
+  copy,
+  langNames,
+  langs,
+  mainLangs,
+  moreLangs,
+  social,
+  year,
+  type Lang,
+  type ProjectSlug,
+} from '../content';
 import Logo from '../components/Logo.astro';
 
 interface Props {
@@ -16,7 +27,8 @@ const t = copy[lang];
 const site = Astro.site!;
 
 const pathFor = (l: Lang) => base(l) + (project ? `${project}/` : '');
-const alternates = { nl: new URL(pathFor('nl'), site).href, en: new URL(pathFor('en'), site).href };
+const alternates = Object.fromEntries(langs.map((l) => [l, new URL(pathFor(l), site).href])) as Record<Lang, string>;
+const current = (l: Lang) => (!notFound && lang === l ? 'page' : undefined);
 const canonical = alternates[lang];
 const title = project ? `${t.projects[project].name} – ${t.meta.title}` : t.meta.title;
 const description = project ? t.projects[project].paragraphs[0].replace(/<[^>]+>/g, '') : t.meta.description;
@@ -46,8 +58,7 @@ const jsonLd = {
       ) : (
         <>
           <link rel="canonical" href={canonical} />
-          <link rel="alternate" hreflang="nl" href={alternates.nl} />
-          <link rel="alternate" hreflang="en" href={alternates.en} />
+          {langs.map((l) => <link rel="alternate" hreflang={copy[l].htmlLang} href={alternates[l]} />)}
           <link rel="alternate" hreflang="x-default" href={alternates.nl} />
         </>
       )
@@ -85,9 +96,40 @@ const jsonLd = {
       <a class="logo" href={base(lang)} aria-label="Luuk Noverraz – home">
         <Logo />
       </a>
-      <p class="lang-switch">
-        <a href={pathFor('nl')} hreflang="nl" lang="nl" aria-current={!notFound && lang === 'nl' ? 'page' : undefined}>NL</a>{' / '}<a href={pathFor('en')} hreflang="en" lang="en" aria-current={!notFound && lang === 'en' ? 'page' : undefined}>EN</a>
-      </p>
+      <div class="lang-switch">
+        <p>
+          {
+            mainLangs.map((l, i) => (
+              <>
+                {i > 0 && ' / '}
+                <a href={pathFor(l)} hreflang={l} lang={l} aria-current={current(l)}>
+                  {l.toUpperCase()}
+                </a>
+              </>
+            ))
+          }
+        </p>
+        {/* The other languages are AI-translated; they live behind the globe. */}
+        <details class="lang-more">
+          <summary aria-label={t.nav.moreLanguages} title={t.nav.moreLanguages}>
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"></path>
+            </svg>
+          </summary>
+          <ul>
+            {
+              moreLangs.map((l) => (
+                <li>
+                  <a href={pathFor(l)} hreflang={copy[l].htmlLang} lang={copy[l].htmlLang} aria-current={current(l)}>
+                    {langNames[l]}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </details>
+      </div>
     </header>
 
     <main id="main">
@@ -95,7 +137,10 @@ const jsonLd = {
     </main>
 
     <footer class="site-footer">
-      <p>{year} © Luuk Noverraz</p>
+      <p>
+        {year} © Luuk Noverraz
+        {t.translationNote && <span class="translation-note">{t.translationNote}</span>}
+      </p>
       <a href={social.source} target="_blank" rel="noopener" aria-label={t.footer.source}>
         <img src="/icons/code.svg" alt="" width="27" height="27" />
       </a>
