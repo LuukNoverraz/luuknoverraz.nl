@@ -212,12 +212,13 @@ a:hover {
     pointer-events: none;
   }
 
-  /* Paper: fine grain plus a faint cloudy unevenness, as inline SVG noise. */
+  /* Paper: the tooth of textured card stock. Inline SVG noise used as a height
+     map and lit from the top left, keeping only the small shadows it casts. */
   &::before {
-    background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .09 0 0 0 0 .07 0 0 0 0 .08 0 0 0 .55 -.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.03 .05' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .09 0 0 0 0 .07 0 0 0 0 .08 0 0 0 .2 -.09'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
-    opacity: 0.55;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='p' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.32' numOctaves='3' stitchTiles='stitch'/%3E%3CfeDiffuseLighting surfaceScale='1.4' lighting-color='%23fff'%3E%3CfeDistantLight azimuth='225' elevation='60'/%3E%3C/feDiffuseLighting%3E%3CfeColorMatrix values='0 0 0 0 .09 0 0 0 0 .07 0 0 0 0 .08 -1.5 0 0 0 1.3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
+    /* the tooth shrinks with the card, so a small card isn't coarser */
+    background-size: clamp(8.5rem, 27cqw, 16rem);
+    opacity: 0.5;
   }
 
   /* Light: brighter where it falls, a touch of shade at the far corner. */
@@ -254,7 +255,7 @@ a:hover {
 
 .card-name {
   margin-block: 1.6cqw 0.6cqw;
-  font-size: 7cqw;
+  font-size: 6.1cqw;
   font-weight: normal;
   letter-spacing: 0.1em;
   white-space: nowrap;
@@ -272,6 +273,11 @@ a:hover {
 
 .card-name span::first-letter {
   font-size: calc(1em / var(--small-cap));
+}
+
+/* The surname is set in full-size capitals: Luuk NOVERRAZ. */
+.card-name span:last-child {
+  --small-cap: 1;
 }
 
 .card-name span::first-letter,
@@ -338,7 +344,7 @@ a:hover {
 
   .card-name {
     margin-block: 5cqw 3cqw;
-    font-size: 15cqw;
+    font-size: 11.2cqw;
     line-height: 1.15;
     white-space: normal;
 
