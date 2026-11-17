@@ -284,7 +284,7 @@ export const copy: Record<Lang, Copy> = {
         tools: 'p5.js',
         link: 'https://codemaker4.com/fury-fly/',
         paragraphs: [
-          'In deze lokale 2D-multiplayer-platformer ben je een dikke vlieg die niet echt kan vliegen. De heksenkeuken loopt onder, en je probeert het langer vol te houden dan je tegenstander voordat na 30 seconden het hele scherm onder water staat.',
+          'Fury Fly in the Witches’ Kitchen, zoals hij voluit heet, is een lokale 2D-multiplayer-platformer waarin je een dikke vlieg bent die niet echt kan vliegen. De heksenkeuken loopt onder, en je probeert het langer vol te houden dan je tegenstander voordat na 30 seconden het hele scherm onder water staat.',
           'In negen uur gemaakt voor de CoderClass Game Jam 2022 (die we wonnen!), samen met <a href="https://jochem33.github.io/">Jochem Baas</a>, <a href="https://github.com/leahcrozier">Leah Crozier</a> en <a href="https://codemaker4.com/">CodeMaker4</a>. Het thema was “30 seconden”. Je speelt hem het best met z’n tweeën.',
         ],
       },
@@ -552,7 +552,7 @@ export const copy: Record<Lang, Copy> = {
         tools: 'p5.js',
         link: 'https://codemaker4.com/fury-fly/',
         paragraphs: [
-          'In this 2D local multiplayer platformer, you are a fat fly who can’t really fly. The witches’ kitchen is about to flood, and you are trying to outlive your opponent before the screen is flooded after 30 seconds.',
+          'Fury Fly in the Witches’ Kitchen, as it’s called in full, is a 2D local multiplayer platformer where you are a fat fly who can’t really fly. The kitchen is about to flood, and you are trying to outlive your opponent before the screen is flooded after 30 seconds.',
           'Made in nine hours for the CoderClass Game Jam 2022 (which we won!) with <a href="https://jochem33.github.io/">Jochem Baas</a>, <a href="https://github.com/leahcrozier">Leah Crozier</a> and <a href="https://codemaker4.com/">CodeMaker4</a>. The theme was “30 seconds”. Best played with someone else.',
         ],
       },
@@ -820,7 +820,7 @@ export const copy: Record<Lang, Copy> = {
         tools: 'p5.js',
         link: 'https://codemaker4.com/fury-fly/',
         paragraphs: [
-          'In diesem lokalen 2D-Multiplayer-Plattformer bist du eine dicke Fliege, die nicht richtig fliegen kann. Die Hexenküche läuft voll, und du versuchst, deinen Gegner zu überdauern, bevor nach 30 Sekunden der ganze Bildschirm unter Wasser steht.',
+          'Fury Fly in the Witches’ Kitchen, so der volle Name, ist ein lokaler 2D-Multiplayer-Plattformer, in dem du eine dicke Fliege bist, die nicht richtig fliegen kann. Die Hexenküche läuft voll, und du versuchst, deinen Gegner zu überdauern, bevor nach 30 Sekunden der ganze Bildschirm unter Wasser steht.',
           'In neun Stunden für den CoderClass Game Jam 2022 (den wir gewonnen haben!) entstanden, zusammen mit <a href="https://jochem33.github.io/">Jochem Baas</a>, <a href="https://github.com/leahcrozier">Leah Crozier</a> und <a href="https://codemaker4.com/">CodeMaker4</a>. Das Thema war „30 Sekunden“. Am besten zu zweit spielen.',
         ],
       },
@@ -1091,7 +1091,7 @@ export const copy: Record<Lang, Copy> = {
         tools: 'p5.js',
         link: 'https://codemaker4.com/fury-fly/',
         paragraphs: [
-          'Dans ce jeu de plateforme 2D multijoueur en local, vous êtes une grosse mouche qui ne sait pas vraiment voler. La cuisine des sorcières est sur le point d’être inondée, et vous tentez de survivre plus longtemps que votre adversaire avant que l’eau ne recouvre tout l’écran au bout de 30 secondes.',
+          'Fury Fly in the Witches’ Kitchen, de son nom complet, est un jeu de plateforme 2D multijoueur en local dans lequel vous êtes une grosse mouche qui ne sait pas vraiment voler. La cuisine des sorcières est sur le point d’être inondée, et vous tentez de survivre plus longtemps que votre adversaire avant que l’eau ne recouvre tout l’écran au bout de 30 secondes.',
           'Réalisé en neuf heures pour la CoderClass Game Jam 2022 (que nous avons gagnée !) avec <a href="https://jochem33.github.io/">Jochem Baas</a>, <a href="https://github.com/leahcrozier">Leah Crozier</a> et <a href="https://codemaker4.com/">CodeMaker4</a>. Le thème était « 30 secondes ». À jouer de préférence à deux.',
         ],
       },
@@ -1361,7 +1361,7 @@ export const copy: Record<Lang, Copy> = {
         tools: 'p5.js',
         link: 'https://codemaker4.com/fury-fly/',
         paragraphs: [
-          'En este plataformas 2D multijugador local eres una mosca gorda que no sabe volar muy bien. La cocina de las brujas está a punto de inundarse, y intentas aguantar más que tu rival antes de que el agua cubra toda la pantalla a los 30 segundos.',
+          'Fury Fly in the Witches’ Kitchen, que es su nombre completo, es un plataformas 2D multijugador local en el que eres una mosca gorda que no sabe volar muy bien. La cocina de las brujas está a punto de inundarse, y intentas aguantar más que tu rival antes de que el agua cubra toda la pantalla a los 30 segundos.',
           'Hecho en nueve horas para la CoderClass Game Jam 2022 (¡que ganamos!) con <a href="https://jochem33.github.io/">Jochem Baas</a>, <a href="https://github.com/leahcrozier">Leah Crozier</a> y <a href="https://codemaker4.com/">CodeMaker4</a>. El tema era «30 segundos». Mejor jugarlo con alguien.',
         ],
       },
@@ -1631,7 +1631,7 @@ export const copy: Record<Lang, Copy> = {
         tools: 'p5.js',
         link: 'https://codemaker4.com/fury-fly/',
         paragraphs: [
-          'この 2D ローカル対戦プラットフォーマーで、あなたはうまく飛べない太ったハエ。魔女のキッチンが水浸しになりかけていて、30秒後に画面がすっかり水に沈むまで、相手より長く生き残ることを目指します。',
+          '正式名称は『Fury Fly in the Witches’ Kitchen』。2D のローカル対戦プラットフォーマーで、あなたはうまく飛べない太ったハエです。魔女のキッチンが水浸しになりかけていて、30秒後に画面がすっかり水に沈むまで、相手より長く生き残ることを目指します。',
           'CoderClass Game Jam 2022 のために、<a href="https://jochem33.github.io/">Jochem Baas</a>、<a href="https://github.com/leahcrozier">Leah Crozier</a>、<a href="https://codemaker4.com/">CodeMaker4</a> と9時間で作りました（そして優勝しました！）。テーマは「30秒」。できれば誰かと一緒に遊んでください。',
         ],
       },
@@ -1901,7 +1901,7 @@ export const copy: Record<Lang, Copy> = {
         tools: 'p5.js',
         link: 'https://codemaker4.com/fury-fly/',
         paragraphs: [
-          '在这款本地多人 2D 平台跳跃游戏里，你是一只不太会飞的胖苍蝇。女巫的厨房就要被水淹没，你要在 30 秒后整个屏幕被淹之前，比对手坚持得更久。',
+          '这款游戏的全名是《Fury Fly in the Witches’ Kitchen》，一款本地多人 2D 平台跳跃游戏，你在里面是一只不太会飞的胖苍蝇。女巫的厨房就要被水淹没，你要在 30 秒后整个屏幕被淹之前，比对手坚持得更久。',
           '这是我和 <a href="https://jochem33.github.io/">Jochem Baas</a>、<a href="https://github.com/leahcrozier">Leah Crozier</a>、<a href="https://codemaker4.com/">CodeMaker4</a> 为 CoderClass Game Jam 2022 用九小时做出来的（而且我们赢了！），主题是“30 秒”。最好找个人一起玩。',
         ],
       },
