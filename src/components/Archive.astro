@@ -1,0 +1,61 @@
+---
+// Earlier versions of this site, reached through "2016" in the footer.
+import { Picture } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import { base, copy, type Lang } from '../content';
+import shot2026 from '../assets/archive/2026.jpg';
+import shot2023 from '../assets/archive/2023.jpg';
+import shot2022 from '../assets/archive/2022.jpg';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = copy[lang];
+const repo = 'https://github.com/LuukNoverraz/luuknoverraz.nl';
+
+// Newest first. Each links to the code as it was then; add older versions here.
+const editions = [
+  { year: '2026', shot: shot2026, code: repo },
+  { year: '2023', shot: shot2023, code: `${repo}/tree/ab8ad59` },
+  { year: '2022', shot: shot2022, code: `${repo}/tree/251d614` },
+];
+---
+
+<Base lang={lang} subpage={{ slug: 'archive', title: t.archive.title, description: t.archive.intro }}>
+  <article class="section archive">
+    <a class="back" href={base(lang)}>
+      <span aria-hidden="true">←</span> {t.back}
+    </a>
+    <h1 class="section-title">{t.archive.title}</h1>
+    <p class="archive-intro">{t.archive.intro}</p>
+    <ol class="editions">
+      {
+        editions.map((e) => (
+          <li class="edition">
+            <div class="edition-shot">
+              <Picture
+                src={e.shot}
+                formats={['avif', 'webp']}
+                widths={[480, 960, 1440]}
+                sizes="(max-width: 768px) 100vw, 36rem"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div class="edition-text">
+              <h2>{e.year}</h2>
+              <p>{t.archive.editions[e.year]}</p>
+              <p class="edition-code">
+                <a href={e.code} target="_blank" rel="noopener">
+                  {t.archive.code}
+                </a>
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </article>
+</Base>

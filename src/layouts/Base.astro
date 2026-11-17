@@ -21,19 +21,22 @@ interface Props {
   project?: ProjectSlug;
   /** Set on the 404 page: no canonical, no alternates, not indexed. */
   notFound?: boolean;
+  /** Set on other pages, such as the archive: their address and heading. */
+  subpage?: { slug: string; title: string; description: string };
 }
 
-const { lang, project, notFound } = Astro.props;
+const { lang, project, notFound, subpage } = Astro.props;
 const t = copy[lang];
 const site = Astro.site!;
 
-const pathFor = (l: Lang) => base(l) + (project ? `${project}/` : '');
+const slug = project ?? subpage?.slug;
+const pathFor = (l: Lang) => base(l) + (slug ? `${slug}/` : '');
 const alternates = Object.fromEntries(langs.map((l) => [l, new URL(pathFor(l), site).href])) as Record<Lang, string>;
 const current = (l: Lang) => (!notFound && lang === l ? 'page' : undefined);
 const canonical = alternates[lang];
 const pp = project ? projectCopy(lang, project).p : undefined;
-const title = pp ? `${pp.name} – ${t.meta.title}` : t.meta.title;
-const description = pp ? pp.paragraphs[0].replace(/<[^>]+>/g, '') : t.meta.description;
+const title = pp ? `${pp.name} – ${t.meta.title}` : subpage ? `${subpage.title} – ${t.meta.title}` : t.meta.title;
+const description = pp ? pp.paragraphs[0].replace(/<[^>]+>/g, '') : (subpage?.description ?? t.meta.description);
 
 
 const jsonLd = {
@@ -142,7 +145,8 @@ const jsonLd = {
 
     <footer class="site-footer">
       <p>
-        {year} © Luuk Noverraz
+        {/* Easter egg: the first year opens the earlier versions of this site. */}
+        <a class="since" href={`${base(lang)}archive/`} aria-label={`2016: ${t.archive.link}`} title={t.archive.link}>2016</a>–{year} © Luuk Noverraz
         {t.translationNote && <span class="translation-note">{t.translationNote}</span>}
       </p>
       <a href={social.source} target="_blank" rel="noopener" aria-label={t.footer.source}>

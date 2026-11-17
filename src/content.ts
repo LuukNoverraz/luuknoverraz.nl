@@ -83,6 +83,8 @@ interface Copy {
   work: { title: string; view: string; play: string };
   /** The image viewer on project pages. */
   viewer: { open: string; close: string };
+  /** Earlier versions of this site, behind the year in the footer. */
+  archive: { title: string; intro: string; link: string; code: string; editions: Record<string, string> };
   /** Heading of the older games behind the "more" toggle; the games are in `earlierGames`. */
   earlier: { title: string };
   /** About me, between Work and Education. Empty paragraphs show placeholder lines. */
@@ -305,6 +307,17 @@ export const copy: Record<Lang, Copy> = {
     card: { mail: 'E-mail.' },
     work: { title: 'Werk', view: 'Lees meer', play: 'Speel' },
     viewer: { open: 'Afbeelding vergroten', close: 'Sluiten' },
+    archive: {
+      title: 'Eerdere versies',
+      intro: 'Deze site bestaat sinds 2016 en is sindsdien een paar keer opnieuw gebouwd. Dit zijn de versies die ik heb bewaard.',
+      link: 'Eerdere versies van deze site',
+      code: 'Code op GitHub',
+      editions: {
+        2026: 'Een visitekaartje, in zeven talen.',
+        2023: 'Een witte balk met mijn gezicht als logo, en game developer, front-end developer en video editor in vette hoofdletters.',
+        2022: 'Donkerblauw, een grote naam in zware hoofdletters en een LN-logo.',
+      },
+    },
     earlier: {
       title: 'Eerdere games',
     },
@@ -533,6 +546,17 @@ export const copy: Record<Lang, Copy> = {
     card: { mail: 'E-mail.' },
     work: { title: 'Work', view: 'Read more', play: 'Play' },
     viewer: { open: 'Enlarge image', close: 'Close' },
+    archive: {
+      title: 'Earlier versions',
+      intro: 'This site has been around since 2016 and has been rebuilt a few times since. These are the versions I’ve kept.',
+      link: 'Earlier versions of this site',
+      code: 'Code on GitHub',
+      editions: {
+        2026: 'A business card, in seven languages.',
+        2023: 'A white bar with my face as the logo, and game developer, front-end developer and video editor in bold capitals.',
+        2022: 'Dark blue, a big name in heavy capitals, and an LN logo.',
+      },
+    },
     earlier: {
       title: 'Earlier games',
     },
@@ -761,6 +785,17 @@ export const copy: Record<Lang, Copy> = {
     card: { mail: 'E-Mail.' },
     work: { title: 'Arbeiten', view: 'Mehr lesen', play: 'Spielen' },
     viewer: { open: 'Bild vergrößern', close: 'Schließen' },
+    archive: {
+      title: 'Frühere Versionen',
+      intro: 'Diese Website gibt es seit 2016, und seitdem habe ich sie ein paar Mal neu gebaut. Das sind die Versionen, die ich aufbewahrt habe.',
+      link: 'Frühere Versionen dieser Website',
+      code: 'Code auf GitHub',
+      editions: {
+        2026: 'Eine Visitenkarte, in sieben Sprachen.',
+        2023: 'Ein weißer Balken mit meinem Gesicht als Logo, dazu Game Developer, Front-end Developer und Video Editor in fetten Großbuchstaben.',
+        2022: 'Dunkelblau, ein großer Name in schweren Großbuchstaben und ein LN-Logo.',
+      },
+    },
     earlier: {
       title: 'Frühere Spiele',
     },
@@ -992,6 +1027,17 @@ export const copy: Record<Lang, Copy> = {
     card: { mail: 'E-mail.' },
     work: { title: 'Travaux', view: 'En savoir plus', play: 'Jouer' },
     viewer: { open: 'Agrandir l’image', close: 'Fermer' },
+    archive: {
+      title: 'Versions précédentes',
+      intro: 'Ce site existe depuis 2016 et je l’ai reconstruit plusieurs fois depuis. Voici les versions que j’ai gardées.',
+      link: 'Versions précédentes de ce site',
+      code: 'Code sur GitHub',
+      editions: {
+        2026: 'Une carte de visite, en sept langues.',
+        2023: 'Une barre blanche avec mon visage en logo, et game developer, front-end developer et video editor en grosses capitales.',
+        2022: 'Du bleu nuit, un grand nom en capitales épaisses et un logo LN.',
+      },
+    },
     earlier: {
       title: 'Jeux précédents',
     },
@@ -1222,6 +1268,17 @@ export const copy: Record<Lang, Copy> = {
     card: { mail: 'E-mail.' },
     work: { title: 'Trabajos', view: 'Leer más', play: 'Jugar' },
     viewer: { open: 'Ampliar imagen', close: 'Cerrar' },
+    archive: {
+      title: 'Versiones anteriores',
+      intro: 'Este sitio existe desde 2016 y lo he rehecho varias veces desde entonces. Estas son las versiones que he guardado.',
+      link: 'Versiones anteriores de este sitio',
+      code: 'Código en GitHub',
+      editions: {
+        2026: 'Una tarjeta de visita, en siete idiomas.',
+        2023: 'Una barra blanca con mi cara como logo, y game developer, front-end developer y video editor en mayúsculas gruesas.',
+        2022: 'Azul oscuro, un nombre grande en mayúsculas gruesas y un logo LN.',
+      },
+    },
     earlier: {
       title: 'Juegos anteriores',
     },
@@ -1452,6 +1509,17 @@ export const copy: Record<Lang, Copy> = {
     card: { mail: 'E-mail.' },
     work: { title: '作品', view: '詳しく見る', play: 'プレイ' },
     viewer: { open: '画像を拡大', close: '閉じる' },
+    archive: {
+      title: '過去のバージョン',
+      intro: 'このサイトは2016年から続いていて、これまでに何度か作り直してきました。ここにあるのは、手元に残しているバージョンです。',
+      link: 'このサイトの過去のバージョン',
+      code: 'GitHub のコード',
+      editions: {
+        2026: '名刺のデザインで、7つの言語に対応。',
+        2023: '白いバーに自分の顔のロゴ、太い大文字で「game developer / front-end developer / video editor」。',
+        2022: 'ダークブルーの背景に、太い大文字の大きな名前と LN のロゴ。',
+      },
+    },
     earlier: {
       title: '過去のゲーム',
     },
@@ -1682,6 +1750,17 @@ export const copy: Record<Lang, Copy> = {
     card: { mail: 'E-mail.' },
     work: { title: '作品', view: '了解更多', play: '试玩' },
     viewer: { open: '放大图片', close: '关闭' },
+    archive: {
+      title: '历史版本',
+      intro: '这个网站从 2016 年开始就有了，之后我又重做过几次。这里是我保留下来的版本。',
+      link: '本网站的历史版本',
+      code: 'GitHub 上的代码',
+      editions: {
+        2026: '一张名片，支持七种语言。',
+        2023: '白色顶栏，用我的脸做标志，粗体大写写着 game developer / front-end developer / video editor。',
+        2022: '深蓝色背景，粗重大写的大名字，还有一个 LN 标志。',
+      },
+    },
     earlier: {
       title: '早期游戏',
     },

@@ -902,6 +902,87 @@ a:hover {
   }
 }
 
+/* "2016" in the footer: looks like plain fine print until you hover it */
+.since {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--red);
+    text-decoration: underline;
+  }
+}
+
+/* ==========================================================================
+   Archive: earlier versions of this site
+   ========================================================================== */
+.archive {
+  padding-block-start: 6rem;
+
+  .section-title {
+    margin-block: 1.5rem 0.75rem;
+  }
+}
+
+.archive-intro {
+  max-inline-size: 38rem;
+}
+
+.editions {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 4rem);
+  margin-block: 2.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.edition {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 4vw, 2.5rem);
+  align-items: center;
+
+  h2 {
+    font-family: var(--serif);
+    font-size: 1.75rem;
+    font-weight: normal;
+    letter-spacing: 0.08em;
+  }
+
+  p {
+    margin-block-start: 0.4rem;
+  }
+}
+
+/* a screenshot framed like a print on the paper */
+.edition-shot {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--line);
+  box-shadow:
+    0 1px 2px rgb(22 18 20 / 0.1),
+    0 1rem 2.5rem -1rem rgb(22 18 20 / 0.25);
+
+  img {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.edition-code {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .edition {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+}
+
 .translation-note {
   display: block;
   margin-block-start: 0.25rem;
