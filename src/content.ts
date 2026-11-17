@@ -31,6 +31,12 @@ export const projectSlugs: readonly string[] = [
 ];
 export type ProjectSlug = string;
 
+/** Copy for a project page in this language, or the English copy while it isn't translated yet. */
+export const projectCopy = (lang: Lang, slug: ProjectSlug) => {
+  const own = copy[lang].projects[slug];
+  return own ? { p: own, lang } : { p: copy.en.projects[slug], lang: 'en' as Lang };
+};
+
 // Year in the footer, worked out at build time (the deploy workflow rebuilds
 // the site every 1 January so it stays current).
 export const year = new Date().getFullYear();
@@ -251,6 +257,128 @@ export const copy: Record<Lang, Copy> = {
         paragraphs: [
           'You are Jörgen, an Icelandic shepherd, tending your sheep like any other day when the ground starts to rumble. Rescue as many sheep as you can before your home disappears under the lava.',
           'Made in two days with homhom for Micro Jam 013, where the theme was lava and the rule was that time is limited. I made the artwork and the 3D models, and we wrote much of the game logic together. Built in Godot, with poetry by Plutbios.',
+        ],
+      },
+      // Earlier games: English only until checked; other languages fall back to it.
+      'how-fast-can-you-climb-the-stairs': {
+        name: 'How Fast Can You Climb the Stairs?',
+        slogan: 'A game about climbing stairs, made in five hours',
+        duration: '2024 · 5 hours',
+        role: 'Solo, including the soundtrack',
+        tools: 'Godot',
+        link: 'https://noverraz.itch.io/hfcycts',
+        paragraphs: [
+          'How Fast Can You Climb the Stairs? is a game about climbing stairs. Every step is a string of characters you have to type, and you only get up as fast as you can type them.',
+          'I made it in five hours for The Weirdcore Jam, including an original soundtrack of three tracks: How Fast Can You Climb The Stairs?, You Gots To Type, Son and You Done Did Type, Son. The poetry is by Plutbios.',
+          'My personal best is 1.67 seconds, which as far as I know is also the world record.',
+        ],
+      },
+      'hero-of-light': {
+        name: 'Hero of Light',
+        slogan: 'A platformer about fulfilling the prophecy of the Hero of Light',
+        duration: 'January 2024 · 3 days',
+        role: 'Art and programming, together with homhom',
+        tools: 'Godot',
+        link: 'https://noverraz.itch.io/hero-of-light',
+        paragraphs: [
+          'Long foretold in myths and legends, the Hero of Light is said to one day free the common folk from the fiends of magic that oppress their land. You are that hero: armed with some unconventional weaponry, you clear away the threats and dodge everything else that comes your way.',
+          'homhom and I made it for Mini Jam 150, where the theme was magic and the limitation was “light is the way”. I made the art and shared the programming; homhom also did the level design.',
+        ],
+      },
+      'invasive-procedure': {
+        name: 'Invasive Procedure',
+        slogan: 'You wake up to find something’s missing',
+        duration: 'October 2023',
+        role: 'Art and programming, together with homhom and Picco Bello BV',
+        tools: 'Godot',
+        link: 'https://homhom.itch.io/invasive-procedure',
+        paragraphs: [
+          'You wake up to find something’s missing…',
+          'homhom and I made it for Ludum Dare 54, together with Picco Bello BV, who wrote the story and worked on the level design. I made the art and shared the programming with homhom, who also designed levels.',
+        ],
+      },
+      'post-it-prison': {
+        name: 'Post-it Prison',
+        slogan: 'A prison guard job where the inmates are post-it notes',
+        duration: 'June 2023 · 6 days',
+        role: 'Solo',
+        tools: 'Godot',
+        link: 'https://noverraz.itch.io/post-it-prison',
+        paragraphs: [
+          'Welcome to the Post-it Prison, where some devious criminals have somehow been turned into post-it notes and stuck to the wall. It’s quite unethical. It’s also your first day on the job, and the prison is badly understaffed.',
+          'Start at the computer, then run to whichever inmate needs you before you run out of hearts. The aim is to keep it up for as long as you can.',
+          'I made it on my own in six days for A highly unproductive game jam.',
+        ],
+      },
+      'scp-at-home': {
+        name: 'scp at home',
+        slogan: 'A short horror game set in the world of the SCP Foundation',
+        duration: 'April 2023 · 1 week',
+        role: 'Solo',
+        tools: 'Godot, Blender, Audacity',
+        link: 'https://noverraz.itch.io/scp-at-home',
+        paragraphs: [
+          'You are a D-class inmate in an SCP Foundation facility, and in the middle of a security incident you have to find your way out. There are three endings, and plenty of scares along the way.',
+          'I made it on my own in one week, with the models made in Blender and the sound edited in Audacity.',
+        ],
+      },
+      'dicetective': {
+        name: 'Dicetective',
+        slogan: 'A comedy detective visual novel with dice in the leading roles',
+        duration: 'July 2022 · 48 hours',
+        role: 'Solo',
+        tools: 'Unity',
+        link: 'https://luuknoverraz.itch.io/dicetective',
+        paragraphs: [
+          'It’s do or die in this dicey detective drama. You play the world-class dice detective, and when tragedy strikes, a mystery is born. On your way to solving it you meet many faces: the six on a die, that is.',
+          'I made it in 48 hours for the GMTK Game Jam 2022, where the theme was “roll of the dice”. It is a pixel-art comedy that you play with a single button, and it takes about half an hour.',
+        ],
+      },
+      'night-stroll-ambush': {
+        name: 'Night Stroll Ambush',
+        slogan: 'Break the arrows flying at you and keep walking',
+        duration: 'August 2021 · 3 days',
+        role: 'Solo, with music by RVKE',
+        tools: 'Unity, Affinity Designer, Audacity',
+        link: 'https://luuknoverraz.itch.io/night-stroll-ambush',
+        paragraphs: [
+          'You were taking a nice walk at night when bandits suddenly start shooting at you. Rather than fighting back, you break their arrows as they come down and keep moving. Watch where the arrows are fired into the sky to know where they will land; the game gets harder as your score climbs.',
+          'I made it for Mini Jam 87, where the theme was “break” and the limitation was that the player is a pacifist. The background music is by RVKE. Get your score to 50 to see something neat.',
+        ],
+      },
+      'zerotrace': {
+        name: 'Zerotrace',
+        slogan: 'A stealth prototype about slipping past your enemies',
+        duration: '2021 · prototype',
+        role: 'Solo',
+        tools: 'Unity',
+        link: 'https://luuknoverraz.itch.io/zerotrace',
+        paragraphs: [
+          'A stealth game in which you have to get past your enemies unseen, crouching to stay low and double-tapping to dash forward. It stayed a prototype: a test of how sneaking and moving should feel.',
+        ],
+      },
+      'barbasim': {
+        name: 'Barbasim',
+        slogan: 'A simulation of little creatures on a randomly generated island',
+        duration: 'December 2020',
+        role: 'Solo',
+        tools: 'Unity',
+        link: 'https://luuknoverraz.itch.io/barbasim',
+        paragraphs: [
+          'Barbasim is a simulation in which little creatures called Barbas live and interact on a randomly generated island. Every Barba has its own name and its own stats.',
+          'You can look at the island from different angles and follow individual Barbas around. The source code is on <a href="https://github.com/LuukNoverraz/Barbasim">GitHub</a>.',
+        ],
+      },
+      'sumo-shooters': {
+        name: 'Sumo Shooters',
+        slogan: 'A two-player mobile game that mixes billiards with sumo',
+        duration: '2020',
+        role: 'Solo',
+        tools: 'Unity',
+        link: 'https://luuknoverraz.itch.io/sumo-shooters',
+        paragraphs: [
+          'Two players share one phone and launch their sumo balls at each other, billiards-style. The first to knock the other off the stage five times wins.',
+          'Power-up crystals appear on the field for a temporary edge, there are several stages to fight on, and you can pick your colours. It runs on Android and Windows.',
         ],
       },
     },
@@ -830,6 +958,8 @@ export const copy: Record<Lang, Copy> = {
 // Older games, newest first, shown as a compact list behind a toggle under the projects.
 // Each line of facts reads: year · engine · game jam (linked).
 interface EarlierGame {
+  /** Address of its own page, e.g. /dicetective/. */
+  slug: string;
   name: string;
   link: string;
   year: number;
@@ -840,6 +970,7 @@ interface EarlierGame {
 
 export const earlierGames: EarlierGame[] = [
   {
+    slug: 'how-fast-can-you-climb-the-stairs',
     name: 'How Fast Can You Climb the Stairs?',
     link: 'https://noverraz.itch.io/hfcycts',
     year: 2024,
@@ -856,6 +987,7 @@ export const earlierGames: EarlierGame[] = [
     },
   },
   {
+    slug: 'hero-of-light',
     name: 'Hero of Light',
     link: 'https://noverraz.itch.io/hero-of-light',
     year: 2024,
@@ -872,6 +1004,7 @@ export const earlierGames: EarlierGame[] = [
     },
   },
   {
+    slug: 'invasive-procedure',
     name: 'Invasive Procedure',
     link: 'https://homhom.itch.io/invasive-procedure',
     year: 2023,
@@ -888,6 +1021,7 @@ export const earlierGames: EarlierGame[] = [
     },
   },
   {
+    slug: 'post-it-prison',
     name: 'Post-it Prison',
     link: 'https://noverraz.itch.io/post-it-prison',
     year: 2023,
@@ -904,6 +1038,7 @@ export const earlierGames: EarlierGame[] = [
     },
   },
   {
+    slug: 'scp-at-home',
     name: 'scp at home',
     link: 'https://noverraz.itch.io/scp-at-home',
     year: 2023,
@@ -919,6 +1054,7 @@ export const earlierGames: EarlierGame[] = [
     },
   },
   {
+    slug: 'dicetective',
     name: 'Dicetective',
     link: 'https://luuknoverraz.itch.io/dicetective',
     year: 2022,
@@ -935,6 +1071,7 @@ export const earlierGames: EarlierGame[] = [
     },
   },
   {
+    slug: 'night-stroll-ambush',
     name: 'Night Stroll Ambush',
     link: 'https://luuknoverraz.itch.io/night-stroll-ambush',
     year: 2021,
@@ -951,6 +1088,7 @@ export const earlierGames: EarlierGame[] = [
     },
   },
   {
+    slug: 'zerotrace',
     name: 'Zerotrace',
     link: 'https://luuknoverraz.itch.io/zerotrace',
     year: 2021,
@@ -966,6 +1104,7 @@ export const earlierGames: EarlierGame[] = [
     },
   },
   {
+    slug: 'barbasim',
     name: 'Barbasim',
     link: 'https://luuknoverraz.itch.io/barbasim',
     year: 2020,
@@ -981,6 +1120,7 @@ export const earlierGames: EarlierGame[] = [
     },
   },
   {
+    slug: 'sumo-shooters',
     name: 'Sumo Shooters',
     link: 'https://luuknoverraz.itch.io/sumo-shooters',
     year: 2020,
@@ -1005,3 +1145,6 @@ export const social = {
   source: 'https://github.com/LuukNoverraz/luuknoverraz.nl',
   itch: 'https://noverraz.itch.io/',
 };
+
+/** Every page under /<slug>/: the four featured projects and the earlier games. */
+export const allProjectSlugs: readonly string[] = [...projectSlugs, ...earlierGames.map((g) => g.slug)];

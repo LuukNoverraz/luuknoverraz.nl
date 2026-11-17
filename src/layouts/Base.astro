@@ -7,6 +7,7 @@ import {
   langs,
   mainLangs,
   moreLangs,
+  projectCopy,
   social,
   year,
   type Lang,
@@ -30,8 +31,9 @@ const pathFor = (l: Lang) => base(l) + (project ? `${project}/` : '');
 const alternates = Object.fromEntries(langs.map((l) => [l, new URL(pathFor(l), site).href])) as Record<Lang, string>;
 const current = (l: Lang) => (!notFound && lang === l ? 'page' : undefined);
 const canonical = alternates[lang];
-const title = project ? `${t.projects[project].name} – ${t.meta.title}` : t.meta.title;
-const description = project ? t.projects[project].paragraphs[0].replace(/<[^>]+>/g, '') : t.meta.description;
+const pp = project ? projectCopy(lang, project).p : undefined;
+const title = pp ? `${pp.name} – ${t.meta.title}` : t.meta.title;
+const description = pp ? pp.paragraphs[0].replace(/<[^>]+>/g, '') : t.meta.description;
 
 
 const jsonLd = {
@@ -186,6 +188,8 @@ const jsonLd = {
         }
 
         if (location.pathname !== '/' || !homes.size) return;
+        // Coming back from another page on this site (e.g. a project's Back link): stay.
+        if (document.referrer && new URL(document.referrer).origin === location.origin) return;
         if (/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)) return;
 
         let want = store.get();
@@ -195,7 +199,7 @@ const jsonLd = {
           store.set(want);
         }
         const target = homes.get(want);
-        if (target && target !== '/') location.replace(target);
+        if (target && target !== '/') location.replace(target + location.hash);
       })();
 
       // Top bar: mark it hidden while scrolling down and shown while scrolling up.

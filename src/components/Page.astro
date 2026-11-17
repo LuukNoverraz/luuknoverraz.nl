@@ -1,7 +1,7 @@
 ---
 import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import { base, copy, earlierGames, projectSlugs, social, type Lang, type ProjectSlug } from '../content';
+import { base, copy, earlierGames, projectCopy, projectSlugs, social, type Lang, type ProjectSlug } from '../content';
 import { earlierThumbs, media } from '../projects';
 
 interface Props {
@@ -17,6 +17,12 @@ const hasWork = projectSlugs.length > 0;
 const posterWidths = (w: number) => [480, 854, 1280].filter((x) => x < w).concat(w);
 // Top image of a project page: a large screenshot when there is one, else the cover.
 const hero = project ? (media[project].hero ?? media[project].poster) : undefined;
+// The page's copy; untranslated pages show the English text, marked as English.
+const pc = project ? projectCopy(lang, project) : undefined;
+const pp = pc?.p;
+const textLang = pc && pc.lang !== lang ? copy[pc.lang].htmlLang : undefined;
+// Earlier games sit in the toggle under Work, so their back link reopens it.
+const backHash = project && !projectSlugs.includes(project) ? '#earlier' : '#work';
 ---
 
 <Base lang={lang} project={project}>
@@ -116,11 +122,12 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
               );
             })}
           </ul>
-          <details class="earlier">
+          <details class="earlier" id="earlier">
             <summary>{t.earlier.title}</summary>
             <ul>
               {earlierGames.map((g) => {
                 const thumb = earlierThumbs[g.link.replace(/\/$/, '').split('/').pop()!];
+                const page = `${base(lang)}${g.slug}/`;
                 return (
                   <li>
                     {thumb && (
@@ -135,7 +142,7 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
                     )}
                     <div>
                       <h3>
-                        <a href={g.link} {...ext}>{g.name}</a>
+                        <a href={page}>{g.name}</a>
                       </h3>
                       <p>{g.text[lang]}</p>
                       <p class="project-facts">
@@ -146,6 +153,14 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
                             <a href={g.jam.url} {...ext}>{g.jam.name}</a>
                           </>
                         )}
+                      </p>
+                      <p class="project-links">
+                        <a href={g.link} {...ext} aria-label={`${t.work.play}: ${g.name}`}>
+                          {t.work.play}
+                        </a>
+                        <a href={page} aria-label={`${t.work.view}: ${g.name}`}>
+                          {t.work.view}
+                        </a>
                       </p>
                     </div>
                   </li>
@@ -195,29 +210,29 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
   {
     project && (
       <article class="section project-detail">
-        <a class="back" href={`${base(lang)}#work`}>
+        <a class="back" href={`${base(lang)}${backHash}`}>
           <span aria-hidden="true">←</span> {t.back}
         </a>
-        <h1 class="section-title">{t.projects[project].name}</h1>
-        <p class="project-slogan">{t.projects[project].slogan}</p>
+        <h1 class="section-title">{pp!.name}</h1>
+        <p class="project-slogan" lang={textLang}>{pp!.slogan}</p>
         <dl class="project-meta">
           <div>
             <dt>{t.projectLabels.date}{t.labelSuffix ?? "."}</dt>
-            <dd>{t.projects[project].duration}</dd>
+            <dd lang={textLang}>{pp!.duration}</dd>
           </div>
           <div>
             <dt>{t.projectLabels.role}{t.labelSuffix ?? "."}</dt>
-            <dd>{t.projects[project].role}</dd>
+            <dd lang={textLang}>{pp!.role}</dd>
           </div>
           <div>
             <dt>{t.projectLabels.tools}{t.labelSuffix ?? "."}</dt>
-            <dd>{t.projects[project].tools}</dd>
+            <dd>{pp!.tools}</dd>
           </div>
-          {t.projects[project].link && (
+          {pp!.link && (
             <div>
               <dt>{t.projectLabels.link}{t.labelSuffix ?? "."}</dt>
               <dd>
-                <a href={t.projects[project].link} {...ext}>{t.projects[project].link.replace('https://', '')}</a>
+                <a href={pp!.link} {...ext}>{pp!.link.replace('https://', '')}</a>
               </dd>
             </div>
           )}
@@ -248,8 +263,8 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
             </video>
           )}
         </div>
-        <div class="project-body">
-          {t.projects[project].paragraphs.map((text, i) => {
+        <div class="project-body" lang={textLang}>
+          {pp!.paragraphs.map((text, i) => {
             const img = media[project].images[i];
             return (
               <div class="project-row">
@@ -261,7 +276,7 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
                     fallbackFormat={img.src.format === 'png' && img.src.width > 900 ? 'jpg' : img.src.format}
                     widths={[Math.min(img.src.width, 420), Math.min(img.src.width, 840)].filter((w, j, a) => a.indexOf(w) === j)}
                     sizes={`(max-width: 768px) 100vw, ${Math.min(img.src.width, 420)}px`}
-                    alt={img.alt[lang]}
+                    alt={img.alt[lang] ?? img.alt.en}
                     loading="lazy"
                   />
                 )}
@@ -273,6 +288,18 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
     )
   }
 </Base>
+
+<script>
+  // Earlier games: a link to #earlier (the Back link on their pages) opens the list.
+  const earlier = document.querySelector<HTMLDetailsElement>('details#earlier');
+  const openEarlier = () => {
+    if (!earlier || location.hash !== '#earlier') return;
+    earlier.open = true;
+    earlier.scrollIntoView(); // the browser's own jump happens before it is open
+  };
+  openEarlier();
+  addEventListener('hashchange', openEarlier);
+</script>
 
 <script>
   // The card leans a few degrees towards the pointer, and the light on it follows.

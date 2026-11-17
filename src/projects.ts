@@ -28,6 +28,37 @@ import tZerotrace from './assets/thumbs/zerotrace.jpg';
 import tBarbasim from './assets/thumbs/barbasim.jpg';
 import tSumoShooters from './assets/thumbs/sumo-shooters.jpg';
 
+// Earlier games
+import eHowFastCanYouClimbTheStairsCover from './assets/earlier/how-fast-can-you-climb-the-stairs/cover.jpg';
+import eHowFastCanYouClimbTheStairs2 from './assets/earlier/how-fast-can-you-climb-the-stairs/2.jpg';
+import eHowFastCanYouClimbTheStairs1 from './assets/earlier/how-fast-can-you-climb-the-stairs/1.jpg';
+import eHeroOfLightCover from './assets/earlier/hero-of-light/cover.jpg';
+import eInvasiveProcedureCover from './assets/earlier/invasive-procedure/cover.jpg';
+import ePostItPrisonCover from './assets/earlier/post-it-prison/cover.jpg';
+import ePostItPrison1 from './assets/earlier/post-it-prison/1.jpg';
+import ePostItPrison2 from './assets/earlier/post-it-prison/2.jpg';
+import ePostItPrison3 from './assets/earlier/post-it-prison/3.jpg';
+import eScpAtHomeCover from './assets/earlier/scp-at-home/cover.jpg';
+import eScpAtHome1 from './assets/earlier/scp-at-home/1.jpg';
+import eScpAtHome2 from './assets/earlier/scp-at-home/2.jpg';
+import eScpAtHome4 from './assets/earlier/scp-at-home/4.jpg';
+import eDicetectiveCover from './assets/earlier/dicetective/cover.jpg';
+import eDicetective2 from './assets/earlier/dicetective/2.jpg';
+import eDicetective1 from './assets/earlier/dicetective/1.jpg';
+import eNightStrollAmbushCover from './assets/earlier/night-stroll-ambush/cover.jpg';
+import eNightStrollAmbush2 from './assets/earlier/night-stroll-ambush/2.jpg';
+import eNightStrollAmbush3 from './assets/earlier/night-stroll-ambush/3.jpg';
+import eZerotraceCover from './assets/earlier/zerotrace/cover.jpg';
+import eZerotrace1 from './assets/earlier/zerotrace/1.jpg';
+import eZerotrace2 from './assets/earlier/zerotrace/2.jpg';
+import eBarbasimCover from './assets/earlier/barbasim/cover.jpg';
+import eBarbasim2 from './assets/earlier/barbasim/2.jpg';
+import eBarbasim1 from './assets/earlier/barbasim/1.jpg';
+import eBarbasim3 from './assets/earlier/barbasim/3.jpg';
+import eSumoShootersCover from './assets/earlier/sumo-shooters/cover.jpg';
+import eSumoShooters1 from './assets/earlier/sumo-shooters/1.jpg';
+import eSumoShooters3 from './assets/earlier/sumo-shooters/3.jpg';
+
 interface ProjectMedia {
   /** Cover, shown in the list on the home page. */
   poster: ImageMetadata;
@@ -36,7 +67,7 @@ interface ProjectMedia {
   /** Base name of an optional loop in /public/videos (.webm + .mp4), played over the poster. */
   video?: string;
   /** One optional image per paragraph, same order as the paragraphs in content.ts. */
-  images: ({ src: ImageMetadata; alt: Record<Lang, string> } | null)[];
+  images: ({ src: ImageMetadata; alt: { en: string } & Partial<Record<Lang, string>> } | null)[];
 }
 
 // One entry per slug in content.ts. Import images from ./assets and list them here.
@@ -182,6 +213,76 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
           zh: '火山在群山之上喷发。',
         },
       },
+    ],
+  },
+  // Earlier games: English descriptions until the pages are translated.
+  'how-fast-can-you-climb-the-stairs': {
+    poster: eHowFastCanYouClimbTheStairsCover,
+    hero: eHowFastCanYouClimbTheStairs2,
+    images: [
+      { src: eHowFastCanYouClimbTheStairs1, alt: { en: 'The opening screen: a poem in pink letters over a green field under a blue sky.' } },
+    ],
+  },
+  'hero-of-light': {
+    poster: eHeroOfLightCover,
+    images: [
+    ],
+  },
+  'invasive-procedure': {
+    poster: eInvasiveProcedureCover,
+    images: [
+    ],
+  },
+  'post-it-prison': {
+    poster: ePostItPrisonCover,
+    images: [
+      { src: ePostItPrison1, alt: { en: 'A bare purple room, seen in first person.' } },
+      { src: ePostItPrison2, alt: { en: 'A pale room opening onto a dark corridor with coloured doorways.' } },
+      { src: ePostItPrison3, alt: { en: 'A ladder leading up through a hatch in a pale room.' } },
+    ],
+  },
+  'scp-at-home': {
+    poster: eScpAtHomeCover,
+    hero: eScpAtHome1,
+    images: [
+      { src: eScpAtHome2, alt: { en: 'A dark room with a long table.' } },
+      { src: eScpAtHome4, alt: { en: 'A dark concrete corridor with a doorway at the end.' } },
+    ],
+  },
+  'dicetective': {
+    poster: eDicetectiveCover,
+    hero: eDicetective2,
+    images: [
+      { src: eDicetective1, alt: { en: 'The Dicetective, a die in a hat and coat, entering the scene in pixel art.' } },
+    ],
+  },
+  'night-stroll-ambush': {
+    poster: eNightStrollAmbushCover,
+    images: [
+      { src: eNightStrollAmbush2, alt: { en: 'Arrows falling towards a hooded bird walking at night under the stars.' } },
+      { src: eNightStrollAmbush3, alt: { en: 'The “You died! Try again” screen.' } },
+    ],
+  },
+  'zerotrace': {
+    poster: eZerotraceCover,
+    hero: eZerotrace1,
+    images: [
+      { src: eZerotrace2, alt: { en: 'A top-down view of a blue level, with enemies patrolling between the walls.' } },
+    ],
+  },
+  'barbasim': {
+    poster: eBarbasimCover,
+    hero: eBarbasim2,
+    images: [
+      { src: eBarbasim1, alt: { en: 'Coloured, egg-shaped Barbas with name tags on a green hillside.' } },
+      { src: eBarbasim3, alt: { en: 'The coast of the island, with a river and a few Barbas.' } },
+    ],
+  },
+  'sumo-shooters': {
+    poster: eSumoShootersCover,
+    images: [
+      { src: eSumoShooters1, alt: { en: 'A green arena on a phone screen, split between the two players at the top and bottom.' } },
+      { src: eSumoShooters3, alt: { en: 'A round yellow stage with a target in the middle.' } },
     ],
   },
 };

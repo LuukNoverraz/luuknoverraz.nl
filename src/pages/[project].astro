@@ -1,9 +1,9 @@
 ---
 import Page from '../components/Page.astro';
-import { projectSlugs, type ProjectSlug } from '../content';
+import { allProjectSlugs, type ProjectSlug } from '../content';
 
 export function getStaticPaths() {
-  return projectSlugs.map((project) => ({ params: { project } }));
+  return allProjectSlugs.map((project) => ({ params: { project } }));
 }
 
 const project = Astro.params.project as ProjectSlug;
