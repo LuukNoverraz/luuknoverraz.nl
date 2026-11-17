@@ -115,7 +115,7 @@ export const copy: Record<Lang, Copy> = {
         name: 'Your Honor, WTF?!',
         slogan: 'Een rechtbank-partygame waarin de rechters AI zijn',
         duration: 'juli – augustus 2025',
-        role: 'Solo: ontwerp, code, art en assets',
+        role: 'Solo: ontwerp, art en assets',
         tools: 'Godot, Player2 API',
         link: 'https://noverraz.itch.io/your-honor-wtf',
         paragraphs: [
@@ -181,7 +181,7 @@ export const copy: Record<Lang, Copy> = {
       title: 'Over mij',
       paragraphs: [
         'Ik ben Luuk, game- en webontwikkelaar en student filosofie aan de UvA. Ik wil begrijpen hoe systemen en ervaringen werken: daarom bouw ik gamewerelden en schrijf ik over onderwerpen als republikanisme, economische afhankelijkheid en kunstmatige intelligentie.',
-        'Mijn games maak ik van begin tot eind zelf, van de code tot de graphics, 3D-modellen en zelfs de muziek. Zelf boulder ik graag, en dat inspireerde me bij Everest Half Full, mijn grootste game tot nu toe: je draagt een glas water de Mount Everest op en probeert boven zo veel mogelijk over te hebben.',
+        'Mijn games maak ik van begin tot eind zelf, van het ontwerp en de techniek tot de graphics, 3D-modellen en zelfs de muziek. Zelf boulder ik graag, en dat inspireerde me bij <a href="%base%everest-half-full/">Everest Half Full</a>, mijn grootste game tot nu toe: je draagt een glas water de Mount Everest op en probeert boven zo veel mogelijk over te hebben.',
         'Ik sta open voor samenwerkingen aan games, freelance webprojecten en stages. Stuur gerust een <a href="mailto:luuknoverraz@gmail.com">mail</a>, ook als je gewoon wilt praten over games of filosofie.',
       ],
     },
@@ -220,7 +220,7 @@ export const copy: Record<Lang, Copy> = {
         name: 'Your Honor, WTF?!',
         slogan: 'A courtroom party game where the judges are AI',
         duration: 'July – August 2025',
-        role: 'Solo: design, code, art and assets',
+        role: 'Solo: design, art and assets',
         tools: 'Godot, Player2 API',
         link: 'https://noverraz.itch.io/your-honor-wtf',
         paragraphs: [
@@ -286,7 +286,7 @@ export const copy: Record<Lang, Copy> = {
       title: 'About me',
       paragraphs: [
         'I’m Luuk, a game and web developer and a philosophy student at the University of Amsterdam. I want to understand how systems and experiences work: that’s why I build game worlds and write about topics such as republicanism, economic dependence and artificial intelligence.',
-        'I make my games myself from start to finish, from the code to the graphics, 3D models and even the music. I love bouldering, and it inspired Everest Half Full, my biggest game so far: you carry a glass of water up Mount Everest and try to have as much of it left at the top as you can.',
+        'I make my games myself from start to finish, from the design and the technical side to the graphics, 3D models and even the music. I love bouldering, and it inspired <a href="%base%everest-half-full/">Everest Half Full</a>, my biggest game so far: you carry a glass of water up Mount Everest and try to have as much of it left at the top as you can.',
         'I’m open to collaborations on games, freelance web projects and internships. Feel free to send me an <a href="mailto:luuknoverraz@gmail.com">email</a>, even if you just want to talk about games or philosophy.',
       ],
     },
@@ -325,7 +325,7 @@ export const copy: Record<Lang, Copy> = {
         name: 'Your Honor, WTF?!',
         slogan: 'Ein Gerichtssaal-Partyspiel, in dem die Richter KIs sind',
         duration: 'Juli – August 2025',
-        role: 'Solo: Design, Code, Grafik und Assets',
+        role: 'Solo: Design, Grafik und Assets',
         tools: 'Godot, Player2 API',
         link: 'https://noverraz.itch.io/your-honor-wtf',
         paragraphs: [
@@ -391,7 +391,7 @@ export const copy: Record<Lang, Copy> = {
       title: 'Über mich',
       paragraphs: [
         'Ich bin Luuk, Spiele- und Webentwickler und Philosophiestudent an der Universität von Amsterdam. Ich will verstehen, wie Systeme und Erfahrungen funktionieren: Deshalb baue ich Spielwelten und schreibe über Themen wie Republikanismus, wirtschaftliche Abhängigkeit und künstliche Intelligenz.',
-        'Meine Spiele mache ich von Anfang bis Ende selbst, vom Code über die Grafik und die 3D-Modelle bis hin zur Musik. Ich bouldere selbst gern, und das hat mich zu Everest Half Full inspiriert, meinem bisher größten Spiel: Du trägst ein Glas Wasser auf den Mount Everest und versuchst, oben so viel wie möglich davon übrig zu haben.',
+        'Meine Spiele mache ich von Anfang bis Ende selbst, vom Design und der Technik über die Grafik und die 3D-Modelle bis hin zur Musik. Ich bouldere selbst gern, und das hat mich zu <a href="%base%everest-half-full/">Everest Half Full</a> inspiriert, meinem bisher größten Spiel: Du trägst ein Glas Wasser auf den Mount Everest und versuchst, oben so viel wie möglich davon übrig zu haben.',
         'Ich bin offen für Zusammenarbeit an Spielen, freiberufliche Webprojekte und Praktika. Schreib mir gern eine <a href="mailto:luuknoverraz@gmail.com">E-Mail</a>, auch wenn du dich einfach über Spiele oder Philosophie unterhalten möchtest.',
       ],
     },
@@ -433,7 +433,7 @@ export const copy: Record<Lang, Copy> = {
         name: 'Your Honor, WTF?!',
         slogan: 'Un jeu de tribunal entre amis où les juges sont des IA',
         duration: 'juillet – août 2025',
-        role: 'Solo : design, code, graphismes et assets',
+        role: 'Solo : design, graphismes et assets',
         tools: 'Godot, Player2 API',
         link: 'https://noverraz.itch.io/your-honor-wtf',
         paragraphs: [
@@ -499,7 +499,7 @@ export const copy: Record<Lang, Copy> = {
       title: 'À propos de moi',
       paragraphs: [
         'Je suis Luuk, développeur de jeux et de sites web, et étudiant en philosophie à l’Université d’Amsterdam. Je veux comprendre comment fonctionnent les systèmes et les expériences : c’est pourquoi je construis des mondes de jeu et j’écris sur des sujets comme le républicanisme, la dépendance économique et l’intelligence artificielle.',
-        'Je réalise mes jeux moi-même du début à la fin, du code aux graphismes, en passant par les modèles 3D et même la musique. J’adore faire de l’escalade de bloc, et c’est ce qui m’a inspiré pour Everest Half Full, mon plus grand jeu à ce jour : vous portez un verre d’eau jusqu’au sommet de l’Everest en essayant d’en garder le plus possible.',
+        'Je réalise mes jeux moi-même du début à la fin, de la conception et de la technique aux graphismes, en passant par les modèles 3D et même la musique. J’adore faire de l’escalade de bloc, et c’est ce qui m’a inspiré pour <a href="%base%everest-half-full/">Everest Half Full</a>, mon plus grand jeu à ce jour : vous portez un verre d’eau jusqu’au sommet de l’Everest en essayant d’en garder le plus possible.',
         'Je suis ouvert aux collaborations sur des jeux, aux projets web en freelance et aux stages. N’hésitez pas à m’envoyer un <a href="mailto:luuknoverraz@gmail.com">e-mail</a>, même si vous voulez simplement parler de jeux ou de philosophie.',
       ],
     },
@@ -540,7 +540,7 @@ export const copy: Record<Lang, Copy> = {
         name: 'Your Honor, WTF?!',
         slogan: 'Un juego de fiesta en un tribunal donde los jueces son IA',
         duration: 'julio – agosto de 2025',
-        role: 'En solitario: diseño, código, arte y recursos',
+        role: 'En solitario: diseño, arte y recursos',
         tools: 'Godot, Player2 API',
         link: 'https://noverraz.itch.io/your-honor-wtf',
         paragraphs: [
@@ -606,7 +606,7 @@ export const copy: Record<Lang, Copy> = {
       title: 'Sobre mí',
       paragraphs: [
         'Soy Luuk, desarrollador de videojuegos y web y estudiante de filosofía en la Universidad de Ámsterdam. Quiero entender cómo funcionan los sistemas y las experiencias: por eso construyo mundos de juego y escribo sobre temas como el republicanismo, la dependencia económica y la inteligencia artificial.',
-        'Hago mis juegos yo mismo de principio a fin, desde el código hasta los gráficos, los modelos 3D e incluso la música. Me encanta hacer boulder, y eso me inspiró para Everest Half Full, mi juego más grande hasta la fecha: llevas un vaso de agua hasta la cima del Everest e intentas que te quede la mayor cantidad posible.',
+        'Hago mis juegos yo mismo de principio a fin, desde el diseño y la parte técnica hasta los gráficos, los modelos 3D e incluso la música. Me encanta hacer boulder, y eso me inspiró para <a href="%base%everest-half-full/">Everest Half Full</a>, mi juego más grande hasta la fecha: llevas un vaso de agua hasta la cima del Everest e intentas que te quede la mayor cantidad posible.',
         'Estoy abierto a colaboraciones en juegos, proyectos web freelance y prácticas. No dudes en escribirme un <a href="mailto:luuknoverraz@gmail.com">correo</a>, aunque solo quieras hablar de juegos o de filosofía.',
       ],
     },
@@ -647,7 +647,7 @@ export const copy: Record<Lang, Copy> = {
         name: 'Your Honor, WTF?!',
         slogan: '裁判官が AI の法廷パーティーゲーム',
         duration: '2025年7月 – 8月',
-        role: 'ソロ：デザイン、プログラム、アート、アセット',
+        role: 'ソロ：デザイン、アート、アセット',
         tools: 'Godot、Player2 API',
         link: 'https://noverraz.itch.io/your-honor-wtf',
         paragraphs: [
@@ -713,7 +713,7 @@ export const copy: Record<Lang, Copy> = {
       title: '自己紹介',
       paragraphs: [
         'Luuk です。ゲーム・ウェブ開発者で、アムステルダム大学で哲学を学んでいます。システムや経験がどのように成り立っているのかを理解したくて、ゲームの世界をつくり、共和主義や経済的依存、人工知能といったテーマについて文章を書いています。',
-        'ゲームはコードからグラフィック、3D モデル、音楽まで、最初から最後まで自分でつくっています。ボルダリングが好きで、それが『Everest Half Full』のヒントにもなりました。これまでで最大の作品で、コップ一杯の水を持ってエベレストに登り、頂上でできるだけ多く残すことを目指すゲームです。',
+        'ゲームは設計や技術面からグラフィック、3D モデル、音楽まで、最初から最後まで自分でつくっています。ボルダリングが好きで、それが『<a href="%base%everest-half-full/">Everest Half Full</a>』のヒントにもなりました。これまでで最大の作品で、コップ一杯の水を持ってエベレストに登り、頂上でできるだけ多く残すことを目指すゲームです。',
         'ゲームの共同制作、フリーランスのウェブ案件、インターンシップのお話を歓迎しています。ゲームや哲学についてただ話したいだけでも、お気軽に<a href="mailto:luuknoverraz@gmail.com">メール</a>をください。',
       ],
     },
@@ -754,7 +754,7 @@ export const copy: Record<Lang, Copy> = {
         name: 'Your Honor, WTF?!',
         slogan: '一款由 AI 当法官的法庭派对游戏',
         duration: '2025 年 7 月至 8 月',
-        role: '独立完成：设计、程序、美术与素材',
+        role: '独立完成：设计、美术与素材',
         tools: 'Godot、Player2 API',
         link: 'https://noverraz.itch.io/your-honor-wtf',
         paragraphs: [
@@ -820,7 +820,7 @@ export const copy: Record<Lang, Copy> = {
       title: '关于我',
       paragraphs: [
         '我是 Luuk，游戏和网页开发者，也是阿姆斯特丹大学的哲学系学生。我想弄明白系统和体验是如何运作的，所以我搭建游戏世界，也撰写关于共和主义、经济依附和人工智能等主题的文章。',
-        '我的游戏从头到尾都由我自己完成，从代码到画面、3D 模型，甚至音乐。我自己很喜欢抱石，它也给了我制作《Everest Half Full》的灵感。这是我迄今为止规模最大的游戏：你要端着一杯水登上珠穆朗玛峰，尽量让水在山顶时还剩得多一些。',
+        '我的游戏从头到尾都由我自己完成，从设计和技术到画面、3D 模型，甚至音乐。我自己很喜欢抱石，它也给了我制作《<a href="%base%everest-half-full/">Everest Half Full</a>》的灵感。这是我迄今为止规模最大的游戏：你要端着一杯水登上珠穆朗玛峰，尽量让水在山顶时还剩得多一些。',
         '我欢迎游戏合作、自由职业的网页项目和实习机会。即使只是想聊聊游戏或哲学，也欢迎给我发<a href="mailto:luuknoverraz@gmail.com">邮件</a>。',
       ],
     },

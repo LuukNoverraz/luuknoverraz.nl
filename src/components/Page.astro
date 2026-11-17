@@ -164,7 +164,7 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
             <div class="about-photo" aria-hidden="true"></div>
             <div class="about-text">
               {t.about.paragraphs.length > 0 ? (
-                t.about.paragraphs.map((text) => <p set:html={text} />)
+                t.about.paragraphs.map((text) => <p set:html={text.replaceAll('%base%', base(lang))} />)
               ) : (
                 <div class="about-placeholder" aria-hidden="true">
                   <span></span><span></span><span></span><span></span><span></span>
