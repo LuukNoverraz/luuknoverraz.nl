@@ -22,7 +22,7 @@
 
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { dirname, join, posix } from 'node:path';
 
 const github = (name) => `https://github.com/LuukNoverraz/${name}.git`;
 
@@ -82,6 +82,17 @@ const source = (repo) => {
 // fixes below. <year>/index.html is a frame: a slim bar in today's style with a
 // way back, and the old site filling the rest of the screen underneath, so the
 // two never overlap or fight over clicks.
+
+// A link like "../projects" to one of the site's own folders: give it the trailing
+// slash, so it works on any server instead of relying on a redirect (the local
+// preview server answers it with a 404). `folders` holds every folder of the
+// version that has an index.html, as paths like "projects".
+const slashFolderLinks = (html, file, folders) =>
+  html.replace(/\bhref="([^"#?:]*)"/g, (whole, href) => {
+    if (!href || href.endsWith('/') || /\.[a-z0-9]+$/i.test(href)) return whole;
+    const target = posix.normalize(posix.join(posix.dirname(file), href)).replace(/^\.\/?/, '');
+    return folders.has(target) ? `href="${href}/"` : whole;
+  });
 
 const fixHtml = (html) =>
   html
@@ -189,10 +200,12 @@ for (const { year, repo, commit, skip, repair } of versions) {
     console.warn(`archive: skipped ${year} (${repo ?? commit}): ${String(err.stderr || err.message).trim().split('\n')[0]}`);
     continue;
   }
+  const folders = new Set(files.filter((f) => f.endsWith('/index.html')).map((f) => posix.dirname(f)));
+  folders.add(''); // the version's own root
 
   for (const file of files) {
     let data = run([...from, 'cat-file', 'blob', `${commit}:${file}`]);
-    if (file.endsWith('.html')) data = Buffer.from(fixHtml(data.toString('utf8')), 'utf8');
+    if (file.endsWith('.html')) data = Buffer.from(slashFolderLinks(fixHtml(data.toString('utf8')), file, folders), 'utf8');
     if (repair && /\.(html|css|js)$/.test(file)) data = Buffer.from(repair(file, data.toString('utf8')), 'utf8');
     const out = join(root, 'site', file);
     mkdirSync(dirname(out), { recursive: true });
