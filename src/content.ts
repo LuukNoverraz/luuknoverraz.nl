@@ -84,7 +84,15 @@ interface Copy {
   /** The image viewer on project pages. */
   viewer: { open: string; close: string };
   /** Earlier versions of this site, behind the year in the footer. */
-  archive: { title: string; intro: string; link: string; code: string; editions: Record<string, string> };
+  archive: {
+    title: string;
+    intro: string;
+    link: string;
+    code: string;
+    /** Opens the old version itself. */
+    visit: string;
+    editions: Record<string, string>;
+  };
   /** Heading of the older games behind the "more" toggle; the games are in `earlierGames`. */
   earlier: { title: string };
   /** About me, between Work and Education. Empty paragraphs show placeholder lines. */
@@ -312,6 +320,7 @@ export const copy: Record<Lang, Copy> = {
       intro: 'Deze site bestaat sinds 2016 en is sindsdien een paar keer opnieuw gebouwd. Dit zijn de versies die ik heb bewaard.',
       link: 'Eerdere versies van deze site',
       code: 'Code op GitHub',
+      visit: 'Bekijk deze versie',
       editions: {
         2026: 'Een visitekaartje, in zeven talen.',
         2023: 'Een witte balk met mijn gezicht als logo, en game developer, front-end developer en video editor in vette hoofdletters.',
@@ -551,6 +560,7 @@ export const copy: Record<Lang, Copy> = {
       intro: 'This site has been around since 2016 and has been rebuilt a few times since. These are the versions I’ve kept.',
       link: 'Earlier versions of this site',
       code: 'Code on GitHub',
+      visit: 'Visit this version',
       editions: {
         2026: 'A business card, in seven languages.',
         2023: 'A white bar with my face as the logo, and game developer, front-end developer and video editor in bold capitals.',
@@ -790,6 +800,7 @@ export const copy: Record<Lang, Copy> = {
       intro: 'Diese Website gibt es seit 2016, und seitdem habe ich sie ein paar Mal neu gebaut. Das sind die Versionen, die ich aufbewahrt habe.',
       link: 'Frühere Versionen dieser Website',
       code: 'Code auf GitHub',
+      visit: 'Diese Version ansehen',
       editions: {
         2026: 'Eine Visitenkarte, in sieben Sprachen.',
         2023: 'Ein weißer Balken mit meinem Gesicht als Logo, dazu Game Developer, Front-end Developer und Video Editor in fetten Großbuchstaben.',
@@ -1032,6 +1043,7 @@ export const copy: Record<Lang, Copy> = {
       intro: 'Ce site existe depuis 2016 et je l’ai reconstruit plusieurs fois depuis. Voici les versions que j’ai gardées.',
       link: 'Versions précédentes de ce site',
       code: 'Code sur GitHub',
+      visit: 'Voir cette version',
       editions: {
         2026: 'Une carte de visite, en sept langues.',
         2023: 'Une barre blanche avec mon visage en logo, et game developer, front-end developer et video editor en grosses capitales.',
@@ -1273,6 +1285,7 @@ export const copy: Record<Lang, Copy> = {
       intro: 'Este sitio existe desde 2016 y lo he rehecho varias veces desde entonces. Estas son las versiones que he guardado.',
       link: 'Versiones anteriores de este sitio',
       code: 'Código en GitHub',
+      visit: 'Ver esta versión',
       editions: {
         2026: 'Una tarjeta de visita, en siete idiomas.',
         2023: 'Una barra blanca con mi cara como logo, y game developer, front-end developer y video editor en mayúsculas gruesas.',
@@ -1514,6 +1527,7 @@ export const copy: Record<Lang, Copy> = {
       intro: 'このサイトは2016年から続いていて、これまでに何度か作り直してきました。ここにあるのは、手元に残しているバージョンです。',
       link: 'このサイトの過去のバージョン',
       code: 'GitHub のコード',
+      visit: 'このバージョンを見る',
       editions: {
         2026: '名刺のデザインで、7つの言語に対応。',
         2023: '白いバーに自分の顔のロゴ、太い大文字で「game developer / front-end developer / video editor」。',
@@ -1755,6 +1769,7 @@ export const copy: Record<Lang, Copy> = {
       intro: '这个网站从 2016 年开始就有了，之后我又重做过几次。这里是我保留下来的版本。',
       link: '本网站的历史版本',
       code: 'GitHub 上的代码',
+      visit: '查看这个版本',
       editions: {
         2026: '一张名片，支持七种语言。',
         2023: '白色顶栏，用我的脸做标志，粗体大写写着 game developer / front-end developer / video editor。',

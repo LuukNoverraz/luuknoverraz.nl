@@ -15,11 +15,12 @@ const { lang } = Astro.props;
 const t = copy[lang];
 const repo = 'https://github.com/LuukNoverraz/luuknoverraz.nl';
 
-// Newest first. Each links to the code as it was then; add older versions here.
+// Newest first. `visit` is where the version can be opened: older versions are
+// published from git history by scripts/archive-versions.mjs at build time.
 const editions = [
-  { year: '2026', shot: shot2026, code: repo },
-  { year: '2023', shot: shot2023, code: `${repo}/tree/ab8ad59` },
-  { year: '2022', shot: shot2022, code: `${repo}/tree/251d614` },
+  { year: '2026', shot: shot2026, code: repo, visit: undefined },
+  { year: '2023', shot: shot2023, code: `${repo}/tree/ab8ad59`, visit: '/archive/2023/' },
+  { year: '2022', shot: shot2022, code: `${repo}/tree/251d614`, visit: '/archive/2022/' },
 ];
 ---
 
@@ -34,20 +35,34 @@ const editions = [
       {
         editions.map((e) => (
           <li class="edition">
-            <div class="edition-shot">
-              <Picture
-                src={e.shot}
-                formats={['avif', 'webp']}
-                widths={[480, 960, 1440]}
-                sizes="(max-width: 768px) 100vw, 36rem"
-                alt=""
-                loading="lazy"
-              />
-            </div>
+            {e.visit ? (
+              <a class="edition-shot" href={e.visit} tabindex="-1" aria-hidden="true">
+                <Picture
+                  src={e.shot}
+                  formats={['avif', 'webp']}
+                  widths={[480, 960, 1440]}
+                  sizes="(max-width: 768px) 100vw, 36rem"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+            ) : (
+              <div class="edition-shot">
+                <Picture
+                  src={e.shot}
+                  formats={['avif', 'webp']}
+                  widths={[480, 960, 1440]}
+                  sizes="(max-width: 768px) 100vw, 36rem"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+            )}
             <div class="edition-text">
               <h2>{e.year}</h2>
               <p>{t.archive.editions[e.year]}</p>
-              <p class="edition-code">
+              <p class="edition-links">
+                {e.visit && <a href={e.visit}>{t.archive.visit}</a>}
                 <a href={e.code} target="_blank" rel="noopener">
                   {t.archive.code}
                 </a>

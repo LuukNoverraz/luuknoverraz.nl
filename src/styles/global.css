@@ -972,8 +972,33 @@ a:hover {
   }
 }
 
-.edition-code {
+.edition-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
   font-size: 0.875rem;
+
+  /* the way into the old site is the main link */
+  a:first-child:not([target]) {
+    font-family: var(--serif);
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+a.edition-shot {
+  display: block;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a.edition-shot img {
+    transition: scale 0.5s ease;
+  }
+
+  a.edition-shot:hover img {
+    scale: 1.025;
+  }
 }
 
 @media (max-width: 768px) {
