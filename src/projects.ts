@@ -27,6 +27,7 @@ import tNightStrollAmbush from './assets/thumbs/night-stroll-ambush.jpg';
 import tZerotrace from './assets/thumbs/zerotrace.jpg';
 import tBarbasim from './assets/thumbs/barbasim.jpg';
 import tSumoShooters from './assets/thumbs/sumo-shooters.jpg';
+import tBesyes from './assets/thumbs/besyes.jpg';
 
 // Earlier games
 import eHowFastCanYouClimbTheStairsCover from './assets/earlier/how-fast-can-you-climb-the-stairs/cover.jpg';
@@ -58,6 +59,7 @@ import eBarbasim3 from './assets/earlier/barbasim/3.jpg';
 import eSumoShootersCover from './assets/earlier/sumo-shooters/cover.jpg';
 import eSumoShooters1 from './assets/earlier/sumo-shooters/1.jpg';
 import eSumoShooters3 from './assets/earlier/sumo-shooters/3.jpg';
+import eBesyesCover from './assets/earlier/besyes/cover.jpg';
 
 interface ProjectMedia {
   /** Cover, shown in the list on the home page. */
@@ -411,6 +413,10 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
       },
     ],
   },
+  'besyes': {
+    poster: eBesyesCover,
+    images: [],
+  },
 };
 
 // Small covers for the earlier games, keyed by the last part of each game's itch.io link.
@@ -425,4 +431,6 @@ export const earlierThumbs: Record<string, ImageMetadata> = {
   'zerotrace': tZerotrace,
   'barbasim': tBarbasim,
   'sumo-shooters': tSumoShooters,
+  // Besyes links to its GitHub repository, not itch.io
+  'BeverBesjes': tBesyes,
 };

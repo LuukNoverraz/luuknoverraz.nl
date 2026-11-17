@@ -288,6 +288,17 @@ export const copy: Record<Lang, Copy> = {
           'Power-upkristallen op het veld geven je tijdelijk een voordeel, er zijn meerdere arena’s om in te vechten, en je kiest je eigen kleuren. De game draait op Android en Windows.',
         ],
       },
+      'besyes': {
+        name: 'Besyes',
+        slogan: 'Een game over voedsel verzamelen als jager-verzamelaar',
+        duration: '2019',
+        role: 'Samen met Jochem Baas, Midas Scheffers en Berk Yildirim',
+        tools: 'Unity',
+        paragraphs: [
+          'Besyes is een game die ik samen met <a href="http://www.jochembaas.nl/">Jochem Baas</a>, <a href="https://midasscheffers.github.io/">Midas Scheffers</a> en <a href="https://github.com/BerkYildirimm">Berk Yildirim</a> maakte. Je speelt een verzamelaar die rondstruint op zoek naar eten. We maakten hem in opdracht van IJsfontein.',
+          'De broncode staat op <a href="https://github.com/jochem33/BeverBesjes">GitHub</a>.',
+        ],
+      },
     },
     education: {
       title: 'Opleidingen',
@@ -533,6 +544,17 @@ export const copy: Record<Lang, Copy> = {
           'Power-up crystals appear on the field for a temporary edge, there are several stages to fight on, and you can pick your colours. It runs on Android and Windows.',
         ],
       },
+      'besyes': {
+        name: 'Besyes',
+        slogan: 'A game about scavenging for food as a hunter-gatherer',
+        duration: '2019',
+        role: 'Together with Jochem Baas, Midas Scheffers and Berk Yildirim',
+        tools: 'Unity',
+        paragraphs: [
+          'Besyes is a game I made together with <a href="http://www.jochembaas.nl/">Jochem Baas</a>, <a href="https://midasscheffers.github.io/">Midas Scheffers</a> and <a href="https://github.com/BerkYildirimm">Berk Yildirim</a>. The game revolves around scavenging as a gatherer, and was made as an assignment from IJsfontein.',
+          'You can view the source code on <a href="https://github.com/jochem33/BeverBesjes">GitHub</a>.',
+        ],
+      },
     },
     education: {
       title: 'Education',
@@ -776,6 +798,17 @@ export const copy: Record<Lang, Copy> = {
         paragraphs: [
           'Zwei Spieler teilen sich ein Handy und schießen ihre Sumo-Kugeln wie beim Billard aufeinander. Wer den anderen zuerst fünfmal aus der Arena stößt, gewinnt.',
           'Power-up-Kristalle auf dem Spielfeld verschaffen dir einen kurzen Vorteil, es gibt mehrere Arenen, und du kannst deine Farben wählen. Das Spiel läuft auf Android und Windows.',
+        ],
+      },
+      'besyes': {
+        name: 'Besyes',
+        slogan: 'Ein Spiel übers Nahrungsammeln als Jäger und Sammler',
+        duration: '2019',
+        role: 'Zusammen mit Jochem Baas, Midas Scheffers und Berk Yildirim',
+        tools: 'Unity',
+        paragraphs: [
+          'Besyes ist ein Spiel, das ich zusammen mit <a href="http://www.jochembaas.nl/">Jochem Baas</a>, <a href="https://midasscheffers.github.io/">Midas Scheffers</a> und <a href="https://github.com/BerkYildirimm">Berk Yildirim</a> gemacht habe. Du spielst einen Sammler, der auf Nahrungssuche umherstreift. Entstanden ist es im Auftrag von IJsfontein.',
+          'Den Quellcode findest du auf <a href="https://github.com/jochem33/BeverBesjes">GitHub</a>.',
         ],
       },
     },
@@ -1026,6 +1059,17 @@ export const copy: Record<Lang, Copy> = {
           'Des cristaux bonus apparaissent sur le terrain pour un avantage temporaire, il y a plusieurs arènes et vous pouvez choisir vos couleurs. Le jeu tourne sur Android et Windows.',
         ],
       },
+      'besyes': {
+        name: 'Besyes',
+        slogan: 'Un jeu où l’on cherche de quoi manger en chasseur-cueilleur',
+        duration: '2019',
+        role: 'Avec Jochem Baas, Midas Scheffers et Berk Yildirim',
+        tools: 'Unity',
+        paragraphs: [
+          'Besyes est un jeu que j’ai fait avec <a href="http://www.jochembaas.nl/">Jochem Baas</a>, <a href="https://midasscheffers.github.io/">Midas Scheffers</a> et <a href="https://github.com/BerkYildirimm">Berk Yildirim</a>. On y incarne un cueilleur qui fouille les environs pour trouver de quoi manger. Il a été réalisé à la demande d’IJsfontein.',
+          'Le code source est sur <a href="https://github.com/jochem33/BeverBesjes">GitHub</a>.',
+        ],
+      },
     },
     education: {
       title: 'Formation',
@@ -1271,6 +1315,17 @@ export const copy: Record<Lang, Copy> = {
         paragraphs: [
           'Dos jugadores comparten un mismo móvil y se lanzan sus bolas de sumo al estilo del billar. Gana quien saque primero al otro del escenario cinco veces.',
           'En el campo aparecen cristales potenciadores que dan una ventaja temporal, hay varios escenarios en los que luchar y puedes elegir tus colores. Funciona en Android y Windows.',
+        ],
+      },
+      'besyes': {
+        name: 'Besyes',
+        slogan: 'Un juego sobre buscar comida como cazador-recolector',
+        duration: '2019',
+        role: 'Junto con Jochem Baas, Midas Scheffers y Berk Yildirim',
+        tools: 'Unity',
+        paragraphs: [
+          'Besyes es un juego que hice junto con <a href="http://www.jochembaas.nl/">Jochem Baas</a>, <a href="https://midasscheffers.github.io/">Midas Scheffers</a> y <a href="https://github.com/BerkYildirimm">Berk Yildirim</a>. Encarnas a un recolector que busca comida por los alrededores. Lo hicimos por encargo de IJsfontein.',
+          'El código fuente está en <a href="https://github.com/jochem33/BeverBesjes">GitHub</a>.',
         ],
       },
     },
@@ -1520,6 +1575,17 @@ export const copy: Record<Lang, Copy> = {
           'フィールドに現れるパワーアップクリスタルで一時的に有利になれるほか、複数のステージで戦え、色も自由に選べます。Android と Windows で動作します。',
         ],
       },
+      'besyes': {
+        name: 'Besyes',
+        slogan: '狩猟採集民として食べ物を探し集めるゲーム',
+        duration: '2019',
+        role: 'Jochem Baas、Midas Scheffers、Berk Yildirim と共同',
+        tools: 'Unity',
+        paragraphs: [
+          'Besyes は <a href="http://www.jochembaas.nl/">Jochem Baas</a>、<a href="https://midasscheffers.github.io/">Midas Scheffers</a>、<a href="https://github.com/BerkYildirimm">Berk Yildirim</a> と一緒に作ったゲームです。採集民となって、食べ物を探し集めて回ります。IJsfontein からの課題として制作しました。',
+          'ソースコードは <a href="https://github.com/jochem33/BeverBesjes">GitHub</a> で公開しています。',
+        ],
+      },
     },
     education: {
       title: '学歴',
@@ -1767,6 +1833,17 @@ export const copy: Record<Lang, Copy> = {
           '场上会出现强化水晶，带来短暂的优势；游戏有多个场地可以对战，还能自选颜色。支持 Android 和 Windows。',
         ],
       },
+      'besyes': {
+        name: 'Besyes',
+        slogan: '一款扮演狩猎采集者搜寻食物的游戏',
+        duration: '2019',
+        role: '与 Jochem Baas、Midas Scheffers、Berk Yildirim 合作',
+        tools: 'Unity',
+        paragraphs: [
+          'Besyes 是我和 <a href="http://www.jochembaas.nl/">Jochem Baas</a>、<a href="https://midasscheffers.github.io/">Midas Scheffers</a>、<a href="https://github.com/BerkYildirimm">Berk Yildirim</a> 一起做的游戏。你扮演一名采集者，四处搜寻食物。这是应 IJsfontein 的委托而做的。',
+          '源代码在 <a href="https://github.com/jochem33/BeverBesjes">GitHub</a> 上。',
+        ],
+      },
     },
     education: {
       title: '教育经历',
@@ -2003,6 +2080,22 @@ export const earlierGames: EarlierGame[] = [
       de: 'Ein Handyspiel für zwei, das Billard mit Sumo mischt.',
       fr: 'Un jeu mobile à deux qui mélange billard et sumo.',
       zh: '一款把台球和相扑混在一起的双人手机游戏。',
+    },
+  },
+  {
+    slug: 'besyes',
+    name: 'Besyes',
+    link: 'https://github.com/jochem33/BeverBesjes',
+    year: 2019,
+    engine: 'Unity',
+    text: {
+      nl: 'Een game over voedsel verzamelen als jager-verzamelaar, in opdracht van IJsfontein.',
+      en: 'A game about scavenging for food as a hunter-gatherer, made for IJsfontein.',
+      es: 'Un juego sobre buscar comida como cazador-recolector, hecho para IJsfontein.',
+      ja: '狩猟採集民として食べ物を探し集めるゲーム。IJsfontein のために制作。',
+      de: 'Ein Spiel übers Nahrungsammeln als Jäger und Sammler, im Auftrag von IJsfontein.',
+      fr: 'Un jeu où l’on cherche de quoi manger en chasseur-cueilleur, fait pour IJsfontein.',
+      zh: '一款扮演狩猎采集者搜寻食物的游戏，为 IJsfontein 制作。',
     },
   },
 ];
