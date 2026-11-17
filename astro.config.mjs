@@ -14,6 +14,8 @@ export default defineConfig({
     // Inline the (small) stylesheet into each page: one less render-blocking request.
     inlineStylesheets: 'always',
   },
+  // No Astro toolbar over the page while developing.
+  devToolbar: { enabled: false },
   // Emits a strict Content-Security-Policy <meta> tag with hashes for every inline script/style.
   security: {
     csp: true,
