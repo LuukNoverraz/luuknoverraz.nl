@@ -12,7 +12,7 @@
 // be reached is skipped with a warning, so a build without access still
 // succeeds, just without that version.
 //
-// Each page gets a small bar linking back to the current site, is kept out of
+// Each version is shown in a frame page with a bar linking back; its own pages are kept out of
 // search engines, and has its root-absolute paths (favicons) made relative so
 // it works from a subfolder.
 //
@@ -60,21 +60,98 @@ const source = (repo) => {
   return ['--git-dir', dir];
 };
 
-const bar = (year) => `
-<!-- added when archived: a way back to the current site -->
-<div role="note" style="all:initial;position:fixed;z-index:2147483647;inset:auto 0 0 0;display:flex;flex-wrap:wrap;gap:.25rem 1rem;justify-content:center;align-items:center;padding:.6rem 1rem;background:#efede8;color:#161214;font:14px/1.4 Georgia,'Times New Roman',serif;letter-spacing:.04em;box-shadow:0 -1px 0 rgb(22 18 20/.15)">
-  <span style="all:unset">Archived version of this site, ${year}</span>
-  <a href="/museum/" onclick="if(document.referrer.indexOf(location.origin+'/')===0&&document.referrer.indexOf('/museum/')>0){location.href=document.referrer;return false}" style="all:unset;color:#ce2a29;text-decoration:underline;text-underline-offset:.2em;cursor:pointer">Back to the current site</a>
-</div>
-`;
+// The old site itself goes in <year>/site/ and is left as it was, apart from the
+// fixes below. <year>/index.html is a frame: a slim bar in today's style with a
+// way back, and the old site filling the rest of the screen underneath, so the
+// two never overlap or fight over clicks.
 
-const fixHtml = (html, year) =>
+const fixHtml = (html) =>
   html
     // favicons and the like pointed at the site root; make them relative
     .replace(/\b(href|src)="\/(?!\/)/g, '$1="')
     // keep old copies out of search results
     .replace(/<head([^>]*)>/i, `<head$1>\n    <meta name="robots" content="noindex">`)
-    .replace(/<\/body>/i, `${bar(year)}</body>`);
+    // links to other sites leave the frame instead of opening inside it
+    .replace(
+      /<\/body>/i,
+      `<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(a&&a.origin!==location.origin&&!a.target)a.target='_top'},true)</script>\n</body>`,
+    );
+
+// The bar's words in each language of the site, and where each language's museum is.
+const labels = {
+  nl: ['Portfoliomuseum', 'Terug', '/museum/'],
+  en: ['Portfolio museum', 'Back', '/en/museum/'],
+  de: ['Portfolio-Museum', 'Zurück', '/de/museum/'],
+  fr: ['Musée du portfolio', 'Retour', '/fr/museum/'],
+  es: ['Museo del portfolio', 'Volver', '/es/museum/'],
+  ja: ['ポートフォリオ博物館', '戻る', '/ja/museum/'],
+  zh: ['作品集博物馆', '返回', '/zh/museum/'],
+};
+
+const frame = (year) => `<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Portfolio museum: ${year}</title>
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+<style>
+@font-face { font-family: mincho; src: url(/fonts/ShipporiMincho-Medium.woff2) format('woff2'); font-display: swap; }
+html, body { margin: 0; height: 100%; background: #efede8; color: #161214; }
+body { display: grid; grid-template-rows: auto minmax(0, 1fr); }
+header {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem;
+  padding: 0.65rem clamp(1rem, 4vw, 3rem); border-bottom: 1px solid #d6d2cb;
+  font: 15px/1.4 mincho, 'Hiragino Mincho ProN', 'Yu Mincho', Georgia, serif; letter-spacing: 0.08em;
+}
+a { color: inherit; text-decoration: none; justify-self: start; }
+a:hover, a:focus-visible { color: #ce2a29; }
+a:focus-visible { outline: 2px solid #ce2a29; outline-offset: 3px; }
+.year { color: #ce2a29; }
+iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+@media (prefers-reduced-motion: no-preference) {
+  a { transition: color 0.15s ease; }
+  iframe { animation: fade-in 0.4s ease-out; }
+  @keyframes fade-in { from { opacity: 0; } }
+}
+</style>
+</head>
+<body>
+<header>
+  <a id="back" href="/museum/"><span aria-hidden="true">←</span> <span id="back-label">Terug</span></a>
+  <span><span id="title">Portfoliomuseum</span> · <span class="year">${year}</span></span>
+</header>
+<iframe src="site/" title="Luuk Noverraz, ${year}"></iframe>
+<script>
+(function () {
+  var labels = ${JSON.stringify(labels)};
+  // the language of the museum page you came from, else the one you chose before, else your browser's
+  var lang, back;
+  try {
+    var ref = document.referrer ? new URL(document.referrer) : null;
+    if (ref && ref.origin === location.origin) {
+      var m = ref.pathname.match(/^\\/(?:([a-z]{2})\\/)?museum\\/$/);
+      if (m) { lang = m[1] || 'nl'; back = ref.pathname; }
+    }
+  } catch (e) {}
+  if (!lang) { try { lang = localStorage.getItem('lang'); } catch (e) {} }
+  if (!labels[lang]) {
+    var prefs = navigator.languages || [navigator.language];
+    for (var i = 0; i < prefs.length && !labels[lang]; i++) lang = String(prefs[i]).slice(0, 2).toLowerCase();
+  }
+  if (!labels[lang]) lang = 'nl';
+  var l = labels[lang];
+  document.documentElement.lang = lang;
+  document.getElementById('title').textContent = l[0];
+  document.getElementById('back-label').textContent = l[1];
+  document.getElementById('back').href = back || l[2];
+  document.title = l[0] + ': ${year}';
+})();
+</script>
+</body>
+</html>
+`;
 
 let total = 0;
 for (const { year, repo, commit, skip } of versions) {
@@ -96,12 +173,13 @@ for (const { year, repo, commit, skip } of versions) {
 
   for (const file of files) {
     let data = run([...from, 'cat-file', 'blob', `${commit}:${file}`]);
-    if (file.endsWith('.html')) data = Buffer.from(fixHtml(data.toString('utf8'), year), 'utf8');
-    const out = join(root, file);
+    if (file.endsWith('.html')) data = Buffer.from(fixHtml(data.toString('utf8')), 'utf8');
+    const out = join(root, 'site', file);
     mkdirSync(dirname(out), { recursive: true });
     writeFileSync(out, data);
     total += data.length;
   }
+  writeFileSync(join(root, 'index.html'), frame(year));
   console.log(`archive: ${year} (${repo ? repo.split('/').pop().replace('.git', '') : commit}) -> ${root}/, ${files.length} files`);
 }
 console.log(`archive: ${(total / 1048576).toFixed(1)} MB in total`);
