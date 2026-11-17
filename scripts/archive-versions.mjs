@@ -6,8 +6,11 @@
 // Versions come either from this repository's own history or from the separate
 // repositories the older sites lived in. Those are cloned (history only, no
 // working files) into the git-ignored .archive-sources/ folder the first time.
-// A repository that can't be reached is skipped with a warning, so a build
-// without access still succeeds, just without that version.
+// They are private: locally your own GitHub login is used, and in the deploy
+// workflow a read-only token from the ARCHIVE_TOKEN repository secret (sent as
+// a header, so it never appears in a URL or the logs). A repository that can't
+// be reached is skipped with a warning, so a build without access still
+// succeeds, just without that version.
 //
 // Each page gets a small bar linking back to the current site, is kept out of
 // search engines, and has its root-absolute paths (favicons) made relative so
@@ -45,7 +48,11 @@ const source = (repo) => {
   const dir = join('.archive-sources', repo.split('/').pop());
   if (!existsSync(dir)) {
     mkdirSync('.archive-sources', { recursive: true });
-    execFileSync('git', ['clone', '--quiet', '--bare', repo, dir], {
+    const token = process.env.ARCHIVE_TOKEN;
+    const auth = token
+      ? ['-c', `http.https://github.com/.extraheader=AUTHORIZATION: basic ${Buffer.from(`x-access-token:${token}`).toString('base64')}`]
+      : [];
+    execFileSync('git', [...auth, 'clone', '--quiet', '--bare', repo, dir], {
       stdio: ['ignore', 'ignore', 'pipe'],
       env: { ...process.env, GIT_TERMINAL_PROMPT: '0' },
     });

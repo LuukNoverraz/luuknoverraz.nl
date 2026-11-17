@@ -24,16 +24,16 @@ const repo = 'https://github.com/LuukNoverraz/luuknoverraz.nl';
 
 // Newest first. `visit` is where the version can be opened: older versions are
 // published from git history by scripts/archive-versions.mjs at build time.
-const old = (name: string) => `https://github.com/LuukNoverraz/${name}`;
+// `code` is left out for the 2017-2021 versions: their repositories are private.
 const all: { year: string; shot: ImageMetadata; code?: string; visit?: string }[] = [
   { year: '2026', shot: shot2026, code: repo },
   { year: '2023', shot: shot2023, code: `${repo}/tree/ab8ad59`, visit: '/museum/2023/' },
   { year: '2022', shot: shot2022, code: `${repo}/tree/251d614`, visit: '/museum/2022/' },
-  { year: '2021', shot: shot2021, code: old('portfolio-4'), visit: '/museum/2021/' },
-  { year: '2020', shot: shot2020, code: old('luuknoverraz-portfolio'), visit: '/museum/2020/' },
-  { year: '2019', shot: shot2019, code: old('portfolio-3'), visit: '/museum/2019/' },
-  { year: '2018', shot: shot2018, code: old('portfolio-2'), visit: '/museum/2018/' },
-  { year: '2017', shot: shot2017, code: old('portfolio-1'), visit: '/museum/2017/' },
+  { year: '2021', shot: shot2021, visit: '/museum/2021/' },
+  { year: '2020', shot: shot2020, visit: '/museum/2020/' },
+  { year: '2019', shot: shot2019, visit: '/museum/2019/' },
+  { year: '2018', shot: shot2018, visit: '/museum/2018/' },
+  { year: '2017', shot: shot2017, visit: '/museum/2017/' },
 ];
 // Only offer "visit" for versions the archive step actually published: a build
 // without access to a private repository simply leaves that link out.

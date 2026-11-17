@@ -31,6 +31,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+        env:
+          # read-only token for the private repositories of the 2017-2021 sites
+          # (portfolio museum); without it those versions are left out
+          ARCHIVE_TOKEN: ${{ secrets.ARCHIVE_TOKEN }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
