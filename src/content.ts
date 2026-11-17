@@ -284,7 +284,7 @@ export const copy: Record<Lang, Copy> = {
         tools: 'p5.js',
         link: 'https://codemaker4.com/fury-fly/',
         paragraphs: [
-          'In deze 2D-platformer voor twee spelers op één toetsenbord ben je een dikke vlieg die niet echt kan vliegen. De heksenkeuken loopt onder, en je probeert het langer vol te houden dan je tegenstander voordat na 30 seconden het hele scherm onder water staat.',
+          'In deze lokale 2D-multiplayer-platformer ben je een dikke vlieg die niet echt kan vliegen. De heksenkeuken loopt onder, en je probeert het langer vol te houden dan je tegenstander voordat na 30 seconden het hele scherm onder water staat.',
           'In negen uur gemaakt voor de CoderClass Game Jam 2022 (die we wonnen!), samen met <a href="https://jochem33.github.io/">Jochem Baas</a>, <a href="https://github.com/leahcrozier">Leah Crozier</a> en <a href="https://codemaker4.com/">CodeMaker4</a>. Het thema was “30 seconden”. Je speelt hem het best met z’n tweeën.',
         ],
       },
@@ -838,7 +838,7 @@ export const copy: Record<Lang, Copy> = {
       },
       'besyes': {
         name: 'Besyes',
-        slogan: 'Ein Spiel übers Nahrungsammeln als Jäger und Sammler',
+        slogan: 'Ein Spiel über die Nahrungssuche als Jäger und Sammler',
         duration: '2019',
         role: 'Zusammen mit Jochem Baas, Midas Scheffers und Berk Yildirim',
         tools: 'Unity',
@@ -2194,7 +2194,7 @@ export const earlierGames: EarlierGame[] = [
       en: 'A game about scavenging for food as a hunter-gatherer, made for IJsfontein.',
       es: 'Un juego sobre buscar comida como cazador-recolector, hecho para IJsfontein.',
       ja: '狩猟採集民として食べ物を探し集めるゲーム。IJsfontein のために制作。',
-      de: 'Ein Spiel übers Nahrungsammeln als Jäger und Sammler, im Auftrag von IJsfontein.',
+      de: 'Ein Spiel über die Nahrungssuche als Jäger und Sammler, im Auftrag von IJsfontein.',
       fr: 'Un jeu où l’on cherche de quoi manger en chasseur-cueilleur, fait pour IJsfontein.',
       zh: '一款扮演狩猎采集者搜寻食物的游戏，为 IJsfontein 制作。',
     },
