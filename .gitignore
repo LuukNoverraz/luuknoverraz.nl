@@ -4,3 +4,6 @@ dist/
 
 # earlier versions of the site, written from git history by scripts/archive-versions.mjs
 public/archive/
+
+# private repos with old versions of the site, cloned locally for the archive
+.archive-sources/

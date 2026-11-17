@@ -3,25 +3,55 @@
 // predev and prebuild), so they work in both. That folder is git-ignored: the
 // files are read from the commit that was live at the time, never committed.
 //
+// Versions come either from this repository's own history or from the separate
+// repositories the older sites lived in. Those are cloned (history only, no
+// working files) into the git-ignored .archive-sources/ folder the first time.
+// A repository that can't be reached is skipped with a warning, so a build
+// without access still succeeds, just without that version.
+//
 // Each page gets a small bar linking back to the current site, is kept out of
 // search engines, and has its root-absolute paths (favicons) made relative so
 // it works from a subfolder.
 //
-// To add a version: add its year and commit below (and an entry in
-// src/components/Archive.astro). In CI the checkout needs the full history
-// (fetch-depth: 0).
+// To add a version: add it below and give it an entry in
+// src/components/Archive.astro. In CI the checkout needs the full history
+// (fetch-depth: 0) for the versions from this repository.
 
 import { execFileSync } from 'node:child_process';
-import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 
+const github = (name) => `https://github.com/LuukNoverraz/${name}.git`;
+
 const versions = [
-  // yourMokum was a separate project hosted next to the site; nothing linked to it.
-  { year: '2022', commit: '251d614', skip: ['yourMokum/', 'CNAME', 'downloadable/'] },
+  // from this repository's history
   { year: '2023', commit: 'ab8ad59', skip: ['CNAME', 'LICENSE', '.gitattributes'] },
+  // yourMokum was a separate project hosted next to the site; nothing linked to it.
+  // downloadable/ held two old CVs.
+  { year: '2022', commit: '251d614', skip: ['yourMokum/', 'CNAME', 'downloadable/'] },
+  // from their own repositories
+  { year: '2021', repo: github('portfolio-4'), commit: 'HEAD', skip: ['CNAME', '.gitattributes'] },
+  { year: '2020', repo: github('luuknoverraz-portfolio'), commit: 'HEAD', skip: ['.gitattributes'] },
+  { year: '2019', repo: github('portfolio-3'), commit: 'HEAD', skip: ['.gitattributes'] },
+  { year: '2018', repo: github('portfolio-2'), commit: 'HEAD', skip: ['CNAME'] },
+  { year: '2017', repo: github('portfolio-1'), commit: 'HEAD', skip: ['CNAME'] },
 ];
 
-const git = (...args) => execFileSync('git', args, { maxBuffer: 512 * 1024 * 1024 });
+const run = (args) => execFileSync('git', args, { maxBuffer: 512 * 1024 * 1024, stdio: ['ignore', 'pipe', 'pipe'] });
+
+// git arguments that read from the right repository, cloning it first if needed
+const source = (repo) => {
+  if (!repo) return [];
+  const dir = join('.archive-sources', repo.split('/').pop());
+  if (!existsSync(dir)) {
+    mkdirSync('.archive-sources', { recursive: true });
+    execFileSync('git', ['clone', '--quiet', '--bare', repo, dir], {
+      stdio: ['ignore', 'ignore', 'pipe'],
+      env: { ...process.env, GIT_TERMINAL_PROMPT: '0' },
+    });
+  }
+  return ['--git-dir', dir];
+};
 
 const bar = (year) => `
 <!-- added when archived: a way back to the current site -->
@@ -40,22 +70,31 @@ const fixHtml = (html, year) =>
     .replace(/<\/body>/i, `${bar(year)}</body>`);
 
 let total = 0;
-for (const { year, commit, skip } of versions) {
+for (const { year, repo, commit, skip } of versions) {
   const root = join('public', 'archive', year);
   rmSync(root, { recursive: true, force: true });
-  const files = git('ls-tree', '-r', '-z', '--name-only', commit)
-    .toString()
-    .split('\0')
-    .filter((f) => f && !skip.some((s) => f === s || f.startsWith(s)) && !f.endsWith('.DS_Store'));
+
+  let from;
+  let files;
+  try {
+    from = source(repo);
+    files = run([...from, 'ls-tree', '-r', '-z', '--name-only', commit])
+      .toString()
+      .split('\0')
+      .filter((f) => f && !skip.some((s) => f === s || f.startsWith(s)) && !f.endsWith('.DS_Store'));
+  } catch (err) {
+    console.warn(`archive: skipped ${year} (${repo ?? commit}): ${String(err.stderr || err.message).trim().split('\n')[0]}`);
+    continue;
+  }
 
   for (const file of files) {
-    let data = git('cat-file', 'blob', `${commit}:${file}`);
+    let data = run([...from, 'cat-file', 'blob', `${commit}:${file}`]);
     if (file.endsWith('.html')) data = Buffer.from(fixHtml(data.toString('utf8'), year), 'utf8');
     const out = join(root, file);
     mkdirSync(dirname(out), { recursive: true });
     writeFileSync(out, data);
     total += data.length;
   }
-  console.log(`archive: ${year} (${commit}) -> ${root}/, ${files.length} files`);
+  console.log(`archive: ${year} (${repo ? repo.split('/').pop().replace('.git', '') : commit}) -> ${root}/, ${files.length} files`);
 }
 console.log(`archive: ${(total / 1048576).toFixed(1)} MB in total`);
