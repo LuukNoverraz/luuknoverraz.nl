@@ -24,16 +24,16 @@ const repo = 'https://github.com/LuukNoverraz/luuknoverraz.nl';
 
 // Newest first. `visit` is where the version can be opened: older versions are
 // published from git history by scripts/archive-versions.mjs at build time.
-// `code` is left out for versions whose repository is private.
+const old = (name: string) => `https://github.com/LuukNoverraz/${name}`;
 const all: { year: string; shot: ImageMetadata; code?: string; visit?: string }[] = [
   { year: '2026', shot: shot2026, code: repo },
-  { year: '2023', shot: shot2023, code: `${repo}/tree/ab8ad59`, visit: '/archive/2023/' },
-  { year: '2022', shot: shot2022, code: `${repo}/tree/251d614`, visit: '/archive/2022/' },
-  { year: '2021', shot: shot2021, visit: '/archive/2021/' },
-  { year: '2020', shot: shot2020, visit: '/archive/2020/' },
-  { year: '2019', shot: shot2019, visit: '/archive/2019/' },
-  { year: '2018', shot: shot2018, visit: '/archive/2018/' },
-  { year: '2017', shot: shot2017, visit: '/archive/2017/' },
+  { year: '2023', shot: shot2023, code: `${repo}/tree/ab8ad59`, visit: '/museum/2023/' },
+  { year: '2022', shot: shot2022, code: `${repo}/tree/251d614`, visit: '/museum/2022/' },
+  { year: '2021', shot: shot2021, code: old('portfolio-4'), visit: '/museum/2021/' },
+  { year: '2020', shot: shot2020, code: old('luuknoverraz-portfolio'), visit: '/museum/2020/' },
+  { year: '2019', shot: shot2019, code: old('portfolio-3'), visit: '/museum/2019/' },
+  { year: '2018', shot: shot2018, code: old('portfolio-2'), visit: '/museum/2018/' },
+  { year: '2017', shot: shot2017, code: old('portfolio-1'), visit: '/museum/2017/' },
 ];
 // Only offer "visit" for versions the archive step actually published: a build
 // without access to a private repository simply leaves that link out.
@@ -43,7 +43,7 @@ const editions = all.map((e) => ({
 }));
 ---
 
-<Base lang={lang} subpage={{ slug: 'archive', title: t.archive.title, description: t.archive.intro }}>
+<Base lang={lang} subpage={{ slug: 'museum', title: t.archive.title, description: t.archive.intro }}>
   <article class="section archive">
     <a class="back" href={base(lang)}>
       <span aria-hidden="true">←</span> {t.back}

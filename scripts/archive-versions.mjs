@@ -1,5 +1,5 @@
 // Publishes earlier versions of this site, straight from git history, under
-// public/archive/<year>/ before `astro dev` and `astro build` (npm runs it as
+// public/museum/<year>/ before `astro dev` and `astro build` (npm runs it as
 // predev and prebuild), so they work in both. That folder is git-ignored: the
 // files are read from the commit that was live at the time, never committed.
 //
@@ -57,7 +57,7 @@ const bar = (year) => `
 <!-- added when archived: a way back to the current site -->
 <div role="note" style="all:initial;position:fixed;z-index:2147483647;inset:auto 0 0 0;display:flex;flex-wrap:wrap;gap:.25rem 1rem;justify-content:center;align-items:center;padding:.6rem 1rem;background:#efede8;color:#161214;font:14px/1.4 Georgia,'Times New Roman',serif;letter-spacing:.04em;box-shadow:0 -1px 0 rgb(22 18 20/.15)">
   <span style="all:unset">Archived version of this site, ${year}</span>
-  <a href="/archive/" onclick="if(document.referrer.indexOf(location.origin+'/')===0&&document.referrer.indexOf('/archive/')>0){location.href=document.referrer;return false}" style="all:unset;color:#ce2a29;text-decoration:underline;text-underline-offset:.2em;cursor:pointer">Back to the current site</a>
+  <a href="/museum/" onclick="if(document.referrer.indexOf(location.origin+'/')===0&&document.referrer.indexOf('/museum/')>0){location.href=document.referrer;return false}" style="all:unset;color:#ce2a29;text-decoration:underline;text-underline-offset:.2em;cursor:pointer">Back to the current site</a>
 </div>
 `;
 
@@ -71,7 +71,7 @@ const fixHtml = (html, year) =>
 
 let total = 0;
 for (const { year, repo, commit, skip } of versions) {
-  const root = join('public', 'archive', year);
+  const root = join('public', 'museum', year);
   rmSync(root, { recursive: true, force: true });
 
   let from;

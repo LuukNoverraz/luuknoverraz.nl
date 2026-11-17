@@ -316,9 +316,9 @@ export const copy: Record<Lang, Copy> = {
     work: { title: 'Werk', view: 'Lees meer', play: 'Speel' },
     viewer: { open: 'Afbeelding vergroten', close: 'Sluiten' },
     archive: {
-      title: 'Eerdere versies',
-      intro: 'Deze site bestaat sinds 2016 en is sindsdien een paar keer opnieuw gebouwd. Dit zijn de versies die ik heb bewaard.',
-      link: 'Eerdere versies van deze site',
+      title: 'Portfoliomuseum',
+      intro: 'Deze site bestaat sinds 2017 en is sindsdien zeven keer opnieuw gebouwd. Dit zijn alle versies van mijn portfolio; samen laten ze mijn vooruitgang en ontwikkeling als programmeur en ontwerper zien.',
+      link: 'Portfoliomuseum',
       code: 'Code op GitHub',
       visit: 'Bekijk deze versie',
       editions: {
@@ -561,9 +561,9 @@ export const copy: Record<Lang, Copy> = {
     work: { title: 'Work', view: 'Read more', play: 'Play' },
     viewer: { open: 'Enlarge image', close: 'Close' },
     archive: {
-      title: 'Earlier versions',
-      intro: 'This site has been around since 2016 and has been rebuilt a few times since. These are the versions I’ve kept.',
-      link: 'Earlier versions of this site',
+      title: 'Portfolio museum',
+      intro: 'This site has been around since 2017 and has been rebuilt seven times since. These are all the iterations of my portfolio and show my progress and development as a coder and designer.',
+      link: 'Portfolio museum',
       code: 'Code on GitHub',
       visit: 'Visit this version',
       editions: {
@@ -806,9 +806,9 @@ export const copy: Record<Lang, Copy> = {
     work: { title: 'Arbeiten', view: 'Mehr lesen', play: 'Spielen' },
     viewer: { open: 'Bild vergrößern', close: 'Schließen' },
     archive: {
-      title: 'Frühere Versionen',
-      intro: 'Diese Website gibt es seit 2016, und seitdem habe ich sie ein paar Mal neu gebaut. Das sind die Versionen, die ich aufbewahrt habe.',
-      link: 'Frühere Versionen dieser Website',
+      title: 'Portfolio-Museum',
+      intro: 'Diese Website gibt es seit 2017, und seitdem habe ich sie sieben Mal neu gebaut. Das sind alle Versionen meines Portfolios; sie zeigen meinen Fortschritt und meine Entwicklung als Programmierer und Designer.',
+      link: 'Portfolio-Museum',
       code: 'Code auf GitHub',
       visit: 'Diese Version ansehen',
       editions: {
@@ -1054,9 +1054,9 @@ export const copy: Record<Lang, Copy> = {
     work: { title: 'Travaux', view: 'En savoir plus', play: 'Jouer' },
     viewer: { open: 'Agrandir l’image', close: 'Fermer' },
     archive: {
-      title: 'Versions précédentes',
-      intro: 'Ce site existe depuis 2016 et je l’ai reconstruit plusieurs fois depuis. Voici les versions que j’ai gardées.',
-      link: 'Versions précédentes de ce site',
+      title: 'Musée du portfolio',
+      intro: 'Ce site existe depuis 2017 et a été reconstruit sept fois depuis. Voici toutes les versions de mon portfolio : elles montrent mes progrès et mon évolution en tant que développeur et designer.',
+      link: 'Musée du portfolio',
       code: 'Code sur GitHub',
       visit: 'Voir cette version',
       editions: {
@@ -1301,9 +1301,9 @@ export const copy: Record<Lang, Copy> = {
     work: { title: 'Trabajos', view: 'Leer más', play: 'Jugar' },
     viewer: { open: 'Ampliar imagen', close: 'Cerrar' },
     archive: {
-      title: 'Versiones anteriores',
-      intro: 'Este sitio existe desde 2016 y lo he rehecho varias veces desde entonces. Estas son las versiones que he guardado.',
-      link: 'Versiones anteriores de este sitio',
+      title: 'Museo del portfolio',
+      intro: 'Este sitio existe desde 2017 y se ha rehecho siete veces desde entonces. Estas son todas las versiones de mi portfolio, y muestran mi progreso y mi evolución como programador y diseñador.',
+      link: 'Museo del portfolio',
       code: 'Código en GitHub',
       visit: 'Ver esta versión',
       editions: {
@@ -1548,9 +1548,9 @@ export const copy: Record<Lang, Copy> = {
     work: { title: '作品', view: '詳しく見る', play: 'プレイ' },
     viewer: { open: '画像を拡大', close: '閉じる' },
     archive: {
-      title: '過去のバージョン',
-      intro: 'このサイトは2016年から続いていて、これまでに何度か作り直してきました。ここにあるのは、手元に残しているバージョンです。',
-      link: 'このサイトの過去のバージョン',
+      title: 'ポートフォリオ博物館',
+      intro: 'このサイトは2017年に始まり、これまでに7回作り直してきました。ここにあるのは私のポートフォリオのすべてのバージョンで、プログラマー・デザイナーとしての成長の記録です。',
+      link: 'ポートフォリオ博物館',
       code: 'GitHub のコード',
       visit: 'このバージョンを見る',
       editions: {
@@ -1795,9 +1795,9 @@ export const copy: Record<Lang, Copy> = {
     work: { title: '作品', view: '了解更多', play: '试玩' },
     viewer: { open: '放大图片', close: '关闭' },
     archive: {
-      title: '历史版本',
-      intro: '这个网站从 2016 年开始就有了，之后我又重做过几次。这里是我保留下来的版本。',
-      link: '本网站的历史版本',
+      title: '作品集博物馆',
+      intro: '这个网站从 2017 年开始，之后重做了七次。这里是我作品集的所有版本，记录了我作为程序员和设计师的进步与成长。',
+      link: '作品集博物馆',
       code: 'GitHub 上的代码',
       visit: '查看这个版本',
       editions: {
