@@ -908,6 +908,101 @@ a:hover {
 }
 
 /* ==========================================================================
+   Motion: short and quiet, and only for people who haven't asked for less
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  /* colour changes on hover ease in rather than snap */
+  a,
+  summary,
+  .play-button {
+    transition:
+      color 0.15s ease,
+      background-color 0.15s ease,
+      border-color 0.15s ease,
+      text-decoration-color 0.15s ease;
+  }
+
+  /* language menu drops in under the globe */
+  .lang-more[open] ul {
+    animation: drop-in 0.18s ease-out;
+  }
+
+  /* the globe gives a small turn when the menu opens */
+  .lang-more summary svg {
+    transition: rotate 0.35s ease;
+  }
+
+  .lang-more[open] summary svg {
+    rotate: 30deg;
+  }
+
+  /* chevron turns over instead of flipping */
+  .earlier summary::after {
+    transition:
+      rotate 0.25s ease,
+      translate 0.25s ease;
+  }
+
+  /* earlier games rise in one after another */
+  .earlier[open] li {
+    animation: rise-in 0.4s ease-out backwards;
+  }
+
+  .earlier[open] li:nth-child(2) { animation-delay: 30ms; }
+  .earlier[open] li:nth-child(3) { animation-delay: 60ms; }
+  .earlier[open] li:nth-child(4) { animation-delay: 90ms; }
+  .earlier[open] li:nth-child(5) { animation-delay: 120ms; }
+  .earlier[open] li:nth-child(6) { animation-delay: 150ms; }
+  .earlier[open] li:nth-child(7) { animation-delay: 180ms; }
+  .earlier[open] li:nth-child(8) { animation-delay: 210ms; }
+  .earlier[open] li:nth-child(9) { animation-delay: 240ms; }
+  .earlier[open] li:nth-child(n + 10) { animation-delay: 270ms; }
+
+  /* covers in the Work list lean in a little on hover */
+  a.project-media img {
+    transition: scale 0.5s ease;
+  }
+
+  a.project-media:hover img {
+    scale: 1.025;
+  }
+
+  /* the scroll cue under the card nods downwards now and then */
+  .scroll-cue span {
+    display: inline-block;
+    animation: nudge 2.4s ease-in-out 1.5s infinite;
+  }
+}
+
+@keyframes drop-in {
+  from {
+    opacity: 0;
+    translate: 0 -0.4rem;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    translate: 0 0.6rem;
+  }
+}
+
+@keyframes nudge {
+  0%,
+  70%,
+  100% {
+    translate: 0 0;
+  }
+  80% {
+    translate: 0 0.25rem;
+  }
+  90% {
+    translate: 0 0;
+  }
+}
+
+/* ==========================================================================
    Narrow screens
    ========================================================================== */
 @media (max-width: 768px) {
