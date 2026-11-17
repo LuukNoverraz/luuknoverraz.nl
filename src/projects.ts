@@ -61,6 +61,9 @@ import eSumoShootersCover from './assets/earlier/sumo-shooters/cover.jpg';
 import eSumoShooters1 from './assets/earlier/sumo-shooters/1.jpg';
 import eSumoShooters3 from './assets/earlier/sumo-shooters/3.jpg';
 import eBesyesCover from './assets/earlier/besyes/cover.jpg';
+import eBesyes1 from './assets/earlier/besyes/1.jpg';
+import eBesyes2 from './assets/earlier/besyes/2.jpg';
+import eBesyes3 from './assets/earlier/besyes/3.jpg';
 import eFuryFlyCover from './assets/earlier/fury-fly/cover.jpg';
 import eFuryFly1 from './assets/earlier/fury-fly/1.jpg';
 import eFuryFly2 from './assets/earlier/fury-fly/2.jpg';
@@ -435,7 +438,29 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
   },
   'besyes': {
     poster: eBesyesCover,
-    images: [],
+    hero: eBesyes1,
+    images: [
+      { src: eBesyes2, alt: {
+          en: 'The camp at dusk: a tent, a campfire and mushrooms in the long shadows, with the inventory at the bottom.',
+          nl: 'Het kamp in de schemering: een tent, een kampvuur en paddenstoelen in de lange schaduwen, met onderin de inventaris.',
+          de: 'Das Lager in der Dämmerung: ein Zelt, ein Lagerfeuer und Pilze in langen Schatten, unten das Inventar.',
+          fr: 'Le campement au crépuscule : une tente, un feu de camp et des champignons dans les ombres allongées, avec l’inventaire en bas.',
+          es: 'El campamento al atardecer: una tienda, una hoguera y setas entre sombras alargadas, con el inventario abajo.',
+          ja: '夕暮れのキャンプ。長い影の中にテント、たき火、キノコがあり、下部にインベントリが表示されている。',
+          zh: '黄昏时的营地：长长的影子里有帐篷、篝火和蘑菇，底部是物品栏。',
+        },
+      },
+      { src: eBesyes3, alt: {
+          en: 'A low-poly forest at sunset, with the smoke of the distant campfire rising between the trees.',
+          nl: 'Een low-poly bos bij zonsondergang, met tussen de bomen de rook van het kampvuur in de verte.',
+          de: 'Ein Low-Poly-Wald bei Sonnenuntergang, zwischen den Bäumen steigt der Rauch des fernen Lagerfeuers auf.',
+          fr: 'Une forêt low poly au coucher du soleil, avec la fumée du feu de camp qui s’élève au loin entre les arbres.',
+          es: 'Un bosque low poly al atardecer, con el humo de la hoguera lejana elevándose entre los árboles.',
+          ja: '夕日に照らされたローポリの森。木々の間から遠くのたき火の煙が立ちのぼっている。',
+          zh: '日落时的低多边形森林，远处篝火的烟从树林间升起。',
+        },
+      },
+    ],
   },
 };
 
