@@ -28,6 +28,7 @@ import tZerotrace from './assets/thumbs/zerotrace.jpg';
 import tBarbasim from './assets/thumbs/barbasim.jpg';
 import tSumoShooters from './assets/thumbs/sumo-shooters.jpg';
 import tBesyes from './assets/thumbs/besyes.jpg';
+import tFuryFly from './assets/thumbs/fury-fly.jpg';
 
 // Earlier games
 import eHowFastCanYouClimbTheStairsCover from './assets/earlier/how-fast-can-you-climb-the-stairs/cover.jpg';
@@ -60,6 +61,9 @@ import eSumoShootersCover from './assets/earlier/sumo-shooters/cover.jpg';
 import eSumoShooters1 from './assets/earlier/sumo-shooters/1.jpg';
 import eSumoShooters3 from './assets/earlier/sumo-shooters/3.jpg';
 import eBesyesCover from './assets/earlier/besyes/cover.jpg';
+import eFuryFlyCover from './assets/earlier/fury-fly/cover.jpg';
+import eFuryFly1 from './assets/earlier/fury-fly/1.jpg';
+import eFuryFly2 from './assets/earlier/fury-fly/2.jpg';
 
 interface ProjectMedia {
   /** Cover, shown in the list on the home page. */
@@ -413,6 +417,22 @@ export const media: Record<ProjectSlug, ProjectMedia> = {
       },
     ],
   },
+  'fury-fly': {
+    poster: eFuryFlyCover,
+    hero: eFuryFly1,
+    images: [
+      { src: eFuryFly2, alt: {
+          en: 'Two flies on the floor of the witches’ kitchen as the water rises, with the countdown at the top.',
+          nl: 'Twee vliegen op de vloer van de heksenkeuken terwijl het water stijgt, met bovenin de aftelklok.',
+          de: 'Zwei Fliegen am Boden der Hexenküche, während das Wasser steigt, oben der Countdown.',
+          fr: 'Deux mouches au sol de la cuisine des sorcières tandis que l’eau monte, avec le compte à rebours en haut.',
+          es: 'Dos moscas en el suelo de la cocina de las brujas mientras sube el agua, con la cuenta atrás arriba.',
+          ja: '水かさが増していく魔女のキッチンの床にいる2匹のハエ。上部にカウントダウンがある。',
+          zh: '水位上涨时，两只苍蝇待在女巫厨房的地板上，顶部是倒计时。',
+        },
+      },
+    ],
+  },
   'besyes': {
     poster: eBesyesCover,
     images: [],
@@ -431,6 +451,7 @@ export const earlierThumbs: Record<string, ImageMetadata> = {
   'zerotrace': tZerotrace,
   'barbasim': tBarbasim,
   'sumo-shooters': tSumoShooters,
-  // Besyes links to its GitHub repository, not itch.io
+  // these two aren't on itch.io: Besyes links to its GitHub repository, Fury Fly to where it's played
   'BeverBesjes': tBesyes,
+  'fury-fly': tFuryFly,
 };

@@ -276,6 +276,18 @@ export const copy: Record<Lang, Copy> = {
           'Je kunt het eiland vanuit verschillende hoeken bekijken en afzonderlijke Barba’s volgen. De broncode staat op <a href="https://github.com/LuukNoverraz/Barbasim">GitHub</a>.',
         ],
       },
+      'fury-fly': {
+        name: 'Fury Fly',
+        slogan: 'Een lokale multiplayer-platformer met een dikke vlieg die niet echt kan vliegen',
+        duration: '2022 · in 9 uur',
+        role: 'Samen met Jochem Baas, Leah Crozier en CodeMaker4',
+        tools: 'p5.js',
+        link: 'https://codemaker4.com/fury-fly/',
+        paragraphs: [
+          'In deze 2D-platformer voor twee spelers op één toetsenbord ben je een dikke vlieg die niet echt kan vliegen. De heksenkeuken loopt onder, en je probeert het langer vol te houden dan je tegenstander voordat na 30 seconden het hele scherm onder water staat.',
+          'In negen uur gemaakt voor de CoderClass Game Jam 2022, samen met <a href="https://jochem33.github.io/">Jochem Baas</a>, <a href="https://github.com/leahcrozier">Leah Crozier</a> en <a href="https://codemaker4.com/">CodeMaker4</a>. Het thema was “30 seconden”. Je speelt hem het best met z’n tweeën.',
+        ],
+      },
       'sumo-shooters': {
         name: 'Sumo Shooters',
         slogan: 'Een mobiele game voor twee spelers die biljart met sumo mixt',
@@ -295,8 +307,8 @@ export const copy: Record<Lang, Copy> = {
         role: 'Samen met Jochem Baas, Midas Scheffers en Berk Yildirim',
         tools: 'Unity',
         paragraphs: [
-          'Besyes is een game die ik samen met <a href="http://www.jochembaas.nl/">Jochem Baas</a>, <a href="https://midasscheffers.github.io/">Midas Scheffers</a> en <a href="https://github.com/BerkYildirimm">Berk Yildirim</a> maakte. Je speelt een verzamelaar die rondstruint op zoek naar eten. We maakten hem in opdracht van IJsfontein.',
-          'De broncode staat op <a href="https://github.com/jochem33/BeverBesjes">GitHub</a>.',
+          'Besyes is een game die ik samen met <a href="https://jochem33.github.io/">Jochem Baas</a>, <a href="https://midasscheffers.github.io/">Midas Scheffers</a> en <a href="https://github.com/BerkYildirimm">Berk Yildirim</a> maakte. Je speelt een verzamelaar die rondstruint op zoek naar eten. We maakten hem in opdracht van IJsfontein.',
+          'De broncode staat op <a href="https://github.com/jochem33/BeverBesjes/tree/dev">GitHub</a>.',
         ],
       },
     },
@@ -532,6 +544,18 @@ export const copy: Record<Lang, Copy> = {
           'You can look at the island from different angles and follow individual Barbas around. The source code is on <a href="https://github.com/LuukNoverraz/Barbasim">GitHub</a>.',
         ],
       },
+      'fury-fly': {
+        name: 'Fury Fly',
+        slogan: 'A local multiplayer platformer about a fat fly who can’t really fly',
+        duration: '2022 · in 9 hours',
+        role: 'Together with Jochem Baas, Leah Crozier and CodeMaker4',
+        tools: 'p5.js',
+        link: 'https://codemaker4.com/fury-fly/',
+        paragraphs: [
+          'In this 2D local multiplayer platformer, you are a fat fly who can’t really fly. The witches’ kitchen is about to flood, and you are trying to outlive your opponent before the screen is flooded after 30 seconds.',
+          'Made in nine hours for the CoderClass Game Jam 2022 with <a href="https://jochem33.github.io/">Jochem Baas</a>, <a href="https://github.com/leahcrozier">Leah Crozier</a> and <a href="https://codemaker4.com/">CodeMaker4</a>. The theme was “30 seconds”. Best played with someone else.',
+        ],
+      },
       'sumo-shooters': {
         name: 'Sumo Shooters',
         slogan: 'A two-player mobile game that mixes billiards with sumo',
@@ -551,8 +575,8 @@ export const copy: Record<Lang, Copy> = {
         role: 'Together with Jochem Baas, Midas Scheffers and Berk Yildirim',
         tools: 'Unity',
         paragraphs: [
-          'Besyes is a game I made together with <a href="http://www.jochembaas.nl/">Jochem Baas</a>, <a href="https://midasscheffers.github.io/">Midas Scheffers</a> and <a href="https://github.com/BerkYildirimm">Berk Yildirim</a>. The game revolves around scavenging as a gatherer, and was made as an assignment from IJsfontein.',
-          'You can view the source code on <a href="https://github.com/jochem33/BeverBesjes">GitHub</a>.',
+          'Besyes is a game I made together with <a href="https://jochem33.github.io/">Jochem Baas</a>, <a href="https://midasscheffers.github.io/">Midas Scheffers</a> and <a href="https://github.com/BerkYildirimm">Berk Yildirim</a>. The game revolves around scavenging as a gatherer, and was made as an assignment from IJsfontein.',
+          'You can view the source code on <a href="https://github.com/jochem33/BeverBesjes/tree/dev">GitHub</a>.',
         ],
       },
     },
@@ -788,6 +812,18 @@ export const copy: Record<Lang, Copy> = {
           'Du kannst die Insel aus verschiedenen Blickwinkeln betrachten und einzelnen Barbas folgen. Der Quellcode ist auf <a href="https://github.com/LuukNoverraz/Barbasim">GitHub</a>.',
         ],
       },
+      'fury-fly': {
+        name: 'Fury Fly',
+        slogan: 'Ein lokaler Multiplayer-Plattformer über eine dicke Fliege, die nicht richtig fliegen kann',
+        duration: '2022 · in 9 Stunden',
+        role: 'Zusammen mit Jochem Baas, Leah Crozier und CodeMaker4',
+        tools: 'p5.js',
+        link: 'https://codemaker4.com/fury-fly/',
+        paragraphs: [
+          'In diesem lokalen 2D-Multiplayer-Plattformer bist du eine dicke Fliege, die nicht richtig fliegen kann. Die Hexenküche läuft voll, und du versuchst, deinen Gegner zu überdauern, bevor nach 30 Sekunden der ganze Bildschirm unter Wasser steht.',
+          'In neun Stunden für den CoderClass Game Jam 2022 entstanden, zusammen mit <a href="https://jochem33.github.io/">Jochem Baas</a>, <a href="https://github.com/leahcrozier">Leah Crozier</a> und <a href="https://codemaker4.com/">CodeMaker4</a>. Das Thema war „30 Sekunden“. Am besten zu zweit spielen.',
+        ],
+      },
       'sumo-shooters': {
         name: 'Sumo Shooters',
         slogan: 'Ein Handyspiel für zwei, das Billard mit Sumo mischt',
@@ -807,8 +843,8 @@ export const copy: Record<Lang, Copy> = {
         role: 'Zusammen mit Jochem Baas, Midas Scheffers und Berk Yildirim',
         tools: 'Unity',
         paragraphs: [
-          'Besyes ist ein Spiel, das ich zusammen mit <a href="http://www.jochembaas.nl/">Jochem Baas</a>, <a href="https://midasscheffers.github.io/">Midas Scheffers</a> und <a href="https://github.com/BerkYildirimm">Berk Yildirim</a> gemacht habe. Du spielst einen Sammler, der auf Nahrungssuche umherstreift. Entstanden ist es im Auftrag von IJsfontein.',
-          'Den Quellcode findest du auf <a href="https://github.com/jochem33/BeverBesjes">GitHub</a>.',
+          'Besyes ist ein Spiel, das ich zusammen mit <a href="https://jochem33.github.io/">Jochem Baas</a>, <a href="https://midasscheffers.github.io/">Midas Scheffers</a> und <a href="https://github.com/BerkYildirimm">Berk Yildirim</a> gemacht habe. Du spielst einen Sammler, der auf Nahrungssuche umherstreift. Entstanden ist es im Auftrag von IJsfontein.',
+          'Den Quellcode findest du auf <a href="https://github.com/jochem33/BeverBesjes/tree/dev">GitHub</a>.',
         ],
       },
     },
@@ -1047,6 +1083,18 @@ export const copy: Record<Lang, Copy> = {
           'Vous pouvez observer l’île sous différents angles et suivre chaque Barba individuellement. Le code source est disponible sur <a href="https://github.com/LuukNoverraz/Barbasim">GitHub</a>.',
         ],
       },
+      'fury-fly': {
+        name: 'Fury Fly',
+        slogan: 'Un jeu de plateforme multijoueur local avec une grosse mouche qui ne vole pas vraiment',
+        duration: '2022 · en 9 heures',
+        role: 'Avec Jochem Baas, Leah Crozier et CodeMaker4',
+        tools: 'p5.js',
+        link: 'https://codemaker4.com/fury-fly/',
+        paragraphs: [
+          'Dans ce jeu de plateforme 2D multijoueur en local, vous êtes une grosse mouche qui ne sait pas vraiment voler. La cuisine des sorcières est sur le point d’être inondée, et vous tentez de survivre plus longtemps que votre adversaire avant que l’eau ne recouvre tout l’écran au bout de 30 secondes.',
+          'Réalisé en neuf heures pour la CoderClass Game Jam 2022 avec <a href="https://jochem33.github.io/">Jochem Baas</a>, <a href="https://github.com/leahcrozier">Leah Crozier</a> et <a href="https://codemaker4.com/">CodeMaker4</a>. Le thème était « 30 secondes ». À jouer de préférence à deux.',
+        ],
+      },
       'sumo-shooters': {
         name: 'Sumo Shooters',
         slogan: 'Un jeu mobile à deux qui mélange billard et sumo',
@@ -1066,8 +1114,8 @@ export const copy: Record<Lang, Copy> = {
         role: 'Avec Jochem Baas, Midas Scheffers et Berk Yildirim',
         tools: 'Unity',
         paragraphs: [
-          'Besyes est un jeu que j’ai fait avec <a href="http://www.jochembaas.nl/">Jochem Baas</a>, <a href="https://midasscheffers.github.io/">Midas Scheffers</a> et <a href="https://github.com/BerkYildirimm">Berk Yildirim</a>. On y incarne un cueilleur qui fouille les environs pour trouver de quoi manger. Il a été réalisé à la demande d’IJsfontein.',
-          'Le code source est sur <a href="https://github.com/jochem33/BeverBesjes">GitHub</a>.',
+          'Besyes est un jeu que j’ai fait avec <a href="https://jochem33.github.io/">Jochem Baas</a>, <a href="https://midasscheffers.github.io/">Midas Scheffers</a> et <a href="https://github.com/BerkYildirimm">Berk Yildirim</a>. On y incarne un cueilleur qui fouille les environs pour trouver de quoi manger. Il a été réalisé à la demande d’IJsfontein.',
+          'Le code source est sur <a href="https://github.com/jochem33/BeverBesjes/tree/dev">GitHub</a>.',
         ],
       },
     },
@@ -1305,6 +1353,18 @@ export const copy: Record<Lang, Copy> = {
           'Puedes ver la isla desde distintos ángulos y seguir a cada Barba. El código fuente está en <a href="https://github.com/LuukNoverraz/Barbasim">GitHub</a>.',
         ],
       },
+      'fury-fly': {
+        name: 'Fury Fly',
+        slogan: 'Un plataformas multijugador local con una mosca gorda que no sabe volar muy bien',
+        duration: '2022 · en 9 horas',
+        role: 'Junto con Jochem Baas, Leah Crozier y CodeMaker4',
+        tools: 'p5.js',
+        link: 'https://codemaker4.com/fury-fly/',
+        paragraphs: [
+          'En este plataformas 2D multijugador local eres una mosca gorda que no sabe volar muy bien. La cocina de las brujas está a punto de inundarse, y intentas aguantar más que tu rival antes de que el agua cubra toda la pantalla a los 30 segundos.',
+          'Hecho en nueve horas para la CoderClass Game Jam 2022 con <a href="https://jochem33.github.io/">Jochem Baas</a>, <a href="https://github.com/leahcrozier">Leah Crozier</a> y <a href="https://codemaker4.com/">CodeMaker4</a>. El tema era «30 segundos». Mejor jugarlo con alguien.',
+        ],
+      },
       'sumo-shooters': {
         name: 'Sumo Shooters',
         slogan: 'Un juego para móvil de dos jugadores que mezcla billar y sumo',
@@ -1324,8 +1384,8 @@ export const copy: Record<Lang, Copy> = {
         role: 'Junto con Jochem Baas, Midas Scheffers y Berk Yildirim',
         tools: 'Unity',
         paragraphs: [
-          'Besyes es un juego que hice junto con <a href="http://www.jochembaas.nl/">Jochem Baas</a>, <a href="https://midasscheffers.github.io/">Midas Scheffers</a> y <a href="https://github.com/BerkYildirimm">Berk Yildirim</a>. Encarnas a un recolector que busca comida por los alrededores. Lo hicimos por encargo de IJsfontein.',
-          'El código fuente está en <a href="https://github.com/jochem33/BeverBesjes">GitHub</a>.',
+          'Besyes es un juego que hice junto con <a href="https://jochem33.github.io/">Jochem Baas</a>, <a href="https://midasscheffers.github.io/">Midas Scheffers</a> y <a href="https://github.com/BerkYildirimm">Berk Yildirim</a>. Encarnas a un recolector que busca comida por los alrededores. Lo hicimos por encargo de IJsfontein.',
+          'El código fuente está en <a href="https://github.com/jochem33/BeverBesjes/tree/dev">GitHub</a>.',
         ],
       },
     },
@@ -1563,6 +1623,18 @@ export const copy: Record<Lang, Copy> = {
           '島をさまざまな角度から眺めたり、1匹の Barba を追いかけたりできます。ソースコードは <a href="https://github.com/LuukNoverraz/Barbasim">GitHub</a> で公開しています。',
         ],
       },
+      'fury-fly': {
+        name: 'Fury Fly',
+        slogan: 'うまく飛べない太ったハエが主役の、ローカル対戦プラットフォーマー',
+        duration: '2022 · 9時間で制作',
+        role: 'Jochem Baas、Leah Crozier、CodeMaker4 と共同',
+        tools: 'p5.js',
+        link: 'https://codemaker4.com/fury-fly/',
+        paragraphs: [
+          'この 2D ローカル対戦プラットフォーマーで、あなたはうまく飛べない太ったハエ。魔女のキッチンが水浸しになりかけていて、30秒後に画面がすっかり水に沈むまで、相手より長く生き残ることを目指します。',
+          'CoderClass Game Jam 2022 のために、<a href="https://jochem33.github.io/">Jochem Baas</a>、<a href="https://github.com/leahcrozier">Leah Crozier</a>、<a href="https://codemaker4.com/">CodeMaker4</a> と9時間で作りました。テーマは「30秒」。できれば誰かと一緒に遊んでください。',
+        ],
+      },
       'sumo-shooters': {
         name: 'Sumo Shooters',
         slogan: 'ビリヤードと相撲を混ぜた、2人用のモバイルゲーム',
@@ -1582,8 +1654,8 @@ export const copy: Record<Lang, Copy> = {
         role: 'Jochem Baas、Midas Scheffers、Berk Yildirim と共同',
         tools: 'Unity',
         paragraphs: [
-          'Besyes は <a href="http://www.jochembaas.nl/">Jochem Baas</a>、<a href="https://midasscheffers.github.io/">Midas Scheffers</a>、<a href="https://github.com/BerkYildirimm">Berk Yildirim</a> と一緒に作ったゲームです。採集民となって、食べ物を探し集めて回ります。IJsfontein からの課題として制作しました。',
-          'ソースコードは <a href="https://github.com/jochem33/BeverBesjes">GitHub</a> で公開しています。',
+          'Besyes は <a href="https://jochem33.github.io/">Jochem Baas</a>、<a href="https://midasscheffers.github.io/">Midas Scheffers</a>、<a href="https://github.com/BerkYildirimm">Berk Yildirim</a> と一緒に作ったゲームです。採集民となって、食べ物を探し集めて回ります。IJsfontein からの課題として制作しました。',
+          'ソースコードは <a href="https://github.com/jochem33/BeverBesjes/tree/dev">GitHub</a> で公開しています。',
         ],
       },
     },
@@ -1821,6 +1893,18 @@ export const copy: Record<Lang, Copy> = {
           '你可以从不同角度观察小岛，也可以跟随某一只 Barba。源代码发布在 <a href="https://github.com/LuukNoverraz/Barbasim">GitHub</a> 上。',
         ],
       },
+      'fury-fly': {
+        name: 'Fury Fly',
+        slogan: '一款本地多人平台跳跃游戏，主角是一只不太会飞的胖苍蝇',
+        duration: '2022 · 9 小时做完',
+        role: '与 Jochem Baas、Leah Crozier、CodeMaker4 合作',
+        tools: 'p5.js',
+        link: 'https://codemaker4.com/fury-fly/',
+        paragraphs: [
+          '在这款本地多人 2D 平台跳跃游戏里，你是一只不太会飞的胖苍蝇。女巫的厨房就要被水淹没，你要在 30 秒后整个屏幕被淹之前，比对手坚持得更久。',
+          '这是我和 <a href="https://jochem33.github.io/">Jochem Baas</a>、<a href="https://github.com/leahcrozier">Leah Crozier</a>、<a href="https://codemaker4.com/">CodeMaker4</a> 为 CoderClass Game Jam 2022 用九小时做出来的，主题是“30 秒”。最好找个人一起玩。',
+        ],
+      },
       'sumo-shooters': {
         name: 'Sumo Shooters',
         slogan: '一款把台球和相扑混在一起的双人手机游戏',
@@ -1840,8 +1924,8 @@ export const copy: Record<Lang, Copy> = {
         role: '与 Jochem Baas、Midas Scheffers、Berk Yildirim 合作',
         tools: 'Unity',
         paragraphs: [
-          'Besyes 是我和 <a href="http://www.jochembaas.nl/">Jochem Baas</a>、<a href="https://midasscheffers.github.io/">Midas Scheffers</a>、<a href="https://github.com/BerkYildirimm">Berk Yildirim</a> 一起做的游戏。你扮演一名采集者，四处搜寻食物。这是应 IJsfontein 的委托而做的。',
-          '源代码在 <a href="https://github.com/jochem33/BeverBesjes">GitHub</a> 上。',
+          'Besyes 是我和 <a href="https://jochem33.github.io/">Jochem Baas</a>、<a href="https://midasscheffers.github.io/">Midas Scheffers</a>、<a href="https://github.com/BerkYildirimm">Berk Yildirim</a> 一起做的游戏。你扮演一名采集者，四处搜寻食物。这是应 IJsfontein 的委托而做的。',
+          '源代码在 <a href="https://github.com/jochem33/BeverBesjes/tree/dev">GitHub</a> 上。',
         ],
       },
     },
@@ -1911,7 +1995,7 @@ interface EarlierGame {
   link: string;
   year: number;
   engine: string;
-  jam?: { name: string; url: string };
+  jam?: { name: string; url?: string };
   text: Record<Lang, string>;
 }
 
@@ -2015,6 +2099,23 @@ export const earlierGames: EarlierGame[] = [
       de: 'Eine komödiantische Detektiv-Visual-Novel mit Würfeln in den Hauptrollen.',
       fr: 'Un visual novel policier et comique avec des dés dans les rôles principaux.',
       zh: '一部由骰子担纲主演的喜剧侦探视觉小说。',
+    },
+  },
+  {
+    slug: 'fury-fly',
+    name: 'Fury Fly',
+    link: 'https://codemaker4.com/fury-fly/',
+    year: 2022,
+    engine: 'p5.js',
+    jam: { name: 'CoderClass Game Jam 2022' },
+    text: {
+      nl: 'Een dikke vlieg die niet kan vliegen, in een heksenkeuken die onderloopt. Voor twee spelers.',
+      en: 'A fat fly who can’t fly, in a witches’ kitchen that’s flooding. For two players.',
+      es: 'Una mosca gorda que no sabe volar, en una cocina de brujas que se inunda. Para dos jugadores.',
+      ja: '飛べない太ったハエと、水浸しになっていく魔女のキッチン。2人用。',
+      de: 'Eine dicke Fliege, die nicht fliegen kann, in einer Hexenküche, die vollläuft. Für zwei Spieler.',
+      fr: 'Une grosse mouche qui ne sait pas voler, dans une cuisine de sorcières inondée. Pour deux joueurs.',
+      zh: '一只不会飞的胖苍蝇，困在正被水淹没的女巫厨房里。双人游戏。',
     },
   },
   {

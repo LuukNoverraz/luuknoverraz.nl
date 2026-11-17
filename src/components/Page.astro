@@ -158,7 +158,7 @@ const rowLarge = project ? await Promise.all(media[project].images.map((img) => 
                         {g.jam && (
                           <>
                             {' · '}
-                            <a href={g.jam.url} {...ext}>{g.jam.name}</a>
+                            {g.jam.url ? <a href={g.jam.url} {...ext}>{g.jam.name}</a> : g.jam.name}
                           </>
                         )}
                       </p>
@@ -231,7 +231,7 @@ const rowLarge = project ? await Promise.all(media[project].images.map((img) => 
         </dl>
         {pp!.link && (
           <p class="play">
-            <a class="play-button" href={pp!.link} {...ext} aria-label={`${t.work.play}: ${pp!.name} (itch.io)`}>
+            <a class="play-button" href={pp!.link} {...ext} aria-label={`${t.work.play}: ${pp!.name} (${new URL(pp!.link).host})`}>
               {t.work.play}
             </a>
             <span class="play-host">{new URL(pp!.link).host}</span>
