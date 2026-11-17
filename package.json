@@ -3,8 +3,10 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "predev": "node scripts/archive-versions.mjs",
     "dev": "astro dev",
-    "build": "astro build && node scripts/archive-versions.mjs",
+    "prebuild": "node scripts/archive-versions.mjs",
+    "build": "astro build",
     "preview": "astro preview"
   },
   "dependencies": {

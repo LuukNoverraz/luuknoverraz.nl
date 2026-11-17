@@ -1,6 +1,7 @@
 // Publishes earlier versions of this site, straight from git history, under
-// dist/archive/<year>/ after `astro build`. Nothing is copied into the repository:
-// the files are read from the commit that was live at the time.
+// public/archive/<year>/ before `astro dev` and `astro build` (npm runs it as
+// predev and prebuild), so they work in both. That folder is git-ignored: the
+// files are read from the commit that was live at the time, never committed.
 //
 // Each page gets a small bar linking back to the current site, is kept out of
 // search engines, and has its root-absolute paths (favicons) made relative so
@@ -11,7 +12,7 @@
 // (fetch-depth: 0).
 
 import { execFileSync } from 'node:child_process';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 
 const versions = [
@@ -40,6 +41,8 @@ const fixHtml = (html, year) =>
 
 let total = 0;
 for (const { year, commit, skip } of versions) {
+  const root = join('public', 'archive', year);
+  rmSync(root, { recursive: true, force: true });
   const files = git('ls-tree', '-r', '-z', '--name-only', commit)
     .toString()
     .split('\0')
@@ -48,11 +51,11 @@ for (const { year, commit, skip } of versions) {
   for (const file of files) {
     let data = git('cat-file', 'blob', `${commit}:${file}`);
     if (file.endsWith('.html')) data = Buffer.from(fixHtml(data.toString('utf8'), year), 'utf8');
-    const out = join('dist', 'archive', year, file);
+    const out = join(root, file);
     mkdirSync(dirname(out), { recursive: true });
     writeFileSync(out, data);
     total += data.length;
   }
-  console.log(`archive: ${year} (${commit}) -> dist/archive/${year}/, ${files.length} files`);
+  console.log(`archive: ${year} (${commit}) -> ${root}/, ${files.length} files`);
 }
 console.log(`archive: ${(total / 1048576).toFixed(1)} MB in total`);

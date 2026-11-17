@@ -1,3 +1,6 @@
 node_modules/
 dist/
 .astro/
+
+# earlier versions of the site, written from git history by scripts/archive-versions.mjs
+public/archive/
