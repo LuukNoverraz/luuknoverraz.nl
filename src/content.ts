@@ -188,12 +188,12 @@ export const copy: Record<Lang, Copy> = {
         name: 'Invasive Procedure',
         slogan: 'Je wordt wakker en merkt dat er iets ontbreekt',
         duration: 'oktober 2023',
-        role: 'Art en programmeren, samen met homhom en Picco Bello BV',
+        role: 'Art en programmeren, samen met homhom en Plutbios',
         tools: 'Godot',
         link: 'https://homhom.itch.io/invasive-procedure',
         paragraphs: [
           'Je wordt wakker en merkt dat er iets ontbreekt…',
-          '<a href="https://homhom.itch.io/">homhom</a> en ik maakten hem voor <a href="https://ludumdare.com/schedule/54/">Ludum Dare 54</a>, samen met Picco Bello BV, die het verhaal schreef en meewerkte aan het leveldesign. Ik maakte de art en deelde het programmeerwerk met homhom, die ook levels ontwierp.',
+          '<a href="https://homhom.itch.io/">homhom</a> en ik maakten hem voor <a href="https://ludumdare.com/schedule/54/">Ludum Dare 54</a>, samen met Plutbios, die het verhaal schreef en meewerkte aan het leveldesign. Ik maakte de art en deelde het programmeerwerk met homhom, die ook levels ontwierp.',
         ],
       },
       'post-it-prison': {
@@ -427,12 +427,12 @@ export const copy: Record<Lang, Copy> = {
         name: 'Invasive Procedure',
         slogan: 'You wake up to find something’s missing',
         duration: 'October 2023',
-        role: 'Art and programming, together with homhom and Picco Bello BV',
+        role: 'Art and programming, together with homhom and Plutbios',
         tools: 'Godot',
         link: 'https://homhom.itch.io/invasive-procedure',
         paragraphs: [
           'You wake up to find something’s missing…',
-          '<a href="https://homhom.itch.io/">homhom</a> and I made it for <a href="https://ludumdare.com/schedule/54/">Ludum Dare 54</a>, together with Picco Bello BV, who wrote the story and worked on the level design. I made the art and shared the programming with homhom, who also designed levels.',
+          '<a href="https://homhom.itch.io/">homhom</a> and I made it for <a href="https://ludumdare.com/schedule/54/">Ludum Dare 54</a>, together with Plutbios, who wrote the story and worked on the level design. I made the art and shared the programming with homhom, who also designed levels.',
         ],
       },
       'post-it-prison': {
@@ -666,12 +666,12 @@ export const copy: Record<Lang, Copy> = {
         name: 'Invasive Procedure',
         slogan: 'Du wachst auf und merkst, dass etwas fehlt',
         duration: 'Oktober 2023',
-        role: 'Grafik und Programmierung, zusammen mit homhom und Picco Bello BV',
+        role: 'Grafik und Programmierung, zusammen mit homhom und Plutbios',
         tools: 'Godot',
         link: 'https://homhom.itch.io/invasive-procedure',
         paragraphs: [
           'Du wachst auf und merkst, dass etwas fehlt…',
-          '<a href="https://homhom.itch.io/">homhom</a> und ich haben es für <a href="https://ludumdare.com/schedule/54/">Ludum Dare 54</a> gemacht, zusammen mit Picco Bello BV, die die Geschichte geschrieben und am Leveldesign mitgearbeitet haben. Ich habe die Grafik gemacht und mir die Programmierung mit homhom geteilt, der auch Levels entworfen hat.',
+          '<a href="https://homhom.itch.io/">homhom</a> und ich haben es für <a href="https://ludumdare.com/schedule/54/">Ludum Dare 54</a> gemacht, zusammen mit Plutbios, der die Geschichte geschrieben und am Leveldesign mitgearbeitet hat. Ich habe die Grafik gemacht und mir die Programmierung mit homhom geteilt, der auch Levels entworfen hat.',
         ],
       },
       'post-it-prison': {
@@ -908,12 +908,12 @@ export const copy: Record<Lang, Copy> = {
         name: 'Invasive Procedure',
         slogan: 'Vous vous réveillez et il vous manque quelque chose',
         duration: 'octobre 2023',
-        role: 'Graphismes et programmation, avec homhom et Picco Bello BV',
+        role: 'Graphismes et programmation, avec homhom et Plutbios',
         tools: 'Godot',
         link: 'https://homhom.itch.io/invasive-procedure',
         paragraphs: [
           'Vous vous réveillez et il vous manque quelque chose…',
-          '<a href="https://homhom.itch.io/">homhom</a> et moi l’avons fait pour <a href="https://ludumdare.com/schedule/54/">Ludum Dare 54</a>, avec Picco Bello BV, qui a écrit l’histoire et participé au level design. J’ai fait les graphismes et partagé la programmation avec homhom, qui a aussi conçu des niveaux.',
+          '<a href="https://homhom.itch.io/">homhom</a> et moi l’avons fait pour <a href="https://ludumdare.com/schedule/54/">Ludum Dare 54</a>, avec Plutbios, qui a écrit l’histoire et participé au level design. J’ai fait les graphismes et partagé la programmation avec homhom, qui a aussi conçu des niveaux.',
         ],
       },
       'post-it-prison': {
@@ -1149,12 +1149,12 @@ export const copy: Record<Lang, Copy> = {
         name: 'Invasive Procedure',
         slogan: 'Te despiertas y notas que te falta algo',
         duration: 'octubre de 2023',
-        role: 'Arte y programación, junto con homhom y Picco Bello BV',
+        role: 'Arte y programación, junto con homhom y Plutbios',
         tools: 'Godot',
         link: 'https://homhom.itch.io/invasive-procedure',
         paragraphs: [
           'Te despiertas y notas que te falta algo…',
-          '<a href="https://homhom.itch.io/">homhom</a> y yo lo hicimos para <a href="https://ludumdare.com/schedule/54/">Ludum Dare 54</a>, junto con Picco Bello BV, que escribió la historia y trabajó en el diseño de niveles. Yo hice el arte y compartí la programación con homhom, que también diseñó niveles.',
+          '<a href="https://homhom.itch.io/">homhom</a> y yo lo hicimos para <a href="https://ludumdare.com/schedule/54/">Ludum Dare 54</a>, junto con Plutbios, que escribió la historia y trabajó en el diseño de niveles. Yo hice el arte y compartí la programación con homhom, que también diseñó niveles.',
         ],
       },
       'post-it-prison': {
@@ -1390,12 +1390,12 @@ export const copy: Record<Lang, Copy> = {
         name: 'Invasive Procedure',
         slogan: '目を覚ますと、何かが足りない',
         duration: '2023年10月',
-        role: 'アートとプログラム（homhom、Picco Bello BV と共同）',
+        role: 'アートとプログラム（homhom、Plutbios と共同）',
         tools: 'Godot',
         link: 'https://homhom.itch.io/invasive-procedure',
         paragraphs: [
           '目を覚ますと、何かが足りない……',
-          '<a href="https://homhom.itch.io/">homhom</a> と2人で、Picco Bello BV とともに <a href="https://ludumdare.com/schedule/54/">Ludum Dare 54</a> のために制作しました。Picco Bello BV はストーリーとレベルデザインを担当。私はアートを担当し、プログラムを homhom と分担しました。homhom はレベルデザインも手がけています。',
+          '<a href="https://homhom.itch.io/">homhom</a> と2人で、Plutbios とともに <a href="https://ludumdare.com/schedule/54/">Ludum Dare 54</a> のために制作しました。Plutbios はストーリーとレベルデザインを担当。私はアートを担当し、プログラムを homhom と分担しました。homhom はレベルデザインも手がけています。',
         ],
       },
       'post-it-prison': {
@@ -1631,12 +1631,12 @@ export const copy: Record<Lang, Copy> = {
         name: 'Invasive Procedure',
         slogan: '你醒来，发现少了点什么',
         duration: '2023 年 10 月',
-        role: '美术与程序，与 homhom 和 Picco Bello BV 合作',
+        role: '美术与程序，与 homhom 和 Plutbios 合作',
         tools: 'Godot',
         link: 'https://homhom.itch.io/invasive-procedure',
         paragraphs: [
           '你醒来，发现少了点什么……',
-          '我和 <a href="https://homhom.itch.io/">homhom</a> 与 Picco Bello BV 一起为 <a href="https://ludumdare.com/schedule/54/">Ludum Dare 54</a> 做了这款游戏，Picco Bello BV 负责故事并参与了关卡设计。我负责美术，并和 homhom 分担了程序，homhom 也设计了关卡。',
+          '我和 <a href="https://homhom.itch.io/">homhom</a> 与 Plutbios 一起为 <a href="https://ludumdare.com/schedule/54/">Ludum Dare 54</a> 做了这款游戏，Plutbios 负责故事并参与了关卡设计。我负责美术，并和 homhom 分担了程序，homhom 也设计了关卡。',
         ],
       },
       'post-it-prison': {
