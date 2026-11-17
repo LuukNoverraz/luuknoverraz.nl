@@ -126,7 +126,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://noverraz.itch.io/your-honor-wtf',
         paragraphs: [
           'Twee spelers staan tegenover elkaar in de rechtbank: de een klaagt aan, de ander verdedigt, en maximaal vier anderen vormen de jury. De aanklachten zijn verzonnen, zoals het stelen van de maan of het beledigen van een gans. Daarna doet een AI-rechter uitspraak. Er zijn tien rechters met elk een eigen karakter, van een holbewoner tot een baby.',
-          'Ik heb het hele spel zelf gemaakt, inclusief alle art en assets, voor de Player2 AI NPC Jam in de zomer van 2025. Het werd vijfde van de 46 inzendingen en won $500. De jury noemde het <q lang="en">a great way to settle arguments IRL</q>.',
+          'Ik heb het hele spel zelf gemaakt, inclusief alle art en assets, voor de <a href="https://itch.io/jam/ai-npc-jam">Player2 AI NPC Jam</a> in de zomer van 2025. Het werd vijfde van de 46 inzendingen en won $500. De jury noemde het <q lang="en">a great way to settle arguments IRL</q>.',
           'Het is bedoeld voor twee tot zes spelers in één kamer en draait in de browser en op Windows en Linux. Om te spelen heb je de Player2-app nodig.',
         ],
       },
@@ -139,7 +139,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://noverraz.itch.io/gnostic-death-experience',
         paragraphs: [
           'Je bent dood en het licht komt je halen. Ren, buk en dash naar de uitgang voordat het je inhaalt en je terugstuurt voor een volgend leven. Het is een firstperson-parkourgame, gemaakt om te speedrunnen, in een low-poly stijl uit het PlayStation-tijdperk.',
-          'Ik heb het in vier dagen gemaakt voor SpeedJam #5, in mijn eentje, inclusief alle art, de 3D-assets en de muziek. Ik werk nu aan een remake voor het web en Discord.',
+          'Ik heb het in vier dagen gemaakt voor <a href="https://itch.io/jam/speedjam5">SpeedJam #5</a>, in mijn eentje, inclusief alle art, de 3D-assets en de muziek. Ik werk nu aan een remake voor het web en Discord.',
         ],
       },
       'sheep-keep': {
@@ -151,7 +151,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://homhom.itch.io/sheep-keep',
         paragraphs: [
           'Je bent Jörgen, een IJslandse schaapherder. Je past op je schapen zoals op elke andere dag, tot de grond begint te rommelen. Red zo veel mogelijk schapen voordat je huis onder de lava verdwijnt.',
-          'Gemaakt in twee dagen met homhom voor Micro Jam 013, met als thema lava en als regel dat de tijd beperkt is. Ik maakte de artwork en de 3D-modellen, en een groot deel van de gamelogica schreven we samen. Gebouwd in Godot, met poëzie van Plutbios.',
+          'Gemaakt in twee dagen met <a href="https://homhom.itch.io/">homhom</a> voor <a href="https://itch.io/jam/micro-jam-013">Micro Jam 013</a>, met als thema lava en als regel dat de tijd beperkt is. Ik maakte de artwork en de 3D-modellen, en een groot deel van de gamelogica schreven we samen. Gebouwd in Godot, met poëzie van Plutbios.',
         ],
       },
     },
@@ -231,7 +231,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://noverraz.itch.io/your-honor-wtf',
         paragraphs: [
           'Two players face each other in court: one accuses, the other defends, and up to four more sit in the jury. The charges are made up, such as stealing the moon or insulting a goose. An AI judge then hands down the verdict. There are ten judges, each with a character of their own, from a caveman to a baby.',
-          'I made the whole game myself, including all the art and assets, for the Player2 AI NPC Jam in the summer of 2025. It finished fifth out of 46 entries and won $500. The judges called it <q>a great way to settle arguments IRL</q>.',
+          'I made the whole game myself, including all the art and assets, for the <a href="https://itch.io/jam/ai-npc-jam">Player2 AI NPC Jam</a> in the summer of 2025. It finished fifth out of 46 entries and won $500. The judges called it <q>a great way to settle arguments IRL</q>.',
           'It is meant for two to six players in one room and runs in the browser and on Windows and Linux. You need the Player2 app to play.',
         ],
       },
@@ -244,7 +244,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://noverraz.itch.io/gnostic-death-experience',
         paragraphs: [
           'You have died and the light is coming for you. Sprint, crouch and dash your way out before it catches up and sends you back for another life. It is a first-person parkour game built for speedrunning, in a low-poly style from the PlayStation era.',
-          'I made it in four days for SpeedJam #5, on my own, including all the art, the 3D assets and the music. I am now working on a remake for the web and Discord.',
+          'I made it in four days for <a href="https://itch.io/jam/speedjam5">SpeedJam #5</a>, on my own, including all the art, the 3D assets and the music. I am now working on a remake for the web and Discord.',
         ],
       },
       'sheep-keep': {
@@ -256,7 +256,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://homhom.itch.io/sheep-keep',
         paragraphs: [
           'You are Jörgen, an Icelandic shepherd, tending your sheep like any other day when the ground starts to rumble. Rescue as many sheep as you can before your home disappears under the lava.',
-          'Made in two days with homhom for Micro Jam 013, where the theme was lava and the rule was that time is limited. I made the artwork and the 3D models, and we wrote much of the game logic together. Built in Godot, with poetry by Plutbios.',
+          'Made in two days with <a href="https://homhom.itch.io/">homhom</a> for <a href="https://itch.io/jam/micro-jam-013">Micro Jam 013</a>, where the theme was lava and the rule was that time is limited. I made the artwork and the 3D models, and we wrote much of the game logic together. Built in Godot, with poetry by Plutbios.',
         ],
       },
       // Earlier games: English only until checked; other languages fall back to it.
@@ -269,7 +269,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://noverraz.itch.io/hfcycts',
         paragraphs: [
           'How Fast Can You Climb the Stairs? is a game about climbing stairs. Every step is a string of characters you have to type, and you only get up as fast as you can type them.',
-          'I made it in five hours for The Weirdcore Jam, including an original soundtrack of three tracks: How Fast Can You Climb The Stairs?, You Gots To Type, Son and You Done Did Type, Son. The poetry is by Plutbios.',
+          'I made it in five hours for <a href="https://itch.io/jam/the-weirdcore-jam">The Weirdcore Jam</a>, including an original soundtrack of three tracks: How Fast Can You Climb The Stairs?, You Gots To Type, Son and You Done Did Type, Son. The poetry is by Plutbios.',
           'My personal best is 1.67 seconds, which as far as I know is also the world record.',
         ],
       },
@@ -282,7 +282,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://noverraz.itch.io/hero-of-light',
         paragraphs: [
           'Long foretold in myths and legends, the Hero of Light is said to one day free the common folk from the fiends of magic that oppress their land. You are that hero: armed with some unconventional weaponry, you clear away the threats and dodge everything else that comes your way.',
-          'homhom and I made it for Mini Jam 150, where the theme was magic and the limitation was “light is the way”. I made the art and shared the programming; homhom also did the level design.',
+          '<a href="https://homhom.itch.io/">homhom</a> and I made it for <a href="https://itch.io/jam/mini-jam-150-magic">Mini Jam 150</a>, where the theme was magic and the limitation was “light is the way”. I made the art and shared the programming; homhom also did the level design.',
         ],
       },
       'invasive-procedure': {
@@ -294,7 +294,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://homhom.itch.io/invasive-procedure',
         paragraphs: [
           'You wake up to find something’s missing…',
-          'homhom and I made it for Ludum Dare 54, together with Picco Bello BV, who wrote the story and worked on the level design. I made the art and shared the programming with homhom, who also designed levels.',
+          '<a href="https://homhom.itch.io/">homhom</a> and I made it for <a href="https://ludumdare.com/schedule/54/">Ludum Dare 54</a>, together with Picco Bello BV, who wrote the story and worked on the level design. I made the art and shared the programming with homhom, who also designed levels.',
         ],
       },
       'post-it-prison': {
@@ -307,7 +307,7 @@ export const copy: Record<Lang, Copy> = {
         paragraphs: [
           'Welcome to the Post-it Prison, where some devious criminals have somehow been turned into post-it notes and stuck to the wall. It’s quite unethical. It’s also your first day on the job, and the prison is badly understaffed.',
           'Start at the computer, then run to whichever inmate needs you before you run out of hearts. The aim is to keep it up for as long as you can.',
-          'I made it on my own in six days for A highly unproductive game jam.',
+          'I made it on my own in six days for <a href="https://itch.io/jam/a-highly-uproductive-game-jam">A highly unproductive game jam</a>.',
         ],
       },
       'scp-at-home': {
@@ -331,7 +331,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://luuknoverraz.itch.io/dicetective',
         paragraphs: [
           'It’s do or die in this dicey detective drama. You play the world-class dice detective, and when tragedy strikes, a mystery is born. On your way to solving it you meet many faces: the six on a die, that is.',
-          'I made it in 48 hours for the GMTK Game Jam 2022, where the theme was “roll of the dice”. It is a pixel-art comedy that you play with a single button, and it takes about half an hour.',
+          'I made it in 48 hours for the <a href="https://itch.io/jam/gmtk-jam-2022">GMTK Game Jam 2022</a>, where the theme was “roll of the dice”. It is a pixel-art comedy that you play with a single button, and it takes about half an hour.',
         ],
       },
       'night-stroll-ambush': {
@@ -343,7 +343,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://luuknoverraz.itch.io/night-stroll-ambush',
         paragraphs: [
           'You were taking a nice walk at night when bandits suddenly start shooting at you. Rather than fighting back, you break their arrows as they come down and keep moving. Watch where the arrows are fired into the sky to know where they will land; the game gets harder as your score climbs.',
-          'I made it for Mini Jam 87, where the theme was “break” and the limitation was that the player is a pacifist. The background music is by RVKE. Get your score to 50 to see something neat.',
+          'I made it for <a href="https://itch.io/jam/mini-jam-87-break">Mini Jam 87</a>, where the theme was “break” and the limitation was that the player is a pacifist. The background music is by <a href="https://jurredevries.me/">RVKE</a>. Get your score to 50 to see something neat.',
         ],
       },
       'zerotrace': {
@@ -458,7 +458,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://noverraz.itch.io/your-honor-wtf',
         paragraphs: [
           'Zwei Spieler stehen sich vor Gericht gegenüber: Einer klagt an, der andere verteidigt, und bis zu vier weitere bilden die Jury. Die Anklagen sind frei erfunden, etwa den Mond gestohlen oder eine Gans beleidigt zu haben. Danach fällt ein KI-Richter das Urteil. Es gibt zehn Richter, jeder mit eigenem Charakter, vom Höhlenmenschen bis zum Baby.',
-          'Ich habe das ganze Spiel selbst gemacht, einschließlich aller Grafiken und Assets, für den Player2 AI NPC Jam im Sommer 2025. Es wurde Fünfter von 46 Einreichungen und gewann 500 Dollar. Die Jury nannte es <q lang="en">a great way to settle arguments IRL</q>.',
+          'Ich habe das ganze Spiel selbst gemacht, einschließlich aller Grafiken und Assets, für den <a href="https://itch.io/jam/ai-npc-jam">Player2 AI NPC Jam</a> im Sommer 2025. Es wurde Fünfter von 46 Einreichungen und gewann 500 Dollar. Die Jury nannte es <q lang="en">a great way to settle arguments IRL</q>.',
           'Es ist für zwei bis sechs Spieler in einem Raum gedacht und läuft im Browser sowie unter Windows und Linux. Zum Spielen brauchst du die Player2-App.',
         ],
       },
@@ -471,7 +471,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://noverraz.itch.io/gnostic-death-experience',
         paragraphs: [
           'Du bist gestorben, und das Licht kommt dich holen. Sprinte, ducke dich und dashe hinaus, bevor es dich einholt und für ein weiteres Leben zurückschickt. Es ist ein First-Person-Parkourspiel, gebaut fürs Speedrunning, in einem Low-Poly-Stil der PlayStation-Ära.',
-          'Ich habe es in vier Tagen für den SpeedJam #5 gemacht, allein, einschließlich aller Grafiken, der 3D-Assets und der Musik. Derzeit arbeite ich an einem Remake für das Web und Discord.',
+          'Ich habe es in vier Tagen für den <a href="https://itch.io/jam/speedjam5">SpeedJam #5</a> gemacht, allein, einschließlich aller Grafiken, der 3D-Assets und der Musik. Derzeit arbeite ich an einem Remake für das Web und Discord.',
         ],
       },
       'sheep-keep': {
@@ -483,7 +483,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://homhom.itch.io/sheep-keep',
         paragraphs: [
           'Du bist Jörgen, ein isländischer Schäfer. Du hütest deine Schafe wie an jedem anderen Tag, als der Boden zu grollen beginnt. Rette so viele Schafe wie möglich, bevor dein Zuhause unter der Lava verschwindet.',
-          'Entstanden in zwei Tagen mit homhom für den Micro Jam 013, mit dem Thema Lava und der Vorgabe, dass die Zeit begrenzt ist. Ich habe die Grafiken und die 3D-Modelle gemacht, und einen großen Teil der Spiellogik haben wir gemeinsam geschrieben. Gebaut in Godot, mit Gedichten von Plutbios.',
+          'Entstanden in zwei Tagen mit <a href="https://homhom.itch.io/">homhom</a> für den <a href="https://itch.io/jam/micro-jam-013">Micro Jam 013</a>, mit dem Thema Lava und der Vorgabe, dass die Zeit begrenzt ist. Ich habe die Grafiken und die 3D-Modelle gemacht, und einen großen Teil der Spiellogik haben wir gemeinsam geschrieben. Gebaut in Godot, mit Gedichten von Plutbios.',
         ],
       },
     },
@@ -566,7 +566,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://noverraz.itch.io/your-honor-wtf',
         paragraphs: [
           'Deux joueurs s’affrontent au tribunal : l’un accuse, l’autre défend, et jusqu’à quatre autres forment le jury. Les chefs d’accusation sont inventés, comme avoir volé la lune ou insulté une oie. Un juge IA rend ensuite son verdict. Il y a dix juges, chacun avec son caractère, de l’homme des cavernes au bébé.',
-          'J’ai réalisé tout le jeu moi-même, graphismes et assets compris, pour la Player2 AI NPC Jam à l’été 2025. Il a terminé cinquième sur 46 participants et a remporté 500 dollars. Le jury l’a décrit ainsi : <q lang="en">a great way to settle arguments IRL</q>.',
+          'J’ai réalisé tout le jeu moi-même, graphismes et assets compris, pour la <a href="https://itch.io/jam/ai-npc-jam">Player2 AI NPC Jam</a> à l’été 2025. Il a terminé cinquième sur 46 participants et a remporté 500 dollars. Le jury l’a décrit ainsi : <q lang="en">a great way to settle arguments IRL</q>.',
           'Il est prévu pour deux à six joueurs dans la même pièce et fonctionne dans le navigateur ainsi que sous Windows et Linux. Il faut l’application Player2 pour jouer.',
         ],
       },
@@ -579,7 +579,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://noverraz.itch.io/gnostic-death-experience',
         paragraphs: [
           'Vous êtes mort, et la lumière vient vous chercher. Courez, accroupissez-vous et foncez vers la sortie avant qu’elle ne vous rattrape et ne vous renvoie pour une autre vie. C’est un jeu de parkour à la première personne conçu pour le speedrun, dans un style low-poly de l’époque PlayStation.',
-          'Je l’ai réalisé en quatre jours pour la SpeedJam #5, seul, y compris tous les graphismes, les assets 3D et la musique. Je travaille actuellement sur un remake pour le web et Discord.',
+          'Je l’ai réalisé en quatre jours pour la <a href="https://itch.io/jam/speedjam5">SpeedJam #5</a>, seul, y compris tous les graphismes, les assets 3D et la musique. Je travaille actuellement sur un remake pour le web et Discord.',
         ],
       },
       'sheep-keep': {
@@ -591,7 +591,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://homhom.itch.io/sheep-keep',
         paragraphs: [
           'Vous êtes Jörgen, un berger islandais. Vous gardez vos moutons comme n’importe quel autre jour, quand le sol se met à gronder. Sauvez autant de moutons que possible avant que votre maison ne disparaisse sous la lave.',
-          'Réalisé en deux jours avec homhom pour la Micro Jam 013, dont le thème était la lave et la contrainte un temps limité. J’ai fait les illustrations et les modèles 3D, et nous avons écrit ensemble une grande partie de la logique de jeu. Conçu avec Godot, avec des poèmes de Plutbios.',
+          'Réalisé en deux jours avec <a href="https://homhom.itch.io/">homhom</a> pour la <a href="https://itch.io/jam/micro-jam-013">Micro Jam 013</a>, dont le thème était la lave et la contrainte un temps limité. J’ai fait les illustrations et les modèles 3D, et nous avons écrit ensemble une grande partie de la logique de jeu. Conçu avec Godot, avec des poèmes de Plutbios.',
         ],
       },
     },
@@ -673,7 +673,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://noverraz.itch.io/your-honor-wtf',
         paragraphs: [
           'Dos jugadores se enfrentan en el tribunal: uno acusa, el otro defiende, y hasta cuatro más forman el jurado. Los cargos son inventados, como haber robado la luna o insultado a un ganso. Después, un juez de IA dicta sentencia. Hay diez jueces, cada uno con su carácter, desde un cavernícola hasta un bebé.',
-          'Hice todo el juego yo solo, incluidos el arte y los recursos, para la Player2 AI NPC Jam del verano de 2025. Quedó quinto entre 46 participantes y ganó 500 dólares. El jurado lo describió como <q lang="en">a great way to settle arguments IRL</q>.',
+          'Hice todo el juego yo solo, incluidos el arte y los recursos, para la <a href="https://itch.io/jam/ai-npc-jam">Player2 AI NPC Jam</a> del verano de 2025. Quedó quinto entre 46 participantes y ganó 500 dólares. El jurado lo describió como <q lang="en">a great way to settle arguments IRL</q>.',
           'Está pensado para entre dos y seis jugadores en la misma habitación y funciona en el navegador, en Windows y en Linux. Para jugar hace falta la aplicación Player2.',
         ],
       },
@@ -686,7 +686,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://noverraz.itch.io/gnostic-death-experience',
         paragraphs: [
           'Has muerto y la luz viene a por ti. Corre, agáchate y lánzate hacia la salida antes de que te alcance y te mande de vuelta a otra vida. Es un juego de parkour en primera persona pensado para el speedrun, con un estilo low-poly de la era PlayStation.',
-          'Lo hice en cuatro días para la SpeedJam #5, yo solo, incluidos todo el arte, los recursos 3D y la música. Ahora estoy trabajando en un remake para web y Discord.',
+          'Lo hice en cuatro días para la <a href="https://itch.io/jam/speedjam5">SpeedJam #5</a>, yo solo, incluidos todo el arte, los recursos 3D y la música. Ahora estoy trabajando en un remake para web y Discord.',
         ],
       },
       'sheep-keep': {
@@ -698,7 +698,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://homhom.itch.io/sheep-keep',
         paragraphs: [
           'Eres Jörgen, un pastor islandés. Estás cuidando de tus ovejas como cualquier otro día cuando el suelo empieza a retumbar. Rescata a tantas ovejas como puedas antes de que tu hogar desaparezca bajo la lava.',
-          'Hecho en dos días con homhom para la Micro Jam 013, cuyo tema era la lava y cuya condición era que el tiempo fuese limitado. Yo me encargué de las ilustraciones y los modelos 3D, y buena parte de la lógica del juego la escribimos juntos. Creado con Godot, con poesía de Plutbios.',
+          'Hecho en dos días con <a href="https://homhom.itch.io/">homhom</a> para la <a href="https://itch.io/jam/micro-jam-013">Micro Jam 013</a>, cuyo tema era la lava y cuya condición era que el tiempo fuese limitado. Yo me encargué de las ilustraciones y los modelos 3D, y buena parte de la lógica del juego la escribimos juntos. Creado con Godot, con poesía de Plutbios.',
         ],
       },
     },
@@ -780,7 +780,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://noverraz.itch.io/your-honor-wtf',
         paragraphs: [
           '2人のプレイヤーが法廷で向き合います。1人が訴え、もう1人が弁護し、最大4人が陪審員になります。罪状は「月を盗んだ」「ガチョウを侮辱した」など、すべてでっち上げ。最後に AI の裁判官が判決を下します。裁判官は原始人から赤ちゃんまで、個性の違う10人です。',
-          'アートとアセットを含め、ゲーム全体をひとりで制作しました。2025年夏の Player2 AI NPC Jam への応募作で、46作品中5位となり、賞金500ドルを獲得しました。審査員のコメントは <q lang="en">a great way to settle arguments IRL</q> でした。',
+          'アートとアセットを含め、ゲーム全体をひとりで制作しました。2025年夏の <a href="https://itch.io/jam/ai-npc-jam">Player2 AI NPC Jam</a> への応募作で、46作品中5位となり、賞金500ドルを獲得しました。審査員のコメントは <q lang="en">a great way to settle arguments IRL</q> でした。',
           '同じ部屋に集まった2〜6人で遊ぶゲームで、ブラウザのほか Windows と Linux で動作します。プレイには Player2 アプリが必要です。',
         ],
       },
@@ -793,7 +793,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://noverraz.itch.io/gnostic-death-experience',
         paragraphs: [
           'あなたは死に、光が迎えに来ます。走り、しゃがみ、ダッシュして、追いつかれて次の人生へ送り返される前に脱出しましょう。PlayStation 時代を思わせるローポリの、スピードラン向け一人称パルクールゲームです。',
-          'SpeedJam #5 のために4日間で、アート、3D アセット、音楽まですべてひとりで作りました。現在はウェブと Discord 向けのリメイクを制作しています。',
+          '<a href="https://itch.io/jam/speedjam5">SpeedJam #5</a> のために4日間で、アート、3D アセット、音楽まですべてひとりで作りました。現在はウェブと Discord 向けのリメイクを制作しています。',
         ],
       },
       'sheep-keep': {
@@ -805,7 +805,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://homhom.itch.io/sheep-keep',
         paragraphs: [
           'あなたはアイスランドの羊飼い、Jörgen。いつものように羊の世話をしていると、地面が鳴り始めます。家が溶岩にのみ込まれる前に、できるだけ多くの羊を救い出しましょう。',
-          'homhom と2日間で、Micro Jam 013 のために作りました。テーマは「溶岩」、条件は「時間制限があること」。私はアートワークと 3D モデルを担当し、ゲームロジックの多くは2人で書きました。Godot 製で、詩は Plutbios によるものです。',
+          '<a href="https://homhom.itch.io/">homhom</a> と2日間で、<a href="https://itch.io/jam/micro-jam-013">Micro Jam 013</a> のために作りました。テーマは「溶岩」、条件は「時間制限があること」。私はアートワークと 3D モデルを担当し、ゲームロジックの多くは2人で書きました。Godot 製で、詩は Plutbios によるものです。',
         ],
       },
     },
@@ -887,7 +887,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://noverraz.itch.io/your-honor-wtf',
         paragraphs: [
           '两名玩家在法庭上对峙：一人指控，一人辩护，另外最多四人组成陪审团。罪名都是编出来的，比如偷走月亮，或者侮辱了一只鹅。随后由 AI 法官宣判。法官共有十位，性格各不相同，从原始人到婴儿都有。',
-          '整款游戏由我一人完成，包括全部美术和素材，是为 2025 年夏天的 Player2 AI NPC Jam 制作的。它在 46 件参赛作品中获得第五名，赢得 500 美元奖金。评委的评价是：<q lang="en">a great way to settle arguments IRL</q>。',
+          '整款游戏由我一人完成，包括全部美术和素材，是为 2025 年夏天的 <a href="https://itch.io/jam/ai-npc-jam">Player2 AI NPC Jam</a> 制作的。它在 46 件参赛作品中获得第五名，赢得 500 美元奖金。评委的评价是：<q lang="en">a great way to settle arguments IRL</q>。',
           '游戏适合两到六人同处一室游玩，可在浏览器、Windows 和 Linux 上运行。游玩需要安装 Player2 应用。',
         ],
       },
@@ -900,7 +900,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://noverraz.itch.io/gnostic-death-experience',
         paragraphs: [
           '你已经死了，而那道光正朝你而来。奔跑、下蹲、冲刺，赶在它追上你、把你送回去再过一世之前逃出去。这是一款为速通而生的第一人称跑酷游戏，采用 PlayStation 时代的低多边形风格。',
-          '我为 SpeedJam #5 用四天独自做完了它，包括全部美术、3D 素材和音乐。目前我正在制作面向网页和 Discord 的重制版。',
+          '我为 <a href="https://itch.io/jam/speedjam5">SpeedJam #5</a> 用四天独自做完了它，包括全部美术、3D 素材和音乐。目前我正在制作面向网页和 Discord 的重制版。',
         ],
       },
       'sheep-keep': {
@@ -912,7 +912,7 @@ export const copy: Record<Lang, Copy> = {
         link: 'https://homhom.itch.io/sheep-keep',
         paragraphs: [
           '你是 Jörgen，一位冰岛牧羊人。这天你像往常一样照看羊群，大地却突然开始隆隆作响。在家园被岩浆吞没之前，尽可能多地救出你的羊。',
-          '这是我和 homhom 为 Micro Jam 013 用两天做出来的，主题是“岩浆”，附加规则是“时间有限”。我负责美术和 3D 模型，游戏逻辑的大部分由我们一起编写。使用 Godot 制作，诗歌出自 Plutbios。',
+          '这是我和 <a href="https://homhom.itch.io/">homhom</a> 为 <a href="https://itch.io/jam/micro-jam-013">Micro Jam 013</a> 用两天做出来的，主题是“岩浆”，附加规则是“时间有限”。我负责美术和 3D 模型，游戏逻辑的大部分由我们一起编写。使用 Godot 制作，诗歌出自 Plutbios。',
         ],
       },
     },

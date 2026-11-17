@@ -154,14 +154,6 @@ const backHash = project && !projectSlugs.includes(project) ? '#earlier' : '#wor
                           </>
                         )}
                       </p>
-                      <p class="project-links">
-                        <a href={g.link} {...ext} aria-label={`${t.work.play}: ${g.name}`}>
-                          {t.work.play}
-                        </a>
-                        <a href={page} aria-label={`${t.work.view}: ${g.name}`}>
-                          {t.work.view}
-                        </a>
-                      </p>
                     </div>
                   </li>
                 );
@@ -228,15 +220,15 @@ const backHash = project && !projectSlugs.includes(project) ? '#earlier' : '#wor
             <dt>{t.projectLabels.tools}{t.labelSuffix ?? "."}</dt>
             <dd>{pp!.tools}</dd>
           </div>
-          {pp!.link && (
-            <div>
-              <dt>{t.projectLabels.link}{t.labelSuffix ?? "."}</dt>
-              <dd>
-                <a href={pp!.link} {...ext}>{pp!.link.replace('https://', '')}</a>
-              </dd>
-            </div>
-          )}
         </dl>
+        {pp!.link && (
+          <p class="play">
+            <a class="play-button" href={pp!.link} {...ext} aria-label={`${t.work.play}: ${pp!.name} (itch.io)`}>
+              {t.work.play}
+            </a>
+            <span class="play-host">{new URL(pp!.link).host}</span>
+          </p>
+        )}
         <div
           class:list={[
             'project-media',
