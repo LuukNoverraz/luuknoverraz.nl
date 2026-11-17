@@ -37,7 +37,25 @@ const versions = [
   { year: '2020', repo: github('luuknoverraz-portfolio'), commit: 'HEAD', skip: ['.gitattributes'] },
   { year: '2019', repo: github('portfolio-3'), commit: 'HEAD', skip: ['.gitattributes'] },
   { year: '2018', repo: github('portfolio-2'), commit: 'HEAD', skip: ['CNAME'] },
-  { year: '2017', repo: github('portfolio-1'), commit: 'HEAD', skip: ['CNAME'] },
+  {
+    year: '2017',
+    repo: github('portfolio-1'),
+    commit: 'HEAD',
+    skip: ['CNAME'],
+    // Small repairs, nothing redesigned:
+    repair: (file, text) =>
+      !file.startsWith('css/')
+        ? text
+        : text
+            // the header image and background were hot-linked through services that
+            // no longer exist; the same images are in the repository itself
+            .replace("url('http://bit.do/luukheaderNL')", "url('../images/Header.png')")
+            .replace("url('http://bit.do/luukheaderEN')", "url('../images/HeaderEN.png')")
+            .replace("url('https://j.gifs.com/mQRPZO.gif')", "url('../images/nature bw.gif')") +
+          // the big "Welkom!" heading hangs over the flags and the menu, so clicks
+          // never reached them; let them through
+          '\n/* museum repair: let clicks through the heading to the menu */\nheader h1 { pointer-events: none; }\n',
+  },
 ];
 
 const run = (args) => execFileSync('git', args, { maxBuffer: 512 * 1024 * 1024, stdio: ['ignore', 'pipe', 'pipe'] });
@@ -70,7 +88,8 @@ const fixHtml = (html) =>
     // favicons and the like pointed at the site root; make them relative
     .replace(/\b(href|src)="\/(?!\/)/g, '$1="')
     // keep old copies out of search results
-    .replace(/<head([^>]*)>/i, `<head$1>\n    <meta name="robots" content="noindex">`)
+    // (the pattern must not match <header>)
+    .replace(/<head(\s[^>]*)?>/i, `<head$1>\n    <meta name="robots" content="noindex">`)
     // links to other sites leave the frame instead of opening inside it
     .replace(
       /<\/body>/i,
@@ -154,7 +173,7 @@ iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff;
 `;
 
 let total = 0;
-for (const { year, repo, commit, skip } of versions) {
+for (const { year, repo, commit, skip, repair } of versions) {
   const root = join('public', 'museum', year);
   rmSync(root, { recursive: true, force: true });
 
@@ -174,6 +193,7 @@ for (const { year, repo, commit, skip } of versions) {
   for (const file of files) {
     let data = run([...from, 'cat-file', 'blob', `${commit}:${file}`]);
     if (file.endsWith('.html')) data = Buffer.from(fixHtml(data.toString('utf8')), 'utf8');
+    if (repair && /\.(html|css|js)$/.test(file)) data = Buffer.from(repair(file, data.toString('utf8')), 'utf8');
     const out = join(root, 'site', file);
     mkdirSync(dirname(out), { recursive: true });
     writeFileSync(out, data);
