@@ -81,6 +81,8 @@ interface Copy {
   /** Business card on the home page, and the section below it. */
   card: { mail: string };
   work: { title: string; view: string; play: string };
+  /** The image viewer on project pages. */
+  viewer: { open: string; close: string };
   /** Heading of the older games behind the "more" toggle; the games are in `earlierGames`. */
   earlier: { title: string };
   /** About me, between Work and Education. Empty paragraphs show placeholder lines. */
@@ -233,12 +235,12 @@ export const copy: Record<Lang, Copy> = {
         name: 'Night Stroll Ambush',
         slogan: 'Breek de pijlen die op je afkomen en loop door',
         duration: 'augustus 2021 · 3 dagen',
-        role: 'Solo, met muziek van RVKE',
+        role: 'Solo, met muziek van Jurre de Vries',
         tools: 'Unity, Affinity Designer, Audacity',
         link: 'https://luuknoverraz.itch.io/night-stroll-ambush',
         paragraphs: [
           'Je maakt een fijne avondwandeling wanneer bandieten ineens op je beginnen te schieten. In plaats van terug te vechten breek je hun pijlen terwijl ze naar beneden komen, en loop je door. Let op waar de pijlen de lucht in worden geschoten om te weten waar ze landen; hoe hoger je score, hoe moeilijker het wordt.',
-          'Ik maakte hem voor <a href="https://itch.io/jam/mini-jam-87-break">Mini Jam 87</a>, met als thema “break” en als beperking dat de speler pacifist is. De achtergrondmuziek is van <a href="https://jurredevries.me/">RVKE</a>. Haal een score van 50 voor een leuke verrassing.',
+          'Ik maakte hem voor <a href="https://itch.io/jam/mini-jam-87-break">Mini Jam 87</a>, met als thema “break” en als beperking dat de speler pacifist is. De achtergrondmuziek is van <a href="https://jurredevries.me/">Jurre de Vries</a>. Haal een score van 50 voor een leuke verrassing.',
         ],
       },
       'zerotrace': {
@@ -302,6 +304,7 @@ export const copy: Record<Lang, Copy> = {
     },
     card: { mail: 'E-mail.' },
     work: { title: 'Werk', view: 'Lees meer', play: 'Speel' },
+    viewer: { open: 'Afbeelding vergroten', close: 'Sluiten' },
     earlier: {
       title: 'Eerdere games',
     },
@@ -460,12 +463,12 @@ export const copy: Record<Lang, Copy> = {
         name: 'Night Stroll Ambush',
         slogan: 'Break the arrows flying at you and keep walking',
         duration: 'August 2021 · 3 days',
-        role: 'Solo, with music by RVKE',
+        role: 'Solo, with music by Jurre de Vries',
         tools: 'Unity, Affinity Designer, Audacity',
         link: 'https://luuknoverraz.itch.io/night-stroll-ambush',
         paragraphs: [
           'You were taking a nice walk at night when bandits suddenly start shooting at you. Rather than fighting back, you break their arrows as they come down and keep moving. Watch where the arrows are fired into the sky to know where they will land; the game gets harder as your score climbs.',
-          'I made it for <a href="https://itch.io/jam/mini-jam-87-break">Mini Jam 87</a>, where the theme was “break” and the limitation was that the player is a pacifist. The background music is by <a href="https://jurredevries.me/">RVKE</a>. Get your score to 50 to see something neat.',
+          'I made it for <a href="https://itch.io/jam/mini-jam-87-break">Mini Jam 87</a>, where the theme was “break” and the limitation was that the player is a pacifist. The background music is by <a href="https://jurredevries.me/">Jurre de Vries</a>. Get your score to 50 to see something neat.',
         ],
       },
       'zerotrace': {
@@ -529,6 +532,7 @@ export const copy: Record<Lang, Copy> = {
     },
     card: { mail: 'E-mail.' },
     work: { title: 'Work', view: 'Read more', play: 'Play' },
+    viewer: { open: 'Enlarge image', close: 'Close' },
     earlier: {
       title: 'Earlier games',
     },
@@ -687,12 +691,12 @@ export const copy: Record<Lang, Copy> = {
         name: 'Night Stroll Ambush',
         slogan: 'Zerbrich die Pfeile, die auf dich zufliegen, und geh weiter',
         duration: 'August 2021 · 3 Tage',
-        role: 'Solo, mit Musik von RVKE',
+        role: 'Solo, mit Musik von Jurre de Vries',
         tools: 'Unity, Affinity Designer, Audacity',
         link: 'https://luuknoverraz.itch.io/night-stroll-ambush',
         paragraphs: [
           'Du machst gerade einen schönen Nachtspaziergang, als plötzlich Banditen auf dich schießen. Statt zurückzuschlagen, zerbrichst du ihre Pfeile im Herabfallen und gehst weiter. Achte darauf, wo die Pfeile in den Himmel geschossen werden, dann weißt du, wo sie landen; je höher deine Punktzahl, desto schwerer wird es.',
-          'Ich habe es für den <a href="https://itch.io/jam/mini-jam-87-break">Mini Jam 87</a> gemacht; das Thema war „break“, die Vorgabe, dass der Spieler Pazifist ist. Die Hintergrundmusik stammt von <a href="https://jurredevries.me/">RVKE</a>. Erreiche 50 Punkte, dann wartet eine kleine Überraschung.',
+          'Ich habe es für den <a href="https://itch.io/jam/mini-jam-87-break">Mini Jam 87</a> gemacht; das Thema war „break“, die Vorgabe, dass der Spieler Pazifist ist. Die Hintergrundmusik stammt von <a href="https://jurredevries.me/">Jurre de Vries</a>. Erreiche 50 Punkte, dann wartet eine kleine Überraschung.',
         ],
       },
       'zerotrace': {
@@ -756,6 +760,7 @@ export const copy: Record<Lang, Copy> = {
     },
     card: { mail: 'E-Mail.' },
     work: { title: 'Arbeiten', view: 'Mehr lesen', play: 'Spielen' },
+    viewer: { open: 'Bild vergrößern', close: 'Schließen' },
     earlier: {
       title: 'Frühere Spiele',
     },
@@ -917,12 +922,12 @@ export const copy: Record<Lang, Copy> = {
         name: 'Night Stroll Ambush',
         slogan: 'Brisez les flèches qui volent vers vous et continuez à marcher',
         duration: 'août 2021 · 3 jours',
-        role: 'Solo, musique de RVKE',
+        role: 'Solo, musique de Jurre de Vries',
         tools: 'Unity, Affinity Designer, Audacity',
         link: 'https://luuknoverraz.itch.io/night-stroll-ambush',
         paragraphs: [
           'Vous faisiez une agréable promenade nocturne quand des bandits se mettent soudain à vous tirer dessus. Au lieu de riposter, vous brisez leurs flèches pendant leur chute et continuez votre chemin. Regardez où les flèches sont tirées dans le ciel pour savoir où elles tomberont ; plus votre score monte, plus le jeu devient difficile.',
-          'Je l’ai fait pour la <a href="https://itch.io/jam/mini-jam-87-break">Mini Jam 87</a>, dont le thème était « break » et la contrainte que le joueur soit pacifiste. La musique de fond est de <a href="https://jurredevries.me/">RVKE</a>. Atteignez un score de 50 pour découvrir une petite surprise.',
+          'Je l’ai fait pour la <a href="https://itch.io/jam/mini-jam-87-break">Mini Jam 87</a>, dont le thème était « break » et la contrainte que le joueur soit pacifiste. La musique de fond est de <a href="https://jurredevries.me/">Jurre de Vries</a>. Atteignez un score de 50 pour découvrir une petite surprise.',
         ],
       },
       'zerotrace': {
@@ -986,6 +991,7 @@ export const copy: Record<Lang, Copy> = {
     },
     card: { mail: 'E-mail.' },
     work: { title: 'Travaux', view: 'En savoir plus', play: 'Jouer' },
+    viewer: { open: 'Agrandir l’image', close: 'Fermer' },
     earlier: {
       title: 'Jeux précédents',
     },
@@ -1146,12 +1152,12 @@ export const copy: Record<Lang, Copy> = {
         name: 'Night Stroll Ambush',
         slogan: 'Rompe las flechas que vuelan hacia ti y sigue caminando',
         duration: 'agosto de 2021 · 3 días',
-        role: 'En solitario, con música de RVKE',
+        role: 'En solitario, con música de Jurre de Vries',
         tools: 'Unity, Affinity Designer, Audacity',
         link: 'https://luuknoverraz.itch.io/night-stroll-ambush',
         paragraphs: [
           'Estabas dando un agradable paseo nocturno cuando, de repente, unos bandidos empiezan a dispararte. En lugar de contraatacar, rompes sus flechas mientras caen y sigues avanzando. Fíjate en dónde se disparan las flechas hacia el cielo para saber dónde caerán; el juego se vuelve más difícil a medida que sube tu puntuación.',
-          'Lo hice para la <a href="https://itch.io/jam/mini-jam-87-break">Mini Jam 87</a>, cuyo tema era «break» y cuya limitación era que el jugador fuese pacifista. La música de fondo es de <a href="https://jurredevries.me/">RVKE</a>. Llega a 50 puntos para ver una pequeña sorpresa.',
+          'Lo hice para la <a href="https://itch.io/jam/mini-jam-87-break">Mini Jam 87</a>, cuyo tema era «break» y cuya limitación era que el jugador fuese pacifista. La música de fondo es de <a href="https://jurredevries.me/">Jurre de Vries</a>. Llega a 50 puntos para ver una pequeña sorpresa.',
         ],
       },
       'zerotrace': {
@@ -1215,6 +1221,7 @@ export const copy: Record<Lang, Copy> = {
     },
     card: { mail: 'E-mail.' },
     work: { title: 'Trabajos', view: 'Leer más', play: 'Jugar' },
+    viewer: { open: 'Ampliar imagen', close: 'Cerrar' },
     earlier: {
       title: 'Juegos anteriores',
     },
@@ -1375,12 +1382,12 @@ export const copy: Record<Lang, Copy> = {
         name: 'Night Stroll Ambush',
         slogan: '飛んでくる矢を砕きながら、歩き続けよう',
         duration: '2021年8月 · 3日間',
-        role: 'ソロ（音楽は RVKE）',
+        role: 'ソロ（音楽は Jurre de Vries）',
         tools: 'Unity, Affinity Designer, Audacity',
         link: 'https://luuknoverraz.itch.io/night-stroll-ambush',
         paragraphs: [
           '夜の散歩を楽しんでいたら、突然、盗賊たちが矢を放ってきました。反撃するのではなく、落ちてくる矢を砕いて進み続けましょう。矢が空に放たれる位置を見れば、どこに落ちてくるかがわかります。スコアが上がるほど難しくなります。',
-          '<a href="https://itch.io/jam/mini-jam-87-break">Mini Jam 87</a> のために制作しました。テーマは「break」、条件は「プレイヤーは平和主義者」。BGM は <a href="https://jurredevries.me/">RVKE</a> によるものです。スコア50を達成すると、ちょっとしたお楽しみがあります。',
+          '<a href="https://itch.io/jam/mini-jam-87-break">Mini Jam 87</a> のために制作しました。テーマは「break」、条件は「プレイヤーは平和主義者」。BGM は <a href="https://jurredevries.me/">Jurre de Vries</a> によるものです。スコア50を達成すると、ちょっとしたお楽しみがあります。',
         ],
       },
       'zerotrace': {
@@ -1444,6 +1451,7 @@ export const copy: Record<Lang, Copy> = {
     },
     card: { mail: 'E-mail.' },
     work: { title: '作品', view: '詳しく見る', play: 'プレイ' },
+    viewer: { open: '画像を拡大', close: '閉じる' },
     earlier: {
       title: '過去のゲーム',
     },
@@ -1604,12 +1612,12 @@ export const copy: Record<Lang, Copy> = {
         name: 'Night Stroll Ambush',
         slogan: '击碎朝你飞来的箭，继续往前走',
         duration: '2021 年 8 月 · 3 天',
-        role: '独立完成，音乐由 RVKE 创作',
+        role: '独立完成，音乐由 Jurre de Vries 创作',
         tools: 'Unity, Affinity Designer, Audacity',
         link: 'https://luuknoverraz.itch.io/night-stroll-ambush',
         paragraphs: [
           '你正在夜里愉快地散步，突然遭到一群强盗放箭袭击。你不还手，而是在箭落下时把它们击碎，然后继续前进。留意箭射向天空的位置，就能知道它们会落在哪里；分数越高，游戏就越难。',
-          '我为 <a href="https://itch.io/jam/mini-jam-87-break">Mini Jam 87</a> 做了这款游戏，主题是“break”，限制条件是玩家必须是和平主义者。背景音乐由 <a href="https://jurredevries.me/">RVKE</a> 创作。分数达到 50，会看到一个小惊喜。',
+          '我为 <a href="https://itch.io/jam/mini-jam-87-break">Mini Jam 87</a> 做了这款游戏，主题是“break”，限制条件是玩家必须是和平主义者。背景音乐由 <a href="https://jurredevries.me/">Jurre de Vries</a> 创作。分数达到 50，会看到一个小惊喜。',
         ],
       },
       'zerotrace': {
@@ -1673,6 +1681,7 @@ export const copy: Record<Lang, Copy> = {
     },
     card: { mail: 'E-mail.' },
     work: { title: '作品', view: '了解更多', play: '试玩' },
+    viewer: { open: '放大图片', close: '关闭' },
     earlier: {
       title: '早期游戏',
     },

@@ -1,5 +1,6 @@
 ---
-import { Picture } from 'astro:assets';
+import { Picture, getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import Base from '../layouts/Base.astro';
 import { base, copy, earlierGames, projectCopy, projectSlugs, social, type Lang, type ProjectSlug } from '../content';
 import { earlierThumbs, media } from '../projects';
@@ -23,6 +24,13 @@ const pp = pc?.p;
 const textLang = pc && pc.lang !== lang ? copy[pc.lang].htmlLang : undefined;
 // Earlier games sit in the toggle under Work, so their back link reopens it.
 const backHash = project && !projectSlugs.includes(project) ? '#earlier' : '#work';
+// Links to other sites inside written text open in a new tab, like the rest of the site.
+const externalLinks = (html: string) =>
+  html.replace(/<a href="(https?:\/\/[^"]+)"/g, '<a href="$1" target="_blank" rel="noopener"');
+// Large versions for the image viewer (also what the link opens without JavaScript).
+const large = (src: ImageMetadata) => getImage({ src, format: 'webp', width: Math.min(src.width, 2000) });
+const heroLarge = hero ? await large(hero) : undefined;
+const rowLarge = project ? await Promise.all(media[project].images.map((img) => (img ? large(img.src) : null))) : [];
 ---
 
 <Base lang={lang} project={project}>
@@ -171,7 +179,7 @@ const backHash = project && !projectSlugs.includes(project) ? '#earlier' : '#wor
             <div class="about-photo" aria-hidden="true"></div>
             <div class="about-text">
               {t.about.paragraphs.length > 0 ? (
-                t.about.paragraphs.map((text) => <p set:html={text.replaceAll('%base%', base(lang))} />)
+                t.about.paragraphs.map((text) => <p set:html={externalLinks(text.replaceAll('%base%', base(lang)))} />)
               ) : (
                 <div class="about-placeholder" aria-hidden="true">
                   <span></span><span></span><span></span><span></span><span></span>
@@ -238,16 +246,18 @@ const backHash = project && !projectSlugs.includes(project) ? '#earlier' : '#wor
           ]}
           data-slug={project}
         >
-          <Picture
-            src={hero!}
-            formats={['avif', 'webp']}
-            fallbackFormat="jpg"
-            widths={posterWidths(hero!.width)}
-            sizes="(max-width: 1100px) 100vw, 64rem"
-            alt=""
-            loading="eager"
-            fetchpriority="high"
-          />
+          <a class="zoomable" href={heroLarge!.src} data-alt={pp!.name} aria-label={`${t.viewer.open}: ${pp!.name}`}>
+            <Picture
+              src={hero!}
+              formats={['avif', 'webp']}
+              fallbackFormat="jpg"
+              widths={posterWidths(hero!.width)}
+              sizes="(max-width: 1100px) 100vw, 64rem"
+              alt=""
+              loading="eager"
+              fetchpriority="high"
+            />
+          </a>
           {media[project].video && (
             <video data-loop muted loop playsinline preload="none" aria-hidden="true">
               <source src={`/videos/${media[project].video}.webm`} type="video/webm" />
@@ -258,28 +268,83 @@ const backHash = project && !projectSlugs.includes(project) ? '#earlier' : '#wor
         <div class="project-body" lang={textLang}>
           {pp!.paragraphs.map((text, i) => {
             const img = media[project].images[i];
+            const alt = img ? (img.alt[lang] ?? img.alt.en) : '';
             return (
               <div class="project-row">
-                <p set:html={text} />
+                <p set:html={externalLinks(text)} />
                 {img && (
-                  <Picture
-                    src={img.src}
-                    formats={['avif', 'webp']}
-                    fallbackFormat={img.src.format === 'png' && img.src.width > 900 ? 'jpg' : img.src.format}
-                    widths={[Math.min(img.src.width, 420), Math.min(img.src.width, 840)].filter((w, j, a) => a.indexOf(w) === j)}
-                    sizes={`(max-width: 768px) 100vw, ${Math.min(img.src.width, 420)}px`}
-                    alt={img.alt[lang] ?? img.alt.en}
-                    loading="lazy"
-                  />
+                  <a class="zoomable" href={rowLarge[i]!.src} data-alt={alt} aria-label={`${t.viewer.open}: ${alt}`}>
+                    <Picture
+                      src={img.src}
+                      formats={['avif', 'webp']}
+                      fallbackFormat={img.src.format === 'png' && img.src.width > 900 ? 'jpg' : img.src.format}
+                      widths={[Math.min(img.src.width, 420), Math.min(img.src.width, 840)].filter((w, j, a) => a.indexOf(w) === j)}
+                      sizes={`(max-width: 768px) 100vw, ${Math.min(img.src.width, 420)}px`}
+                      alt={alt}
+                      loading="lazy"
+                    />
+                  </a>
                 )}
               </div>
             );
           })}
         </div>
+        {/* Image viewer: opened by the script below when an image is clicked. */}
+        <dialog class="viewer" aria-label={t.viewer.open}>
+          <button class="viewer-close" type="button" aria-label={t.viewer.close} title={t.viewer.close}>
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" focusable="false">
+              <path d="M5 5l14 14M19 5L5 19"></path>
+            </svg>
+          </button>
+          <img class="viewer-image" src="data:," alt="" />
+        </dialog>
       </article>
     )
   }
 </Base>
+
+<script>
+  // Image viewer: clicking a picture on a project page shows it large in a dialog.
+  // Close with the cross, a click beside the image, or Escape. Without this script
+  // the link simply opens the large image itself.
+  const viewer = document.querySelector<HTMLDialogElement>('dialog.viewer');
+  const viewerImage = viewer?.querySelector<HTMLImageElement>('.viewer-image');
+  const calm = matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (viewer && viewerImage) {
+    const close = () => {
+      if (!viewer.open || viewer.classList.contains('closing')) return;
+      if (calm.matches) return viewer.close();
+      viewer.classList.add('closing');
+      const finish = () => {
+        if (!viewer.classList.contains('closing')) return;
+        viewer.classList.remove('closing');
+        viewer.close();
+      };
+      viewer.addEventListener('animationend', finish, { once: true });
+      setTimeout(finish, 300); // in case no animation runs
+    };
+
+    for (const link of document.querySelectorAll<HTMLAnchorElement>('a.zoomable')) {
+      link.addEventListener('click', (e) => {
+        if (e.ctrlKey || e.metaKey || e.shiftKey) return; // let new-tab clicks through
+        e.preventDefault();
+        viewerImage.src = link.href;
+        viewerImage.alt = link.dataset.alt ?? '';
+        viewer.showModal();
+      });
+    }
+
+    viewer.addEventListener('click', (e) => {
+      const target = e.target as Element;
+      if (target === viewer || target.closest('.viewer-close')) close();
+    });
+    viewer.addEventListener('cancel', (e) => {
+      e.preventDefault(); // Escape: close with the same animation
+      close();
+    });
+  }
+</script>
 
 <script>
   // Earlier games: a link to #earlier (the Back link on their pages) opens the list.

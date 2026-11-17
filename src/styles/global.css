@@ -908,6 +908,81 @@ a:hover {
 }
 
 /* ==========================================================================
+   Image viewer on project pages
+   ========================================================================== */
+.zoomable {
+  display: block;
+  cursor: zoom-in;
+}
+
+.project-media .zoomable {
+  position: absolute;
+  inset: 0;
+}
+
+/* Fills the screen; the image sits in the middle on a dimmed page. */
+.viewer {
+  inline-size: 100vw;
+  max-inline-size: none;
+  block-size: 100dvh;
+  max-block-size: none;
+  margin: 0;
+  padding: clamp(3.5rem, 8vh, 5rem) var(--gutter);
+  border: 0;
+  background: transparent;
+  color: var(--paper);
+
+  &[open] {
+    display: grid;
+    place-items: center;
+  }
+
+  &::backdrop {
+    background: rgb(22 18 20 / 0.9);
+  }
+}
+
+.viewer-image {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+  inline-size: auto;
+  block-size: auto;
+  object-fit: contain;
+  box-shadow: 0 1.5rem 4rem -1rem rgb(0 0 0 / 0.6);
+  cursor: default;
+}
+
+.viewer-close {
+  position: fixed;
+  inset-block-start: 0.75rem;
+  inset-inline-end: calc(var(--gutter) - 0.6rem);
+  display: grid;
+  place-items: center;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--paper);
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--red);
+  }
+
+  svg {
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+  }
+}
+
+/* keep the page still behind the viewer */
+html:has(.viewer[open]) {
+  overflow: hidden;
+}
+
+/* ==========================================================================
    Motion: short and quiet, and only for people who haven't asked for less
    ========================================================================== */
 @media (prefers-reduced-motion: no-preference) {
@@ -923,7 +998,7 @@ a:hover {
   }
 
   /* language menu drops in under the globe */
-  .lang-more[open] ul {
+  .lang-more.opening ul {
     animation: drop-in 0.18s ease-out;
   }
 
@@ -944,19 +1019,19 @@ a:hover {
   }
 
   /* earlier games rise in one after another */
-  .earlier[open] li {
+  .earlier.opening li {
     animation: rise-in 0.4s ease-out backwards;
   }
 
-  .earlier[open] li:nth-child(2) { animation-delay: 30ms; }
-  .earlier[open] li:nth-child(3) { animation-delay: 60ms; }
-  .earlier[open] li:nth-child(4) { animation-delay: 90ms; }
-  .earlier[open] li:nth-child(5) { animation-delay: 120ms; }
-  .earlier[open] li:nth-child(6) { animation-delay: 150ms; }
-  .earlier[open] li:nth-child(7) { animation-delay: 180ms; }
-  .earlier[open] li:nth-child(8) { animation-delay: 210ms; }
-  .earlier[open] li:nth-child(9) { animation-delay: 240ms; }
-  .earlier[open] li:nth-child(n + 10) { animation-delay: 270ms; }
+  .earlier.opening li:nth-child(2) { animation-delay: 30ms; }
+  .earlier.opening li:nth-child(3) { animation-delay: 60ms; }
+  .earlier.opening li:nth-child(4) { animation-delay: 90ms; }
+  .earlier.opening li:nth-child(5) { animation-delay: 120ms; }
+  .earlier.opening li:nth-child(6) { animation-delay: 150ms; }
+  .earlier.opening li:nth-child(7) { animation-delay: 180ms; }
+  .earlier.opening li:nth-child(8) { animation-delay: 210ms; }
+  .earlier.opening li:nth-child(9) { animation-delay: 240ms; }
+  .earlier.opening li:nth-child(n + 10) { animation-delay: 270ms; }
 
   /* covers in the Work list lean in a little on hover */
   a.project-media img {
@@ -965,6 +1040,36 @@ a:hover {
 
   a.project-media:hover img {
     scale: 1.025;
+  }
+
+  /* image viewer: the picture grows out of the dimmed page, and shrinks back */
+  .viewer[open] .viewer-image {
+    animation: zoom-in 0.28s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .viewer[open]::backdrop {
+    animation: fade-in 0.28s ease-out;
+  }
+
+  .viewer[open] .viewer-close {
+    animation: fade-in 0.4s ease-out;
+  }
+
+  .viewer.closing .viewer-image {
+    animation: zoom-out 0.18s ease-in forwards;
+  }
+
+  .viewer.closing::backdrop,
+  .viewer.closing .viewer-close {
+    animation: fade-out 0.18s ease-in forwards;
+  }
+
+  .zoomable img {
+    transition: opacity 0.2s ease;
+  }
+
+  .zoomable:hover img {
+    opacity: 0.88;
   }
 
   /* the scroll cue under the card nods downwards now and then */
@@ -978,6 +1083,32 @@ a:hover {
   from {
     opacity: 0;
     translate: 0 -0.4rem;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    scale: 0.94;
+  }
+}
+
+@keyframes zoom-out {
+  to {
+    opacity: 0;
+    scale: 0.96;
   }
 }
 
