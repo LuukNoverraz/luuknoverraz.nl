@@ -157,6 +157,23 @@ const hero = project ? (media[project].hero ?? media[project].poster) : undefine
 
         )}
 
+        <section class="section about" id="about" aria-labelledby="about-title">
+          <h2 class="section-title" id="about-title">{t.about.title}</h2>
+          <div class="about-body">
+            {/* Placeholder until there is a photo: an empty frame at the size it will take. */}
+            <div class="about-photo" aria-hidden="true"></div>
+            <div class="about-text">
+              {t.about.paragraphs.length > 0 ? (
+                t.about.paragraphs.map((text) => <p set:html={text} />)
+              ) : (
+                <div class="about-placeholder" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+
         <section class="section education" id="education" aria-labelledby="education-title">
           <h2 class="section-title" id="education-title">{t.education.title}</h2>
           <ul class="entries">

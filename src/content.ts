@@ -77,6 +77,8 @@ interface Copy {
   work: { title: string; view: string; play: string };
   /** Heading of the older games behind the "more" toggle; the games are in `earlierGames`. */
   earlier: { title: string };
+  /** About me, between Work and Education. Empty paragraphs show placeholder lines. */
+  about: { title: string; paragraphs: string[] };
 }
 
 export const copy: Record<Lang, Copy> = {
@@ -175,6 +177,7 @@ export const copy: Record<Lang, Copy> = {
     earlier: {
       title: 'Eerdere games',
     },
+    about: { title: 'Over mij', paragraphs: [] },
   },
 
   en: {
@@ -272,6 +275,7 @@ export const copy: Record<Lang, Copy> = {
     earlier: {
       title: 'Earlier games',
     },
+    about: { title: 'About me', paragraphs: [] },
   },
   // German. AI-translated from the English; keep it in step when that changes.
   de: {
@@ -369,6 +373,7 @@ export const copy: Record<Lang, Copy> = {
     earlier: {
       title: 'Frühere Spiele',
     },
+    about: { title: 'Über mich', paragraphs: [] },
   },
 
   // French. AI-translated from the English; keep it in step when that changes.
@@ -469,6 +474,7 @@ export const copy: Record<Lang, Copy> = {
     earlier: {
       title: 'Jeux précédents',
     },
+    about: { title: 'À propos de moi', paragraphs: [] },
   },
 
   // Spanish. AI-translated from the English; keep it in step when that changes.
@@ -568,6 +574,7 @@ export const copy: Record<Lang, Copy> = {
     earlier: {
       title: 'Juegos anteriores',
     },
+    about: { title: 'Sobre mí', paragraphs: [] },
   },
 
   // Japanese. AI-translated from the English; keep it in step when that changes.
@@ -667,6 +674,7 @@ export const copy: Record<Lang, Copy> = {
     earlier: {
       title: '過去のゲーム',
     },
+    about: { title: '自己紹介', paragraphs: [] },
   },
 
   // Simplified Chinese. AI-translated from the English; keep it in step when that changes.
@@ -766,6 +774,7 @@ export const copy: Record<Lang, Copy> = {
     earlier: {
       title: '早期游戏',
     },
+    about: { title: '关于我', paragraphs: [] },
   },
 };
 
