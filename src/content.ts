@@ -317,7 +317,7 @@ export const copy: Record<Lang, Copy> = {
     viewer: { open: 'Afbeelding vergroten', close: 'Sluiten' },
     archive: {
       title: 'Portfoliomuseum',
-      intro: 'Deze site bestaat sinds 2017 en is sindsdien zeven keer opnieuw gebouwd. Dit zijn alle versies van mijn portfolio; samen laten ze mijn vooruitgang en ontwikkeling als programmeur en ontwerper zien.',
+      intro: 'Deze site bestaat sinds 2017 en is sindsdien zeven keer opnieuw gebouwd. Dit zijn alle versies van mijn portfolio. Niet alle versies zijn ooit afgemaakt, maar samen laten ze wel mijn vooruitgang en ontwikkeling als programmeur en ontwerper zien.',
       link: 'Portfoliomuseum',
       code: 'Code op GitHub',
       visit: 'Bekijk deze versie',
@@ -562,7 +562,7 @@ export const copy: Record<Lang, Copy> = {
     viewer: { open: 'Enlarge image', close: 'Close' },
     archive: {
       title: 'Portfolio museum',
-      intro: 'This site has been around since 2017 and has been rebuilt seven times since. These are all the iterations of my portfolio and show my progress and development as a coder and designer.',
+      intro: 'This site has been around since 2017 and has been rebuilt seven times since. These are all the iterations of my portfolio. While some of them were never finished, they do show my progress and development as a coder and designer.',
       link: 'Portfolio museum',
       code: 'Code on GitHub',
       visit: 'Visit this version',
@@ -807,7 +807,7 @@ export const copy: Record<Lang, Copy> = {
     viewer: { open: 'Bild vergrößern', close: 'Schließen' },
     archive: {
       title: 'Portfolio-Museum',
-      intro: 'Diese Website gibt es seit 2017, und seitdem habe ich sie sieben Mal neu gebaut. Das sind alle Versionen meines Portfolios; sie zeigen meinen Fortschritt und meine Entwicklung als Programmierer und Designer.',
+      intro: 'Diese Website gibt es seit 2017, und seitdem habe ich sie sieben Mal neu gebaut. Das sind alle Versionen meines Portfolios. Manche davon wurden nie fertig, aber sie zeigen meinen Fortschritt und meine Entwicklung als Programmierer und Designer.',
       link: 'Portfolio-Museum',
       code: 'Code auf GitHub',
       visit: 'Diese Version ansehen',
@@ -1055,7 +1055,7 @@ export const copy: Record<Lang, Copy> = {
     viewer: { open: 'Agrandir l’image', close: 'Fermer' },
     archive: {
       title: 'Musée du portfolio',
-      intro: 'Ce site existe depuis 2017 et a été reconstruit sept fois depuis. Voici toutes les versions de mon portfolio : elles montrent mes progrès et mon évolution en tant que développeur et designer.',
+      intro: 'Ce site existe depuis 2017 et a été reconstruit sept fois depuis. Voici toutes les versions de mon portfolio. Certaines n’ont jamais été terminées, mais elles montrent bien mes progrès et mon évolution en tant que développeur et designer.',
       link: 'Musée du portfolio',
       code: 'Code sur GitHub',
       visit: 'Voir cette version',
@@ -1302,7 +1302,7 @@ export const copy: Record<Lang, Copy> = {
     viewer: { open: 'Ampliar imagen', close: 'Cerrar' },
     archive: {
       title: 'Museo del portfolio',
-      intro: 'Este sitio existe desde 2017 y se ha rehecho siete veces desde entonces. Estas son todas las versiones de mi portfolio, y muestran mi progreso y mi evolución como programador y diseñador.',
+      intro: 'Este sitio existe desde 2017 y se ha rehecho siete veces desde entonces. Estas son todas las versiones de mi portfolio. Algunas nunca llegaron a terminarse, pero sí muestran mi progreso y mi evolución como programador y diseñador.',
       link: 'Museo del portfolio',
       code: 'Código en GitHub',
       visit: 'Ver esta versión',
@@ -1549,7 +1549,7 @@ export const copy: Record<Lang, Copy> = {
     viewer: { open: '画像を拡大', close: '閉じる' },
     archive: {
       title: 'ポートフォリオ博物館',
-      intro: 'このサイトは2017年に始まり、これまでに7回作り直してきました。ここにあるのは私のポートフォリオのすべてのバージョンで、プログラマー・デザイナーとしての成長の記録です。',
+      intro: 'このサイトは2017年に始まり、これまでに7回作り直してきました。ここにあるのは私のポートフォリオのすべてのバージョンです。完成しなかったものもありますが、プログラマー・デザイナーとしての成長の記録になっています。',
       link: 'ポートフォリオ博物館',
       code: 'GitHub のコード',
       visit: 'このバージョンを見る',
@@ -1796,7 +1796,7 @@ export const copy: Record<Lang, Copy> = {
     viewer: { open: '放大图片', close: '关闭' },
     archive: {
       title: '作品集博物馆',
-      intro: '这个网站从 2017 年开始，之后重做了七次。这里是我作品集的所有版本，记录了我作为程序员和设计师的进步与成长。',
+      intro: '这个网站从 2017 年开始，之后重做了七次。这里是我作品集的所有版本。其中有些从未完成，但它们记录了我作为程序员和设计师的进步与成长。',
       link: '作品集博物馆',
       code: 'GitHub 上的代码',
       visit: '查看这个版本',
